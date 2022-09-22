@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Wiki_Vendors::vendor">
+                <resource id="Wiki_VendorsProfile::profile" title="Profile" translate="title" sortOrder="120">
+                    <resource id="Wiki_VendorsProfile::edit_profile" title="Edit Profile" translate="title" sortOrder="10" />
+                    <resource id="Wiki_VendorsProfile::address" title="Address" translate="title" sortOrder="20" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

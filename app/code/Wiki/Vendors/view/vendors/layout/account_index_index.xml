@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="vendor-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+        	<block class="Wiki\Vendors\Block\Vendors\Account" name="vendor.myaccount" template="Wiki_Vendors::account.phtml">
+        		<container name="vendor.myaccount.left" as="myaccount_left">
+        			<block class="Wiki\Vendors\Block\Vendors\Account\Profile" name="vendor.myaccount.left.profile" template="Wiki_Vendors::account/profile.phtml">
+        				<block class="Wiki\Vendors\Block\Vendors\Account\Profile" name="vendor.myaccount.left.profile.logo" template="Wiki_Vendors::account/profile/logo.phtml"/>
+        				<block class="Wiki\Vendors\Block\Vendors\Account\Profile" name="vendor.myaccount.left.profile.title" template="Wiki_Vendors::account/profile/title.phtml"/>
+        				<block class="Wiki\Vendors\Block\Vendors\Account\Profile" name="vendor.myaccount.left.profile.description" template="Wiki_Vendors::account/profile/description.phtml"/>
+        				<block class="Wiki\Vendors\Block\Vendors\Account\Profile" name="vendor.myaccount.left.profile.joinedtime" template="Wiki_Vendors::account/profile/joined-time.phtml"/>
+        				<block class="Wiki\Vendors\Block\Vendors\Account\Profile" name="vendor.myaccount.left.profile.phone" template="Wiki_Vendors::account/profile/phone.phtml"/>
+        				<block class="Wiki\Vendors\Block\Vendors\Account\Profile" name="vendor.myaccount.left.profile.salescount" template="Wiki_Vendors::account/profile/sales.phtml"/>
+        				<block class="Wiki\Vendors\Block\Vendors\Account\Profile" name="vendor.myaccount.left.profile.address" template="Wiki_Vendors::account/profile/address.phtml"/>
+        			</block>
+        		</container>
+        		<container name="vendor.myaccount.content" as="myaccount_content">
+        			<block class="Wiki\Vendors\Block\Vendors\Account\Edit" name="vendor.myaccount.form"/>
+        		</container>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

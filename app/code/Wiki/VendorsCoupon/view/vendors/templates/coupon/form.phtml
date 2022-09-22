@@ -1,0 +1,141 @@
+<div class="box box-solid">
+    <form class="fieldset form-horizontal" id="generate-coupon-form">
+    <div class="box-header with-border">
+      <h3 class="box-title"><i class="fa fa-tags"></i> <?php echo __('Generate Coupons')?></h3>
+    </div>
+    <div class="box-body form-horizontal">
+        <div class="form-group required">
+            <label for="quantity" class="col-sm-6 control-label"><span><?php echo __("Coupon Qty")?></span></label>
+            <div class="col-sm-6">
+                <input class="form-control input-sm required-entry validate-number" name="qty" id="quantity" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="code-prefix" class="col-sm-6 control-label"><span><?php echo __("Code Prefix")?></span></label>
+            <div class="col-sm-6">
+                <input class="form-control input-sm validate-alphanum" name="code_prefix" id="code-prefix" type="text">
+            </div>
+        </div>
+        <div class="form-group required">
+            <label for="coupon-value" class="col-sm-6 control-label"><span><?php echo __("Coupon Value")?></span></label>
+            <div class="col-sm-6">
+                <input class="form-control input-sm required-entry validate-number" name="coupon_value" id="coupon-value" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="usage-per-coupon" class="col-sm-6 control-label"><span><?php echo __("Usage Limit")?></span></label>
+            <div class="col-sm-6">
+                <input class="form-control input-sm validate-number" name="usage_limit" id="usage-per-coupon" type="text">
+            </div>
+        </div>
+        <?php /*?>
+        <div class="form-group">
+            <label for="usage-per-customer" class="col-sm-6 control-label"><span><?php echo __("Usage per Customer")?></span></label>
+            <div class="col-sm-6">
+                <input class="form-control input-sm" name="usage_per_customer" id="usage-per-customer" type="text">
+            </div>
+        </div>
+        */?>
+        <div class="form-group">
+            <label for="from-date" class="col-sm-6 control-label"><span><?php echo __("From")?></span></label>
+            <div class="col-sm-6">
+                <input class="form-control input-sm" name="from_date" id="from-date" type="text" data-mage-init="<?php echo $block->getCalendarInit();?>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="to-date" class="col-sm-6 control-label"><span><?php echo __("To")?></span></label>
+            <div class="col-sm-6">
+                <input class="form-control input-sm" name="to_date" id="to-date" type="text" data-mage-init="<?php echo $block->getCalendarInit();?>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="img-coupon" class="col-sm-6 control-label"><span><?php echo __("Image Coupon")?></span></label>
+            <div class="col-sm-6">
+                <input  name="image_coupon" id="img-coupon" class="inputfileImageCoupon "  type="file" accept="image/*" />
+                <!-- <input type="file" name="file" id="file" class="inputfile" /> -->
+                <label for="img-coupon"><i class="fa fa-upload" aria-hidden="true"></i> <strong>Choose a file</strong></label>
+                <img id="imageCoupon" />
+            </div>
+           
+        </div>
+    </div>
+    <div class="box-footer">
+        <button type="submit" id="generate-coupon-btn" class="pull-right btn btn-sm btn-primary"><i class="fa fa-bolt"></i> <?php echo __("Generate")?></button>
+    </div>
+    </form>
+</div>
+<script type="text/javascript">
+
+
+var GENERATE_URL = '<?php echo $block->getGenerateUrl()?>';
+
+require([
+    'jquery',
+    'uiRegistry',
+    'mage/translate',
+    'mage/mage',
+    'loader',
+    'domReady!'
+], function($, registry, $t){
+    /*************************************/
+    var inputs = document.querySelectorAll( '.inputfileImageCoupon' );
+    
+    Array.prototype.forEach.call( inputs, function( input )
+    {
+        var label	 = input.nextElementSibling,
+            labelVal = label.innerHTML;
+
+        input.addEventListener( 'change', function( e )
+        {
+            
+            var fileName = '';
+            
+           
+            fileName = e.target.value.split('\\').pop();
+
+            // if( fileName )
+                label.querySelector( 'strong' ).innerHTML = fileName;
+            //  else
+            //      label.innerHTML = labelVal;
+            
+        });
+    });
+    document.getElementById("img-coupon").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("imageCoupon").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+
+        /*************************************/
+	$('#generate-coupon-form').mage('validation', {
+        submitHandler: function (form) {
+        	var params = {};
+        	$('#generate-coupon-form').find('input').each(function(index,el){
+        		params[$(el).attr('name')] = $(el).val();
+        	});
+            	
+            $('body').trigger('processStart');
+            
+            $.ajax({
+                url: GENERATE_URL,
+                type: "POST",
+                data: params,
+                dataType: "json",
+                success: function (result) {
+                	$('body').trigger('processStop');
+                	registry.get('vendor_coupon_grid.vendor_coupon_grid_data_source').set('params.t ', Date.now());
+                	form.reset();
+                    console.log(result);
+                }
+            });
+        }
+    });
+
+});
+</script>

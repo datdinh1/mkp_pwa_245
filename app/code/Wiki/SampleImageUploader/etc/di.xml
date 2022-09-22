@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Wiki_SampleImageUploader
+
+ * @category   Wiki
+ * @package    Wiki_SampleImageUploader
+ * @copyright  Copyright (c) 2017 Wiki
+ * @license    https://github.com/Wiki/magento2-sample-imageuploader/blob/master/LICENSE.md
+ * @version    1.0.0
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Wiki\SampleImageUploader\Api\ImageRepositoryInterface" type="Wiki\SampleImageUploader\Model\ImageRepository"/>
+    <preference for="Wiki\SampleImageUploader\Api\Data\ImageInterface" type="Wiki\SampleImageUploader\Model\Image" />
+    <preference for="Wiki\SampleImageUploader\Api\Data\ImageInterestInterface" type="Wiki\SampleImageUploader\Model\ImageInterest" />
+
+    <!-- <virtualType name="Wiki\SampleImageUploader\Model\ResourceModel\Image\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">Wiki_sampleimageuploader_image</argument>
+            <argument name="resourceModel" xsi:type="string">Wiki\SampleImageUploader\Model\ResourceModel\Image</argument>
+        </arguments>
+    </virtualType> -->
+
+    <virtualType name="SampleImageUploaderDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Wiki\SampleImageUploader\Model\Resource\Image\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">SampleImageUploaderDataGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Wiki\SampleImageUploader\Model\ResourceModel\Image\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">Wiki_sampleimageuploader_image</argument>
+            <argument name="resourceModel" xsi:type="string">Wiki\SampleImageUploader\Model\ResourceModel\Image</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="SampleImageUploaderImageUploader" type="Wiki\SampleImageUploader\Model\Uploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="const">Wiki\SampleImageUploader\Model\Uploader::IMAGE_TMP_PATH</argument>
+            <argument name="basePath" xsi:type="const">Wiki\SampleImageUploader\Model\Uploader::IMAGE_PATH</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sampleimageuploader_image_grid_data_source" xsi:type="string">Wiki\SampleImageUploader\Model\ResourceModel\Image\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Wiki\SampleImageUploader\Model\UploaderPool">
+        <arguments>
+            <argument name="uploaders" xsi:type="array">
+                <item name="image" xsi:type="string">SampleImageUploaderImageUploader</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Wiki\SampleImageUploader\Controller\Adminhtml\Image\Upload">
+        <arguments>
+            <argument name="uploader" xsi:type="object">SampleImageUploaderImageUploader</argument>
+        </arguments>
+    </type>
+    <type name="Wiki\SampleImageUploader\Ui\Component\Listing\Column\Image">
+        <arguments>
+            <argument name="imageModel" xsi:type="object">SampleImageUploaderImageUploader</argument>
+        </arguments>
+    </type>
+    <type name="Wiki\SampleImageUploader\Controller\Adminhtml\Image\MassDelete">
+        <arguments>
+            <argument name="successMessage" xsi:type="string" translate="true">A total of %1 record(s) have been deleted.</argument>
+            <argument name="errorMessage" xsi:type="string" translate="true">An error occurred while deleting record(s).</argument>
+        </arguments>
+    </type>
+    <preference for="Wiki\SampleImageUploader\Api\Data\CustomInterestInterface" type="Wiki\SampleImageUploader\Model\Api\Data\CustomInterest" />
+</config>

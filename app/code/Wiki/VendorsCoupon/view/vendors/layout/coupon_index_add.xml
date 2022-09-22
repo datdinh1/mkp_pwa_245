@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="vendor-1column"  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Wiki_VendorsCoupon/css/couponedit.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Wiki\VendorsCoupon\Block\Vendors\Coupon\Add" name="coupon_add" />
+            <block class="Wiki\VendorsCoupon\Block\Vendors\Coupon\Add" name="couponadd" template="edit.phtml">
+            <block class="Magento\Catalog\Block\Adminhtml\Category\Tree" name="category.tree" template="tree.phtml"/>
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="editCoupon" xsi:type="array">
+                                <item name="component" xsi:type="string">Wiki_VendorsCoupon/js/edit</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

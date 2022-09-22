@@ -1,0 +1,76 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+namespace Wiki\Vendors\Block\Account\Create;
+
+use Wiki\Vendors\Model\Source\RegisterType;
+
+class Link extends \Magento\Framework\View\Element\Html\Link
+{
+
+    /**
+     * @var \Wiki\Vendors\Helper\Data
+     */
+    protected $_vendorHelper;
+    
+    /**
+     * @var \Wiki\Vendors\Model\Session
+     */
+    protected $_vendorSession;
+    
+    /**
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \Wiki\Vendors\Helper\Data $vendorHelper
+     * @param array $data
+     */
+    public function __construct(
+        \Magento\Framework\View\Element\Template\Context $context,
+        \Wiki\Vendors\Helper\Data $vendorHelper,
+        \Wiki\Vendors\Model\Session $session,
+        array $data = []
+    ) {
+        $this->_vendorHelper = $vendorHelper;
+        $this->_vendorSession = $session;
+        parent::__construct($context, $data);
+    }
+    
+    /**
+     * Is registered vendor
+     *
+     * @return boolean
+     */
+    public function getIsRegisteredVendor()
+    {
+        return $this->_vendorSession->isLoggedIn() && $this->_vendorSession->getVendor()->getId();
+    }
+    
+    /**
+     * @return string
+     */
+    public function getHref()
+    {
+        return $this->getIsRegisteredVendor()?$this->getUrl('vendors'):$this->getUrl('marketplace/seller/login');
+    }
+
+    
+    /**
+     * (non-PHPdoc)
+     *
+     * @see \Magento\Framework\View\Element\Html\Link::_toHtml()
+     */
+    protected function _toHtml()
+    {
+        if (!$this->_vendorHelper->moduleEnabled() ||
+            (
+                $this->_vendorHelper->getSellerRegisterType() != RegisterType::TYPE_SEPARATED &&
+                $this->_vendorSession->getVendor()->getId()
+            ) ||
+            $this->_vendorSession->getVendor()->getId()
+        ) {
+            return '';
+        }
+        return parent::_toHtml();
+    }
+}

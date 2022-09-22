@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="formkey"/>
+    <head>
+        <css src="Wiki_VendorsProfile::css/profile.css"/>
+        <css src="Wiki_VendorsProfile::css/owl.carousel.css"/>
+        <css src="Wiki_VendorsProfile::css/owl.theme.min.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Wiki\VendorsProfile\Block\Profile" name="vendors.edit_profile">
+            	<arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                    	<item name="components" xsi:type="array">
+                            <item name="profile" xsi:type="array">
+                            	<item name="component" xsi:type="string">Wiki_VendorsProfile/js/profile</item>
+                            </item>
+                        </item>
+                	</argument>
+               	</arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

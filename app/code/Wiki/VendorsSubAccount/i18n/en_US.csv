@@ -1,0 +1,66 @@
+"Save Role","Save Role"
+"Edit Role '%s'","Edit Role '%s'"
+"New Role","New Role"
+"Role Information","Role Information"
+"Role Resources","Role Resources"
+"Role Info","Role Info"
+"Role Name","Role Name"
+"Current User Identity Verification","Current User Identity Verification"
+"Your Password","Your Password"
+"Save User","Save User"
+"Edit User '%s'","Edit User '%s'"
+"New User","New User"
+"User Information","User Information"
+"User Info","User Info"
+"Is Active","Is Active"
+No,No
+Yes,Yes
+"First Name","First Name"
+"Last Name","Last Name"
+Email,Email
+Password,Password
+"Password Confirmation","Password Confirmation"
+"User Role","User Role"
+"User Roles Information","User Roles Information"
+Assigned,Assigned
+Role,Role
+"The role is deleted.","The role is deleted."
+"We can't delete the role.","We can't delete the role."
+"The role is no longer available.","The role is no longer available."
+"Sub Account","Sub Account"
+"Manage Roles","Manage Roles"
+"Edit Role %1","Edit Role %1"
+"The current password is not valid","The current password is not valid"
+"The role is saved.","The role is saved."
+"We can't save the role.","We can't save the role."
+"You can not delete the super user.","You can not delete the super user."
+"You deleted the user.","You deleted the user."
+"We can't delete the user.","We can't delete the user."
+"The user is not available.","The user is not available."
+"You are editing the super user. You are not allowed to delete, change role or disable this user.","You are editing the super user. You are not allowed to delete, change role or disable this user."
+"Manage Users","Manage Users"
+%1,%1
+Users,Users
+"The current password is not valid.","The current password is not valid."
+"You must select role for this user.","You must select role for this user."
+"The user passwords do not match.","The user passwords do not match."
+"The user is saved.","The user is saved."
+"Something went wrong while saving the user.","Something went wrong while saving the user."
+"Your account is temporarily disabled.","Your account is temporarily disabled."
+Edit,Edit
+"Roles Resources","Roles Resources"
+"Resource Access","Resource Access"
+Custom,Custom
+All,All
+Resources,Resources
+"Hi,","Hi,"
+"You're added as a sub account of vendor %vendor_name","You're added as a sub account of vendor %vendor_name"
+"You can login to vendor admin ","You can login to vendor admin "
+here,here
+"Vendor Sub Accounts","Vendor Sub Accounts"
+"Email Sender","Email Sender"
+"Email send to user after added as Sub-Account","Email send to user after added as Sub-Account"
+"Sub Accounts","Sub Accounts"
+"Add New Role","Add New Role"
+ID,ID
+"Add New User","Add New User"

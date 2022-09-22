@@ -1,0 +1,26 @@
+{
+    "name": "Wiki/module-vendors-sales",
+    "description": "A component module of Marketplace extension which allows vendor to manage and process the order from the vendor dashboard.",
+		"authors": [
+			{
+					"name": "Wiki",
+					"email": "support@Wiki.com"
+			}
+		],
+		"require": {
+				"magento/framework": "*",
+				"magento/module-sales": ">=100.0.0",
+				"Wiki/module-credit": "2.0.*",
+        "Wiki/module-core": "2.0.*"
+    },
+    "type": "magento2-module",
+    "version": "2.0.20",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Wiki\\VendorsSales\\": ""
+        }
+    }
+}

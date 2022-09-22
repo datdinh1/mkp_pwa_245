@@ -1,0 +1,26 @@
+{
+  "name": "Wiki/module-vendors-report",
+  "description": "Add advanced report to vendor panel.",
+  "authors": [
+    {
+      "name": "Wiki",
+      "email": "support@Wiki.com"
+    }
+  ],
+  "require": {
+    "magento/framework": "*",
+    "Wiki/module-vendors-sales": ">=2.0.0",
+    "Wiki/module-vendors": ">=2.0.0",
+    "Wiki/module-core": "2.0.*"
+  },
+  "type": "magento2-module",
+  "version": "2.0.6",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Wiki\\VendorsReport\\": ""
+    }
+  }
+}

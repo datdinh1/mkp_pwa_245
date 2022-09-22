@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!-- Credit section -->
+        <section id="chat" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Chat</label>
+            <tab>Wiki</tab>
+            <resource>Wiki_VendorsChat::configurations</resource>
+            <group id="general" translate="label tooltip" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="channel" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Channel</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+
+                <field id="app_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>App Id</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Key</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="secret" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Secret</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="cluster" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Cluster</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="server_enable" translate="label" sortOrder="60" type="select" showInDefault="1" showInWebsite="1" >
+                    <label>Enable Server</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="host" translate="label" sortOrder="70" type="text" showInDefault="1" showInWebsite="1">
+                    <label>Host</label>
+                     <depends>
+                        <field id="server_enable">1</field>
+                    </depends>
+                </field>
+                <field id="port" translate="label" sortOrder="80" type="text" showInDefault="1" showInWebsite="1" >
+                    <label>Port</label>
+                     <depends>
+                        <field id="server_enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

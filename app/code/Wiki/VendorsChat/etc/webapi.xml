@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/chat/send-message" method="POST">
+        <service class="Wiki\VendorsChat\Api\ChatManagementInterface" method="createConversation"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+
+    <route url="/V1/chat/upload-image" method="POST">
+        <service class="Wiki\VendorsChat\Api\ChatManagementInterface" method="uploadImage"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+
+    <route url="/V1/chat/list-room/:id" method="GET">
+        <service class="Wiki\VendorsChat\Api\ChatManagementInterface" method="getListRoomById"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <route url="/V1/chat/get-messages/:customer_id/:vendor_id" method="GET">
+        <service class="Wiki\VendorsChat\Api\ChatManagementInterface" method="getMessage"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <route url="/V1/chat/delete-room/:room_id" method="POST">
+        <service class="Wiki\VendorsChat\Api\ChatManagementInterface" method="deleteRoom"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+</routes>

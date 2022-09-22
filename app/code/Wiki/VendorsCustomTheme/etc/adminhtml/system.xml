@@ -1,0 +1,842 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="vendors">
+        	<group id="custom_theme" translate="label tooltip" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+        		<label>Custom Theme</label>
+        		<field id="register_form" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show theme selector on vendor registration form</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+        	</group>
+        </section>
+		<!-- Auction section -->
+        <section id="vendors_customtheme" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>SM Destino</label>
+            <tab>Wiki</tab>
+            <resource>Wiki_VendorsCustomTheme::configuration</resource>
+            <group id="general" translate="label tooltip" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            	<label>General</label>
+				<field id="theme_color" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Theme color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="layout_style" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Layout Style</label>
+                    <source_model>Wiki\VendorsCustomTheme\Model\Source\LayoutStyle</source_model>
+                </field>
+				<field id="maximum_page_width" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Maximum Page Width</label>
+                    <source_model>Wiki\VendorsCustomTheme\Model\Source\MaxWidth</source_model>
+                </field>
+				<field id="background_image" translate="label" type="image" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Out of Box Background Image</label>
+                    <comment>Allowed file types:PNG, GIF, JPG, JPEG.</comment>
+                    <backend_model>Wiki\VendorsCustomTheme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">background</base_url>
+                </field>
+				<field id="background_repeat" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Background Repeat</label>
+					<source_model>Wiki\VendorsCustomTheme\Model\Source\Repeat</source_model>
+                </field>
+				<field id="background_image_position" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Background Image Position</label>
+					<source_model>Wiki\VendorsCustomTheme\Model\Source\BackgroundRepeatImage</source_model>
+                </field>
+				<field id="responsive_layout" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Responsive Layout</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="right_to_left_layout" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Right To Left Layout</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="show_border_radius" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Border Radius</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="home_style" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Home Style</label>
+					<source_model>Wiki\VendorsCustomTheme\Model\Source\HomeStyle</source_model>
+                </field>
+				<field id="mobile_layout" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Mobile Layout</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="cms_home_page_mobile" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>CMS Home Page Mobile</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+			<group id="fonts" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Fonts</label>
+				<field id="top_heading" translate="label comment" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Default Font</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+				</field>
+				<field id="default_font_family" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Family</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Fonts</frontend_model>
+					<source_model>Wiki\VendorsCustomTheme\Model\Config\Sources\Fonts</source_model>
+				</field>
+				<field id="default_font_size" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Size</label>
+					<comment>eg: 12px</comment>
+				</field>
+				<field id="top_heading_h1" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Heading 1</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+				</field>
+				<field id="heading1_font_family" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Family</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Fonts</frontend_model>
+					<source_model>Wiki\VendorsCustomTheme\Model\Config\Sources\Fonts</source_model>
+				</field>
+				<field id="heading1_font_size" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Size</label>
+					<comment>eg: 12px</comment>
+				</field>
+				<field id="top_heading_h2" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Heading 2</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+				</field>
+				<field id="heading2_font_family" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Family</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Fonts</frontend_model>
+					<source_model>Wiki\VendorsCustomTheme\Model\Config\Sources\Fonts</source_model>
+				</field>
+				<field id="heading2_font_size" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Size</label>
+					<comment>eg: 12px</comment>
+				</field>
+				<field id="top_heading_h3" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Heading 3</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+				</field>
+				<field id="heading3_font_family" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Family</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Fonts</frontend_model>
+					<source_model>Wiki\VendorsCustomTheme\Model\Config\Sources\Fonts</source_model>
+				</field>
+				<field id="heading3_font_size" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Size</label>
+					<comment>eg: 12px</comment>
+				</field>
+				<field id="top_heading_h4" translate="label comment" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Heading 4</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+				</field>
+				<field id="heading4_font_family" translate="label comment" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Family</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Fonts</frontend_model>
+					<source_model>Wiki\VendorsCustomTheme\Model\Config\Sources\Fonts</source_model>
+				</field>
+				<field id="heading4_font_size" translate="label comment" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Size</label>
+					<comment>eg: 12px</comment>
+				</field>
+				<field id="top_heading_h5" translate="label comment" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Heading 5</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+				</field>
+				<field id="heading5_font_family" translate="label comment" type="select" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Family</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Fonts</frontend_model>
+					<source_model>Wiki\VendorsCustomTheme\Model\Config\Sources\Fonts</source_model>
+				</field>
+				<field id="heading5_font_size" translate="label comment" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Size</label>
+					<comment>eg: 12px</comment>
+				</field>
+				<field id="top_heading_h6" translate="label comment" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Heading 6</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+				</field>
+				<field id="heading6_font_family" translate="label comment" type="select" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Family</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Fonts</frontend_model>
+					<source_model>Wiki\VendorsCustomTheme\Model\Config\Sources\Fonts</source_model>
+				</field>
+				<field id="heading6_font_size" translate="label comment" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Size</label>
+					<comment>eg: 12px</comment>
+				</field>
+				<field id="top_heading_price" translate="label comment" type="text" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Price</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+				</field>
+				<field id="price_font_family" translate="label comment" type="select" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Family</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Fonts</frontend_model>
+					<source_model>Wiki\VendorsCustomTheme\Model\Config\Sources\Fonts</source_model>
+				</field>
+				<field id="price_font_size" translate="label comment" type="text" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Size</label>
+					<comment>eg: 12px</comment>
+				</field>
+				<field id="top_heading_menu" translate="label comment" type="text" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Menu</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+				</field>
+				<field id="menu_font_family" translate="label comment" type="select" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Family</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Fonts</frontend_model>
+					<source_model>Wiki\VendorsCustomTheme\Model\Config\Sources\Fonts</source_model>
+				</field>
+				<field id="menu_font_size" translate="label comment" type="text" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Size</label>
+					<comment>eg: 12px</comment>
+				</field>
+				<field id="top_heading_btn" translate="label comment" type="text" sortOrder="270" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Button</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+				</field>
+				<field id="button_font_family" translate="label comment" type="select" sortOrder="280" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Family</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Fonts</frontend_model>
+					<source_model>Wiki\VendorsCustomTheme\Model\Config\Sources\Fonts</source_model>
+				</field>
+				<field id="button_font_size" translate="label comment" type="text" sortOrder="290" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Size</label>
+					<comment>eg: 12px</comment>
+				</field>
+				<field id="custom_font" translate="label comment" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Custom Font</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+				</field>
+				<field id="custom_fonts_element" translate="label comment" type="textarea" sortOrder="310" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Element use font</label>
+					<comment>eg: .class-element-1, .class-element-2, #id-element</comment>
+				</field>
+				<field id="custom_font_family" translate="label comment" type="select" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Family</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Fonts</frontend_model>
+					<source_model>Wiki\VendorsCustomTheme\Model\Config\Sources\Fonts</source_model>
+				</field>
+				<field id="custom_font_size" translate="label comment" type="text" sortOrder="330" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Size</label>
+					<comment>eg: 12px</comment>
+				</field>
+			</group>
+			<group id="header" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Header</label>
+				<field id="header_background_color" translate="label comment" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Header background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="header_border_color" translate="label comment" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Header border color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+
+				<field id="header_heading" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Top Links Section</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="toplink_background_color" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="toplink_text_color" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="toplink_link_color" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Link color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="toplink_link_hover_color" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Link hover color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="toplink_dropdown_link_color" translate="label comment" type="text" sortOrder="61" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Dropdown link color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="toplink_dropdown_link_hover_color" translate="label comment" type="text" sortOrder="62" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Dropdown link hover color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="header_middle" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Middle Section</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="middle_section_background_color" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="middle_section_middle_link_color" translate="label comment" type="text" sortOrder="111" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Middle link color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="middle_section_middle_link_hover_color" translate="label comment" type="text" sortOrder="112" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Middle link hover color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="middle_section_middle_text_color" translate="label comment" type="text" sortOrder="113" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Middle text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+
+				<field id="middle_section_icon_color" translate="label comment" type="text" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Icon color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="middle_section_icon_color_hover" translate="label comment" type="text" sortOrder="215" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Icon color (Hover)</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="middle_section_number_color" translate="label comment" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Number color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="middle_section_number_background_color" translate="label comment" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Number background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+
+				<field id="menu" translate="label comment" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Menu Section</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="menu_section_section_background_menu" translate="label comment" type="text" sortOrder="325" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Section background menu</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="menu_section_section_background_content_menu" translate="label comment" type="text" sortOrder="325" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Section background content menu</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="menu_section_level_0_link_color" translate="label comment" type="text" sortOrder="330" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Level 0 link color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="menu_section_level_0_link_color_hover" translate="label comment" type="text" sortOrder="340" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Level 0 link hover color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="menu_section_level_0_background_color" translate="label comment" type="text" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Level 0 background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="menu_section_level_0_hover_background_color" translate="label comment" type="text" sortOrder="360" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Level 0 hover background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="menu_section_level_1_link_color" translate="label comment" type="text" sortOrder="370" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Level 1 link color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="menu_section_level_1_link_color_hover" translate="label comment" type="text" sortOrder="380" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Level 1 link hover color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="menu_section_level_1_background_color" translate="label comment" type="text" sortOrder="390" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Level 1 background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+				<field id="menu_section_level_1_hover_background_color" translate="label comment" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Level 1 hover background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="header_custom">1</field>
+                    </depends>
+				</field>
+			</group>
+			<group id="main" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Main Content</label>
+				<field id="main_section" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label><![CDATA[Text & Link]]></label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="text_link_text_color" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="text_link_link_color" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Link color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="text_link_link_hover_color" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Link hover color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="text_link_price_color" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Price color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="text_link_special_price_color" translate="label comment" type="text" sortOrder="61" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Special price color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="text_link_old_price_color" translate="label comment" type="text" sortOrder="62" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Old price color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+
+				<field id="default_button_heading" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Default Button</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="default_button_text_color" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="default_button_hover_text_color" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Hover text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="default_button_background_color" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="default_button_hover_background_color" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Hover background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="default_button_border_color" translate="label comment" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Border color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="default_button_hover_border_color" translate="label comment" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Hover border color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+
+				<field id="default_button_df_heading" translate="label comment" type="text" sortOrder="131" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Default Button 2</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="default_button2_text_color" translate="label comment" type="text" sortOrder="132" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="default_button2_hover_text_color" translate="label comment" type="text" sortOrder="133" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Hover text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="default_button2_background_color" translate="label comment" type="text" sortOrder="134" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="default_button2_hover_background_color" translate="label comment" type="text" sortOrder="135" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Hover background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="default_button2_border_color" translate="label comment" type="text" sortOrder="136" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Border color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="default_button2_hover_border_color" translate="label comment" type="text" sortOrder="137" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Hover border color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+
+				<field id="primary_button_heading" translate="label comment" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Primary Button</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="primary_button_text_color" translate="label comment" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="primary_button_hover_text_color" translate="label comment" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Hover text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="primary_button_background_color" translate="label comment" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="primary_button_hover_background_color" translate="label comment" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Hover background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="primary_button_border_color" translate="label comment" type="text" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Border color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="primary_button_hover_border_color" translate="label comment" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Hover border color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+
+				<field id="secondary_button_heading" translate="label comment" type="text" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Secondary Button</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="secondary_button_text_color" translate="label comment" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="secondary_button_hover_text_color" translate="label comment" type="text" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Hover text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="secondary_button_background_color" translate="label comment" type="text" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="secondary_button_hover_background_color" translate="label comment" type="text" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Hover background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="secondary_button_border_color" translate="label comment" type="text" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Border color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+				<field id="secondary_button_hover_border_color" translate="label comment" type="text" sortOrder="270" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Hover border color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="main_custom">1</field>
+                    </depends>
+				</field>
+			</group>
+			<group id="footer" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Footer</label>
+				<field id="footer_heading" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Top Section</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="top_section_background_color" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="top_section_text_color" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="top_section_border_top_color" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Border top color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="top_section_heading_color" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Heading color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="top_section_link_color" translate="label comment" type="text" sortOrder="65" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Link color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="top_section_link_hover_color" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Link hover color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+
+				<field id="footer_middle" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Middle Section</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="footer_middle_section_background_color" translate="label comment" type="text" sortOrder="101" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="footer_middle_section_text_color" translate="label comment" type="text" sortOrder="102" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="footer_middle_section_border_color" translate="label comment" type="text" sortOrder="103" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Border color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="footer_middle_section_heading_color" translate="label comment" type="text" sortOrder="104" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Heading color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="footer_middle_section_link_color" translate="label comment" type="text" sortOrder="105" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Link color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+
+				<field id="footer_middle_section_link_hover_color" translate="label comment" type="text" sortOrder="106" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Link hover color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+
+				<field id="footer_bottom" translate="label comment" type="text" sortOrder="108" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Bottom Section</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Heading</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="bottom_section_background_color" translate="label comment" type="text" sortOrder="109" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Background color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+
+				<field id="bottom_section_text_color" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Text color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+
+				<field id="bottom_section_border_color" translate="label comment" type="text" sortOrder="111" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Border color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="bottom_section_heading_color" translate="label comment" type="text" sortOrder="112" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Heading color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="bottom_section_link_color" translate="label comment" type="text" sortOrder="113" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Link color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+				<field id="bottom_section_link_hover_color" translate="label comment" type="text" sortOrder="114" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Link hover color</label>
+					<frontend_model>Wiki\VendorsCustomTheme\Block\Adminhtml\Fields\Color</frontend_model>
+					<depends>
+                        <field id="footer_custom">1</field>
+                    </depends>
+				</field>
+			</group>
+		</section>
+    </system>
+</config>

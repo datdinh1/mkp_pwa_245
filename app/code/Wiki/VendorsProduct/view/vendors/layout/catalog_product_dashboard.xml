@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="formkey"/>
+    <head>
+        <css src="Wiki_VendorsProduct::css/styles.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Wiki\VendorsProduct\Block\Dashboard" name="vendors.dashboard">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="dashboard" xsi:type="array">
+                                <item name="component" xsi:type="string">Wiki_VendorsProduct/js/dashboard</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

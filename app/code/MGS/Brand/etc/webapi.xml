@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/brand/getAllBrand" method="GET">
+        <service class="MGS\Brand\Api\BrandManagementInterface" method="getAllBrand"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <!-- get all brand of product from seller for mall landing page by id group -->
+    <route url="/V1/brand/MallPage/getAllBrand/:idGroup" method="GET">
+        <service class="MGS\Brand\Api\BrandManagementInterface" method="getAllByBrandMallPage"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/brand/all-brand" method="GET">
+        <service class="MGS\Brand\Api\BrandManagementInterface" method="getListBrand"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/brand/categories" method="GET">
+        <service class="MGS\Brand\Api\BrandManagementInterface" method="getListCategory"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/brand/list/:categoryId" method="GET">
+        <service class="MGS\Brand\Api\BrandManagementInterface" method="getListBrandByCategory"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/brand/products/:brandId" method="GET">
+        <service class="MGS\Brand\Api\BrandManagementInterface" method="getProductByBrand"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/brand/create" method="POST">
+        <service class="MGS\Brand\Api\BrandManagementInterface" method="create"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/brand/update" method="PUT">
+        <service class="MGS\Brand\Api\BrandManagementInterface" method="update"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+     <route url="/V1/brand/delete/:id" method="DELETE">
+        <service class="MGS\Brand\Api\BrandManagementInterface" method="delete"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

@@ -1,0 +1,25 @@
+{
+  "name": "Wiki/module-vendors-custom-theme",
+  "description": "Module allows admin to create multiple theme based on installed theme and set it available for vendor to use.",
+  "authors": [
+    {
+      "name": "Wiki",
+      "email": "support@Wiki.com"
+    }
+  ],
+  "require": {
+    "Wiki/module-vendors": ">=100.1.0",
+    "Wiki/module-vendors-media": "^2.0.0",
+    "Wiki/module-vendors-page": "^2.0.0"
+  },
+  "type": "magento2-module",
+  "version": "2.0.2",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Wiki\\VendorsCustomTheme\\": ""
+    }
+  }
+}

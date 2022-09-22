@@ -1,0 +1,105 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Wiki\VendorsApi\Api\VendorRepositoryInterface" type="Wiki\VendorsApi\Model\VendorRepository" />
+    <preference for="Wiki\VendorsApi\Api\DashboardRepositoryInterface" type="Wiki\VendorsApi\Model\DashboardRepository" />
+    <preference for="Wiki\VendorsApi\Api\OrderRepositoryInterface" type="Wiki\VendorsApi\Model\OrderRepository" />
+    <preference for="Wiki\VendorsApi\Api\CreditRepositoryInterface" type="Wiki\VendorsApi\Model\CreditRepository" />
+    <preference for="Wiki\VendorsApi\Api\ProductRepositoryInterface" type="Wiki\VendorsApi\Model\ProductRepository" />
+    <preference for="Wiki\VendorsApi\Api\VendorProductAttributeMediaGalleryManagementInterface" type="Wiki\VendorsApi\Model\Product\Gallery\VendorGalleryManagement" />
+    <preference for="Wiki\VendorsApi\Api\VendorProductCustomOptionRepositoryInterface" type="Wiki\VendorsApi\Model\Product\Option\VendorProductCustomOptionRepository" />
+    <preference for="Wiki\VendorsApi\Api\ProductCustomOptionTypeListInterface" type="Wiki\VendorsApi\Model\ProductCustomOptionTypeList" />
+	<preference for="Wiki\VendorsApi\Api\VendorProductTierPriceManagementInterface" type="Wiki\VendorsApi\Model\Product\Price\VendorTierPriceManagement" />
+	<preference for="Wiki\VendorsApi\Api\VendorTierPriceStorageInterface" type="Wiki\VendorsApi\Model\Product\Price\VendorTierPriceStorage" />
+	<preference for="Wiki\VendorsApi\Api\VendorBasePriceStorageInterface" type="Wiki\VendorsApi\Model\Product\Price\VendorBasePriceStorage" />
+	<preference for="Wiki\VendorsApi\Api\VendorCostStorageInterface" type="Wiki\VendorsApi\Model\Product\Price\VendorCostStorage" />
+	<preference for="Wiki\VendorsApi\Api\VendorSpecialPriceStorageInterface" type="Wiki\VendorsApi\Model\Product\Price\VendorSpecialPriceStorage" />
+
+
+	<preference for="Wiki\VendorsApi\Api\VendorProductLinkManagementInterface" type="Wiki\VendorsApi\Model\Product\Bundle\VendorProductLinkManagement" />
+	<preference for="Wiki\VendorsApi\Api\VendorProductOptionRepositoryInterface" type="Wiki\VendorsApi\Model\Product\Bundle\VendorProductOptionRepository" />
+	<preference for="Wiki\VendorsApi\Api\VendorProductOptionTypeListInterface" type="Wiki\VendorsApi\Model\Product\Bundle\VendorProductOptionTypeList" />
+	<preference for="Wiki\VendorsApi\Api\VendorProductOptionManagementInterface" type="Wiki\VendorsApi\Model\Product\Bundle\VendorProductOptionManagement" />
+
+    <preference for="Wiki\VendorsApi\Api\ReportRepositoryInterface" type="Wiki\VendorsApi\Model\ReportRepository" />
+    <preference for="Wiki\VendorsApi\Api\NotificationRepositoryInterface" type="Wiki\VendorsApi\Model\NotificationRepository" />
+	<preference for="Wiki\VendorsApi\Api\InvoiceRepositoryInterface" type="Wiki\VendorsApi\Model\InvoiceRepository" />
+	<preference for="Wiki\VendorsApi\Api\MemoRepositoryInterface" type="Wiki\VendorsApi\Model\MemoRepository" />
+	<preference for="Wiki\VendorsApi\Api\ShipmentRepositoryInterface" type="Wiki\VendorsApi\Model\ShipmentRepository" />
+	<preference for="Wiki\VendorsApi\Api\WithdrawalRepositoryInterface" type="Wiki\VendorsApi\Model\WithdrawalRepository" />
+
+	<preference for="Wiki\VendorsApi\Api\Data\VendorInterface" type="Wiki\VendorsApi\Model\Data\Vendor" />
+	<preference for="Wiki\VendorsApi\Api\Data\NotificationInterface" type="Wiki\VendorsApi\Model\Data\Notification" />
+	<preference for="Wiki\VendorsApi\Api\Data\NotificationSearchResultInterface" type="Wiki\VendorsApi\Model\Data\NotificationSearchResult" />
+
+	<preference for="Wiki\VendorsApi\Api\Data\Dashboard\DashboardInterface" type="Wiki\VendorsApi\Model\Data\Dashboard\Dashboard" />
+    <preference for="Wiki\VendorsApi\Api\Data\Dashboard\CreditChartInterface" type="Wiki\VendorsApi\Model\Data\Dashboard\CreditChart" />
+	<preference for="Wiki\VendorsApi\Api\Data\Dashboard\OrderChartInterface" type="Wiki\VendorsApi\Model\Data\Dashboard\OrderChart" />
+
+	<preference for="Wiki\VendorsApi\Api\Data\Credit\TransactionInterface" type="Wiki\VendorsApi\Model\Data\Credit\Transaction" />
+	<preference for="Wiki\VendorsApi\Api\Data\Credit\TransactionSearchResultInterface" type="Wiki\VendorsApi\Model\Data\Credit\TransactionSearchResult" />
+	<preference for="Wiki\VendorsApi\Api\Data\Credit\WithdrawalInterface" type="Wiki\VendorsApi\Model\Data\Credit\Withdrawal" />
+	<preference for="Wiki\VendorsApi\Api\Data\Credit\WithdrawalSearchResultInterface" type="Wiki\VendorsApi\Model\Data\Credit\WithdrawalSearchResult" />
+
+	<preference for="Wiki\VendorsApi\Api\Data\Report\BestsellingInterface" type="Wiki\VendorsApi\Model\Data\Report\Bestselling" />
+	<preference for="Wiki\VendorsApi\Api\Data\Report\BestsellingSearchResultInterface" type="Wiki\VendorsApi\Model\Data\Report\BestsellingSearchResult" />
+	<preference for="Wiki\VendorsApi\Api\Data\Report\MostViewedInterface" type="Wiki\VendorsApi\Model\Data\Report\MostViewed" />
+	<preference for="Wiki\VendorsApi\Api\Data\Report\MostViewedSearchResultInterface" type="Wiki\VendorsApi\Model\Data\Report\MostViewedSearchResult" />
+
+	<preference for="Wiki\VendorsApi\Api\Data\Catalog\ProductInterface" type="Magento\Catalog\Model\Catalog\Product" />
+	<preference for="Wiki\VendorsApi\Api\Data\Catalog\ProductSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+
+	<preference for="Wiki\VendorsApi\Api\Data\Sale\OrderInterface" type="Wiki\VendorsApi\Model\Data\Sale\Order" />
+	<preference for="Wiki\VendorsApi\Api\Data\Sale\OrderSearchResultInterface" type="Wiki\VendorsApi\Model\Data\Sale\OrderSearchResult" />
+	<preference for="Wiki\VendorsApi\Api\Data\Sale\InvoiceInterface" type="Wiki\VendorsApi\Model\Data\Sale\Invoice" />
+	<preference for="Wiki\VendorsApi\Api\Data\Sale\InvoiceSearchResultInterface" type="Wiki\VendorsApi\Model\Data\Sale\InvoiceSearchResult" />
+	<preference for="Wiki\VendorsApi\Api\Data\Sale\MemoInterface" type="Wiki\VendorsApi\Model\Data\Sale\Memo" />
+	<preference for="Wiki\VendorsApi\Api\Data\Sale\MemoSearchResultInterface" type="Wiki\VendorsApi\Model\Data\Sale\MemoSearchResult" />
+	<preference for="Wiki\VendorsApi\Api\Data\Sale\ShipmentInterface" type="Wiki\VendorsApi\Model\Data\Sale\Shipment" />
+	<preference for="Wiki\VendorsApi\Api\Data\Sale\ShipmentSearchResultInterface" type="Wiki\VendorsApi\Model\Data\Sale\ShipmentSearchResult" />
+	<preference for="Wiki\VendorsApi\Api\Data\Sale\ItemQtyInterface" type="Wiki\VendorsApi\Model\Data\Sale\ItemQty" />
+	<preference for="Wiki\VendorsApi\Api\Data\Sale\TrackingInterface" type="Wiki\VendorsApi\Model\Data\Sale\Tracking" />
+
+
+<preference for="Wiki\VendorsApi\Api\GetProductReviewsInterface" type="Wiki\VendorsApi\Model\GetProductReviews" />
+	<virtualType name="Wiki\VendorsApi\Model\Api\SearchCriteria\VendorsOrderApiCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+		<arguments>
+			<argument name="processors" xsi:type="array">
+				<item name="filters" xsi:type="object">Wiki\VendorsApi\Model\Api\SearchCriteria\VendorsOrderApiCollectionProcessor\FilterProcessor</item>
+				<item name="sorting" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
+				<item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+			</argument>
+		</arguments>
+	</virtualType>
+
+	<virtualType name="Wiki\VendorsApi\Model\Api\SearchCriteria\VendorsOrderApiCollectionProcessor\FilterProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor">
+		<arguments>
+			<argument name="fieldMapping" xsi:type="array">
+				<item name="status" xsi:type="string">main_table.status</item>
+				<item name="entity_id" xsi:type="string">main_table.entity_id</item>
+				<item name="base_grand_total" xsi:type="string">main_table.base_grand_total</item>
+				<item name="base_total_paid" xsi:type="string">main_table.base_total_paid</item>
+				<item name="grand_total" xsi:type="string">main_table.grand_total</item>
+				<item name="total_paid" xsi:type="string">main_table.total_paid</item>
+				<item name="created_at" xsi:type="string">main_table.created_at</item>
+				<item name="updated_at" xsi:type="string">main_table.updated_at</item>
+				<item name="subtotal" xsi:type="string">main_table.subtotal</item>
+				<item name="total_refunded" xsi:type="string">main_table.total_refunded</item>
+			</argument>
+		</arguments>
+	</virtualType>
+
+	<virtualType name="Magento\Catalog\Model\Api\SearchCriteria\ProductCollectionProcessor" type="Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor">
+		<arguments>
+			<argument name="processors" xsi:type="array">
+				<item name="filters" xsi:type="object">Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\ProductFilterProcessor</item>
+				<item name="sorting" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
+				<item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+			</argument>
+		</arguments>
+	</virtualType>
+	<type name="Wiki\VendorsApi\Model\ProductRepository">
+		<arguments>
+			<argument name="collectionProcessor" xsi:type="object">Magento\Catalog\Model\Api\SearchCriteria\ProductCollectionProcessor</argument>
+		</arguments>
+	</type>
+</config>

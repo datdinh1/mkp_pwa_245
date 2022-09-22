@@ -1,0 +1,20 @@
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<!--@subject Sub Account Vendor Added @-->
+<!--@vars {
+
+} @-->
+
+{{template config_path="design/email/header_template"}}
+<p>{{trans "Hi,"}}
+</p>
+<p>{{trans "You're added as a sub account of vendor %vendor_name" vendor_name=$vendor.name. }} </p>
+<p>{{trans "You can login to vendor admin "}}<a href="{{var vendorLoginLink}}">{{trans "here"}}</a></p>
+
+
+{{template config_path="design/email/footer_template"}}

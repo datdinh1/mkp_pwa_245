@@ -1,0 +1,24 @@
+{
+    "name": "Wiki/module-vendors-config-approval",
+    "description": "Allow admin to set some vendor configs must to be approved before they are applied.",
+		"authors": [
+			{
+					"name": "Wiki",
+					"email": "support@Wiki.com"
+			}
+		],
+		"require": {
+				"magento/framework": "*",
+        "Wiki/module-core": "2.0.*"
+    },
+    "type": "magento2-module",
+    "version": "2.0.4",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Wiki\\VendorsConfigApproval\\": ""
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<div class="vat-information checkbox">
+    <input type="checkbox" name="vat-information"
+           data-bind="checked: isRequireVatVisible, attr: {id: 'vat-information'}"/>
+    <label data-bind="attr: {for: 'vat-information'}">
+        <span data-bind="i18n: 'Request for Tax invoice'"></span>
+    </label>
+</div>
+<div class="vat-information" data-bind="fadeVisible: isRequireVatVisible">
+    <div class="vat-number">
+        <div class="title">
+            <span data-bind="i18n: 'VAT ID'"></span>
+        </div>
+        <div class="control">
+            <input type="text"  data-bind="value: vatNumber"
+                   name="vat-number" id="wk-vat-number"/>
+        </div>
+    </div>
+</div>

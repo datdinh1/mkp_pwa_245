@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+
+    <fieldset name="rule_information">
+
+        <field name="image">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">image</item>
+                    <item name="label" xsi:type="string" translate="true">Image</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">Wiki_SampleImageUploader/image-preview</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="sampleimageuploader/image/upload/field/image"/>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <!-- <field name="coupon_by_seller" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">sales_rule</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Coupon By Seller</label>
+                <dataScope>coupon_by_seller</dataScope>
+            </settings>
+        </field> -->
+
+        <field name="is_recommend" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">sales_rule</item>
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>boolean</dataType>
+                <label translate="true">Recommend</label>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+
+        <field name="is_display_all" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">sales_rule</item>
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>boolean</dataType>
+                <label translate="true"> All Coupon Page</label>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+
+
+        <field name="category_id" component="Magento_Catalog/js/components/new-category" sortOrder="20" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filterOptions" xsi:type="boolean">true</item>
+                    <item name="multiple" xsi:type="boolean">false</item>
+                    <item name="showCheckbox" xsi:type="boolean">true</item>
+                    <item name="disableLabel" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+            <settings>
+                <required>true</required>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <elementTmpl>ui/grid/filters/elements/ui-select</elementTmpl>
+                <label translate="true">Select Category</label>
+
+                <componentType>field</componentType>
+                <listens>
+                    <link name="${ $.namespace }.${ $.namespace }:responseData">setParsed</link>
+                </listens>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Magento\Catalog\Ui\Component\Product\Form\Categories\Options"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+    </fieldset>
+    <fieldset name="actions" sortOrder="30">
+        <field name="max_discount_amount" formElement="input" sortOrder="10">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">sales_rule</item>
+                    <item name="default" xsi:type="string">0</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Max Discount Amount</label>
+                <dataScope>max_discount_amount</dataScope>
+                <notice translate="true">
+                   The maximum discount amount is only applicable to coupon type by "percent product".
+                </notice>
+            </settings>
+        </field>
+        <!-- <field name="minimum_price" formElement="input" sortOrder="30">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">sales_rule</item>
+                    <item name="default" xsi:type="string">0</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Minimum Price</label>
+                <dataScope>minimum_price</dataScope>
+            </settings>
+        </field> -->
+    </fieldset>
+</form>
