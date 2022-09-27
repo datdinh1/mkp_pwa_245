@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Wiki_Vendors:etc/menu.xsd">
-    <menu>
-    	<add id="Wiki_VendorsMedia::media" icon="fa fa-image" title="Manage Media" sortOrder="80" module="Wiki_VendorsMedia" action="media/image" dependsOnModule="Wiki_VendorsMedia" resource="Wiki_VendorsMedia::media"/>
-    </menu>
-</config>

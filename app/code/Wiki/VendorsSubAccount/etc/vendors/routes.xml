@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-    <router id="vendors">
-        <route id="subaccount" frontName="subaccount">
-            <module name="Wiki_VendorsSubAccount" before="Wiki_Vendors"/>
-        </route>
-    </router>
-</config>

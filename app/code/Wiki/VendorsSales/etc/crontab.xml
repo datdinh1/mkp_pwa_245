@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
-	<group id="default">
-		<job instance="Wiki\VendorsSales\Cron\ResetIncrementEveryMonths" method="execute" name="ResetIncrementEveryMonths">
-			<schedule>0 0 1 * *</schedule>
-		</job>
-		<!-- run crontab first day of months -->
-	</group>
-</config>

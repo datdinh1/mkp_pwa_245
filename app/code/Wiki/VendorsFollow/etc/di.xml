@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
- 
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Wiki\VendorsFollow\Api\FollowRepositoryInterface" type="Wiki\VendorsFollow\Model\Api\FollowRepository" />
-    <preference for="Wiki\VendorsFollow\Api\Data\CustomerInterface" type="Wiki\VendorsFollow\Model\Api\Data\CustomerData" />
-</config>

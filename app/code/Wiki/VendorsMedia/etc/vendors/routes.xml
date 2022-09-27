@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-    <router id="vendors">
-        <route id="media" frontName="media">
-            <module name="Wiki_VendorsMedia" before="Wiki_Vendors"/>
-        </route>
-    </router>
-</config>

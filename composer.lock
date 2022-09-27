@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d22eeb5e5ffa98ee6d1ca55c04b97efa",
+    "content-hash": "1425879a125bbc8170242c5ad3f05022",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -6673,6 +6673,38 @@
             "description": "N/A"
         },
         {
+            "name": "magento/module-catalog-graph-ql-aux",
+            "version": "0.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-catalog-graph-ql-aux/magento-module-catalog-graph-ql-aux-0.3.0.0.zip",
+                "shasum": "15145f6c4a0172cda83fefe156a2f94d71545e2e"
+            },
+            "require": {
+                "magento/framework": "*",
+                "magento/module-catalog": "*",
+                "magento/module-catalog-graph-ql": "*",
+                "magento/module-eav": "*",
+                "magento/module-eav-graph-ql-aux": "0.3.*",
+                "magento/module-store": "*",
+                "php": "~7.4.0||~8.1.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\CatalogGraphQlAux\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "N/A"
+        },
+        {
             "name": "magento/module-catalog-import-export",
             "version": "101.1.5",
             "dist": {
@@ -7576,6 +7608,37 @@
             "description": "N/A"
         },
         {
+            "name": "magento/module-contact-graph-ql-pwa",
+            "version": "0.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-contact-graph-ql-pwa/magento-module-contact-graph-ql-pwa-0.3.0.0.zip",
+                "shasum": "18d84d575e03c112bcdd449ac00b4b0cc53e9053"
+            },
+            "require": {
+                "magento/framework": "*",
+                "magento/module-contact": "*",
+                "php": "~7.4.0||~8.1.0"
+            },
+            "suggest": {
+                "magento/module-graph-ql": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\ContactGraphQlPwa\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Provides GraphQl functionality for the contact-us form."
+        },
+        {
             "name": "magento/module-cookie",
             "version": "100.4.5",
             "dist": {
@@ -8211,6 +8274,39 @@
                 ],
                 "psr-4": {
                     "Magento\\EavGraphQl\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "N/A"
+        },
+        {
+            "name": "magento/module-eav-graph-ql-aux",
+            "version": "0.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-eav-graph-ql-aux/magento-module-eav-graph-ql-aux-0.3.0.0.zip",
+                "shasum": "6f7bd985871226f855c3009f71d4b6eefdca5fb8"
+            },
+            "require": {
+                "magento/framework": "*",
+                "magento/module-eav": "*",
+                "magento/module-eav-graph-ql": "*",
+                "magento/module-store": "*",
+                "php": "~7.4.0||~8.1.0"
+            },
+            "suggest": {
+                "magento/module-graph-ql": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\EavGraphQlAux\\": ""
                 }
             },
             "license": [
@@ -12801,6 +12897,38 @@
             "description": "Provides GraphQl functionality for the newsletter subscriptions."
         },
         {
+            "name": "magento/module-newsletter-graph-ql-pwa",
+            "version": "0.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-newsletter-graph-ql-pwa/magento-module-newsletter-graph-ql-pwa-0.3.0.0.zip",
+                "shasum": "ced440c40e66d62a1b8ada9bd2762877b5a66d7d"
+            },
+            "require": {
+                "magento/framework": "*",
+                "php": "~7.4.0||~8.1.0"
+            },
+            "suggest": {
+                "magento/module-graph-ql": "*",
+                "magento/module-newsletter": "*",
+                "magento/module-store": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\NewsletterGraphQlPwa\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Provides additional GraphQl functionality for the newsletter subscriptions in PWA."
+        },
+        {
             "name": "magento/module-offline-payments",
             "version": "100.4.3",
             "dist": {
@@ -12981,6 +13109,37 @@
                 "proprietary"
             ],
             "description": "Page Builder Analytics module"
+        },
+        {
+            "name": "magento/module-page-builder-pwa",
+            "version": "0.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-page-builder-pwa/magento-module-page-builder-pwa-0.3.0.0.zip",
+                "shasum": "cf62ad6c2ee65496244b2172ce2058dad9f17416"
+            },
+            "require": {
+                "magento/framework": "*",
+                "magento/module-cms": "*",
+                "magento/module-eav-graph-ql-aux": "0.3.*",
+                "magento/module-page-builder": "*",
+                "php": "~7.4.0||~8.1.0",
+                "phpgt/dom": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\PageBuilderPwa\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Provides additions to Page Builder for PWA."
         },
         {
             "name": "magento/module-page-cache",
@@ -13690,6 +13849,40 @@
             "description": "Google reCAPTCHA integration for Magento2"
         },
         {
+            "name": "magento/module-re-captcha-graph-ql-pwa",
+            "version": "0.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-re-captcha-graph-ql-pwa/magento-module-re-captcha-graph-ql-pwa-0.3.0.0.zip",
+                "shasum": "ae5d4f1a58e04f8ff23c6b0e5c22e2e26704dfbd"
+            },
+            "require": {
+                "magento/framework": "*",
+                "magento/module-re-captcha-frontend-ui": "*",
+                "magento/module-re-captcha-validation-api": "*",
+                "magento/module-re-captcha-version-3-invisible": "*",
+                "php": "~7.4.0||~8.1.0"
+            },
+            "suggest": {
+                "magento/module-graph-ql": "*",
+                "magento/security-package": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\ReCaptchaGraphQlPwa\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Provides GraphQl support for ReCaptcha in PWA."
+        },
+        {
             "name": "magento/module-re-captcha-migration",
             "version": "1.1.2",
             "dist": {
@@ -13774,6 +13967,42 @@
                 "OSL-3.0"
             ],
             "description": "Google reCaptcha integration for Magento2 PayPal PayflowPro payment form"
+        },
+        {
+            "name": "magento/module-re-captcha-pwa",
+            "version": "0.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-re-captcha-pwa/magento-module-re-captcha-pwa-0.3.0.0.zip",
+                "shasum": "7f895fd47d59f3253d74ae392e033032a49659fe"
+            },
+            "require": {
+                "magento/framework": "*",
+                "magento/module-checkout": "*",
+                "magento/module-config": "*",
+                "magento/module-customer-graph-ql": "*",
+                "magento/module-quote-graph-ql": "*",
+                "magento/module-re-captcha-checkout": "*",
+                "magento/module-re-captcha-customer": "*",
+                "magento/module-re-captcha-ui": "*",
+                "magento/module-re-captcha-validation-api": "*",
+                "magento/module-re-captcha-webapi-api": "*",
+                "php": "~7.4.0||~8.1.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\ReCaptchaPwa\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Adds warnings and config validation to Magento ReCaptcha modules."
         },
         {
             "name": "magento/module-re-captcha-review",
@@ -14674,6 +14903,37 @@
                 ],
                 "psr-4": {
                     "Magento\\SalesGraphQl\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "N/A"
+        },
+        {
+            "name": "magento/module-sales-graph-ql-aux",
+            "version": "0.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-sales-graph-ql-aux/magento-module-sales-graph-ql-aux-0.3.0.0.zip",
+                "shasum": "f638d318db5c96f339c2640869abf205ff9b91c3"
+            },
+            "require": {
+                "magento/framework": "*",
+                "php": "~7.4.0||~8.1.0"
+            },
+            "suggest": {
+                "magento/module-graph-ql": "*",
+                "magento/module-sales-graph-ql": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\SalesGraphQlAux\\": ""
                 }
             },
             "license": [
@@ -15766,6 +16026,39 @@
             "description": "N/A"
         },
         {
+            "name": "magento/module-url-rewrite-graph-ql-pwa",
+            "version": "0.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-url-rewrite-graph-ql-pwa/magento-module-url-rewrite-graph-ql-pwa-0.3.0.0.zip",
+                "shasum": "e65ed7f57a3195c205e745d6671f4f411a90c2d1"
+            },
+            "require": {
+                "magento/framework": "*",
+                "magento/module-store": "*",
+                "magento/module-url-rewrite": "*",
+                "magento/module-url-rewrite-graph-ql": "*",
+                "php": "~7.4.0||~8.1.0"
+            },
+            "suggest": {
+                "magento/module-graph-ql": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\UrlRewriteGraphQlPwa\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Provides additional GraphQl functionality for URL Rewrites in PWA."
+        },
+        {
             "name": "magento/module-user",
             "version": "101.2.5",
             "dist": {
@@ -16119,6 +16412,36 @@
                 ],
                 "psr-4": {
                     "Magento\\WeeeGraphQl\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "N/A"
+        },
+        {
+            "name": "magento/module-weee-graph-ql-aux",
+            "version": "0.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-weee-graph-ql-aux/magento-module-weee-graph-ql-aux-0.3.0.0.zip",
+                "shasum": "8844021a216b163729c48ed05dc93d36f3d5118f"
+            },
+            "require": {
+                "magento/framework": "*",
+                "php": "~7.4.0||~8.1.0"
+            },
+            "suggest": {
+                "magento/module-eav-graph-ql-aux": "0.3.*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\WeeeGraphQlAux\\": ""
                 }
             },
             "license": [
@@ -16605,6 +16928,29 @@
                 "AFL-3.0"
             ],
             "description": "eCommerce Platform for Growth (Community Edition)"
+        },
+        {
+            "name": "magento/pwa",
+            "version": "0.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/pwa/magento-pwa-0.3.0.0.zip",
+                "shasum": "72abd765a2a5a7460a77990f8353f8be976d789c"
+            },
+            "require": {
+                "magento/module-catalog-graph-ql-aux": "0.3.*",
+                "magento/module-contact-graph-ql-pwa": "0.3.*",
+                "magento/module-eav-graph-ql-aux": "0.3.*",
+                "magento/module-newsletter-graph-ql-pwa": "0.3.*",
+                "magento/module-page-builder-pwa": "0.3.*",
+                "magento/module-re-captcha-graph-ql-pwa": "0.3.*",
+                "magento/module-re-captcha-pwa": "0.3.*",
+                "magento/module-sales-graph-ql-aux": "0.3.*",
+                "magento/module-url-rewrite-graph-ql-pwa": "0.3.*",
+                "magento/module-weee-graph-ql-aux": "0.3.*"
+            },
+            "type": "metapackage",
+            "description": "PWA metapackage"
         },
         {
             "name": "magento/security-package",
@@ -18796,6 +19142,133 @@
                 "source": "https://github.com/Spomky-Labs/otphp/tree/v10.0.3"
             },
             "time": "2022-03-17T08:00:35+00:00"
+        },
+        {
+            "name": "swissup/module-core",
+            "version": "1.12.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swissup/module-core.git",
+                "reference": "238bb0fac5cf76f460c80f38cbb75853b58b5e98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swissup/module-core/zipball/238bb0fac5cf76f460c80f38cbb75853b58b5e98",
+                "reference": "238bb0fac5cf76f460c80f38cbb75853b58b5e98",
+                "shasum": ""
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Swissup\\Core\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "description": "Swissup core module. It's purpose is to add Swissup menu and config entries",
+            "support": {
+                "issues": "https://github.com/swissup/module-core/issues",
+                "source": "https://github.com/swissup/module-core/tree/1.12.11"
+            },
+            "time": "2022-08-05T11:16:39+00:00"
+        },
+        {
+            "name": "swissup/module-pwa-studio-integration",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swissup/module-pwa-studio-integration.git",
+                "reference": "ea9456a7409d0d2033dadc0d41be480e4289433b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swissup/module-pwa-studio-integration/zipball/ea9456a7409d0d2033dadc0d41be480e4289433b",
+                "reference": "ea9456a7409d0d2033dadc0d41be480e4289433b",
+                "shasum": ""
+            },
+            "require": {
+                "swissup/module-core": "^1.12.9"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Swissup\\PwaStudioIntegration\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "description": "Add custom graphql api and fixes",
+            "keywords": [
+                "graphql",
+                "pwa-studio"
+            ],
+            "support": {
+                "issues": "https://github.com/swissup/module-pwa-studio-integration/issues",
+                "source": "https://github.com/swissup/module-pwa-studio-integration/tree/1.0.1"
+            },
+            "time": "2022-07-14T12:51:17+00:00"
+        },
+        {
+            "name": "swissup/module-upward-connector",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swissup/module-upward-connector.git",
+                "reference": "564cd7c364b614778b5168e8a6faa409b542a29d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swissup/module-upward-connector/zipball/564cd7c364b614778b5168e8a6faa409b542a29d",
+                "reference": "564cd7c364b614778b5168e8a6faa409b542a29d",
+                "shasum": ""
+            },
+            "require": {
+                "magento/framework": "*",
+                "magento/module-catalog": "*",
+                "magento/module-catalog-url-rewrite-graph-ql": "*",
+                "magento/module-cms": "*",
+                "magento/module-config": "*",
+                "magento/module-store": "*",
+                "magento/module-upward-connector": "*",
+                "magento/module-url-rewrite": "*",
+                "magento/module-url-rewrite-graph-ql": "*",
+                "magento/pwa": "*",
+                "magento/upward": "*",
+                "php": "~7.4.0||~8.1.0",
+                "swissup/module-core": "^1.12.9",
+                "swissup/module-pwa-studio-integration": "^1.0.0",
+                "yireo/magento2-disable-service-worker-in-admin": "^0.0.2"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Swissup\\UpwardConnector\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Magento module used for routing all frontend requests through UPWARD-PHP. Wrapper for magento/module-upward-connector",
+            "support": {
+                "issues": "https://github.com/swissup/module-upward-connector/issues",
+                "source": "https://github.com/swissup/module-upward-connector/tree/1.1.1"
+            },
+            "time": "2022-07-06T12:25:12+00:00"
         },
         {
             "name": "symfony/config",
@@ -25789,7 +26262,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,

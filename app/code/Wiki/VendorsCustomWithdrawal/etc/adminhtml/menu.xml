@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
-    <menu>
-    	<add id="Wiki_VendorsCustomWithdrawal::withdrawal_methods" title="Withdrawal Methods" translate="title" sortOrder="100" module="Wiki_VendorsCustomWithdrawal" parent="Wiki_VendorsCredit::credit" action="vendors/credit_withdrawal_method" dependsOnModule="Wiki_VendorsCustomWithdrawal" resource="Wiki_VendorsCustomWithdrawal::withdrawal_methods"/>
-    </menu>
-</config>
