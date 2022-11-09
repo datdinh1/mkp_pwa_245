@@ -1,0 +1,246 @@
+@import 'src/styles/abstracts/variables';
+
+.checkoutContainer {
+    background: $color-white;
+    border: 1px solid $color-grey;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 7px;
+        border-bottom: 1px solid rgb(187, 187, 187);
+        .checkoutTitle {
+            display: flex;
+            align-items: center;
+            .titleImg {
+                margin-right: 5px;
+            }
+            .titleText {
+                margin: 0;
+                font-family: $font-family-sans;
+                font-size: $font-size-base;
+                font-weight: 400;
+                color: $color-black;
+                &.popup {
+                    color: #457fca;
+                    cursor: pointer;
+                }
+                &.disabled {
+                    color: gray;
+                    cursor: default;
+                }
+                .rightIcon {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        .checkoutField {
+            width: auto;
+        }
+        .checkoutContent {
+            .priceText {
+                margin: 0;
+                font-family: $font-family-sans;
+                font-size: $font-size-base;
+                font-weight: 400;
+                color: $color-black;
+                &.priceNumber {
+                    margin-top: 2px;
+                }
+            }
+        }
+        .checkoutButton {
+            .buttonPay {
+                border: unset;
+                background: $color-yellow;
+                font-family: $font-family-sans;
+                font-size: $font-size-base;
+                font-weight: 400;
+                color: $color-black;
+                border-radius: 5px;
+                padding: 5px 12px;
+                &:disabled {
+                    color: $color-white;
+                    background-color: #c4c4c4;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+}
+
+@media all and (max-width: 912px) {
+    .checkoutContainer {
+        border: 1px solid $color-grey;
+        padding: 15px;
+        border-radius: 0px;
+        .top {
+            padding-bottom: 7px;
+            .checkoutTitle {
+                .titleImg {
+                    margin-right: 5px;
+                }
+                .titleText {
+                    font-size: $font-size-medium;
+                    &.popup {
+                        color: #457fca;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .bottom {
+            padding-top: 10px;
+            .checkoutField {
+                width: auto;
+                span {
+                    font-size: $font-size-medium;
+                }
+            }
+            .checkoutContent {
+                .priceText {
+                    font-size: $font-size-medium;
+                    &.priceNumber {
+                        margin-top: 2px;
+                    }
+                }
+            }
+            .checkoutButton {
+                .buttonPay {
+                    font-size: $font-size-medium;
+                    font-weight: 400;
+                    color: $color-black;
+                    border-radius: 5px;
+                    padding: 5px 12px;
+                    &:disabled {
+                        color: $color-white;
+                        background-color: #c4c4c4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+    .checkoutContainer {
+        border: 1px solid $color-grey;
+        padding: 15px;
+        border-radius: 0px;
+        .top {
+            padding-bottom: 7px;
+            .checkoutTitle {
+                .titleImg {
+                    margin-right: 5px;
+                }
+                .titleText {
+                    font-size: $font-size-base;
+                    &.popup {
+                        color: #457fca;
+                        cursor: pointer;
+                    }
+                    .rightIcon {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
+        }
+        .bottom {
+            padding-top: 10px;
+            .checkoutField {
+                width: auto;
+                span {
+                    font-size: $font-size-base;
+                }
+            }
+            .checkoutContent {
+                .priceText {
+                    font-size: $font-size-base;
+                    &.priceNumber {
+                        margin-top: 2px;
+                    }
+                }
+            }
+            .checkoutButton {
+                .buttonPay {
+                    font-size: $font-size-base;
+                    font-weight: 400;
+                    color: $color-black;
+                    border-radius: 5px;
+                    padding: 5px 12px;
+                    &:disabled {
+                        color: $color-white;
+                        background-color: #c4c4c4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 480px) {
+    .checkoutContainer {
+        border: 1px solid $color-grey;
+        padding: 15px;
+        border-radius: 0px;
+        .top {
+            padding-bottom: 7px;
+            .checkoutTitle {
+                .titleImg {
+                    margin-right: 5px;
+                }
+                .titleText {
+                    font-size: $font-size-small;
+                    &.popup {
+                        color: #457fca;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .bottom {
+            padding-top: 10px;
+            .checkoutField {
+                width: auto;
+                span {
+                    font-size: $font-size-small;
+                }
+            }
+            .checkoutContent {
+                .priceText {
+                    font-size: $font-size-small;
+                    &.priceNumber {
+                        margin-top: 2px;
+                    }
+                }
+            }
+            .checkoutButton {
+                .buttonPay {
+                    font-size: $font-size-small;
+                    font-weight: 400;
+                    color: $color-black;
+                    border-radius: 5px;
+                    padding: 5px 12px;
+                    &:disabled {
+                        color: $color-white;
+                        background-color: #c4c4c4;
+                    }
+                }
+            }
+        }
+    }
+}

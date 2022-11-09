@@ -1,0 +1,149 @@
+@import 'src/styles/abstracts/variables';
+
+.dataNullContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .dataNullImage {
+        width: 100px;
+        height: 100px;
+        .dataNullImg {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .dataNullContent {
+        margin-left: 15px;
+        .dataNullTitle {
+            font-family: $font-family-sans;
+            font-size: $font-size-large;
+            font-weight: 400;
+        }
+        .dataNullText {
+            font-family: $font-family-sans;
+            font-size: $font-size-base;
+            font-weight: 300;
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .dataNullContainer {
+        .dataNullImage {
+            width: 100px;
+            height: 100px;
+            .dataNullImg {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .dataNullContent {
+            margin-left: 15px;
+            .dataNullTitle {
+                font-family: $font-family-sans;
+                font-size: $font-size-large;
+                font-weight: 400;
+            }
+            .dataNullText {
+                font-family: $font-family-sans;
+                font-size: $font-size-base;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 912px) {
+    .dataNullContainer {
+        .dataNullImage {
+            width: 90px;
+            height: 90px;
+            .dataNullImg {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .dataNullContent {
+            margin-left: 15px;
+            .dataNullTitle {
+                font-family: $font-family-sans;
+                font-size: $font-size-medium;
+                font-weight: 400;
+            }
+            .dataNullText {
+                font-family: $font-family-sans;
+                font-size: $font-size-small;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+    .dataNullContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .dataNullImage {
+            width: 80px;
+            height: 80px;
+            .dataNullImg {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .dataNullContent {
+            margin-left: 0px;
+            .dataNullTitle {
+                font-family: $font-family-sans;
+                font-size: $font-size-medium;
+                font-weight: 400;
+                text-align: center;
+            }
+            .dataNullText {
+                font-family: $font-family-sans;
+                font-size: $font-size-small;
+                font-weight: 300;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 480px) {
+    .dataNullContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .dataNullImage {
+            width: 70px;
+            height: 70px;
+            .dataNullImg {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .dataNullContent {
+            margin-left: 0px;
+            .dataNullTitle {
+                font-family: $font-family-sans;
+                font-size: $font-size-base;
+                font-weight: 400;
+            }
+            .dataNullText {
+                font-family: $font-family-sans;
+                font-size: $font-size-xsmall;
+                font-weight: 300;
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@import 'src/styles/abstracts/variables';
+
+.recentlyViewedContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .recentlyViewedListProduct{
+        margin: 40px 0 0 0;
+        h1{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+
+@media all and (max-width: 1024px) {
+    .recentlyViewedContainer{
+        .recentlyViewedListProduct{
+            margin: 30px 0 0 0;
+            h1{
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 912px) {   
+
+}
+
+@media all and (max-width: 600px) {    
+    .recentlyViewedContainer{
+        .recentlyViewedListProduct{
+            margin: 20px 0 0 0;
+            h1{
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media all and ( max-width: 480px) {  
+
+}

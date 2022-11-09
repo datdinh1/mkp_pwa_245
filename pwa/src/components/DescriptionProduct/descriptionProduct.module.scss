@@ -1,0 +1,232 @@
+@import 'src/styles/abstracts/variables';
+
+.descriptionProductContainer{
+    background: $color-white;
+    padding: 10px;
+    height: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 3px;
+
+    .descriptionProductHeader{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px 0;
+
+        .descriptionProductText{
+            margin: 0;
+            font-size: $font-size-medium;
+            font-family: $font-family-sans;
+            font-weight: 500;
+            color: $color-black;
+            letter-spacing: 0.3px;
+        }
+        .iconDown{
+            height: 22px;
+            width: 22px;
+            transition: transform 250ms linear;
+            margin: 0;
+            &.active{
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    .descriptionProductContent{
+        transition: all 250ms linear;
+        min-height: 0;
+        max-height: 0;
+        overflow: auto;
+        &.active{
+            min-height: 100px;
+            max-height: 100vh;
+        }
+
+        .contentTop{
+            border-bottom: 1px solid rgb(160, 160, 160);
+            .content{
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin: 15px 0;
+                .contentTitle{
+                    flex:1;
+                    font-size: $font-size-base;
+                    font-family: $font-family-sans;
+                    font-weight: 400;
+                    color: $color-black;
+                    padding-right: 18px;
+                    margin: 0;
+                    word-break: normal;
+                    letter-spacing: 0.3px;
+                }
+                .contentText{
+                    flex:3;
+                    font-size: $font-size-base;
+                    font-family: $font-family-sans;
+                    font-weight: 400;
+                    color: $color-black;
+                    padding-right: 18px;
+                    margin: 0;
+                    word-break: normal;
+                    letter-spacing: 0.3px;
+                }
+            }
+        }
+        .contentBottom{
+            padding: 5px 0;
+            
+            .descriptionTitle{
+                margin: 0;
+                margin-top: 10px;
+                font-size: $font-size-medium;
+                font-family: $font-family-sans;
+                font-weight: 500;
+                color: $color-black;
+                letter-spacing: 0.3px;
+            }
+
+            .descriptionText{
+                margin: 0;
+                margin: 15px 0;
+                font-size: $font-size-base;
+                font-family: $font-family-sans;
+                font-weight: 400;
+                color: $color-black;
+                padding-right: 18px;
+                word-break: normal;
+                letter-spacing: 0.3px;
+                line-height: 27px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .descriptionProductContainer{
+        padding: 10px;
+    
+        .descriptionProductHeader{
+            padding: 5px 0;
+    
+            .descriptionProductText{
+                font-size: $font-size-medium;
+                font-family: $font-family-sans;
+            }
+            .iconDown{
+                height: 22px;
+                width: 22px;
+            }
+        }
+    
+        .descriptionProductContent{
+    
+            .contentTop{
+                .content{
+                    margin: 15px 0;
+                    .contentTitle{
+                        flex:1;
+                        font-size: $font-size-base;
+                        font-family: $font-family-sans;
+                        color: $color-black;
+                        padding-right: 18px;
+                    }
+                    .contentText{
+                        flex:3;
+                        font-size: $font-size-base;
+                        font-family: $font-family-sans;
+                        font-weight: 400;
+                        padding-right: 18px;
+                    }
+                }
+            }
+            .contentBottom{
+                padding: 5px 0;
+                
+                .descriptionTitle{
+                    margin: 0;
+                    margin-top: 10px;
+                    font-size: $font-size-medium;
+                    font-family: $font-family-sans;
+                }
+    
+                .descriptionText{
+                    margin: 0;
+                    margin: 15px 0;
+                    font-size: $font-size-base;
+                    font-family: $font-family-sans;
+                    padding-right: 18px;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 912px) {   
+    
+}
+
+@media all and (max-width: 600px) {    
+    .descriptionProductContainer{
+        padding: 10px;
+    
+        .descriptionProductHeader{
+            padding: 5px 0;
+    
+            .descriptionProductText{
+                font-size: $font-size-medium;
+                font-family: $font-family-sans;
+            }
+            .iconDown{
+                height: 22px;
+                width: 22px;
+            }
+        }
+    
+        .descriptionProductContent{
+    
+            .contentTop{
+                .content{
+                    margin: 15px 0;
+                    .contentTitle{
+                        flex:1.5;
+                        font-size: $font-size-base;
+                        font-family: $font-family-sans;
+                        color: $color-black;
+                        padding-right: 13px;
+                    }
+                    .contentText{
+                        flex:2;
+                        font-size: $font-size-base;
+                        font-family: $font-family-sans;
+                        font-weight: 400;
+                        padding-right: 18px;
+                    }
+                }
+            }
+            .contentBottom{
+                padding: 5px 0;
+                
+                .descriptionTitle{
+                    margin: 0;
+                    margin-top: 10px;
+                    font-size: $font-size-medium;
+                    font-family: $font-family-sans;
+                }
+    
+                .descriptionText{
+                    margin: 0;
+                    margin: 15px 0;
+                    font-size: $font-size-base;
+                    font-family: $font-family-sans;
+                    padding-right: 18px;
+                }
+            }
+        }
+    }
+}
+
+@media all and ( max-width: 480px) {  
+    
+}

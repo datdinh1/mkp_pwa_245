@@ -1,0 +1,18 @@
+{
+    "Payment Method":"วิธีการชำระเงิน",
+    "My Credit Card":"บัตรเครดิตของฉัน",
+    "Add A New Credit Card":"เพิ่มบัตรเครดิตใหม่",
+    "Bank Account":"เพิ่มบัตรเครดิตใหม่",
+    "Add Bank Account":"เพิ่มบัญชีธนาคาร",
+    "Add New Card":"เพิ่มบัตรใหม่",
+    "Card Number":"หมายเลขบัตร",
+    "Name On Card":"ชื่อบนบัตร",
+    "Month":"เดือน",
+    "Year":"ปี",
+    "CVV Code":"รหัส CVV",
+    "Set As Default":"ตั้งเป็นค่าเริ่มต้น",
+    "Name-surname Page Of The Account Book":"ชื่อ-นามสกุล หน้าสมุดบัญชี",
+    "Account Number":"เลขบัญชี",
+    "Select Bank":"เลือกธนาคาร",
+    "Confirm":"ยืนยัน"
+}

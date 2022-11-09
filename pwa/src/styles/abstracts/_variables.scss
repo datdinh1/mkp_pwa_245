@@ -1,0 +1,46 @@
+// ======================================================
+// Abstracts :: Variables
+// ======================================================
+
+// Fonts
+$font-family-roboto: 'roboto', sans-serif;
+$font-family-sans: 'DM Sans', sans-serif;
+
+// >> Font-size
+$font-size-xsmall  : 1rem;
+$font-size-small   : 1.2rem;
+$font-size-base    : 1.4rem;
+$font-size-medium  : 1.6rem;
+$font-size-big     : 1.8rem;
+$font-size-large   : 2rem;
+$font-size-xlarge  : 2.4rem;
+$font-size-xxlarge : 3.6rem;
+
+// >> Font-weight
+$font-weight-light    : 300;
+$font-weight-base     : 400;
+$font-weight-semibold : 600;
+$font-weight-bold     : 700;
+
+// Borders
+$border-radius-small : 2px;
+$border-radius-base  : 4px;
+$border-radius-medium: 8px;
+
+// z-index
+$z-indexes: (
+  base    : 1,
+  under   : -1,
+  modal   : 1001,
+  sidebar : 1000
+);
+
+// Colors
+$color-red: #FF0000;
+$color-blue-bold: #002C9D;
+$color-blue-light: #005999;
+$color-grey: #E5E5E5;
+$color-yellow: #FDDB3A;
+$color-orange: #FFA800; 
+$color-white: #FFF;
+$color-black: #000;

@@ -1,0 +1,32 @@
+{
+  "name": "Marketplace",
+  "short_name": "Marketplace",
+  "start_url": "/",
+  "theme_color": "#00C7AA",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Marketplace",
+  "icons": [
+    {
+      "src": "/static/icons/venia_square_144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/icons/venia_square_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/icons/venia_square_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/icons/venia_square_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

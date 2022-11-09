@@ -1,0 +1,23 @@
+mutation updateCustomer(
+  $firstname: String
+  $lastname: String
+  $gender: Int
+  $date_of_birth: String
+) {
+  updateCustomer(
+    input: {
+      firstname: $firstname
+      lastname: $lastname
+      date_of_birth: $date_of_birth
+      gender: $gender
+    }
+  ) {
+    customer {
+      email
+      gender
+      date_of_birth
+      firstname
+      lastname
+    }
+  }
+}

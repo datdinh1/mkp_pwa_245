@@ -1,0 +1,86 @@
+@import 'src/styles/abstracts/variables';
+
+.footerCheckoutContainer {
+    background: $color-white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    border: 1px solid $color-grey;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px -2px 8px;
+    .footerCheckoutBox {
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .boxLeft {
+            .priceText {
+                margin: 0;
+                font-size: $font-size-base;
+                font-family: $font-family-sans;
+                color: $color-black;
+                font-weight: 300;
+                .priceNumber {
+                    margin: 0;
+                    font-size: $font-size-large;
+                    font-family: $font-family-sans;
+                    color: $color-black;
+                    font-weight: 400;
+                }
+            }
+        }
+        .boxRight {
+            .btnOrder {
+                border: unset;
+                background: $color-yellow;
+                font-family: $font-family-sans;
+                font-size: $font-size-base;
+                font-weight: 400;
+                color: $color-black;
+                border-radius: 5px;
+                padding: 5px 16px;
+                height: 40px;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                letter-spacing: 0.3px;
+                &:disabled {
+                    color: $color-white;
+                    background-color: #c4c4c4;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+}
+
+@media all and (max-width: 912px) {
+}
+
+@media all and (max-width: 600px) {
+    .footerCheckoutContainer {
+        .footerCheckoutBox {
+            height: 55px;
+            .boxLeft {
+                .priceText {
+                    font-size: $font-size-small;
+                    .priceNumber {
+                        font-size: $font-size-medium;
+                    }
+                }
+            }
+            .boxRight {
+                .btnOrder {
+                    font-size: $font-size-small;
+                    padding: 5px 16px;
+                    height: 35px;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 480px) {
+}

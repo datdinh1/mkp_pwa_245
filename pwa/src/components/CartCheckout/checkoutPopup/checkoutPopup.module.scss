@@ -1,0 +1,566 @@
+@import 'src/styles/abstracts/variables';
+
+.popupBox {
+    height: 100vh;
+    width: 100%;
+    border-radius: unset;
+    .popupHeader {
+        display: flex;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+            rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        padding: 10px;
+        .closeIcon {
+            height: 20px;
+            width: 20px;
+            cursor: pointer;
+        }
+        .titlePopup {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            font-family: $font-family-sans;
+            font-size: $font-size-medium;
+            font-weight: 500;
+            color: $color-black;
+        }
+    }
+    .popupBody {
+        padding: 15px;
+        .bodyContainer {
+            .formCheckoutContainer {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                form {
+                    display: flex;
+                    align-items: flex-start;
+                    flex: 2;
+                }
+                .faq {
+                    flex: 0.2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px 0;
+                    .faqIcon {
+                        height: 23px;
+                        width: 23px;
+                        cursor: pointer;
+                    }
+                }
+                .inputField {
+                    width: 85%;
+                    .input {
+                        width: 100%;
+                    }
+                }
+                .buttonArea {
+                    width: 15%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    .buttonSubmit {
+                        width: 85%;
+                        padding: 10px;
+                        background: $color-yellow;
+                        border-radius: 5px;
+                        font-family: $font-family-sans;
+                        font-size: $font-size-base;
+                        font-weight: 400;
+                        color: $color-black;
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                            rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                        letter-spacing: 0.3px;
+                        &:disabled {
+                            color: $color-white;
+                            background-color: #c4c4c4;
+                        }
+                    }
+                }
+            }
+
+            .listCouponContainer {
+                margin-top: 30px;
+            }
+        }
+        .popupLogin {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .loginTitle {
+                width: 100%;
+                margin-top: 5px;
+                .titleText {
+                    margin: 0;
+                    text-align: center;
+                    font-size: $font-size-base;
+                    font-family: $font-family-sans;
+                    font-weight: 400;
+                    color: $color-black;
+                    margin-bottom: 5px;
+                    letter-spacing: 0.3px;
+                }
+            }
+            .loginButtonArea {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                .loginButton {
+                    padding: 10px 15px;
+                    background: $color-yellow;
+                    border-radius: 5px;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-base;
+                    font-weight: 400;
+                    color: $color-black;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                    letter-spacing: 0.3px;
+                    &:disabled {
+                        color: $color-white;
+                        background-color: #c4c4c4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.faqContainer {
+    .faqHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 2px solid $color-grey;
+        .titleText {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            font-family: $font-family-sans;
+            font-size: $font-size-xlarge;
+            font-weight: 400;
+            color: $color-black;
+        }
+    }
+    .faqBody {
+        padding: 15px;
+        .faqText {
+            width: 100%;
+            margin: 0;
+            font-family: $font-family-sans;
+            font-size: $font-size-base;
+            font-weight: 300;
+            color: $color-black;
+            margin-bottom: 3px;
+            line-height: 25px;
+        }
+
+        .faqBtnArea {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+            .btn {
+                width: 50%;
+                padding: 10px;
+                background: $color-yellow;
+                border-radius: 5px;
+                font-family: $font-family-sans;
+                font-size: $font-size-base;
+                font-weight: 400;
+                color: $color-black;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                letter-spacing: 0.3px;
+                &:disabled {
+                    color: $color-white;
+                    background-color: #c4c4c4;
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 1024px) {
+    .popupBox {
+        height: 100vh;
+        width: 100%;
+        border-radius: unset;
+        .popupHeader {
+            display: flex;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+                rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            padding: 10px;
+            .closeIcon {
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
+            }
+            .titlePopup {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+                font-family: $font-family-sans;
+                font-size: $font-size-medium;
+                font-weight: 500;
+                color: $color-black;
+            }
+        }
+        .popupBody {
+            .bodyContainer {
+                .formCheckoutContainer {
+                    form {
+                        flex: 2;
+                    }
+                    .faq {
+                        flex: 0.2;
+                        .faqIcon {
+                            height: 23px;
+                            width: 23px;
+                            cursor: pointer;
+                        }
+                    }
+                    .inputField {
+                        width: 85%;
+                        .input {
+                            width: 100%;
+                        }
+                    }
+                    .buttonArea {
+                        width: 15%;
+                        .buttonSubmit {
+                            width: 85%;
+                            padding: 10px;
+                            font-size: $font-size-base;
+                        }
+                    }
+                }
+
+                .listCouponContainer {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+    .faqContainer {
+        .faqHeader {
+            padding: 15px;
+            .titleText {
+                font-size: $font-size-large;
+            }
+        }
+        .faqBody {
+            padding: 15px;
+            .faqText {
+                font-size: $font-size-base;
+                margin-bottom: 3px;
+                line-height: 25px;
+            }
+
+            .faqBtnArea {
+                margin-top: 25px;
+                .btn {
+                    width: 50%;
+                    padding: 10px;
+                    font-size: $font-size-base;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 912px) {
+    .popupBox {
+        height: 100vh;
+        width: 100%;
+        border-radius: unset;
+        .popupHeader {
+            display: flex;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+                rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            padding: 10px;
+            .closeIcon {
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
+            }
+            .titlePopup {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+                font-family: $font-family-sans;
+                font-size: $font-size-medium;
+                font-weight: 500;
+                color: $color-black;
+            }
+        }
+        .popupBody {
+            .bodyContainer {
+                .formCheckoutContainer {
+                    form {
+                        flex: 2;
+                    }
+                    .faq {
+                        flex: 0.3;
+                        .faqIcon {
+                            height: 23px;
+                            width: 23px;
+                            cursor: pointer;
+                        }
+                    }
+                    .inputField {
+                        width: 80%;
+                        .input {
+                            width: 100%;
+                        }
+                    }
+                    .buttonArea {
+                        width: 20%;
+                        .buttonSubmit {
+                            width: 85%;
+                            padding: 10px;
+                            font-size: $font-size-base;
+                        }
+                    }
+                }
+
+                .listCouponContainer {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+    .popupBox {
+        height: 100vh;
+        width: 100%;
+        border-radius: unset;
+        .popupHeader {
+            display: flex;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+                rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            padding: 10px;
+            .closeIcon {
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
+            }
+            .titlePopup {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+                font-family: $font-family-sans;
+                font-size: $font-size-base;
+                font-weight: 500;
+                color: $color-black;
+            }
+        }
+        .popupBody {
+            .bodyContainer {
+                .formCheckoutContainer {
+                    form {
+                        flex: 2;
+                    }
+                    .faq {
+                        flex: 0.3;
+                        padding: 8px 0;
+                        .faqIcon {
+                            height: 23px;
+                            width: 23px;
+                            cursor: pointer;
+                        }
+                    }
+                    .inputField {
+                        width: 80%;
+                        .input {
+                            width: 100%;
+                            input {
+                                min-height: 36px !important;
+                                max-height: 36px !important;
+                            }
+                        }
+                    }
+                    .buttonArea {
+                        width: 20%;
+                        .buttonSubmit {
+                            width: 85%;
+                            padding: 8px;
+                            font-size: $font-size-small;
+                        }
+                    }
+                }
+
+                .listCouponContainer {
+                    margin-top: 30px;
+                }
+            }
+            .popupLogin {
+                .loginTitle {
+                    margin-top: 5px;
+                    .titleText {
+                        font-size: $font-size-small;
+                        margin-bottom: 5px;
+                    }
+                }
+                .loginButtonArea {
+                    margin-top: 10px;
+                    .loginButton {
+                        padding: 8px 12px;
+                        font-size: $font-size-small;
+                        font-weight: 400;
+                        letter-spacing: 0.3px;
+                    }
+                }
+            }
+        }
+    }
+    .faqContainer {
+        .faqHeader {
+            padding: 15px;
+            .titleText {
+                font-size: $font-size-medium;
+            }
+        }
+        .faqBody {
+            padding: 15px;
+            .faqText {
+                font-size: $font-size-small;
+                margin-bottom: 3px;
+                line-height: 25px;
+            }
+
+            .faqBtnArea {
+                margin-top: 25px;
+                .btn {
+                    width: 50%;
+                    padding: 10px;
+                    font-size: $font-size-small;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 480px) {
+    .popupBox {
+        height: 100vh;
+        width: 100%;
+        border-radius: unset;
+        .popupHeader {
+            display: flex;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+                rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            padding: 10px;
+            .closeIcon {
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
+            }
+            .titlePopup {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+                font-family: $font-family-sans;
+                font-size: $font-size-small;
+                font-weight: 500;
+                color: $color-black;
+            }
+        }
+        .popupBody {
+            .bodyContainer {
+                .formCheckoutContainer {
+                    form {
+                        flex: 2;
+                    }
+                    .faq {
+                        flex: 0.3;
+                        padding: 6px 0;
+                        .faqIcon {
+                            height: 20px;
+                            width: 20px;
+                            cursor: pointer;
+                        }
+                    }
+                    .inputField {
+                        width: 80%;
+                        .input {
+                            width: 100%;
+                            input {
+                                min-height: 32px !important;
+                                max-height: 32px !important;
+                            }
+                        }
+                    }
+                    .buttonArea {
+                        width: 20%;
+                        .buttonSubmit {
+                            width: 85%;
+                            padding: 6px;
+                            font-size: $font-size-small;
+                        }
+                    }
+                }
+
+                .listCouponContainer {
+                    margin-top: 30px;
+                }
+            }
+
+            .popupLogin {
+                .loginTitle {
+                    margin-top: 5px;
+                    .titleText {
+                        font-size: $font-size-small;
+                        margin-bottom: 5px;
+                    }
+                }
+                .loginButtonArea {
+                    margin-top: 10px;
+                    .loginButton {
+                        padding: 8px 12px;
+                        font-size: $font-size-small;
+                        font-weight: 400;
+                        letter-spacing: 0.3px;
+                    }
+                }
+            }
+        }
+    }
+
+    .faqContainer {
+        .faqHeader {
+            padding: 15px;
+            .titleText {
+                font-size: $font-size-medium;
+            }
+        }
+        .faqBody {
+            padding: 15px;
+            .faqText {
+                font-size: $font-size-small;
+                margin-bottom: 3px;
+                line-height: 25px;
+            }
+
+            .faqBtnArea {
+                margin-top: 25px;
+                .btn {
+                    width: 50%;
+                    padding: 10px;
+                    font-size: $font-size-small;
+                }
+            }
+        }
+    }
+}

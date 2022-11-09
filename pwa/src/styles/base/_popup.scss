@@ -1,0 +1,128 @@
+:global {
+  .modal-popup {
+    padding: 15px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-white;
+    border-radius: $border-radius-medium;
+    width: 100%;
+    max-width: 400px;
+    max-height: 96vh;
+    z-index: 4;
+    visibility: hidden;
+    opacity: 0;
+    transition-property: opacity, visibility;
+    transition-timing-function: linear;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transition-duration: 224ms;
+    }
+
+    &__header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-bottom: 2rem;
+
+      .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+      }
+    }
+
+    &__title {
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    &.modal-popup-right {
+      left: unset;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      min-height: auto;
+      max-width: auto;
+      transform: unset;
+      padding: 0;
+      max-height: 100vh;
+      max-width: 700px;
+      border-radius: unset;
+      transform: translateX(700px);
+      transition: all 500ms linear;
+
+      &.active-slide-in-right {
+        transform: translateX(0px);
+      }
+    }
+    &.modal-popup-left {
+      left: 0;
+      top: 0;
+      bottom: 0;
+      min-height: auto;
+      max-width: auto;
+      transform: unset;
+      padding: 0;
+      max-height: 100vh;
+      max-width: 700px;
+      border-radius: unset;
+      transform: translateX(-700px);
+      transition: all 500ms linear;
+
+      &.active-slide-in-left {
+        transform: translateX(0px);
+      }
+    }
+  }
+
+  @media all and (max-width: 1024px) {
+    .modal-popup {
+      &.modal-popup-right {
+        max-width: 600px;
+        transform: translateX(600px);
+      }
+      &.modal-popup-left {
+        max-width: 600px;
+        transform: translateX(-600px);
+      }
+    }
+  }
+
+  @media all and (max-width: 912px) {
+    .modal-popup {
+      &.modal-popup-right {
+        max-width: 450px;
+        transform: translateX(450px);
+      }
+      &.modal-popup-left {
+        max-width: 450px;
+        transform: translateX(-450px);
+      }
+    }
+  }
+
+  @media all and (max-width: 600px) {
+    .modal-popup {
+      &.modal-popup-right {
+        max-width: 100%;
+        transform: translateX(100%);
+      }
+      &.modal-popup-left {
+        max-width: 100%;
+        transform: translateX(-100%);
+      }
+    }
+  }
+}

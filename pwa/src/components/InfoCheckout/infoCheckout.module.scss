@@ -1,0 +1,159 @@
+@import 'src/styles/abstracts/variables';
+
+.infoCheckoutContainer {
+    .infoCheckoutBox {
+        border-radius: 16px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $color-grey;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+            rgba(17, 17, 26, 0.1) 0px 8px 24px,
+            rgba(17, 17, 26, 0.1) 0px 16px 56px;
+        margin-bottom: 20px;
+
+        .infoToggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            .left {
+                flex: 1.2;
+                display: flex;
+                align-items: flex-start;
+                .text {
+                    font-family: $font-family-sans;
+                    font-size: $font-size-base;
+                    font-weight: 300;
+                    color: $color-black;
+                    margin: 0;
+                }
+                .icon {
+                    margin-right: 10px;
+                }
+            }
+            .right {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+            .icon {
+                height: 21px;
+                width: 21px;
+            }
+        }
+
+        .infoCheckout {
+            .infoPayment {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 5px;
+
+                &:first-child {
+                    padding-top: 0;
+                }
+                &:last-child {
+                    padding-bottom: 0;
+                }
+                .priceInfo {
+                    font-family: $font-family-sans;
+                    font-size: $font-size-base;
+                    font-weight: 400;
+                    margin: 0;
+                    color: $color-black;
+                    &.total {
+                        font-size: $font-size-medium;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .infoCheckoutContainer {
+        .infoCheckoutBox {
+            .infoToggle {
+                .left {
+                    flex: 2;
+                }
+                .right {
+                    flex: 0.5;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 912px) {
+}
+
+@media all and (max-width: 600px) {
+}
+
+@media all and (max-width: 480px) {
+    .infoCheckoutContainer {
+        .infoCheckoutBox {
+            border-radius: 16px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid $color-grey;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+                rgba(17, 17, 26, 0.1) 0px 8px 24px,
+                rgba(17, 17, 26, 0.1) 0px 16px 56px;
+            margin-bottom: 20px;
+
+            .infoToggle {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                .left {
+                    flex: 2;
+                    display: flex;
+                    align-items: flex-start;
+                    .text {
+                        font-family: $font-family-sans;
+                        font-size: $font-size-small;
+                        font-weight: 300;
+                        color: $color-black;
+                        margin: 0;
+                    }
+                    .icon {
+                        margin-right: 10px;
+                    }
+                }
+                .right {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                }
+                .icon {
+                    height: 18px;
+                    width: 18px;
+                }
+            }
+
+            .infoCheckout {
+                .infoPayment {
+                    &:first-child {
+                        padding-top: 0;
+                    }
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+                    .priceInfo {
+                        font-size: $font-size-small;
+                        &.total {
+                            font-size: $font-size-medium;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

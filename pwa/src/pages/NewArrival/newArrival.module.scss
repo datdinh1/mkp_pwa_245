@@ -1,0 +1,85 @@
+@import 'src/styles/abstracts/variables';
+
+.newArrivalContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.newArrivalBanner{
+    margin-bottom: 45px;
+}
+
+.newArrivalListProduct{
+    margin-bottom: 30px;
+}
+
+.newArrivalBannerAdvertise{
+    margin-bottom: 30px;
+}
+
+.newArrivalMainCategory{
+    margin-bottom: 30px;
+}
+
+.newArrivalListProduct{
+    margin-bottom: 30px;
+}
+
+@media all and (max-width: 1024px) {
+    .newArrivalBanner{
+        margin-bottom: 45px;
+    }
+
+    .newArrivalListProduct{
+        margin-bottom: 30px;
+    }
+    
+    .newArrivalBannerAdvertise{
+        margin-bottom: 20px;
+    }
+}
+
+@media all and (max-width: 912px) {    
+    .newArrivalBanner{
+        margin-bottom: 45px;
+    }
+
+    .newArrivalListProduct{
+        margin-bottom: 30px;
+    }
+    
+    .newArrivalBannerAdvertise{
+        margin-bottom: 20px;
+    }
+}
+
+@media all and (max-width: 600px) {    
+    .newArrivalBanner{
+        margin-bottom: 45px;
+    }
+
+    .newArrivalListProduct{
+        margin-bottom: 30px;
+    }
+    
+    .newArrivalBannerAdvertise{
+        margin-bottom: 20px;
+    }
+}
+
+@media all and ( max-width: 480px) {    
+    .newArrivalBanner{
+        margin-bottom: 45px;
+    }
+
+    .newArrivalListProduct{
+        margin-bottom: 30px;
+    }
+    
+    .newArrivalBannerAdvertise{
+        margin-bottom: 20px;
+    }
+}

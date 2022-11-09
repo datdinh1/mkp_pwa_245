@@ -1,0 +1,1289 @@
+@import 'src/styles/abstracts/variables';
+
+.profileContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 0;
+  .profileBody {
+    width: 60%;
+    height: 100%;
+    margin: auto;
+
+    .profileFormContainer {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border: 1px solid whitesmoke;
+      border-radius: 16px;
+      padding: 15px;
+
+      .profileTitle {
+        margin-bottom: 30px;
+        .titleText {
+          text-align: center;
+          font-family: $font-family-sans;
+          font-size: $font-size-xlarge;
+          font-weight: 600;
+          letter-spacing: 0.3px;
+          margin: 0;
+        }
+      }
+
+      .inputImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        .avatar {
+          border-radius: 50%;
+          height: 90px;
+          width: 90px;
+          position: relative;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          .avatarImg {
+            border-radius: 50%;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+          .avatarLabel {
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            background: $color-grey;
+            padding: 6px;
+            border-radius: 50%;
+            cursor: pointer;
+
+            .avatarIcon {
+              width: 17px;
+              height: 17px;
+            }
+          }
+        }
+      }
+      .inputField {
+        border-bottom: 1px solid rgba(203, 195, 195, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+        .labelField {
+          width: 20%;
+          font-size: $font-size-base;
+          font-family: $font-family-sans;
+          font-weight: 500;
+          margin: 0;
+          .fieldRequired {
+            color: $color-red;
+          }
+        }
+        .input {
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          &.date {
+            max-width: 30%;
+          }
+          input {
+            width: 100% !important;
+            text-align: right;
+            border: none !important;
+            box-shadow: none;
+            padding-right: 0px;
+            font-size: $font-size-base;
+            font-family: $font-family-sans;
+            font-weight: 400;
+            margin: 0;
+            &:focus {
+              outline: none;
+              border: none;
+            }
+          }
+
+          select {
+            min-height: 40px !important;
+            max-height: 40px !important;
+            width: 100% !important;
+            text-align: right;
+            border: none;
+            background: none;
+            padding-right: 5px;
+            font-size: $font-size-base;
+            font-family: $font-family-sans;
+            font-weight: 400;
+            margin: 0;
+            cursor: pointer;
+
+            &:disabled {
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+
+      .buttonArea {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        // padding: 10px 0;
+        margin-top: 30px;
+        .buttonChangePassword {
+          margin-right: 15px;
+          padding: 8px 10px;
+          background: $color-red;
+          border-radius: 5px;
+          font-family: $font-family-sans;
+          font-size: $font-size-small;
+          font-weight: 500;
+          color: $color-white;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+            rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+        .buttonSubmit {
+          padding: 8px 10px;
+          background: $color-yellow;
+          border-radius: 5px;
+          font-family: $font-family-sans;
+          font-size: $font-size-small;
+          font-weight: 500;
+          color: $color-black;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+            rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          &:disabled {
+            color: $color-white;
+            background-color: #c4c4c4;
+          }
+        }
+
+        .disable {
+          display: none;
+        }
+
+        .buttonIcon {
+          width: 15px;
+          height: 15px;
+          margin-right: 2px;
+        }
+      }
+    }
+
+    .modalContainer {
+      left: unset;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      min-height: auto;
+      max-width: auto;
+      transform: unset;
+      padding: 0;
+      max-height: 100vh;
+      max-width: 700px;
+      border-radius: unset;
+      transform: translateX(700px);
+      transition: all 500ms linear;
+      &.slideInRight {
+        transform: translateX(0px);
+      }
+      .changePasswordBox {
+        height: 100vh;
+        width: 100%;
+        border-radius: unset;
+
+        .boxHeader {
+          display: flex;
+          align-items: center;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+            rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+          padding: 10px;
+          .iconChangePassword {
+            height: 20px;
+            width: 20px;
+            cursor: pointer;
+          }
+          .titleChangePassword {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            font-family: $font-family-sans;
+            font-size: $font-size-large;
+            font-weight: 500;
+            color: $color-black;
+          }
+        }
+
+        .boxContent {
+          padding: 10px 20px;
+          .inputChangePasswordField {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 20px;
+            .labelChangePasswordField {
+              width: 100%;
+              font-size: $font-size-base;
+              font-family: $font-family-sans;
+              font-weight: 500;
+              margin: 0;
+              margin-bottom: 5px;
+              .fieldRequired {
+                color: $color-red;
+              }
+            }
+            .inputChangePassword {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              input {
+                width: 100% !important;
+                padding-right: 0px;
+                font-size: $font-size-base;
+                font-family: $font-family-sans;
+                font-weight: 400;
+                margin: 0;
+              }
+            }
+          }
+          .buttonArea {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 10px;
+            .buttonSubmit {
+              padding: 8px 10px;
+              background: $color-yellow;
+              border-radius: 5px;
+              font-family: $font-family-sans;
+              font-size: $font-size-small;
+              font-weight: 500;
+              color: $color-black;
+              box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+              &:disabled {
+                color: $color-white;
+                background-color: #c4c4c4;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .profileContainer {
+    .profileBody {
+      width: 70%;
+      height: 100%;
+      margin: auto;
+      .profileFormContainer {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border: 1px solid whitesmoke;
+        border-radius: 16px;
+        padding: 15px;
+
+        .profileTitle {
+          margin-bottom: 30px;
+          .titleText {
+            text-align: center;
+            font-family: $font-family-sans;
+            font-size: $font-size-large;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin: 0;
+          }
+        }
+
+        .inputImage {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 30px;
+          .avatar {
+            border-radius: 50%;
+            height: 80px;
+            width: 80px;
+            position: relative;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            .avatarImg {
+              border-radius: 50%;
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+            .avatarLabel {
+              position: absolute;
+              bottom: -5px;
+              right: -5px;
+              background: $color-grey;
+              padding: 6px;
+              border-radius: 50%;
+              cursor: pointer;
+
+              .avatarIcon {
+                width: 17px;
+                height: 17px;
+              }
+            }
+          }
+        }
+        .inputField {
+          border-bottom: 1px solid rgba(203, 195, 195, 0.4);
+          display: flex;
+          align-items: center;
+          padding: 10px 0;
+          .labelField {
+            width: 20%;
+            font-size: $font-size-base;
+            font-family: $font-family-sans;
+            font-weight: 500;
+            margin: 0;
+            .fieldRequired {
+              color: $color-red;
+            }
+          }
+          .input {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            input {
+              width: 100% !important;
+              text-align: right;
+              border: none !important;
+              box-shadow: none;
+              padding-right: 0px;
+              font-size: $font-size-base;
+              font-family: $font-family-sans;
+              font-weight: 400;
+              margin: 0;
+
+              &:focus {
+                outline: none;
+                border: none;
+              }
+            }
+            select {
+              min-height: 40px !important;
+              max-height: 40px !important;
+              width: 100% !important;
+              text-align: right;
+              border: none;
+              background: none;
+              padding-right: 5px;
+              font-size: $font-size-base;
+              font-family: $font-family-sans;
+              font-weight: 400;
+              margin: 0;
+              cursor: pointer;
+
+              &:disabled {
+                cursor: not-allowed;
+              }
+            }
+          }
+        }
+
+        .buttonArea {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          // padding: 10px 0;
+          margin-top: 30px;
+          .buttonChangePassword {
+            margin-right: 15px;
+            padding: 8px 10px;
+            background: $color-red;
+            border-radius: 5px;
+            font-family: $font-family-sans;
+            font-size: $font-size-small;
+            font-weight: 500;
+            color: $color-white;
+          }
+          .buttonSubmit {
+            padding: 8px 10px;
+            background: $color-yellow;
+            border-radius: 5px;
+            font-family: $font-family-sans;
+            font-size: $font-size-small;
+            font-weight: 500;
+            color: $color-black;
+          }
+
+          .disable {
+            display: none;
+          }
+
+          .buttonIcon {
+            width: 15px;
+            height: 15px;
+            margin-right: 2px;
+          }
+        }
+      }
+
+      .modalContainer {
+        left: unset;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        min-height: auto;
+        max-width: auto;
+        transform: unset;
+        padding: 0;
+        max-height: 100vh;
+        max-width: 600px;
+        border-radius: unset;
+        transform: translateX(600px);
+        &.slideInRight {
+          transform: translateX(0px);
+        }
+        .changePasswordBox {
+          height: 100vh;
+          width: 100%;
+          border-radius: unset;
+
+          .boxHeader {
+            display: flex;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+              rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            padding: 10px;
+            .iconChangePassword {
+              height: 20px;
+              width: 20px;
+              cursor: pointer;
+            }
+            .titleChangePassword {
+              width: 100%;
+              text-align: center;
+              margin: 0;
+              font-family: $font-family-sans;
+              font-size: $font-size-large;
+              font-weight: 500;
+              color: $color-black;
+            }
+          }
+
+          .boxContent {
+            padding: 10px 20px;
+            .inputChangePasswordField {
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
+              width: 100%;
+              margin-bottom: 20px;
+              .labelChangePasswordField {
+                font-size: $font-size-base;
+                font-family: $font-family-sans;
+                font-weight: 500;
+                margin: 0;
+                margin-bottom: 5px;
+                .fieldRequired {
+                  color: $color-red;
+                }
+              }
+              .inputChangePassword {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                input {
+                  width: 100% !important;
+                  padding-right: 0px;
+                  font-size: $font-size-base;
+                  font-family: $font-family-sans;
+                  font-weight: 400;
+                  margin: 0;
+                }
+              }
+            }
+            .buttonArea {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              margin-top: 10px;
+              .buttonSubmit {
+                padding: 8px 10px;
+                background: $color-yellow;
+                border-radius: 5px;
+                font-family: $font-family-sans;
+                font-size: $font-size-small;
+                font-weight: 500;
+                color: $color-black;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 912px) {
+  .profileContainer {
+    .profileBody {
+      width: 80%;
+      height: 100%;
+      margin: auto;
+      .profileFormContainer {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border: 1px solid whitesmoke;
+        border-radius: 16px;
+        padding: 15px;
+
+        .profileTitle {
+          margin-bottom: 30px;
+          .titleText {
+            text-align: center;
+            font-family: $font-family-sans;
+            font-size: $font-size-large;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin: 0;
+          }
+        }
+
+        .inputImage {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 30px;
+          .avatar {
+            border-radius: 50%;
+            height: 80px;
+            width: 80px;
+            position: relative;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            .avatarImg {
+              border-radius: 50%;
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+            .avatarLabel {
+              position: absolute;
+              bottom: -5px;
+              right: -5px;
+              background: $color-grey;
+              padding: 6px;
+              border-radius: 50%;
+              cursor: pointer;
+
+              .avatarIcon {
+                width: 17px;
+                height: 17px;
+              }
+            }
+          }
+        }
+        .inputField {
+          border-bottom: 1px solid rgba(203, 195, 195, 0.4);
+          display: flex;
+          align-items: center;
+          padding: 10px 0;
+          .labelField {
+            width: 20%;
+            font-size: $font-size-base;
+            font-family: $font-family-sans;
+            font-weight: 500;
+            margin: 0;
+            .fieldRequired {
+              color: $color-red;
+            }
+          }
+          .input {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            &.date {
+              width: 45%;
+            }
+            input {
+              width: 100% !important;
+              text-align: right;
+              border: none !important;
+              box-shadow: none;
+              padding-right: 0px;
+              font-size: $font-size-base;
+              font-family: $font-family-sans;
+              font-weight: 400;
+              margin: 0;
+
+              &:focus {
+                outline: none;
+                border: none;
+              }
+            }
+            select {
+              min-height: 40px !important;
+              max-height: 40px !important;
+              width: 100% !important;
+              text-align: right;
+              border: none;
+              background: none;
+              padding-right: 5px;
+              font-size: $font-size-base;
+              font-family: $font-family-sans;
+              font-weight: 400;
+              margin: 0;
+              cursor: pointer;
+
+              &:disabled {
+                cursor: not-allowed;
+              }
+            }
+          }
+        }
+
+        .buttonArea {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          // padding: 10px 0;
+          margin-top: 30px;
+          .buttonChangePassword {
+            margin-right: 15px;
+            padding: 8px 10px;
+            background: $color-red;
+            border-radius: 5px;
+            font-family: $font-family-sans;
+            font-size: $font-size-small;
+            font-weight: 500;
+            color: $color-white;
+          }
+          .buttonSubmit {
+            padding: 8px 10px;
+            background: $color-yellow;
+            border-radius: 5px;
+            font-family: $font-family-sans;
+            font-size: $font-size-small;
+            font-weight: 500;
+            color: $color-black;
+          }
+
+          .disable {
+            display: none;
+          }
+
+          .buttonIcon {
+            width: 15px;
+            height: 15px;
+            margin-right: 2px;
+          }
+        }
+      }
+
+      .modalContainer {
+        left: unset;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        min-height: auto;
+        max-width: auto;
+        transform: unset;
+        padding: 0;
+        max-height: 100vh;
+        max-width: 450px;
+        border-radius: unset;
+        transform: translateX(450px);
+        &.slideInRight {
+          transform: translateX(0px);
+        }
+        .changePasswordBox {
+          height: 100vh;
+          width: 100%;
+          border-radius: unset;
+
+          .boxHeader {
+            display: flex;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+              rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            padding: 10px;
+            .iconChangePassword {
+              height: 20px;
+              width: 20px;
+              cursor: pointer;
+            }
+            .titleChangePassword {
+              width: 100%;
+              text-align: center;
+              margin: 0;
+              font-family: $font-family-sans;
+              font-size: $font-size-large;
+              font-weight: 500;
+              color: $color-black;
+            }
+          }
+
+          .boxContent {
+            padding: 10px 20px;
+            .inputChangePasswordField {
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
+              width: 100%;
+              margin-bottom: 20px;
+              .labelChangePasswordField {
+                font-size: $font-size-base;
+                font-family: $font-family-sans;
+                font-weight: 500;
+                margin: 0;
+                margin-bottom: 5px;
+                .fieldRequired {
+                  color: $color-red;
+                }
+              }
+              .inputChangePassword {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                input {
+                  width: 100% !important;
+                  padding-right: 0px;
+                  font-size: $font-size-base;
+                  font-family: $font-family-sans;
+                  font-weight: 400;
+                  margin: 0;
+                }
+              }
+            }
+            .buttonArea {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              margin-top: 10px;
+              .buttonSubmit {
+                padding: 8px 10px;
+                background: $color-yellow;
+                border-radius: 5px;
+                font-family: $font-family-sans;
+                font-size: $font-size-small;
+                font-weight: 500;
+                color: $color-black;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 600px) {
+  .profileContainer {
+    .profileBody {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      .profileFormContainer {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border: 1px solid whitesmoke;
+        border-radius: 16px;
+        padding: 15px;
+
+        .profileTitle {
+          margin-bottom: 20px;
+          .titleText {
+            text-align: center;
+            font-family: $font-family-sans;
+            font-size: $font-size-medium;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin: 0;
+          }
+        }
+
+        .inputImage {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 20px;
+          .avatar {
+            border-radius: 50%;
+            height: 70px;
+            width: 70px;
+            position: relative;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            .avatarImg {
+              border-radius: 50%;
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+            .avatarLabel {
+              position: absolute;
+              bottom: -5px;
+              right: -5px;
+              background: $color-grey;
+              padding: 6px;
+              border-radius: 50%;
+              cursor: pointer;
+
+              .avatarIcon {
+                width: 15px;
+                height: 15px;
+              }
+            }
+          }
+        }
+        .inputField {
+          border-bottom: 1px solid rgba(203, 195, 195, 0.4);
+          display: flex;
+          align-items: center;
+          padding: 10px 0;
+          .labelField {
+            width: 20%;
+            font-size: $font-size-small;
+            font-family: $font-family-sans;
+            font-weight: 500;
+            margin: 0;
+            .fieldRequired {
+              color: $color-red;
+            }
+          }
+          .input {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            &.date {
+              width: 45%;
+            }
+            input {
+              width: 100% !important;
+              text-align: right;
+              border: none !important;
+              box-shadow: none;
+              padding-right: 0px;
+              font-size: $font-size-small;
+              font-family: $font-family-sans;
+              font-weight: 400;
+              margin: 0;
+
+              &:focus {
+                outline: none;
+                border: none;
+              }
+            }
+            select {
+              min-height: 40px !important;
+              max-height: 40px !important;
+              width: 100% !important;
+              text-align: right;
+              border: none;
+              background: none;
+              padding-right: 5px;
+              font-size: $font-size-small;
+              font-family: $font-family-sans;
+              font-weight: 400;
+              margin: 0;
+              cursor: pointer;
+
+              &:disabled {
+                cursor: not-allowed;
+              }
+            }
+          }
+        }
+
+        .buttonArea {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          // padding: 10px 0;
+          margin-top: 25px;
+          .buttonChangePassword {
+            margin-right: 15px;
+            padding: 8px 10px;
+            background: $color-red;
+            border-radius: 5px;
+            font-family: $font-family-sans;
+            font-size: $font-size-xsmall;
+            font-weight: 500;
+            color: $color-white;
+          }
+          .buttonSubmit {
+            padding: 8px 10px;
+            background: $color-yellow;
+            border-radius: 5px;
+            font-family: $font-family-sans;
+            font-size: $font-size-xsmall;
+            font-weight: 500;
+            color: $color-black;
+          }
+
+          .disable {
+            display: none;
+          }
+
+          .buttonIcon {
+            width: 13px;
+            height: 13px;
+            margin-right: 2px;
+          }
+        }
+      }
+
+      .modalContainer {
+        left: unset;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        min-height: auto;
+        max-width: auto;
+        transform: unset;
+        padding: 0;
+        max-height: 100vh;
+        max-width: 100%;
+        border-radius: unset;
+        transform: translateX(100%);
+        &.slideInRight {
+          transform: translateX(0px);
+        }
+        .changePasswordBox {
+          height: 100vh;
+          width: 100%;
+          border-radius: unset;
+
+          .boxHeader {
+            display: flex;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+              rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            padding: 10px;
+            .iconChangePassword {
+              height: 20px;
+              width: 20px;
+              cursor: pointer;
+            }
+            .titleChangePassword {
+              width: 100%;
+              text-align: center;
+              margin: 0;
+              font-family: $font-family-sans;
+              font-size: $font-size-medium;
+              font-weight: 500;
+              color: $color-black;
+            }
+          }
+
+          .boxContent {
+            padding: 10px 20px;
+            .inputChangePasswordField {
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
+              width: 100%;
+              margin-bottom: 20px;
+              .labelChangePasswordField {
+                font-size: $font-size-small;
+                font-family: $font-family-sans;
+                font-weight: 500;
+                margin: 0;
+                margin-bottom: 5px;
+                .fieldRequired {
+                  color: $color-red;
+                }
+              }
+              .inputChangePassword {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                input {
+                  width: 100% !important;
+                  padding-right: 0px;
+                  font-size: $font-size-small;
+                  font-family: $font-family-sans;
+                  font-weight: 400;
+                  margin: 0;
+                }
+              }
+            }
+            .buttonArea {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              margin-top: 10px;
+              .buttonSubmit {
+                padding: 8px 10px;
+                background: $color-yellow;
+                border-radius: 5px;
+                font-family: $font-family-sans;
+                font-size: $font-size-small;
+                font-weight: 500;
+                color: $color-black;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .profileContainer {
+    .profileBody {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      .profileFormContainer {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border: 1px solid whitesmoke;
+        border-radius: 16px;
+        padding: 15px;
+
+        .profileTitle {
+          margin-bottom: 20px;
+          .titleText {
+            text-align: center;
+            font-family: $font-family-sans;
+            font-size: $font-size-medium;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin: 0;
+          }
+        }
+
+        .inputImage {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 20px;
+          .avatar {
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            position: relative;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            .avatarImg {
+              border-radius: 50%;
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+            .avatarLabel {
+              position: absolute;
+              bottom: -8px;
+              right: -8px;
+              background: $color-grey;
+              padding: 5px;
+              border-radius: 50%;
+              cursor: pointer;
+
+              .avatarIcon {
+                width: 13px;
+                height: 13px;
+              }
+            }
+          }
+        }
+        .inputField {
+          border-bottom: 1px solid rgba(203, 195, 195, 0.4);
+          display: flex;
+          align-items: center;
+          padding: 8px 0;
+          .labelField {
+            width: 25%;
+            font-size: $font-size-small;
+            font-family: $font-family-sans;
+            font-weight: 500;
+            margin: 0;
+            .fieldRequired {
+              color: $color-red;
+            }
+          }
+          .input {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            &.date {
+              width: 70%;
+            }
+            input {
+              width: 100% !important;
+              text-align: right;
+              border: none !important;
+              box-shadow: none;
+              padding-right: 0px;
+              font-size: $font-size-small;
+              font-family: $font-family-sans;
+              font-weight: 400;
+              margin: 0;
+
+              &:focus {
+                outline: none;
+                border: none;
+              }
+            }
+            select {
+              min-height: 40px !important;
+              max-height: 40px !important;
+              width: 100% !important;
+              text-align: right;
+              border: none;
+              background: none;
+              padding-right: 5px;
+              font-size: $font-size-small;
+              font-family: $font-family-sans;
+              font-weight: 400;
+              margin: 0;
+              cursor: pointer;
+
+              &:disabled {
+                cursor: not-allowed;
+              }
+            }
+          }
+        }
+
+        .buttonArea {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          // padding: 10px 0;
+          margin-top: 25px;
+          .buttonChangePassword {
+            margin-right: 15px;
+            padding: 8px 10px;
+            background: $color-red;
+            border-radius: 5px;
+            font-family: $font-family-sans;
+            font-size: $font-size-xsmall;
+            font-weight: 500;
+            color: $color-white;
+          }
+          .buttonSubmit {
+            padding: 8px 10px;
+            background: $color-yellow;
+            border-radius: 5px;
+            font-family: $font-family-sans;
+            font-size: $font-size-xsmall;
+            font-weight: 500;
+            color: $color-black;
+          }
+
+          .disable {
+            display: none;
+          }
+
+          .buttonIcon {
+            width: 13px;
+            height: 13px;
+            margin-right: 2px;
+          }
+        }
+      }
+
+      .modalContainer {
+        left: unset;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        min-height: auto;
+        max-width: auto;
+        transform: unset;
+        padding: 0;
+        max-height: 100vh;
+        max-width: 100%;
+        border-radius: unset;
+        transform: translateX(100%);
+        &.slideInRight {
+          transform: translateX(0px);
+        }
+        .changePasswordBox {
+          height: 100vh;
+          width: 100%;
+          border-radius: unset;
+
+          .boxHeader {
+            display: flex;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+              rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            padding: 10px;
+            .iconChangePassword {
+              height: 20px;
+              width: 20px;
+              cursor: pointer;
+            }
+            .titleChangePassword {
+              width: 100%;
+              text-align: center;
+              margin: 0;
+              font-family: $font-family-sans;
+              font-size: $font-size-medium;
+              font-weight: 500;
+              color: $color-black;
+            }
+          }
+
+          .boxContent {
+            padding: 10px 20px;
+            .inputChangePasswordField {
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
+              width: 100%;
+              margin-bottom: 20px;
+              .labelChangePasswordField {
+                font-size: $font-size-small;
+                font-family: $font-family-sans;
+                font-weight: 500;
+                margin: 0;
+                margin-bottom: 5px;
+                .fieldRequired {
+                  color: $color-red;
+                }
+              }
+              .inputChangePassword {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                input {
+                  width: 100% !important;
+                  padding-right: 0px;
+                  font-size: $font-size-small;
+                  font-family: $font-family-sans;
+                  font-weight: 400;
+                  margin: 0;
+                }
+              }
+            }
+            .buttonArea {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              margin-top: 10px;
+              .buttonSubmit {
+                padding: 8px 10px;
+                background: $color-yellow;
+                border-radius: 5px;
+                font-family: $font-family-sans;
+                font-size: $font-size-xsmall;
+                font-weight: 500;
+                color: $color-black;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import 'src/styles/abstracts/variables';
+
+.bestSellerContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.bestSellerBanner{
+    margin-bottom: 45px;
+}
+
+.bestSellerListProduct{
+    margin-bottom: 30px;
+}
+
+.bestSellerBannerAdvertise{
+    margin-bottom: 30px;
+}
+
+.bestSellerMainCategory{
+    margin-bottom: 30px;
+}
+
+.bestSellerListProduct{
+    margin-bottom: 30px;
+}
+
+@media all and (max-width: 1024px) {
+    .bestSellerBanner{
+        margin-bottom: 45px;
+    }
+
+    .bestSellerListProduct{
+        margin-bottom: 30px;
+    }
+    
+    .bestSellerBannerAdvertise{
+        margin-bottom: 20px;
+    }
+}
+
+@media all and (max-width: 912px) {    
+    .bestSellerBanner{
+        margin-bottom: 45px;
+    }
+
+    .bestSellerListProduct{
+        margin-bottom: 30px;
+    }
+    
+    .bestSellerBannerAdvertise{
+        margin-bottom: 20px;
+    }
+}
+
+@media all and (max-width: 600px) {    
+    .bestSellerBanner{
+        margin-bottom: 45px;
+    }
+
+    .bestSellerListProduct{
+        margin-bottom: 30px;
+    }
+    
+    .bestSellerBannerAdvertise{
+        margin-bottom: 20px;
+    }
+}
+
+@media all and ( max-width: 480px) {    
+    .bestSellerBanner{
+        margin-bottom: 45px;
+    }
+
+    .bestSellerListProduct{
+        margin-bottom: 30px;
+    }
+    
+    .bestSellerBannerAdvertise{
+        margin-bottom: 20px;
+    }
+}

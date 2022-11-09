@@ -1,0 +1,77 @@
+@import 'src/styles/abstracts/variables';
+
+.toggleMobbileContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  display: none;
+  background: $color-white;
+  width: 100vw;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px -2px 8px;
+  .menuList {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .menuItem {
+      margin: 0 10px;
+      padding: 16px 0;
+      a,
+      p {
+        // border: 1px solid black;
+        display: block;
+        padding: 5px 0px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        font-size: $font-size-small;
+        font-family: $font-family-sans;
+        color: $color-black;
+        font-weight: 400;
+        cursor: pointer;
+        .menuIcon {
+          height: 18px;
+          width: 18px;
+          color: rgb(70, 70, 70);
+          margin-right: 5px;
+        }
+      }
+      .buttonBuy {
+        width: 120px;
+        padding: 8px 20px;
+        background: $color-yellow;
+        border-radius: 5px;
+        font-family: $font-family-sans;
+        font-size: $font-size-xsmall;
+        font-weight: 400;
+        color: $color-black;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        border: unset;
+        &:disabled {
+          color: $color-white;
+          background-color: #c4c4c4;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+}
+
+@media all and (max-width: 912px) {
+}
+
+@media all and (max-width: 600px) {
+  .toggleMobbileContainer {
+    display: block;
+  }
+}
+@media all and (max-width: 480px) {
+}

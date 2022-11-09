@@ -1,0 +1,89 @@
+@import 'src/styles/abstracts/variables';
+
+.bannerContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bannerBox {
+  width: 100%;
+  height: 100%;
+}
+
+.bannerItem {
+  width: 100%;
+  height: 441px;
+  overflow: hidden;
+  border-radius: 10px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+}
+
+// .bannerImg{
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+// }
+
+.dots {
+  color: $color-grey;
+  background-color: $color-grey;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+.dotActive {
+  color: $color-yellow;
+  background-color: $color-yellow;
+}
+
+@media all and (max-width: 1024px) {
+  .bannerItem {
+    height: 362px;
+  }
+}
+
+@media all and (max-width: 912px) {
+  .bannerItem {
+    height: 342px;
+  }
+  .dots {
+    height: 9px;
+    width: 9px;
+    margin-top: 5px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .bannerItem {
+    height: 222px;
+  }
+  .dots {
+    height: 8px;
+    width: 8px;
+    margin-top: 4px;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .bannerBox {
+    width: 100%;
+  }
+  .bannerItem {
+    height: 182px;
+  }
+
+  .dots {
+    height: 7px;
+    width: 7px;
+    margin-top: 3px;
+  }
+}

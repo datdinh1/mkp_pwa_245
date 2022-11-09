@@ -1,0 +1,41 @@
+@import 'src/styles/abstracts/variables';
+
+.couponContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.couponBody{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+}
+
+.couponListProduct{
+    
+}
+
+@media all and (max-width: 1024px) {
+    .couponBody{
+        width: 70%;
+    }    
+}
+
+@media all and (max-width: 912px) {    
+    .couponBody{
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 600px) {    
+    .couponBody{
+        width: 100%;
+    }
+}
+
+@media all and ( max-width: 480px) {    
+
+}

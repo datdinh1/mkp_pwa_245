@@ -1,0 +1,460 @@
+@import 'src/styles/abstracts/variables';
+
+.headerContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .coverImage{
+        width: 100%;
+        height: 450px; 
+        .coverImg{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .headerBody{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 10px;
+        .left{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            .avatar{
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                border:2px solid $color-white;
+                position: relative;
+                top:-60px;
+                .avatarImg{
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+            .infoShop{
+                margin-left: 20px;
+                .nameShop{
+                    margin-bottom: 5px;
+                    .nameShopText{
+                        font-family: $font-family-sans;
+                        font-size: $font-size-xlarge;
+                        font-weight: 500;
+                        color: $color-black;
+                        letter-spacing: 0.3px;
+                        margin: 0;
+                    }
+                }
+                .listInfo{
+                    list-style: none;
+                    padding: 0;
+                    .inforItem{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 5px;
+                        .infoIcon{
+                            margin-right: 5px;
+                        }
+                        .infoText{
+                            font-family: $font-family-sans;
+                            font-size: $font-size-base;
+                            font-weight: 400;
+                            color: $color-black;
+                            letter-spacing: 0.3px;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .buttonGroup{
+            display: flex;
+            align-items: center;
+            .toolButton{
+                border:1px solid $color-grey;
+                margin-right: 10px;
+                padding: 6px 8px;
+                border-radius: 5px;
+                background: $color-white;
+                font-family: $font-family-sans;
+                font-size: $font-size-small;
+                font-weight: 500;
+                color: $color-black;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            }
+        }
+    }
+
+    .menuList{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        height: 100%;
+        padding: 0;
+        .menuItem{
+            height: 100%;
+            margin: 10px 0px;
+            padding: 0 5px;
+            
+            .menuLink{
+                padding: 7px 30px;
+                background: $color-white;
+                font-family: $font-family-sans;
+                font-size: $font-size-medium;
+                font-weight: 400;
+                color: $color-black;
+                border-radius: 25px;
+                background: $color-grey;
+                
+                &.active{
+                    background: $color-yellow;
+                }
+               
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .headerContainer{    
+        .coverImage{
+            width: 100%;
+            height: 370px; 
+            .coverImg{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .headerBody{
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 10px;
+            .left{
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                .avatar{
+                    height: 100px;
+                    width: 100px;
+                    border-radius: 50%;
+                    border:2px solid $color-white;
+                    position: relative;
+                    top:-60px;
+                    .avatarImg{
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                }
+                .infoShop{
+                    margin-left: 20px;
+                    .nameShop{
+                        margin-bottom: 5px;
+                        .nameShopText{
+                            font-family: $font-family-sans;
+                            font-size: $font-size-xlarge;
+                        }
+                    }
+                    .listInfo{
+                        padding: 0;
+                        .inforItem{
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 5px;
+                            .infoIcon{
+                                margin-right: 5px;
+                            }
+                            .infoText{
+                                font-family: $font-family-sans;
+                                font-size: $font-size-base;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .buttonGroup{
+                display: flex;
+                align-items: center;
+                .toolButton{
+                    margin-right: 10px;
+                    padding: 6px 8px;
+                    background: $color-white;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-small;
+                }
+            }
+        }
+    
+        .menuList{
+            .menuItem{
+                margin: 10px 0px;
+                padding: 0 5px;
+                .menuLink{
+                    padding: 7px 30px;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-medium;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 912px) {   
+    .headerContainer{    
+        .coverImage{
+            width: 100%;
+            height: 330px; 
+            .coverImg{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .headerBody{
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 10px;
+            .left{
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                .avatar{
+                    height: 90px;
+                    width: 90px;
+                    top:-55px;
+                }
+                .infoShop{
+                    margin-left: 20px;
+                    .nameShop{
+                        margin-bottom: 5px;
+                        .nameShopText{
+                            font-family: $font-family-sans;
+                            font-size: $font-size-xlarge;
+                        }
+                    }
+                    .listInfo{
+                        padding: 0;
+                        .inforItem{
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 5px;
+                            .infoIcon{
+                                margin-right: 5px;
+                            }
+                            .infoText{
+                                font-family: $font-family-sans;
+                                font-size: $font-size-base;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .buttonGroup{
+                display: flex;
+                align-items: center;
+                .toolButton{
+                    margin-right: 10px;
+                    padding: 6px 8px;
+                    background: $color-white;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-small;
+                }
+            }
+        }
+    
+        .menuList{
+            .menuItem{
+                margin: 10px 0px;
+                padding: 0 5px;
+                .menuLink{
+                    padding: 6px 25px;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-base;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px) {    
+    .headerContainer{    
+        .coverImage{
+            width: 100%;
+            height: 280px; 
+            .coverImg{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .headerBody{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px;
+            .left{
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                .avatar{
+                    height: 80px;
+                    width: 80px;
+                    top:-50px;
+                }
+                .infoShop{
+                    margin-left: 20px;
+                    .nameShop{
+                        margin-bottom: 5px;
+                        .nameShopText{
+                            font-family: $font-family-sans;
+                            font-size: $font-size-large;
+                        }
+                    }
+                    .listInfo{
+                        padding: 0;
+                        .inforItem{
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 5px;
+                            .infoIcon{
+                                margin-right: 5px;
+                            }
+                            .infoText{
+                                font-family: $font-family-sans;
+                                font-size: $font-size-small;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .buttonGroup{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                
+                .toolButton{
+                    width: 100%;
+                    margin-bottom: 7px;
+                    margin-right: 0px;
+                    padding: 4px 7px;
+                    background: $color-white;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-xsmall;
+                }
+            }
+        }
+    
+        .menuList{
+            .menuItem{
+                margin: 10px 0px;
+                padding: 0 5px;
+                .menuLink{
+                    padding: 6px 20px;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-small;
+                }
+            }
+        }
+    }
+}
+
+@media all and ( max-width: 480px) {  
+    .headerContainer{    
+        .coverImage{
+            width: 100%;
+            height: 250px; 
+            .coverImg{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .headerBody{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px;
+            .left{
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                .avatar{
+                    height: 70px;
+                    width: 70px;
+                    top:-45px;
+                }
+                .infoShop{
+                    margin-left: 10px;
+                    .nameShop{
+                        margin-bottom: 5px;
+                        .nameShopText{
+                            font-family: $font-family-sans;
+                            font-size: $font-size-medium;
+                        }
+                    }
+                    .listInfo{
+                        padding: 0;
+                        .inforItem{
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 5px;
+                            .infoIcon{
+                                margin-right: 5px;
+                            }
+                            .infoText{
+                                font-family: $font-family-sans;
+                                font-size: $font-size-xsmall;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .buttonGroup{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                
+                .toolButton{
+                    width: 100%;
+                    margin-bottom: 5px;
+                    margin-right: 0px;
+                    padding: 4px 7px;
+                    background: $color-white;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-xsmall;
+                }
+            }
+        }
+    
+        .menuList{
+            .menuItem{
+                margin: 10px 0px;
+                padding: 0 5px;
+                .menuLink{
+                    padding: 6px 18px;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-xsmall;
+                }
+            }
+        }
+    }
+}

@@ -17,3 +17,9 @@
 status: veniaResponse.status
 headers: veniaResponse.headers
 body: veniaResponse.body
+
+myStaticIncludes:
+    resolver: directory
+    directory:
+        resolver: inline
+        inline: './static'

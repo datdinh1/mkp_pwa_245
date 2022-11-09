@@ -1,0 +1,204 @@
+@import 'src/styles/abstracts/variables';
+
+.headerPcContainer {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 15% 60% 15%;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.headerPcLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .headerPcLogo {
+    display: block;
+  }
+
+  .headerPcLogoSmall {
+    display: none;
+  }
+}
+
+.headerPcMiddle {
+  .headerPcFormSearch {
+    position: relative;
+    border-radius: 5px;
+
+    .headerPcSearchInput {
+      padding: 0px 50px 0 10px;
+      font-size: $font-size-base;
+      font-weight: 300;
+      color: $color-black;
+      font-family: $font-family-roboto;
+      letter-spacing: 0.3px;
+    }
+
+    .searchIconItem {
+      position: absolute;
+      width: 40px;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-orange;
+
+      .searchIcon {
+        color: $color-white;
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    .headerPcSearchBar {
+      position: absolute;
+      bottom: -42px;
+      background-color: $color-white;
+      height: 40px;
+      width: 100%;
+      border-radius: 5px;
+      padding: 0px 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      overflow-y: auto;
+
+      .headerPcSearchText {
+        margin: 0;
+        font-size: $font-size-small;
+        font-family: $font-family-roboto;
+        color: #457fca;
+        word-break: break-all;
+      }
+    }
+  }
+  .headerPcMenuList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+
+    .headerPcMenuItem:nth-child(2) {
+      margin: 0 10px;
+    }
+
+    .headerPcMenuItem {
+      width: 80% !important;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+      .headerPcMenuLink {
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+        margin: 0;
+        font-size: $font-size-base;
+        background-color: $color-white;
+        color: $color-black;
+        padding: 5px 20px;
+        text-align: center;
+
+        &.active {
+          background-color: $color-orange;
+          color: $color-white;
+          transition: all 0.2s linear;
+        }
+
+        &:hover {
+          background-color: $color-orange;
+          color: $color-white;
+          transition: all 0.2s linear;
+        }
+      }
+    }
+  }
+}
+
+.headerPcRight {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  padding-left: 30px;
+  .headerPcIconItem {
+    height: 70px;
+    padding-top: 10px;
+    margin-right: 20px;
+    .headerPcIcon {
+      height: 20px;
+      width: 20px;
+      cursor: pointer;
+    }
+    a {
+      position: relative;
+      .badge {
+        position: absolute;
+        top: -16px;
+        right: -12px;
+        padding: 5px;
+        background: red;
+        border-radius: 50%;
+        height: 21px;
+        width: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          margin: 0;
+          font-size: $font-size-xsmall;
+          font-family: $font-family-sans;
+          font-weight: bold;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+::placeholder {
+  color: dimgray;
+}
+
+@media all and (max-width: 1024px) {
+  .headerPcContainer {
+    grid-template-columns: 23% 55% 17%;
+  }
+}
+
+@media all and (max-width: 912px) {
+  .headerPcContainer {
+    grid-template-columns: 28% 55% 17%;
+  }
+
+  .headerPcLogo {
+    display: none;
+  }
+
+  .headerPcLogoSmall {
+    display: block;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .headerPcContainer {
+    display: none;
+  }
+}
+
+@media all and (max-width: 480px) {
+}

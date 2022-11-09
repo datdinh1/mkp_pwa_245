@@ -1,0 +1,61 @@
+@import 'src/styles/abstracts/variables';
+
+.recommendProductContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.recommendProductBanner{
+    margin-bottom: 60px;
+}
+
+.recommendProductMainCategory{
+    margin-bottom: 30px;
+}
+
+.recommendProductListProduct{
+    margin-bottom: 30px;
+}
+
+@media all and (max-width: 1024px) {
+    .recommendProductBanner{
+        margin-bottom: 45px;
+    }
+
+    .recommendProductListProduct{
+        margin-bottom: 30px;
+    }
+}
+
+@media all and (max-width: 912px) {    
+    .recommendProductBanner{
+        margin-bottom: 45px;
+    }
+
+    .recommendProductListProduct{
+        margin-bottom: 30px;
+    }
+}
+
+@media all and (max-width: 600px) {    
+    .recommendProductBanner{
+        margin-bottom: 45px;
+    }
+
+    .recommendProductListProduct{
+        margin-bottom: 30px;
+    }
+}
+
+@media all and ( max-width: 480px) {    
+    .recommendProductBanner{
+        margin-bottom: 45px;
+    }
+
+    .recommendProductListProduct{
+        margin-bottom: 30px;
+    }
+}

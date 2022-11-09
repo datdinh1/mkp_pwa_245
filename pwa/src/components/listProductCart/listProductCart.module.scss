@@ -1,0 +1,554 @@
+@import 'src/styles/abstracts/variables';
+
+.ListProductCartContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .ListProductCartBox {
+        border-radius: 16px;
+        width: 90%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $color-grey;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+            rgba(17, 17, 26, 0.1) 0px 8px 24px,
+            rgba(17, 17, 26, 0.1) 0px 16px 56px;
+        margin-bottom: 30px;
+        .boxHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            .infoShop {
+                display: flex;
+                align-items: center;
+                .checkBox {
+                    height: 20px;
+                    margin-right: 5px;
+                }
+                .nameShop {
+                    display: flex;
+                    align-items: center;
+                    .storeIcon {
+                        margin: 0;
+                        font-size: $font-size-xlarge;
+                        margin-right: 5px;
+                    }
+                    .nameText {
+                        font-family: $font-family-sans;
+                        font-size: $font-size-large;
+                        font-weight: 400;
+                        margin: 0;
+                    }
+                }
+            }
+            .discountCode {
+                .codeText {
+                    font-family: $font-family-sans;
+                    font-size: $font-size-base;
+                    font-weight: 400;
+                    margin: 0;
+                    cursor: pointer;
+                }
+            }
+        }
+        .boxListProduct {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            .productItem {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1.5fr 2fr;
+                padding: 10px 0;
+
+                margin-bottom: 10px;
+                .left {
+                    display: flex;
+                    align-items: center;
+                    min-height: 212px;
+                    .checkBox {
+                        margin-right: 5px;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .productImage {
+                        height: auto;
+                        width: 100%;
+                        .productImg {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+                .right {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-left: 10px;
+                    .rightTop {
+                        width: 100%;
+                        .nameProduct {
+                            margin-bottom: 10px;
+                            .nameText {
+                                font-family: $font-family-sans;
+                                font-size: $font-size-large;
+                                font-weight: 400;
+                                margin: 0;
+                                cursor: pointer;
+                            }
+                        }
+                        .priceProduct {
+                            margin-bottom: 10px;
+                            .priceText {
+                                font-family: $font-family-sans;
+                                font-size: $font-size-large;
+                                font-weight: 400;
+                                margin: 0;
+                                cursor: pointer;
+                            }
+                        }
+                        .quantityBox {
+                            padding: 6px 10px;
+                            margin-right: 0px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            border: 1px solid $color-grey;
+                            border-radius: 5px;
+                            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                            width: 35%;
+
+                            .quantityIcon {
+                                height: 17px;
+                                width: 17px;
+                                color: $color-black;
+                                cursor: pointer;
+                            }
+
+                            .quantityText {
+                                font-family: $font-family-sans;
+                                font-size: $font-size-base;
+                            }
+                        }
+                    }
+                    .rightBottom {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        width: 100%;
+                        margin-top: 5px;
+                        .button {
+                            font-family: $font-family-sans;
+                            font-size: $font-size-small;
+                            font-weight: 400;
+                            margin: 0;
+                            &.love {
+                                margin-right: 15px;
+                            }
+                            .iconButton {
+                                height: 18px;
+                                width: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .ListProductCartContainer {
+        .ListProductCartBox {
+            width: 90%;
+            padding: 15px;
+            margin-bottom: 30px;
+            .boxHeader {
+                margin-bottom: 10px;
+                .infoShop {
+                    .checkBox {
+                        height: 20px;
+                        margin-right: 5px;
+                    }
+                    .nameShop {
+                        .nameText {
+                            font-size: $font-size-large;
+                        }
+                    }
+                }
+                .discountCode {
+                    .codeText {
+                        font-size: $font-size-base;
+                    }
+                }
+            }
+            .boxListProduct {
+                .productItem {
+                    grid-template-columns: 1.5fr 2fr;
+                    padding: 10px 0;
+                    margin-bottom: 10px;
+                    .left {
+                        .checkBox {
+                            margin-right: 5px;
+                            height: 100%;
+                        }
+                        .productImage {
+                            height: auto;
+                            width: 100%;
+                            .productImg {
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .right {
+                        padding-left: 10px;
+                        .rightTop {
+                            width: 100%;
+                            .nameProduct {
+                                margin-bottom: 10px;
+                                .nameText {
+                                    font-size: $font-size-medium;
+                                }
+                            }
+                            .priceProduct {
+                                margin-bottom: 10px;
+                                .priceText {
+                                    font-size: $font-size-medium;
+                                }
+                            }
+                            .quantityBox {
+                                padding: 6px 10px;
+                                margin-right: 0px;
+                                width: 40%;
+
+                                .quantityIcon {
+                                    height: 17px;
+                                    width: 17px;
+                                }
+                                .quantityText {
+                                    font-size: $font-size-base;
+                                }
+                            }
+                        }
+                        .rightBottom {
+                            width: 100%;
+                            margin-top: 5px;
+                            .button {
+                                font-size: $font-size-small;
+                                &.love {
+                                    margin-right: 15px;
+                                }
+                                .iconButton {
+                                    height: 18px;
+                                    width: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 912px) {
+    .ListProductCartContainer {
+        .ListProductCartBox {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 30px;
+            .boxHeader {
+                margin-bottom: 10px;
+                .infoShop {
+                    .checkBox {
+                        height: 20px;
+                        margin-right: 5px;
+                    }
+                    .nameShop {
+                        .nameText {
+                            font-size: $font-size-large;
+                        }
+                    }
+                }
+                .discountCode {
+                    .codeText {
+                        font-size: $font-size-base;
+                    }
+                }
+            }
+            .boxListProduct {
+                .productItem {
+                    grid-template-columns: 1.5fr 2fr;
+                    padding: 10px 0;
+                    margin-bottom: 10px;
+                    .left {
+                        min-height: 154px;
+                        .checkBox {
+                            margin-right: 5px;
+                            height: 100%;
+                        }
+                        .productImage {
+                            height: auto;
+                            width: 100%;
+                            .productImg {
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .right {
+                        padding-left: 10px;
+                        .rightTop {
+                            width: 100%;
+                            .nameProduct {
+                                margin-bottom: 10px;
+                                .nameText {
+                                    font-size: $font-size-large;
+                                }
+                            }
+                            .priceProduct {
+                                margin-bottom: 10px;
+                                .priceText {
+                                    font-size: $font-size-large;
+                                }
+                            }
+                            .quantityBox {
+                                padding: 6px 10px;
+                                margin-right: 0px;
+                                width: 35%;
+
+                                .quantityIcon {
+                                    height: 17px;
+                                    width: 17px;
+                                }
+                                .quantityText {
+                                    font-size: $font-size-base;
+                                }
+                            }
+                        }
+                        .rightBottom {
+                            width: 100%;
+                            margin-top: 5px;
+                            .button {
+                                font-size: $font-size-small;
+                                &.love {
+                                    margin-right: 15px;
+                                }
+                                .iconButton {
+                                    height: 18px;
+                                    width: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+    .ListProductCartContainer {
+        .ListProductCartBox {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 30px;
+            .boxHeader {
+                margin-bottom: 10px;
+                .infoShop {
+                    .checkBox {
+                        height: 20px;
+                        margin-right: 5px;
+                    }
+                    .nameShop {
+                        .storeIcon {
+                            margin: 0;
+                            font-size: $font-size-large;
+                            margin-right: 3px;
+                        }
+                        .nameText {
+                            font-size: $font-size-medium;
+                        }
+                    }
+                }
+                .discountCode {
+                    .codeText {
+                        font-size: $font-size-small;
+                    }
+                }
+            }
+            .boxListProduct {
+                .productItem {
+                    grid-template-columns: 1.5fr 2fr;
+                    padding: 10px 0;
+                    margin-bottom: 10px;
+                    .left {
+                        min-height: 140px;
+                        .checkBox {
+                            margin-right: 5px;
+                            height: 100%;
+                        }
+                        .productImage {
+                            margin: auto;
+                            height: auto;
+                            width: 100%;
+                            .productImg {
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .right {
+                        padding-left: 10px;
+                        .rightTop {
+                            width: 100%;
+                            .nameProduct {
+                                margin-bottom: 10px;
+                                .nameText {
+                                    font-size: $font-size-medium;
+                                }
+                            }
+                            .priceProduct {
+                                margin-bottom: 10px;
+                                .priceText {
+                                    font-size: $font-size-medium;
+                                }
+                            }
+                            .quantityBox {
+                                padding: 6px 10px;
+                                margin-right: 0px;
+                                width: 45%;
+
+                                .quantityIcon {
+                                    height: 15px;
+                                    width: 15px;
+                                }
+                                .quantityText {
+                                    font-size: $font-size-small;
+                                }
+                            }
+                        }
+                        .rightBottom {
+                            width: 100%;
+                            margin-top: 5px;
+                            .button {
+                                font-size: $font-size-small;
+                                &.love {
+                                    margin-right: 15px;
+                                }
+                                .iconButton {
+                                    height: 18px;
+                                    width: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 480px) {
+    .ListProductCartContainer {
+        .ListProductCartBox {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 30px;
+            .boxHeader {
+                margin-bottom: 10px;
+                .infoShop {
+                    .checkBox {
+                        height: 20px;
+                        margin-right: 5px;
+                    }
+                    .nameShop {
+                        .nameText {
+                            font-size: $font-size-medium;
+                        }
+                    }
+                }
+                .discountCode {
+                    .codeText {
+                        font-size: $font-size-small;
+                    }
+                }
+            }
+            .boxListProduct {
+                .productItem {
+                    grid-template-columns: 1.8fr 2fr;
+                    padding: 10px 0;
+                    margin-bottom: 10px;
+                    .left {
+                        min-height: 120px;
+                        .checkBox {
+                            margin-right: 5px;
+                            height: 100%;
+                        }
+                        .productImage {
+                            margin: auto;
+                            height: auto;
+                            width: 100%;
+                            .productImg {
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .right {
+                        padding-left: 10px;
+                        .rightTop {
+                            width: 100%;
+                            .nameProduct {
+                                margin-bottom: 10px;
+                                .nameText {
+                                    font-size: $font-size-base;
+                                }
+                            }
+                            .priceProduct {
+                                margin-bottom: 10px;
+                                .priceText {
+                                    font-size: $font-size-base;
+                                }
+                            }
+                            .quantityBox {
+                                padding: 5px 10px;
+                                margin-right: 0px;
+                                width: 55%;
+
+                                .quantityIcon {
+                                    height: 15px;
+                                    width: 15px;
+                                }
+                                .quantityText {
+                                    font-size: $font-size-xsmall;
+                                }
+                            }
+                        }
+                        .rightBottom {
+                            width: 100%;
+                            margin-top: 5px;
+                            .button {
+                                font-size: $font-size-xsmall;
+                                &.love {
+                                    margin-right: 15px;
+                                }
+                                .iconButton {
+                                    height: 15px;
+                                    width: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

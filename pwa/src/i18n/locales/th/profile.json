@@ -1,0 +1,17 @@
+{
+    "Personal Information":"ข้อมูลส่วนตัว",
+    "First Name":"ชื่อจริง",
+    "Last Name": "นามสกุล",
+    "Username":"ชื่อผู้ใช้",
+    "Sex":"เพศ",
+    "Birthday":"วันเกิด",
+    "Confirm":"ยืนยัน",
+    "Change Password":"เปลี่ยนรหัสผ่าน",
+    "edit":"แก้ไข",
+    "Current Password":"รหัสผ่านปัจจุบัน",
+    "Password":"รหัสผ่าน",
+    "Retype Password":"พิมพ์รหัสผ่านอีกครั้ง",
+    "Male":"ชาย",
+    "Female":"หญิง",
+    "Not Specific":"ไม่เฉพาะเจาะจง"
+}

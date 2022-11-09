@@ -1,0 +1,97 @@
+// ======================================================
+// Base :: Global like html, body, img, a, ul
+// ======================================================
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+  font-family: $font-family-roboto;
+  color: $color-black;
+}
+
+::-webkit-scrollbar {
+  background-color: inherit;
+  height: 2px;
+  position: absolute;
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e1e1e1;
+  border-radius: 3px;
+}
+
+a {
+    color: $color-black;
+
+    &:hover,
+    &:focus,
+    &:active {
+        outline: 0;
+        box-shadow: none;
+        text-decoration: none;
+        color: $color-black;
+    }
+}
+
+:global{
+    .container {
+        @media screen and (min-width: 1400px) {
+            max-width: 1320px;
+        }
+    }
+
+    .page {
+        min-height: 50vh;
+    }
+
+    .size-xsmall {
+        font-size  : $font-size-xsmall;
+    }
+
+    .size-small {
+        font-size  : $font-size-small;
+    }
+
+    .size-base {
+        font-size  : $font-size-base;
+    }
+
+    .size-medium {
+        font-size  : $font-size-medium;
+    }
+
+    .size-big {
+        font-size  : $font-size-big;
+    }
+
+    .size-large {
+        font-size  : $font-size-large;
+    }
+
+    .size-xlarge {
+        font-size  : $font-size-xlarge;
+    }
+
+    .size-xxlarge {
+        font-size  : $font-size-xxlarge;
+    }
+
+    .color-blue-bold {
+        color: $color-blue-bold;
+    }
+
+    .image-circle {
+        background-color: #fff;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 0 4px 20px 0 rgba(73, 80, 87, 0.25);
+        border-radius: 50%;
+        overflow: hidden;
+        min-width: 45px;
+        min-height: 45px;
+    }
+}

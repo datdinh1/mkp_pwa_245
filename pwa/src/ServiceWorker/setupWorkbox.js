@@ -1,12 +1,9 @@
-import { skipWaiting, clientsClaim } from 'workbox-core';
-import { precacheAndRoute } from 'workbox-precaching';
-
 export default function() {
     /**
      * Import and Instantiate workbox object.
      */
     importScripts(
-        'https://storage.googleapis.com/workbox-cdn/releases/6.2.4/workbox-sw.js'
+        'https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js'
     );
 
     /**
@@ -18,7 +15,7 @@ export default function() {
      * it is advised to remove this line and let the
      * browser handle delete and update of the service worker.
      */
-    skipWaiting();
+    workbox.core.skipWaiting();
 
     /**
      * This will claim/control all clients once the service worker is
@@ -26,18 +23,7 @@ export default function() {
      * browser will let the service worker control the clients
      * after a page reresh.
      */
-    clientsClaim();
+    workbox.core.clientsClaim();
 
-    /**
-     * This will be replaced with an array of assets
-     * that webpack will be emitting during the compilation process
-     * before writing the files in the file system.
-     *
-     * ```js
-     *  Array<{url: String, revision: null|String}>
-     * ```
-     */
-    const precacheAssets = self.__WB_MANIFEST;
-
-    precacheAndRoute(precacheAssets || []);
+    workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
 }

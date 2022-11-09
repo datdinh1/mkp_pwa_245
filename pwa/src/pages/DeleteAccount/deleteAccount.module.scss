@@ -1,0 +1,388 @@
+@import 'src/styles/abstracts/variables';
+
+.DeleteAccountContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 0;
+}
+
+.DeleteAccountBody{
+    width: 35%;
+    height: 100%;
+    margin: auto;
+
+    .DeleteAccountTitle{
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .titleText{
+            text-align: center;
+            font-family: $font-family-sans;
+            font-size: $font-size-xlarge;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin: 0;
+        }
+    }
+    .formContainer{
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border:1px solid whitesmoke;
+        .inputField{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            .labelField{
+                width: 100%;
+                font-size: $font-size-base;
+                font-family: $font-family-sans;
+                font-weight: 500;
+                margin: 0;
+                margin-bottom: 5px;
+                .fieldRequired{
+                    color: $color-red;
+                }
+            }
+            .input{
+                width: 100%;
+                input{
+                    width: 100% !important;
+                    font-size: $font-size-base;
+                    font-family: $font-family-sans;
+                    font-weight: 400;
+                    margin: 0;
+                }
+               
+            }
+        }
+
+        .buttonArea{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            .buttonSubmit{
+                width: 100% !important;
+                padding: 8px 10px;
+                background: $color-yellow;
+                border-radius: 5px;
+                font-family: $font-family-sans;
+                font-size: $font-size-base;
+                font-weight: 500;
+                color: $color-black;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .DeleteAccountBody{
+        width: 45%;
+        height: 100%;
+        margin: auto;
+    
+        .DeleteAccountTitle{
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .titleText{
+                text-align: center;
+                font-family: $font-family-sans;
+                font-size: $font-size-large;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                margin: 0;
+            }
+        }
+        .formContainer{
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border:1px solid whitesmoke;
+            .inputField{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                margin-bottom: 25px;
+                .labelField{
+                    width: 100%;
+                    font-size: $font-size-base;
+                    font-family: $font-family-sans;
+                    font-weight: 500;
+                    margin: 0;
+                    margin-bottom: 5px;
+                    .fieldRequired{
+                        color: $color-red;
+                    }
+                }
+                .input{
+                    width: 100%;
+                    input{
+                        width: 100% !important;
+                        font-size: $font-size-base;
+                        font-family: $font-family-sans;
+                        font-weight: 400;
+                        margin: 0;
+                    }
+                   
+                }
+            }
+    
+            .buttonArea{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+                .buttonSubmit{
+                    width: 100% !important;
+                    padding: 8px 10px;
+                    background: $color-yellow;
+                    border-radius: 5px;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-base;
+                    font-weight: 500;
+                    color: $color-black;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 912px) {    
+    .DeleteAccountBody{
+        width: 55%;
+        height: 100%;
+        margin: auto;
+    
+        .DeleteAccountTitle{
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .titleText{
+                text-align: center;
+                font-family: $font-family-sans;
+                font-size: $font-size-large;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                margin: 0;
+            }
+        }
+        .formContainer{
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border:1px solid whitesmoke;
+            .inputField{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                margin-bottom: 25px;
+                .labelField{
+                    width: 100%;
+                    font-size: $font-size-base;
+                    font-family: $font-family-sans;
+                    font-weight: 500;
+                    margin: 0;
+                    margin-bottom: 5px;
+                    .fieldRequired{
+                        color: $color-red;
+                    }
+                }
+                .input{
+                    width: 100%;
+                    input{
+                        width: 100% !important;
+                        font-size: $font-size-base;
+                        font-family: $font-family-sans;
+                        font-weight: 400;
+                        margin: 0;
+                    }
+                   
+                }
+            }
+    
+            .buttonArea{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+                .buttonSubmit{
+                    width: 100% !important;
+                    padding: 8px 10px;
+                    background: $color-yellow;
+                    border-radius: 5px;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-base;
+                    font-weight: 500;
+                    color: $color-black;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px) {    
+    .DeleteAccountBody{
+        width: 80%;
+        height: 100%;
+        margin: auto;
+    
+        .DeleteAccountTitle{
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .titleText{
+                text-align: center;
+                font-family: $font-family-sans;
+                font-size: $font-size-medium;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                margin: 0;
+            }
+        }
+        .formContainer{
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border:1px solid whitesmoke;
+            .inputField{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                margin-bottom: 25px;
+                .labelField{
+                    width: 100%;
+                    font-size: $font-size-small;
+                    font-family: $font-family-sans;
+                    font-weight: 500;
+                    margin: 0;
+                    margin-bottom: 5px;
+                    .fieldRequired{
+                        color: $color-red;
+                    }
+                }
+                .input{
+                    width: 100%;
+                    input{
+                        width: 100% !important;
+                        font-size: $font-size-small;
+                        font-family: $font-family-sans;
+                        font-weight: 400;
+                        margin: 0;
+                    }
+                   
+                }
+            }
+    
+            .buttonArea{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+                .buttonSubmit{
+                    width: 100% !important;
+                    padding: 8px 10px;
+                    background: $color-yellow;
+                    border-radius: 5px;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-small;
+                    font-weight: 500;
+                    color: $color-black;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                }
+            }
+        }
+    }
+}
+
+@media all and ( max-width: 480px) {    
+    .DeleteAccountBody{
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    
+        .DeleteAccountTitle{
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .titleText{
+                text-align: center;
+                font-family: $font-family-sans;
+                font-size: $font-size-medium;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                margin: 0;
+            }
+        }
+        .formContainer{
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border:1px solid whitesmoke;
+            .inputField{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                margin-bottom: 20px;
+                .labelField{
+                    width: 100%;
+                    font-size: $font-size-xsmall;
+                    font-family: $font-family-sans;
+                    font-weight: 500;
+                    margin: 0;
+                    margin-bottom: 5px;
+                    .fieldRequired{
+                        color: $color-red;
+                    }
+                }
+                .input{
+                    width: 100%;
+                    input{
+                        width: 100% !important;
+                        font-size: $font-size-xsmall;
+                        font-family: $font-family-sans;
+                        font-weight: 400;
+                        margin: 0;
+                    }
+                   
+                }
+            }
+    
+            .buttonArea{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+                .buttonSubmit{
+                    width: 100% !important;
+                    padding: 8px 10px;
+                    background: $color-yellow;
+                    border-radius: 5px;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-xsmall;
+                    font-weight: 500;
+                    color: $color-black;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                }
+            }
+        }
+    }
+}

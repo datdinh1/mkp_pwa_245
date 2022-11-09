@@ -1,0 +1,50 @@
+@import 'src/styles/abstracts/variables';
+
+.container {
+    .switch {
+        display: inline-block;
+        height: 26px;
+        position: relative;
+        width: 54px;
+
+        input {
+            display: none;
+        }
+
+        input:checked + .slider {
+            background-color: $color-yellow;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: 0.4s;
+
+            &:before {
+                background-color: #fff;
+                bottom: 3.5px;
+                content: '';
+                height: 19.5px;
+                left: 4px;
+                position: absolute;
+                transition: 0.3s;
+                width: 19.5px;
+            }
+
+            &.round {
+                border-radius: 34px;
+                &:before {
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

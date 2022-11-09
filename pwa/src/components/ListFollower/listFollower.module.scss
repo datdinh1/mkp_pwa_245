@@ -1,0 +1,373 @@
+@import 'src/styles/abstracts/variables';
+
+.listFollowerContainer{
+    width: 100%;
+    height: 100%;
+    .listFollowerTitle{
+        margin: 40px 10px;
+        .listFollowerTitleText{
+            font-family: $font-family-sans;
+            font-size: $font-size-xlarge;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin: 0;
+        }
+    }
+    .listFollowerWishListContainer{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        border:1px solid whitesmoke;
+        border-radius: 16px;
+        padding: 10px;
+        .wishListTabGroup{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #9E9090;
+            padding: 15px 0;
+
+            .tabFollow{
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                cursor: pointer;
+
+                &:first-child{
+                    border-right: 1px solid #9E9090;
+                }
+                .followText{
+                    margin: 0;
+                    font-size: $font-size-base;
+                    font-family: $font-family-sans;
+                    font-weight: 400;
+                    padding: 0 5px;
+                    &.active{
+                        border-bottom: 2px solid $color-yellow;
+                    }
+                }
+            }
+        }
+        .listItem{
+            margin-top: 25px;
+            .item{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 20px 20px;
+                border: 1px solid $color-grey;
+                border-radius: 16px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+                margin-bottom: 15px;
+
+                .itemLeft{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    height: 100%;
+                    width: 100%;
+                    .itemImage{
+                        border:1px solid $color-grey;
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        .itemImg{
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+    
+                    .itemTitle{
+                        margin-left: 10px;
+                        .itemTitleText{
+                            margin: 0;
+                            font-size: $font-size-medium;
+                            font-family: $font-family-sans;
+                            font-weight: 400;
+                        }
+                    }
+                }
+
+                .itemRight{
+                    .itemButton{
+                        .buttonUnfollow{
+                            padding: 7px 10px;
+                            font-size: $font-size-base;
+                            font-family: $font-family-sans;
+                            border-radius: 6px;
+                            border: 1px solid $color-yellow;
+                            letter-spacing: 0.3px;
+                            background: $color-yellow;
+                            font-weight: 400;
+
+                            &.follower{
+                                border: 2px solid $color-yellow;
+                                background: none;
+                                margin: 0;
+                                cursor: default;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .dataNull{
+            width: 100%;
+            padding: 25px 0;
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .listFollowerContainer{
+        width: 100%;
+        height: 100%;
+        .listFollowerTitle{
+            margin: 30px 10px;
+            .listFollowerTitleText{
+                font-family: $font-family-sans;
+                font-size: $font-size-large;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                margin: 0;
+            }
+        }
+        .listFollowerWishListContainer{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            border:1px solid whitesmoke;
+            border-radius: 16px;
+            padding: 10px;
+            .wishListTabGroup{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 1px solid #9E9090;
+                padding: 15px 0;
+    
+                .tabFollow{
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    cursor: pointer;
+    
+                    &:first-child{
+                        border-right: 1px solid #9E9090;
+                    }
+                    .followText{
+                        margin: 0;
+                        font-size: $font-size-base;
+                        font-family: $font-family-sans;
+                        font-weight: 400;
+                        padding: 0 5px;
+                        &.active{
+                            border-bottom: 2px solid $color-yellow;
+                        }
+                    }
+                }
+            }
+            .listItem{
+                margin-top: 25px;
+                .item{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 20px 20px;
+                    border: 1px solid $color-grey;
+                    border-radius: 16px;
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+                    margin-bottom: 15px;
+    
+                    .itemLeft{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        .itemImage{
+                            border:1px solid $color-grey;
+                            width: 45px;
+                            height: 45px;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            .itemImg{
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                        }
+        
+                        .itemTitle{
+                            margin-left: 10px;
+                            .itemTitleText{
+                                margin: 0;
+                                font-size: $font-size-base;
+                                font-family: $font-family-sans;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+    
+                    .itemRight{
+                        .itemButton{
+                            .buttonUnfollow{
+                                padding: 7px 10px;
+                                font-size: $font-size-small;
+                                font-family: $font-family-sans;
+                                border-radius: 6px;
+                                border: 1px solid $color-yellow;
+                                letter-spacing: 0.3px;
+                                background: $color-yellow;
+                                font-weight: 400;
+    
+                                &.follower{
+                                    border: 2px solid $color-yellow;
+                                    background: none;
+                                    margin: 0;
+                                    cursor: default;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .dataNull{
+                width: 100%;
+                padding: 25px 0;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 912px) {    
+ 
+}
+
+@media all and (max-width: 600px) {    
+    .listFollowerContainer{
+        width: 100%;
+        height: 100%;
+        .listFollowerTitle{
+            margin: 20px 10px;
+            .listFollowerTitleText{
+                font-family: $font-family-sans;
+                font-size: $font-size-medium;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                margin: 0;
+            }
+        }
+        .listFollowerWishListContainer{
+            box-shadow: none;
+            border:none;
+            border-radius: none;
+            padding: 0px;
+            .wishListTabGroup{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 1px solid #9E9090;
+                padding: 15px 0;
+    
+                .tabFollow{
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    cursor: pointer;
+    
+                    &:first-child{
+                        border-right: 1px solid #9E9090;
+                    }
+                    .followText{
+                        margin: 0;
+                        font-size: $font-size-small;
+                        font-family: $font-family-sans;
+                        font-weight: 400;
+                        padding: 0 5px;
+                        &.active{
+                            border-bottom: 2px solid $color-yellow;
+                        }
+                    }
+                }
+            }
+            .listItem{
+                margin-top: 25px;
+                .item{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 15px 15px;
+                    border: 1px solid $color-grey;
+                    border-radius: 16px;
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+                    margin-bottom: 12px;
+    
+                    .itemLeft{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+
+                        .itemImage{
+                            border:1px solid $color-grey;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            .itemImg{
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                        }
+        
+                        .itemTitle{
+                            margin-left: 10px;
+                            .itemTitleText{
+                                margin: 0;
+                                font-size: $font-size-small;
+                                font-family: $font-family-sans;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+    
+                    .itemRight{
+                        .itemButton{
+                            .buttonUnfollow{
+                                padding: 7px 10px;
+                                font-size: $font-size-xsmall;
+                                font-family: $font-family-sans;
+                                border-radius: 6px;
+                                border: 1px solid $color-yellow;
+                                letter-spacing: 0.3px;
+                                background: $color-yellow;
+                                font-weight: 400;
+    
+                                &.follower{
+                                    border: 2px solid $color-yellow;
+                                    background: none;
+                                    margin: 0;
+                                    cursor: default;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .dataNull{
+                width: 100%;
+                padding: 25px 0;
+            }
+        }
+    }
+}
+
+@media all and ( max-width: 480px) {    
+
+}

@@ -1,0 +1,35 @@
+@import 'src/styles/abstracts/variables';
+
+.bannerAdvertiseContainer{
+    width: 100%;
+    height: 100%;
+}
+
+.bannerAdvertiseImg{
+    width: 100%;
+    height: 250px;
+}
+
+@media all and (max-width: 1024px) {
+    .bannerAdvertiseImg{
+        height: 250px;
+    }
+}
+
+@media all and (max-width: 912px) {    
+    .bannerAdvertiseImg{
+        height: 230px;
+    }
+}
+
+@media all and (max-width: 600px) {    
+    .bannerAdvertiseImg{
+        height: 200px;
+    }
+}
+
+@media all and ( max-width: 480px) {   
+    .bannerAdvertiseImg{
+        height: 106px;
+    }
+}

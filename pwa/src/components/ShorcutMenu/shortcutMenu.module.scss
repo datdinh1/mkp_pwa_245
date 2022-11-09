@@ -1,0 +1,151 @@
+@import 'src/styles/abstracts/variables';
+
+.shortcutMenuContainer{
+    width: 100%;
+    height: 100%;
+    .shortcutMenuTitle{
+        margin: 20px 0 20px 0;
+        display: flex;
+        align-items: center;
+        .shortcutIcon{
+            width: 23px;
+            height: 23px;
+            align-items: center;
+            margin-right: 8px;
+        }
+        .shortcutMenuText{
+            font-family: $font-family-sans;
+            font-size: $font-size-large;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin: 0;
+           
+        }
+    }
+    .listShortcutMenu{
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-column-gap: 60px;
+        justify-content: center;
+        align-content: center;
+
+        .shortcutMenuItem{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &:first-child .menuItemIcon{
+                background: linear-gradient(180deg, #FE2626 0%, #E74040 100%);
+                
+            }
+
+            &:nth-child(2) .menuItemIcon{
+                background: linear-gradient(180deg, #56CCF2 0%, #2D9CDB 100%);
+            }
+
+            &:nth-child(3) .menuItemIcon{
+                background: linear-gradient(180deg, #27AE60 0%, #6FCF97 100%);
+            }
+            
+            &:last-child .menuItemIcon{
+                background: linear-gradient(180deg, #F2994A 0%, #F2C94C 100%);
+            }
+
+            .menuItemIcon{
+                width: 55px;
+                height: 55px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+    
+                .menuIcon{
+                    color: $color-white;
+                    text-align: center;
+                    margin: 0;
+                    font-weight: 500;
+                    font-size: $font-size-xlarge;
+                }
+            }
+
+            .menuItemTitle{
+                margin-top: 6px;
+                text-align: center;
+                font-size: $font-size-small;
+                font-family: $font-family-sans;
+                word-break: break-all
+            }
+           
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+
+}
+
+@media all and (max-width: 912px) {   
+ 
+}
+
+@media all and (max-width: 600px) {    
+    .shortcutMenuContainer{
+        .shortcutMenuTitle{
+            .shortcutMenuText{
+                font-size: $font-size-medium;
+            }
+        }
+        .listShortcutMenu{
+            grid-template-columns: auto auto auto auto;
+            grid-column-gap: 42px;
+            .shortcutMenuItem{
+    
+                .menuItemIcon{
+                    width: 40px;
+                    height: 40px;
+        
+                    .menuIcon{
+                        font-size: $font-size-large;
+                    }
+                }
+                .menuItemTitle{
+                    font-size: $font-size-xsmall;
+
+                }
+               
+            }
+        }
+    }
+}
+
+@media all and ( max-width: 480px) {  
+    .shortcutMenuContainer{
+        .shortcutMenuTitle{
+            .shortcutMenuText{
+                font-size: $font-size-medium;
+            }
+        }
+        .listShortcutMenu{
+            grid-template-columns: auto auto auto auto;
+            grid-column-gap: 38px;
+            .shortcutMenuItem{
+    
+                .menuItemIcon{
+                    width: 40px;
+                    height: 40px;
+        
+                    .menuIcon{
+                        font-size: $font-size-large;
+                    }
+                }
+                .menuItemTitle{
+                    font-size: $font-size-xsmall;
+
+                }
+               
+            }
+        }
+    }
+}

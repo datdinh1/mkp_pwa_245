@@ -1,0 +1,315 @@
+@import 'src/styles/abstracts/variables';
+
+.addPaymentMethodContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left{
+        .title{
+            font-size: $font-size-medium;
+            font-family: $font-family-sans;
+            font-weight: 400;
+            color:$color-black;
+            margin: 0;
+        }
+    }
+    .right{
+        width: 33%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+        .imagePopup{
+            margin-right: 10px;
+            .popupImg{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .namePopup{
+            font-size: $font-size-base;
+            font-family: $font-family-sans;
+            font-weight: 400;
+            color: #2F80ED;
+            margin: 0;
+        }
+    }
+    .popupBox{
+        height: 100vh;
+        width: 100%;
+        border-radius: unset;
+        .popupHeader{
+            display: flex;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            padding: 10px;
+            .closeIcon{
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
+            }
+            .titlePopup{
+                width: 100%;
+                text-align: center;
+                margin: 0;
+                font-family: $font-family-sans;
+                font-size: $font-size-medium;
+                font-weight: 500;
+                color: $color-black;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .addPaymentMethodContainer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left{
+            .title{
+                font-size: $font-size-medium;
+                font-family: $font-family-sans;
+                font-weight: 400;
+                color:$color-black;
+                margin: 0;
+            }
+        }
+        .right{
+            width: 35%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            cursor: pointer;
+            .imagePopup{
+                margin-right: 10px;
+                .popupImg{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .namePopup{
+                font-size: $font-size-base;
+                font-family: $font-family-sans;
+                font-weight: 400;
+                color: #2F80ED;
+                margin: 0;
+            }
+        }
+        .popupBox{
+            height: 100vh;
+            width: 100%;
+            border-radius: unset;
+            .popupHeader{
+                display: flex;
+                align-items: center;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+                padding: 10px;
+                .closeIcon{
+                    height: 20px;
+                    width: 20px;
+                    cursor: pointer;
+                }
+                .titlePopup{
+                    width: 100%;
+                    text-align: center;
+                    margin: 0;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-medium;
+                    font-weight: 500;
+                    color: $color-black;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 912px) {    
+       .addPaymentMethodContainer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left{
+            .title{
+                font-size: $font-size-medium;
+                font-family: $font-family-sans;
+                font-weight: 400;
+                color:$color-black;
+                margin: 0;
+            }
+        }
+        .right{
+            width: 35%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            cursor: pointer;
+            .imagePopup{
+                margin-right: 10px;
+                .popupImg{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .namePopup{
+                font-size: $font-size-base;
+                font-family: $font-family-sans;
+                font-weight: 400;
+                color: #2F80ED;
+                margin: 0;
+            }
+        }
+        .popupBox{
+            height: 100vh;
+            width: 100%;
+            border-radius: unset;
+            .popupHeader{
+                display: flex;
+                align-items: center;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+                padding: 10px;
+                .closeIcon{
+                    height: 20px;
+                    width: 20px;
+                    cursor: pointer;
+                }
+                .titlePopup{
+                    width: 100%;
+                    text-align: center;
+                    margin: 0;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-medium;
+                    font-weight: 500;
+                    color: $color-black;
+                }
+            }
+        }
+    } 
+}
+
+@media all and (max-width: 600px) {    
+    .addPaymentMethodContainer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left{
+            .title{
+                font-size: $font-size-base;
+                font-family: $font-family-sans;
+                font-weight: 400;
+                color:$color-black;
+                margin: 0;
+            }
+        }
+        .right{
+            width: 40%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            cursor: pointer;
+            .imagePopup{
+                margin-right: 10px;
+                .popupImg{
+                    width: 30px;
+                    height: 20px;
+                }
+            }
+            .namePopup{
+                font-size: $font-size-small;
+                font-family: $font-family-sans;
+                font-weight: 400;
+                color: #2F80ED;
+                margin: 0;
+            }
+        }
+        .popupBox{
+            height: 100vh;
+            width: 100%;
+            border-radius: unset;
+            .popupHeader{
+                display: flex;
+                align-items: center;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+                padding: 10px;
+                .closeIcon{
+                    height: 20px;
+                    width: 20px;
+                    cursor: pointer;
+                }
+                .titlePopup{
+                    width: 100%;
+                    text-align: center;
+                    margin: 0;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-base;
+                    font-weight: 500;
+                    color: $color-black;
+                }
+            }
+        }
+    } 
+}
+
+@media all and ( max-width: 480px) {    
+    .addPaymentMethodContainer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left{
+            .title{
+                font-size: $font-size-small;
+                font-family: $font-family-sans;
+                font-weight: 400;
+                color:$color-black;
+                margin: 0;
+            }
+        }
+        .right{
+            width: 50%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            cursor: pointer;
+            .imagePopup{
+                margin-right: 10px;
+                .popupImg{
+                    width: 25px;
+                    height: 15px;
+                    object-fit: cover;
+                }
+            }
+            .namePopup{
+                font-size: $font-size-xsmall;
+                font-family: $font-family-sans;
+                font-weight: 400;
+                color: #2F80ED;
+                margin: 0;
+            }
+        }
+        .popupBox{
+            height: 100vh;
+            width: 100%;
+            border-radius: unset;
+            .popupHeader{
+                display: flex;
+                align-items: center;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+                padding: 10px;
+                .closeIcon{
+                    height: 20px;
+                    width: 20px;
+                    cursor: pointer;
+                }
+                .titlePopup{
+                    width: 100%;
+                    text-align: center;
+                    margin: 0;
+                    font-family: $font-family-sans;
+                    font-size: $font-size-small;
+                    font-weight: 500;
+                    color: $color-black;
+                }
+            }
+        }
+    }  
+}

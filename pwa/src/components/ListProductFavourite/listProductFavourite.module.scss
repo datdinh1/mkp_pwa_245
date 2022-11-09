@@ -1,0 +1,371 @@
+@import 'src/styles/abstracts/variables';
+
+.listProductContainer {
+  width: 100%;
+  height: 100%;
+  .listProductTitle {
+    margin: 40px 10px;
+    .listProductTitleText {
+      font-family: $font-family-sans;
+      font-size: $font-size-xlarge;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin: 0;
+    }
+  }
+  .listProductWishList {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border: 1px solid whitesmoke;
+    border-radius: 16px;
+    padding: 10px;
+    .wishListTitle {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      .wishListTitleText {
+        font-family: $font-family-sans;
+        font-size: $font-size-large;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        margin: 0;
+      }
+    }
+
+    .wishListListProduct {
+      .productItem {
+        border-bottom: 1px solid gray;
+        padding: 30px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .itemLeft {
+          display: flex;
+          align-items: flex-start;
+          .itemLeftCheck {
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10px;
+          }
+          .itemLeftImage {
+            width: 120px;
+            height: 120px;
+            border: 1px solid gray;
+
+            border-radius: 16px;
+            overflow: hidden;
+            .itemLeftImg {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          .itemLeftInfo {
+            margin-top: 10px;
+            margin-left: 10px;
+            max-width: 400px;
+            .infoName {
+              color: #005999;
+              font-family: $font-family-sans;
+              font-size: $font-size-medium;
+              font-weight: 500;
+              letter-spacing: 0.3px;
+              margin: 0;
+              text-decoration: underline;
+              word-break: normal;
+            }
+            .infoPrice {
+              color: $color-black;
+              font-family: $font-family-sans;
+              font-size: $font-size-medium;
+              font-weight: 400;
+              letter-spacing: 0.3px;
+              margin: 0;
+              margin-top: 8px;
+              word-break: normal;
+            }
+          }
+        }
+        .itemRight {
+          padding-right: 10px;
+          .itemRightDelete {
+            cursor: pointer;
+            .itemRightDeleteIcon {
+              width: 25px;
+              height: 25px;
+              color: #7b7979;
+            }
+          }
+        }
+      }
+    }
+
+    .wishListNull {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .wishListButtonGroup {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .wishListButton {
+        border: 1px solid #c4c4c4;
+        background: $color-white;
+        width: 30%;
+        padding: 15px 5px;
+        border-radius: 6px;
+        font-family: $font-family-sans;
+        font-size: $font-size-base;
+        font-weight: 400;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        &:last-child {
+          background: $color-yellow;
+          border: none;
+        }
+        &:disabled {
+          background: gray;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .listProductContainer {
+    .listProductTitle {
+      .listProductTitleText {
+        font-size: $font-size-large;
+      }
+    }
+    .listProductWishList {
+      padding: 10px;
+      .wishListTitle {
+        margin-top: 10px;
+        .wishListTitleText {
+          font-family: $font-family-sans;
+          font-size: $font-size-medium;
+        }
+      }
+
+      .wishListListProduct {
+        .productItem {
+          padding: 30px 0;
+          .itemLeft {
+            .itemLeftCheck {
+              height: 100px;
+              padding: 0 10px;
+            }
+            .itemLeftImage {
+              width: 100px;
+              height: 100px;
+            }
+            .itemLeftInfo {
+              margin-top: 10px;
+              margin-left: 10px;
+              max-width: 350px;
+              .infoName {
+                font-family: $font-family-sans;
+                font-size: $font-size-base;
+              }
+              .infoPrice {
+                font-family: $font-family-sans;
+                font-size: $font-size-small;
+                margin-top: 8px;
+              }
+            }
+          }
+          .itemRight {
+            padding-right: 10px;
+            .itemRightDelete {
+              cursor: pointer;
+              .itemRightDeleteIcon {
+                width: 23px;
+                height: 23px;
+              }
+            }
+          }
+        }
+      }
+
+      .wishListNull {
+        margin-top: 20px;
+      }
+
+      .wishListButtonGroup {
+        margin-top: 30px;
+        .wishListButton {
+          width: 32%;
+          padding: 15px 5px;
+          font-family: $font-family-sans;
+          font-size: $font-size-small;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 912px) {
+}
+
+@media all and (max-width: 600px) {
+  .listProductContainer {
+    .listProductTitle {
+      margin: 25px 0px;
+      .listProductTitleText {
+        font-size: $font-size-medium;
+      }
+    }
+    .listProductWishList {
+      box-shadow: none;
+      border: none;
+      border-radius: none;
+      padding: 0px 0px;
+      .wishListTitle {
+        margin-top: 10px;
+        .wishListTitleText {
+          font-family: $font-family-sans;
+          font-size: $font-size-base;
+        }
+      }
+
+      .wishListListProduct {
+        .productItem {
+          padding: 25px 0;
+          .itemLeft {
+            .itemLeftCheck {
+              height: 85px;
+              padding: 0 10px;
+            }
+            .itemLeftImage {
+              width: 85px;
+              height: 85px;
+            }
+            .itemLeftInfo {
+              margin-top: 10px;
+              margin-left: 10px;
+              max-width: 280px;
+
+              .infoName {
+                font-family: $font-family-sans;
+                font-size: $font-size-small;
+              }
+              .infoPrice {
+                font-family: $font-family-sans;
+                font-size: $font-size-xsmall;
+                margin-top: 8px;
+              }
+            }
+          }
+          .itemRight {
+            padding-right: 10px;
+            .itemRightDelete {
+              cursor: pointer;
+              .itemRightDeleteIcon {
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+
+      .wishListNull {
+        margin-top: 20px;
+      }
+
+      .wishListButtonGroup {
+        margin-top: 25px;
+        .wishListButton {
+          width: 32%;
+          padding: 10px 5px;
+          font-family: $font-family-sans;
+          font-size: $font-size-small;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .listProductContainer {
+    .listProductTitle {
+      margin: 20px 0px;
+      .listProductTitleText {
+        font-size: $font-size-medium;
+      }
+    }
+    .listProductWishList {
+      box-shadow: none;
+      border: none;
+      border-radius: none;
+      padding: 0px 0px;
+      .wishListTitle {
+        margin-top: 5px;
+        .wishListTitleText {
+          font-family: $font-family-sans;
+          font-size: $font-size-base;
+        }
+      }
+
+      .wishListListProduct {
+        .productItem {
+          padding: 25px 0;
+          .itemLeft {
+            .itemLeftCheck {
+              height: 85px;
+              padding: 0 10px;
+            }
+            .itemLeftImage {
+              width: 85px;
+              height: 85px;
+            }
+            .itemLeftInfo {
+              margin-top: 5px;
+              margin-left: 7px;
+              max-width: 180px;
+
+              .infoName {
+                font-family: $font-family-sans;
+                font-size: $font-size-small;
+              }
+              .infoPrice {
+                font-family: $font-family-sans;
+                font-size: $font-size-xsmall;
+                margin-top: 6px;
+              }
+            }
+          }
+          .itemRight {
+            padding-right: 10px;
+            .itemRightDelete {
+              cursor: pointer;
+              .itemRightDeleteIcon {
+                width: 18px;
+                height: 18px;
+              }
+            }
+          }
+        }
+      }
+
+      .wishListNull {
+        margin-top: 20px;
+      }
+
+      .wishListButtonGroup {
+        margin-top: 25px;
+        .wishListButton {
+          width: 32%;
+          padding: 12px 5px;
+          font-family: $font-family-sans;
+          font-size: $font-size-xsmall;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+@import 'src/styles/abstracts/variables';
+
+.categoryContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .categoryItem{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin:0 50px;
+
+        .categoryItemTop{
+            background-color: $color-yellow;
+            padding: 13px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-bottom: 10px;
+
+            .categoryIcon{
+                width: 22px;
+                height: 22px;
+                color: $color-white;
+            }
+        }
+        .categoryItemBottom{
+
+            .categoryTitle{
+                font-size: $font-size-small;
+                font-family: $font-family-sans;
+                letter-spacing: 0.3px;
+                line-height: 15px;
+                text-align: center;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1; /* number of lines to show */
+                        line-clamp: 1; 
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+
+}
+
+@media all and (max-width: 912px) {   
+    .categoryContainer{
+
+        .categoryItem{
+            margin:0 10px;
+            width: 20%;
+        
+            .categoryItemTop{
+                padding: 11px;
+
+                .categoryIcon{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .categoryItemBottom{
+
+                .categoryTitle{
+                    font-size: $font-size-small;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px) {    
+    .categoryContainer{
+
+        .categoryItem{
+            margin:0 10px;
+            width: 25%;
+        
+            .categoryItemTop{
+                padding: 11px;
+
+                .categoryIcon{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .categoryItemBottom{
+
+                .categoryTitle{
+                    font-size: $font-size-small;
+                }
+            }
+        }
+    }
+}
+
+@media all and ( max-width: 480px) {  
+
+   .categoryContainer{
+
+        .categoryItem{
+            margin:0 20px;
+            width: 30%;
+
+            .categoryItemTop{
+                padding: 11px;
+
+                .categoryIcon{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .categoryItemBottom{
+
+                .categoryTitle{
+                    font-size: $font-size-small;
+                }
+            }
+        }
+    }
+}

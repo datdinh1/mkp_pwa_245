@@ -1,0 +1,53 @@
+@import 'src/styles/abstracts/variables';
+
+.footerContainer{
+    width: 100%;
+    background-color: #495057;
+    color: #fff;
+    .footerRow{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-right: 0;
+        margin-left: 0;
+        .footerMenu{
+            text-align: left;
+            padding: 0 10px;
+            margin-bottom: 15px;
+            h3{
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+            ul{
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            img{
+                vertical-align: top;
+                max-width: 100%;
+            }
+            .inputForm{
+                width: 160px;
+                input{
+                    color: #495057;
+                    border-right: 0;
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+            .inputButton{
+                background-color: #fddb3a;
+                width: 56px;
+                border-radius: 5px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                padding: 5px;
+                span{
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,49 @@
+@import 'src/styles/abstracts/variables';
+
+.cartContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 30px;
+    height: 100%;
+    .cartLeft {
+        flex: 2;
+        height: 100%;
+    }
+    .cartRight {
+        flex: 1.2;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .cartContainer {
+        .cartLeft {
+            flex: 2;
+        }
+        .cartRight {
+            flex: 1.5;
+        }
+    }
+}
+
+@media all and (max-width: 912px) {
+    .cartContainer {
+        .cartLeft {
+            flex: 1;
+            margin-bottom: 90px;
+        }
+        .cartRight {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 5;
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+}
+
+@media all and (max-width: 480px) {
+}

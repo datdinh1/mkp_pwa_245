@@ -1,0 +1,43 @@
+@import 'src/styles/abstracts/variables';
+
+.infoProductSection {
+  margin-top: 0;
+}
+
+.descSection {
+  margin-top: 25px;
+}
+
+.infoShopSection {
+  margin-top: 25px;
+}
+
+.listCouponSection {
+  margin-top: 25px;
+  background: $color-white;
+  padding: 10px;
+  height: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 3px;
+}
+
+.listProductSection {
+  margin-top: 25px;
+  background: $color-white;
+  padding: 10px;
+  height: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 3px;
+}
+
+.nullSection {
+  margin-top: 25px;
+  background: $color-white;
+  padding: 10px;
+  height: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 3px;
+}

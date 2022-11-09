@@ -1,0 +1,10 @@
+query getCustomer {
+  customer {
+    created_at
+    email
+    firstname
+    lastname
+    gender
+    date_of_birth
+  }
+}

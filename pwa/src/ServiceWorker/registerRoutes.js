@@ -1,20 +1,11 @@
-import { ExpirationPlugin } from 'workbox-expiration';
-import { registerRoute } from 'workbox-routing';
 import {
-    CacheFirst,
-    StaleWhileRevalidate,
-    NetworkFirst
-} from 'workbox-strategies';
-import {
-    isResizedImage,
+    isResizedCatalogImage,
     findSameOrLargerImage,
-    createImageCacheHandler
+    createCatalogCacheHandler
 } from './Utilities/imageCacheHandler';
-import {
-    THIRTY_DAYS,
-    MAX_NUM_OF_IMAGES_TO_CACHE,
-    IMAGES_CACHE_NAME
-} from './defaults';
+import { isHTMLRoute } from './Utilities/routeHandler';
+import { THIRTY_DAYS, MAX_NUM_OF_IMAGES_TO_CACHE } from './defaults';
+import { cacheHTMLPlugin } from './Utilities/htmlHandler';
 
 /**
  * registerRoutes function contains all the routes that need to
@@ -23,43 +14,44 @@ import {
  * @returns {void}
  */
 export default function() {
-    const imageCacheHandler = createImageCacheHandler();
+    const catalogCacheHandler = createCatalogCacheHandler();
 
-    registerRoute(
+    workbox.routing.registerRoute(
         new RegExp('(robots.txt|favicon.ico|manifest.json)'),
-        new StaleWhileRevalidate()
+        new workbox.strategies.StaleWhileRevalidate()
     );
 
     /**
-     * Route that checks for resized images in cache.
+     * Route that checks for resized catalog images in cache.
      */
-    registerRoute(isResizedImage, ({ url, request, event }) => {
-        const sameOrLargerImagePromise = findSameOrLargerImage(url, request);
-        event.waitUntil(sameOrLargerImagePromise);
-        return sameOrLargerImagePromise.then(
-            response => response || imageCacheHandler.handle({ request, event })
-        );
-    });
+    workbox.routing.registerRoute(
+        isResizedCatalogImage,
+        ({ url, request, event }) => {
+            const sameOrLargerImagePromise = findSameOrLargerImage(
+                url,
+                request
+            );
+            event.waitUntil(sameOrLargerImagePromise);
+            return sameOrLargerImagePromise.then(
+                response =>
+                    response || catalogCacheHandler.handle({ request, event })
+            );
+        }
+    );
 
     /**
      * Route to handle all types of images. Stores them in cache with a
      * cache name "images". They auto expire after 30 days and only 60
      * can be stored at a time.
-     *
-     * There is another route that handles images without width and options on them.
-     * This route handles images that wont have width options on them.
      */
-    registerRoute(
+    workbox.routing.registerRoute(
         /\.(?:png|gif|jpg|jpeg|svg)$/,
-        new CacheFirst({
-            cacheName: IMAGES_CACHE_NAME,
+        new workbox.strategies.CacheFirst({
+            cacheName: 'images',
             plugins: [
-                new ExpirationPlugin({
+                new workbox.expiration.Plugin({
                     maxEntries: MAX_NUM_OF_IMAGES_TO_CACHE, // 60 Images
-                    maxAgeSeconds: THIRTY_DAYS, // 30 Days
-                    matchOptions: {
-                        ignoreVary: true
-                    }
+                    maxAgeSeconds: THIRTY_DAYS // 30 Days
                 })
             ]
         })
@@ -70,17 +62,22 @@ export default function() {
      * strategy because if the file contents change, the file name will
      * change. There is no point in using StaleWhileRevalidate for JS files.
      */
-    registerRoute(new RegExp(/\.js$/), new CacheFirst());
+    workbox.routing.registerRoute(
+        new RegExp(/\.js$/),
+        new workbox.strategies.CacheFirst()
+    );
 
     /**
-     * Route for HTML files. This route uses NetworkFirst strategy to fetch
-     * the most up to date inlined data for the page. When offline, it will fallback
-     * to the cache if available.
+     * Route for HTML files. This route uses the cacheHTMLPlugin
+     * to intercept all HTML file requests and return the file for
+     * `/` which is the default file. This enables the app to have
+     * offline capabilities by returning HTML for `/` irrespective
+     * of the route that was requsted since all routes use same HTML file.
      */
-    registerRoute(
-        ({ url, request }) =>
-            url.origin === self.location.origin &&
-            request.destination === 'document',
-        new NetworkFirst()
+    workbox.routing.registerRoute(
+        ({ url }) => isHTMLRoute(url),
+        new workbox.strategies.StaleWhileRevalidate({
+            plugins: [cacheHTMLPlugin]
+        })
     );
 }

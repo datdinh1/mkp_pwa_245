@@ -1,0 +1,33 @@
+@import 'src/styles/abstracts/variables';
+
+.collectCouponContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .collectCouponListCoupon{
+        margin: 40px 0;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    
+}
+
+@media all and (max-width: 912px) {    
+    
+}
+
+@media all and (max-width: 600px) {    
+    .collectCouponListCoupon{
+        margin: 35px 0;
+    }
+}
+
+@media all and ( max-width: 480px) {    
+    .collectCouponListCoupon{
+        margin: 30px 0;
+    }
+}

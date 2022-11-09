@@ -1,0 +1,45 @@
+query getBestSellerProduct(
+  $search: String
+  $pageSize: Int
+  $currentPage: Int
+  $filter: ProductAttributeFilterInput
+  $sort: ProductAttributeSortInput
+) {
+  products(
+    search: $search
+    pageSize: $pageSize
+    currentPage: $currentPage
+    filter: $filter
+    sort: $sort
+  ) {
+    items {
+      url_key
+      image {
+        url
+        label
+      }
+      name
+      price_range {
+        minimum_price {
+          regular_price {
+            value
+            currency
+          }
+          discount {
+            amount_off
+            percent_off
+          }
+          final_price {
+            value
+          }
+        }
+      }
+    }
+    page_info {
+      current_page
+      page_size
+      total_pages
+    }
+    total_count
+  }
+}

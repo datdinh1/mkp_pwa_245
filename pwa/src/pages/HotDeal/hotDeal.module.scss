@@ -1,0 +1,85 @@
+@import 'src/styles/abstracts/variables';
+
+.hotDealContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hotDealBanner{
+    margin-bottom: 45px;
+}
+
+.hotDealListProduct{
+    margin-bottom: 30px;
+}
+
+.hotDealBannerAdvertise{
+    margin-bottom: 30px;
+}
+
+.hotDealMainCategory{
+    margin-bottom: 30px;
+}
+
+.hotDealListProduct{
+    margin-bottom: 30px;
+}
+
+@media all and (max-width: 1024px) {
+    .hotDealBanner{
+        margin-bottom: 45px;
+    }
+
+    .hotDealListProduct{
+        margin-bottom: 30px;
+    }
+    
+    .hotDealBannerAdvertise{
+        margin-bottom: 20px;
+    }
+}
+
+@media all and (max-width: 912px) {    
+    .hotDealBanner{
+        margin-bottom: 45px;
+    }
+
+    .hotDealListProduct{
+        margin-bottom: 30px;
+    }
+    
+    .hotDealBannerAdvertise{
+        margin-bottom: 20px;
+    }
+}
+
+@media all and (max-width: 600px) {    
+    .hotDealBanner{
+        margin-bottom: 45px;
+    }
+
+    .hotDealListProduct{
+        margin-bottom: 30px;
+    }
+    
+    .hotDealBannerAdvertise{
+        margin-bottom: 20px;
+    }
+}
+
+@media all and ( max-width: 480px) {    
+    .hotDealBanner{
+        margin-bottom: 45px;
+    }
+
+    .hotDealListProduct{
+        margin-bottom: 30px;
+    }
+    
+    .hotDealBannerAdvertise{
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,114 @@
+@import 'src/styles/abstracts/variables';
+
+.listDeliveryContainer{
+    width: 100%;
+    height: 100%;
+
+    .buttonArea{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        // padding: 10px 0;
+        margin-top: 30px;
+        .buttonDiscard{
+            margin-right: 15px;
+            padding: 8px 10px;
+            background: $color-white;
+            border-radius: 5px;
+            font-family: $font-family-sans;
+            font-size: $font-size-small;
+            font-weight: 500;
+            color: #6c757d;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+        .buttonSave{
+            padding: 8px 10px;
+            background: #6c757d;
+            border-radius: 5px;
+            font-family: $font-family-sans;
+            font-size: $font-size-small;
+            font-weight: 500;
+            color: $color-black;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+    }
+
+    .inputField{
+        padding: 5px 0;
+        label{
+            &:after{
+                content: "*";
+                color: red;
+            }
+        }
+    }
+    .checkBoxRow{
+        padding: 5px 0;
+    }
+
+    .addressWrap{
+        position: relative;
+        padding-left: 40px;
+        width: 95%;
+        .addressRadio{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0,-50%);
+            .inputRadio{
+                min-height: 0;
+                box-shadow: none;
+                &__label{
+                    &:before{
+                        content: "";
+                        border: 1px solid;
+                        min-width: 14px;
+                        width: 14px;
+                        height: 14px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        .addressBox{
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 10px;
+            box-shadow: 0 4px 20px 0 rgba(73,80,87,.25);
+            .formTag{
+                display: inline-block;
+                position: relative;
+                border-radius: 5px;
+                vertical-align: middle;
+                line-height: 1;
+                background-color: #fddb3a;
+                border-color: #fddb3a;
+            }
+            .normalText{
+                margin-bottom: 0;
+            }
+            .configButton{
+                color: #457fca;
+            }
+        }  
+    }
+    .addressButton{
+        box-shadow: 0 4px 20px 0 rgba(73,80,87,.25);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #fddb3a;
+        transition: .2s;
+        padding: 5px;
+        border-radius: 5px;
+        line-height: 1;
+        font-size: 1.6rem;
+        min-height: 40px;
+        min-width: 40px;
+        span{
+            padding: 0 5px;
+        }
+    }
+}

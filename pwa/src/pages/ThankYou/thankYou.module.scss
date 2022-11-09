@@ -1,0 +1,229 @@
+@import 'src/styles/abstracts/variables';
+
+.thankYouContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    .thankYouBox {
+        border: 1px solid $color-grey;
+        border-radius: 16px;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        .imageThankYou {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            .iconSuccess {
+                font-size: 10rem;
+                font-weight: 500;
+                color: #4bd37b;
+            }
+            .textSuccess {
+                margin: 0;
+                font-family: $font-family-sans;
+                font-weight: 500;
+                font-size: $font-size-large;
+                text-align: center;
+                color: #4bd37b;
+            }
+        }
+        .numberOrder {
+            .textNumber {
+                margin: 5px 0;
+                font-family: $font-family-sans;
+                font-weight: 400;
+                font-size: $font-size-medium;
+                text-align: center;
+                &.id {
+                    color: rgb(0, 0, 209);
+                }
+            }
+        }
+        .contentThankYou {
+            .text {
+                margin: 20px 0;
+                font-family: $font-family-sans;
+                font-weight: 400;
+                font-size: $font-size-medium;
+                text-align: center;
+            }
+        }
+
+        .buttonThankYou {
+            .btn {
+                padding: 8px 10px;
+                background: $color-yellow;
+                border-radius: 5px;
+                font-family: $font-family-sans;
+                font-size: $font-size-base;
+                font-weight: 500;
+                color: $color-black;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                border: unset;
+                letter-spacing: 0.3px;
+                &:disabled {
+                    color: $color-white;
+                    background-color: #c4c4c4;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .thankYouContainer {
+        .thankYouBox {
+            padding: 10px;
+            width: 60%;
+            .imageThankYou {
+                margin-bottom: 10px;
+                .iconSuccess {
+                    font-size: 10rem;
+                }
+                .textSuccess {
+                    font-size: $font-size-large;
+                }
+            }
+            .numberOrder {
+                .textNumber {
+                    margin: 5px 0;
+                    font-size: $font-size-medium;
+                }
+            }
+            .contentThankYou {
+                .text {
+                    margin: 20px 0;
+                    font-size: $font-size-medium;
+                }
+            }
+
+            .buttonThankYou {
+                .btn {
+                    padding: 8px 10px;
+                    font-size: $font-size-base;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 912px) {
+    .thankYouContainer {
+        .thankYouBox {
+            padding: 10px;
+            width: 70%;
+            .imageThankYou {
+                margin-bottom: 10px;
+                .iconSuccess {
+                    font-size: 10rem;
+                }
+                .textSuccess {
+                    font-size: $font-size-large;
+                }
+            }
+            .numberOrder {
+                .textNumber {
+                    margin: 5px 0;
+                    font-size: $font-size-medium;
+                }
+            }
+            .contentThankYou {
+                .text {
+                    margin: 20px 0;
+                    font-size: $font-size-medium;
+                }
+            }
+
+            .buttonThankYou {
+                .btn {
+                    padding: 8px 10px;
+                    font-size: $font-size-base;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+    .thankYouContainer {
+        .thankYouBox {
+            padding: 10px;
+            width: 90%;
+            .imageThankYou {
+                margin-bottom: 10px;
+                .iconSuccess {
+                    font-size: 8rem;
+                }
+                .textSuccess {
+                    font-size: $font-size-medium;
+                }
+            }
+            .numberOrder {
+                .textNumber {
+                    margin: 5px 0;
+                    font-size: $font-size-base;
+                }
+            }
+            .contentThankYou {
+                .text {
+                    margin: 20px 0;
+                    font-size: $font-size-base;
+                }
+            }
+
+            .buttonThankYou {
+                .btn {
+                    padding: 8px 10px;
+                    font-size: $font-size-small;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 480px) {
+    .thankYouContainer {
+        .thankYouBox {
+            padding: 10px;
+            width: 100%;
+            .imageThankYou {
+                margin-bottom: 10px;
+                .iconSuccess {
+                    font-size: 7rem;
+                }
+                .textSuccess {
+                    font-size: $font-size-medium;
+                }
+            }
+            .numberOrder {
+                .textNumber {
+                    margin: 5px 0;
+                    font-size: $font-size-base;
+                }
+            }
+            .contentThankYou {
+                .text {
+                    margin: 20px 0;
+                    font-size: $font-size-base;
+                }
+            }
+
+            .buttonThankYou {
+                .btn {
+                    padding: 8px 10px;
+                    font-size: $font-size-small;
+                }
+            }
+        }
+    }
+}

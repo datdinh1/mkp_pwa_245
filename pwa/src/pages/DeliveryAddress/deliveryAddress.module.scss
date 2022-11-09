@@ -1,0 +1,19 @@
+@import 'src/styles/abstracts/variables';
+
+.deliveryAddressContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.deliveryAddressBody{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+}
+
+.deliveryAddressList{
+    
+}

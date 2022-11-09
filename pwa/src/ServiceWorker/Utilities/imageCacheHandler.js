@@ -1,36 +1,27 @@
-import { CacheableResponsePlugin } from 'workbox-cacheable-response';
-import { CacheFirst } from 'workbox-strategies';
-import { ExpirationPlugin } from 'workbox-expiration';
-import { MESSAGE_TYPES } from '@magento/peregrine/lib/util/swUtils';
+import { PREFETCH_IMAGES } from '@magento/venia-ui/lib/constants/swMessageTypes';
 
 import { isFastNetwork } from './networkUtils';
-import {
-    THIRTY_DAYS,
-    IMAGES_CACHE_NAME,
-    MAX_NUM_OF_IMAGES_TO_CACHE
-} from '../defaults';
+import { THIRTY_DAYS, CATALOG_CACHE_NAME } from '../defaults';
 import { registerMessageHandler } from './messageHandler';
-
-const imageRegex = new RegExp(/\.(?:png|jpg|jpeg)$/);
 
 const getWidth = url => Number(new URLSearchParams(url.search).get('width'));
 
-const isImage = url => imageRegex.test(url.pathname);
+const isCatalogImage = ({ url }) => url.pathname.startsWith('/media/catalog');
 
 /**
- * isResizedImage is route checker for workbox
- * that returns true for a valid resized image URL.
+ * isResizedCatalogImage is route checker for workbox
+ * that returns true for a valid catalog image URL.
  *
  * @param {url: URL, event: FetchEvent} workboxRouteObject
  *
  * @returns {boolean}
  */
-export const isResizedImage = ({ url }) =>
-    isImage(url) && !isNaN(getWidth(url));
+export const isResizedCatalogImage = ({ url }) =>
+    isCatalogImage({ url }) && !isNaN(getWidth(url));
 
 /**
  * This function tries to find same or a larger image
- * from the images cache storage.
+ * from the catalog cache storage.
  *
  * @param {URL} url
  *
@@ -41,13 +32,11 @@ export const findSameOrLargerImage = async url => {
     const requestedWidth = getWidth(url);
     const requestedFilename = url.pathname.split('/').reverse()[0];
 
-    const cache = await caches.open(IMAGES_CACHE_NAME);
+    const cache = await caches.open(CATALOG_CACHE_NAME);
     const cachedURLs = await cache.keys();
-    const cachedSources = await cachedURLs.filter(({ url }) => {
-        const cachedFileName = new URL(url).pathname.split('/').reverse()[0];
-
-        return cachedFileName === requestedFilename;
-    });
+    const cachedSources = await cachedURLs.filter(({ url }) =>
+        url.includes(requestedFilename)
+    );
 
     // Find the cached version of this image that is closest to the requested
     // width without going under it.
@@ -104,9 +93,9 @@ export const findSameOrLargerImage = async url => {
 };
 
 const fetchAndCacheImage = imageURL =>
-    fetch(imageURL, { mode: 'no-cors' }).then(response =>
+    fetch(imageURL).then(response =>
         caches
-            .open(IMAGES_CACHE_NAME)
+            .open(CATALOG_CACHE_NAME)
             .then(cache => cache.put(imageURL, response.clone()))
             .then(() => response)
     );
@@ -152,28 +141,22 @@ const handleImagePreFetchRequest = (payload, event) => {
  * 1. PREFETCH_IMAGES
  */
 export const registerImagePreFetchHandler = () => {
-    registerMessageHandler(
-        MESSAGE_TYPES.PREFETCH_IMAGES,
-        handleImagePreFetchRequest
-    );
+    registerMessageHandler(PREFETCH_IMAGES, handleImagePreFetchRequest);
 };
 
 /**
  * This function creates a handler that workbox can use
- * to handle all images.
+ * to handle all catalog images.
  */
-export const createImageCacheHandler = () =>
-    new CacheFirst({
-        cacheName: IMAGES_CACHE_NAME,
+export const createCatalogCacheHandler = () =>
+    new workbox.strategies.CacheFirst({
+        cacheName: CATALOG_CACHE_NAME,
         plugins: [
-            new ExpirationPlugin({
-                maxEntries: MAX_NUM_OF_IMAGES_TO_CACHE,
-                maxAgeSeconds: THIRTY_DAYS,
-                matchOptions: {
-                    ignoreVary: true
-                }
+            new workbox.expiration.Plugin({
+                maxEntries: 60,
+                maxAgeSeconds: THIRTY_DAYS
             }),
-            new CacheableResponsePlugin({
+            new workbox.cacheableResponse.Plugin({
                 statuses: [0, 200]
             })
         ]

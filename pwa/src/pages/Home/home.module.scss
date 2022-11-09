@@ -1,0 +1,87 @@
+@import 'src/styles/abstracts/variables';
+
+.homeContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.homeBanner {
+  padding-bottom: 30px;
+}
+
+.homeListMenu {
+  padding: 30px 0;
+}
+
+.homeListAdvertise {
+  padding-bottom: 20px;
+}
+
+.homeTable {
+  margin-bottom: 40px;
+}
+
+.homeListProduct {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.bannerAdvertise {
+  margin: 30px 0;
+}
+
+@media all and (max-width: 1024px) {
+  //   .homeBanner {
+  //     padding-bottom: 25px;
+  //   }
+
+  //   .homeListMenu {
+  //     padding: 20px 0;
+  //   }
+
+  //   .homeListAdvertise {
+  //     padding-bottom: 20px;
+  //   }
+}
+
+@media all and (max-width: 912px) {
+  //   .homeBanner {
+  //     padding-bottom: 20px;
+  //   }
+  //   .homeListMenu {
+  //     padding: 15px 0;
+  //   }
+  //   .homeListAdvertise {
+  //     padding-bottom: 20px;
+  //   }
+}
+
+@media all and (max-width: 600px) {
+  //   .homeBanner {
+  //     padding-bottom: 17px;
+  //   }
+  //   .homeListMenu {
+  //     padding: 12px 0;
+  //   }
+  //   .homeListAdvertise {
+  //     padding-bottom: 12px;
+  //   }
+}
+
+@media all and (max-width: 480px) {
+  //   .homeBanner {
+  //     padding-bottom: 15px;
+  //   }
+  //   .homeListMenu {
+  //     padding: 10px 0;
+  //   }
+  //   .homeListAdvertise {
+  //     padding-bottom: 12px;
+  //   }
+}

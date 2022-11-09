@@ -1,0 +1,36 @@
+@import 'src/styles/abstracts/variables';
+
+.followerContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.followerBody{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+}
+
+@media all and (max-width: 1024px) {
+    .followerBody{
+        width: 70%;
+    }    
+}
+
+@media all and (max-width: 912px) {    
+    .followerBody{
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 600px) {    
+    .followerBody{
+        width: 100%;
+    }
+}
+
+@media all and ( max-width: 480px) {    
+
+}

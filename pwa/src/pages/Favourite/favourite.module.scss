@@ -1,0 +1,41 @@
+@import 'src/styles/abstracts/variables';
+
+.favouriteContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.favouriteBody{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+}
+
+.favouriteListProduct{
+    
+}
+
+@media all and (max-width: 1024px) {
+    .favouriteBody{
+        width: 70%;
+    }    
+}
+
+@media all and (max-width: 912px) {    
+    .favouriteBody{
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 600px) {    
+    .favouriteBody{
+        width: 100%;
+    }
+}
+
+@media all and ( max-width: 480px) {    
+
+}

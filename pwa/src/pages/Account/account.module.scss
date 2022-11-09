@@ -1,0 +1,67 @@
+@import 'src/styles/abstracts/variables';
+
+.accountContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.accountBody {
+  width: 70%;
+  height: 100%;
+  margin: auto;
+}
+
+.accountCategory {
+  margin: 55px 0;
+}
+
+.accountRecentUpdate {
+}
+
+.accountCoupon {
+  margin: 55px 0;
+}
+
+.accountShortcutMenu {
+  margin-top: 55px;
+}
+
+@media all and (max-width: 1024px) {
+}
+
+@media all and (max-width: 912px) {
+  .accountBody {
+    width: 100%;
+  }
+
+  .accountCategory {
+    margin: 50px 0;
+  }
+
+  .accountShortcutMenu {
+    margin: 50px 0;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .accountCategory {
+    margin: 42px 0;
+  }
+
+  .accountShortcutMenu {
+    margin: 42px 0;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .accountCategory {
+    margin: 40px 0;
+  }
+
+  .accountShortcutMenu {
+    margin: 40px 0;
+  }
+}

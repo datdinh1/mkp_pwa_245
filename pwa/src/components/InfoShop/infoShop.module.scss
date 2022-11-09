@@ -1,0 +1,241 @@
+@import 'src/styles/abstracts/variables';
+
+.infoShopContainer {
+  background: $color-white;
+  padding: 10px;
+  height: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 3px;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .avatar {
+      display: flex;
+      align-items: center;
+      .avatarImg {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      .avatarName {
+        font-family: $font-family-sans;
+        font-size: $font-size-medium;
+        font-weight: 500;
+        margin: 0;
+        color: $color-black;
+        margin-left: 10px;
+      }
+    }
+    .buttonFollow {
+      background: $color-yellow;
+      font-size: $font-size-small;
+      font-family: $font-family-sans;
+      font-weight: 400;
+      border-radius: 5px;
+      padding: 5px 10px;
+      color: $color-black;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+  }
+  .mid {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .midItem {
+      flex: 1;
+      &:nth-child(2) {
+        border: 1px solid gray;
+        border-top: 0;
+        border-bottom: 0;
+      }
+      .number {
+        text-align: center;
+        font-family: $font-family-sans;
+        font-size: $font-size-base;
+        font-weight: 400;
+        margin: 0;
+        color: $color-black;
+        margin-bottom: 6px;
+      }
+      .text {
+        text-align: center;
+        font-family: $font-family-sans;
+        font-size: $font-size-base;
+        font-weight: 400;
+        margin: 0;
+        color: $color-black;
+      }
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    .bottomButton {
+      background: $color-white;
+      font-size: $font-size-base;
+      font-family: $font-family-sans;
+      font-weight: 400;
+      border-radius: 5px;
+      padding: 8px 15px;
+      margin: 0 15px;
+      color: $color-black;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+      &:last-child {
+        background: $color-yellow;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .infoShopContainer {
+    .top {
+      .avatar {
+        .avatarImg {
+          width: 50px;
+          height: 50px;
+        }
+        .avatarName {
+          font-family: $font-family-sans;
+          font-size: $font-size-medium;
+          margin-left: 10px;
+        }
+      }
+      .buttonFollow {
+        font-size: $font-size-small;
+        font-family: $font-family-sans;
+        padding: 5px 10px;
+      }
+    }
+    .mid {
+      margin: 10px 0;
+      .midItem {
+        flex: 1;
+        .number {
+          font-family: $font-family-sans;
+          font-size: $font-size-base;
+          margin-bottom: 3px;
+        }
+        .text {
+          font-family: $font-family-sans;
+          font-size: $font-size-base;
+        }
+      }
+    }
+    .bottom {
+      margin-top: 30px;
+      .bottomButton {
+        font-size: $font-size-base;
+        font-family: $font-family-sans;
+        padding: 6px 12px;
+        margin: 0 15px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 912px) {
+}
+
+@media all and (max-width: 600px) {
+  .infoShopContainer {
+    .top {
+      .avatar {
+        .avatarImg {
+          width: 35px;
+          height: 35px;
+        }
+        .avatarName {
+          font-family: $font-family-sans;
+          font-size: $font-size-base;
+          margin-left: 10px;
+        }
+      }
+      .buttonFollow {
+        font-size: $font-size-xsmall;
+        font-family: $font-family-sans;
+        padding: 4px 8px;
+      }
+    }
+    .mid {
+      margin: 10px 0;
+      .midItem {
+        flex: 1;
+        .number {
+          font-family: $font-family-sans;
+          font-size: $font-size-small;
+          margin-bottom: 3px;
+        }
+        .text {
+          font-family: $font-family-sans;
+          font-size: $font-size-small;
+        }
+      }
+    }
+    .bottom {
+      margin-top: 25px;
+      .bottomButton {
+        font-size: $font-size-small;
+        font-family: $font-family-sans;
+        padding: 5px 10px;
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .infoShopContainer {
+    .top {
+      .avatar {
+        .avatarImg {
+          width: 35px;
+          height: 35px;
+        }
+        .avatarName {
+          font-family: $font-family-sans;
+          font-size: $font-size-small;
+          margin-left: 10px;
+        }
+      }
+      .buttonFollow {
+        font-size: $font-size-xsmall;
+        font-family: $font-family-sans;
+        padding: 4px 8px;
+      }
+    }
+    .mid {
+      margin: 10px 0;
+      .midItem {
+        flex: 1;
+        .number {
+          font-family: $font-family-sans;
+          font-size: $font-size-xsmall;
+          margin-bottom: 3px;
+        }
+        .text {
+          font-family: $font-family-sans;
+          font-size: $font-size-xsmall;
+        }
+      }
+    }
+    .bottom {
+      margin-top: 20px;
+      .bottomButton {
+        font-size: $font-size-small;
+        font-family: $font-family-sans;
+        padding: 4px 10px;
+        margin: 0 10px;
+      }
+    }
+  }
+}
