@@ -1,0 +1,1641 @@
+<?php $helper = $this->helper('MGS\Mpanel\Helper\Data') ?>
+<?php $header = $helper->getStoreConfig('mgstheme/general/header') ?>
+<?php $canUsePanel = $helper->acceptToUsePanel() ?>
+<?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); ?>
+<?php $customerSession = $objectManager->create('Magento\Customer\Model\Session'); ?>
+<?php $customerUrl = $objectManager->create('Magento\Customer\Model\Url'); ?>
+
+<?php // Variable Layout Element ?>
+<?php $miniCart = $block->getChildHtml('minicart'); //Mini Cart ?>
+<?php $storeLanguage = $block->getChildHtml('store_language'); //Language Option ?>
+<?php $currency = $block->getChildHtml('currency'); //Currenct Option ?>
+<?php $logo = $block->getChildHtml('logo'); //Logo ?>
+
+<?php $mgsMegamenu = $block->getChildHtml('megamenu'); // MGS_Megamenu ?>
+<?php if (!$helper->isActiveModule('MGS_Mmegamenu')) {
+    $mgsMegamenu = $block->getChildHtml('catalog.topnav'); // Default menu magento
+}  ?>
+
+<?php $topSearch = $block->getChildHtml('top.search'); // Top Search ?>
+<?php $storeSetting = $block->getChildHtml('store.settings'); // Store Setting ?>
+<?php $subCategories = $block->getChildHtml('sub.categories'); // Sub Categories ?>
+
+<?php $headerSocialBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_social_block')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+
+<?php // Image Toogle menu button ?>
+<?php $imgToggleMenu = '<img src="'. $block->getViewFileUrl('images/hamburger-black.svg') .'" alt="'. __('Toggle Menu') .'">'; ?>
+
+<?php // Tab Menu - Responsive Header ?>
+<?php $htmlTabMenu = '<ul class="nav nav-tabs">' ?>
+    <?php $htmlTabMenu .= '<li class="active"><a data-toggle="tab" href="#main-Menucontent">'. __('Menu') .'</a></li>'; ?>
+    <?php if($header == 'header_6' || $header == 'header_7'): ?>
+        <?php $htmlTabMenu .= '<li class="hidden-lg"><a data-toggle="tab" href="#main-Accountcontent">'. __('Account') .'</a></li>'; ?>
+        <?php if($storeSetting): ?>
+            <?php $htmlTabMenu .= '<li class="hidden-lg"><a data-toggle="tab" href="#main-Settingcontent">'. __('Setting') .'</a></li>'; ?>
+        <?php endif ?>
+    <?php else: ?>
+        <?php $htmlTabMenu .= '<li><a data-toggle="tab" href="#main-Accountcontent">'. __('Account') .'</a></li>'; ?>
+        <?php if($storeSetting): ?>
+            <?php $htmlTabMenu .= '<li><a data-toggle="tab" href="#main-Settingcontent">'. __('Setting') .'</a></li>'; ?>
+        <?php endif ?>
+    <?php endif ?>
+<?php $htmlTabMenu .= '</ul>'; ?>
+
+
+<?php // Setting Tab Panel ?>
+<?php $htmlTabSetting = "" ?>
+<?php if($storeSetting): ?>
+    <?php $htmlTabSetting = '<div id="main-Settingcontent" class="tab-pane">'.$storeSetting.'</div>'; ?>
+<?php endif ?>
+
+<?php //Tab content - Responsive Header ?>
+<?php if ($helper->isActiveModule('MGS_Mmegamenu')): ?>
+    <?php $htmlTabContent = '<div class="tab-content"><div id="main-Menucontent" class="tab-pane active">'. $mgsMegamenu .'</div><div id="main-Accountcontent" class="tab-pane"><div class="top-links">'.$block->getChildHtml('top.links').'</div></div>'.$htmlTabSetting.'</div>' ; ?>
+<?php else:?>
+    <?php $htmlTabContent = '<div class="tab-content mgt-menu"><div id="main-Menucontent" class="tab-pane active">'. $mgsMegamenu .'</div><div id="main-Accountcontent" class="tab-pane"><div class="top-links">'.$block->getChildHtml('top.links').'</div></div>'.$htmlTabSetting.'</div>' ; ?>
+<?php endif;?>
+                    
+<?php // Wishlist link ?>
+<?php $htmlWishlist = "" ?>
+<?php if($this->helper('Magento\Wishlist\Helper\Data')->isAllow()): ?>
+    <?php $htmlWishlist = '<div class="header-wl"><a href="'.$this->helper('Magento\Wishlist\Helper\Data')->getListUrl().'"><i class="pe-7s-like"></i>'; ?>
+    <?php if($this->helper('Magento\Wishlist\Helper\Data')->getItemCount() > 0): ?>
+        <?php $htmlWishlist .= '<span class="count-wl">'. $this->helper('Magento\Wishlist\Helper\Data')->getItemCount() .'</span>'; ?>
+    <?php endif ?>
+    <?php $htmlWishlist .= '</a></div>'; ?>
+<?php endif ?>
+
+<?php // Top Link ?>
+<?php $htmlTopLink = '<div class="dropdown dropdown-toplinks"><button class="dropdown-toggle" type="button" data-toggle="dropdown"><i class="pe-7s-user"></i></button><div class="dropdown-menu">'. $block->getChildHtml('top.links') .'</div></div>'; ?>
+<?php // HEADER CONTENT ?>
+<?php if($header == "" || $header == 'header_1' || $header == 'header_2' || $header == 'header_3' || $header == 'header'): ?>
+    <?php // Header 1, 2 , 3 ?>
+    <?php $topLeftBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_left_link')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    <?php $topMiddleBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_middle_block')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    <div class="top-header-content">
+        <div class="container<?php if($header != 'header_3'): ?>-fluid<?php endif ?>">
+            <div class="row header-content">
+                <div class="col-xs-12 col-lg-6 header-utilities qa-header-utilities __a1bcd ember-view header-logo">
+                    <!-- Static block: header_1_top_left_link -->
+                    <?php if($topLeftBlock): ?>
+                        <!-- <php echo $logo  ?> | -->
+                        <img class="logo-aeo"  src="<?php echo $this->getViewFileUrl("images/aeo.svg"); ?>">
+                        <img class="logo-aerie" src="<?php echo $this->getViewFileUrl("images/aerie.svg"); ?>">
+                    <?php endif ?>
+                </div>
+                <div class="col-xs-12 col-lg-6 header-utilities qa-header-utilities __a1bcd ember-view tab-menu">
+                    <ul class="utilities-list qa-utilities-menu">
+                        <li class="utilities-list-item utilities-hamburger relative qa-utilities-hamburger hidden-lg" data-ember-action="" data-ember-action-86="86">
+                            <img class="btnMenuBar" src="<?php echo $this->getViewFileUrl("images/fonts/menubar.png"); ?>">
+                        </li>
+                        <li class="utilities-list-item utilities-search qa-utilities-search relative">
+                            <a tabindex="0" class="myBtnSearch" id="myBtnSearch" class="clickable sidetray-search qa-show-sidetray-search ember-view">      
+                                <img  src="<?php echo $this->getViewFileUrl("images/fonts/search.png"); ?>">
+                                <span  class="utilities-item-title">Search</span>
+                            </a>  
+                        </li>
+                        <li class="tnav-myaeo utilities-list-item utilities-account qa-utilities-account hidden-on-affix">
+                            <a tabindex="0" class="myBtnAccount" id="myBtnAccount" class="clickable sidetray-account qa-show-sidetray-account ember-view">      
+                                <img src="<?php echo $this->getViewFileUrl("images/fonts/account.png"); ?>">
+                                <span class="utilities-item-title">Account</span>
+                            </a>  
+                        </li>
+                        <li class="utilities-list-item utilities-favorites qa-utilities-favorites hidden-on-affix">
+                            <a href="/us/en/favorites" id="ember93" class="favorites-button ember-view">        
+                                <img src="<?php echo $this->getViewFileUrl("images/fonts/favorites.png"); ?>">
+                                <span class="utilities-item-title">Favorites</span>
+                            </a>    
+                        </li>
+                        <li class="utilities-list-item utilities-cart qa-utilities-cart relative">
+                            <a data-tl="tnav-bag-icon" href="/us/en/cart" id="ember97" class="bag-button underline-on-hover qa-tnav-bag-icon ember-view">  
+                                <img src="<?php echo $this->getViewFileUrl("images/fonts/checkout.png"); ?>">
+                                <span class="utilities-item-title qa-utilities-item-title">Checkout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header-content">
+        <div class="container<?php if($header != 'header_3'): ?>-fluid<?php endif ?>">
+            <div class="row megamenu-content-mobile">
+                <div class="col-lg-12 col-xs-12 megamenu-content">
+                    <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+                    <ul class="utilities-list qa-utilities-megamenu-content">
+                        <li class="utilities-list-item utilities-search qa-utilities-search relative">
+                            <a tabindex="0" class="myBtnSearch" id="myBtnSearch" class="clickable sidetray-search qa-show-sidetray-search ember-view">      
+                                <img  src="<?php echo $this->getViewFileUrl("images/fonts/search.png"); ?>">
+                            </a>  
+                        </li>
+                        <li class="utilities-list-item utilities-cart qa-utilities-cart relative">
+                            <a data-tl="tnav-bag-icon" href="/us/en/cart" id="ember97" class="bag-button underline-on-hover qa-tnav-bag-icon ember-view">  
+                                <img src="<?php echo $this->getViewFileUrl("images/fonts/checkout.png"); ?>">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cms-header-promo cms-header-promo-ae_summer19_studio_pink_ec008c_100 text-center cms-header-dynheight" style="">
+                        <p class="cms-details-lg-white_ffffff_100 cms-details-xs-white_ffffff_100 ">
+                            <span class="cms-avenir">25-50% off all AE jeans &amp; shorts through Sunday!&nbsp;</span>
+                            <span class="cms-link-wrap">
+                                <a href="/us/en/c/women/bottoms/cat10051?pagetype=plp" data-link-text="Shop Women" class="cms-link-text cms-link-text-lg-white_ffffff_100 cms-link-text-xs-white_ffffff_100 cms-avenir" data-cms-agwa-link="">Shop Women</a>
+                                  | 
+                                <a href="/us/en/c/men/bottoms/cat10027?pagetype=plp" data-link-text="Shop Men" class="cms-link-text cms-link-text-lg-white_ffffff_100 cms-link-text-xs-white_ffffff_100 cms-avenir" data-cms-agwa-link="">Shop Men</a> 
+                            </span>
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- The Modal -->
+<div id="myModalSearch" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div id="ember3814" class="modal-header __84815 ember-view">  
+        <button arialabel="Close" datadismiss="modal" id="ember3815" class="close clickable qa-btn-cancel ember-view" type="button">
+            <span aria-hidden="true">×</span>
+        </button>
+        <h2 class="modal-title">Search</h2>
+    </div>
+    <div id="ember3816" class="modal-body __bd376 ember-view">    
+        <form action="." class="search-input-section row" novalidate="" data-ember-action="" data-ember-action-3820="3820">
+            <div id="ember3817" class="form-group aeo-input __0a189 qa-input-search ember-view col-xs-10 input-search-term qa-input-search-term">
+                <span class="twitter-typeahead" style="position: relative; display: inline-block;">
+                    <label class="search-input-label clickable" for="ember487-input">What are you looking for?</label>
+                    <input name="search" id="ember3817-input" class="form-control ember-text-field ember-view tt-input qa-tt-input search-tt-input" type="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+                    <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Avenir Next Regular&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0.5px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+                    <div class="search-typeahead-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+                        <div class="tt-dataset tt-dataset-5"></div>
+                    </div>
+                </span>
+            </div>
+            <button class="btn btn-link search-btn" type="submit">
+                <img id="myBtn" src="<?php echo $this->getViewFileUrl("images/fonts/search.png"); ?>">
+            </button>
+        </form>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="myModalAccount" class="modal">
+  <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-content-wrapper start with-transition ">
+            <div id="ember3778" class="pull-left sidetray-account-links qa-sidetray-account-links __d29fa ember-view slide-content">
+                <div id="ember3779" class="modal-header __84815 ember-view">    
+                    <button arialabel="Close" datadismiss="modal" id="ember3780" class="close clickable qa-btn-cancel ember-view" type="button">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h2 class="modal-title" tabindex="0">Account</h2>
+                </div>
+                <div id="ember3781" class="modal-body __bd376 ember-view">    
+                    <div class="btn-actions">
+                        <button data-tl="" name="" id="myBtnSignIn" class="myBtnSignIn qa-btn-signin btn-action btn btn-secondary ember-view" type="submit">SIGN IN</button>
+                        <a href="/us/en/myaccount/create-account" id="ember3783" class="btn btn-secondary qa-btn-register btn-action link ember-view">CREATE ACCOUNT</a>    
+                    </div>
+                    <ul class="link-list">
+                        <li class="link-list-item">
+                            <a href="/us/en/myaccount/aeoconnected" id="ember3784" class="link qa-aeo-connected-link ember-view">AEO Connected</a>      
+                        </li>
+                        <li class="link-list-item">
+                            <a href="/us/en/trackorder" id="ember3785" class="link qa-order-tracking-link ember-view">Track Order</a>    
+                        </li>
+                        <li class="link-list-item">
+                            <a href="/us/en/myaccount" id="ember3786" class="link qa-account-settings-link ember-view">Account Settings</a>    
+                        </li>
+                        <li class="link-list-item">
+                            <a target="_blank" href="/us/en/content/credit" id="ember3787" class="link qa-credit-card-bill-pay-link ember-view">AEO Credit Card &amp; Bill Pay </a>     
+                        </li>
+                        <li class="link-list-item currency">
+                            <button tabindex="0" id="ember3788" class="i18n-icon btn-link clickable qa-i18n-icon __d75dc ember-view link link-icon">  
+                                <span class="i18n-status-flag">
+                                        <img src="https://s7d2.scene7.com/is/image/aeo/flag__US?fit=crop&amp;wid=50&amp;qlt=90,0&amp;fmt=png-alpha" id="ember3789" class="country-flag ember-view">
+                                </span>
+                                <span class="i18n-icon-currency">$USD</span>
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="help-title">Help &amp; More</div>
+                    <ul class="link-list">
+                        <li class="link-list-item">
+                            <a href="/us/en/content/help/home" id="ember3790" class="link qa-help-link ember-view">Help</a>    
+                        </li>
+                        <li class="link-list-item">
+                            <a class="link qa-locator-link" href="//storelocations.ae.com/search.html">Store Locator</a>
+                        </li>
+                        <li class="link-list-item awo-slot-container qa-just-for-you-link">
+                            <div class="awo-slot" data-awo="jfy-acc-nav"></div>
+                        </li>
+                        <li class="link-list-item awo-slot-container qa-feedback-link">
+                            <div id="awo_qualtrics_1" class="awo-slot-feed-back" data-awo="qualtrics-acc-nav">Feed back</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="ember3793" class="pull-left sidetray-account-login qa-sidetray-account-login __bfad4 ember-view slide-menu">
+                <div id="ember3794" class="modal-header __84815 ember-view">    
+                    <div class="actions-panel">
+                        <span class="actions-panel-back qa-btn-back link myBtnBack" data-ember-action="" data-ember-action-3796="3796">
+                            <span id="ember3795" class="fa fa-chevron-left"></span>
+                            <span class="btn-back-text">Back</span>
+                        </span>
+                        <button arialabel="Close" datadismiss="modal" id="ember3797" class="close clickable qa-btn-cancel ember-view" type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <h3 class="sidetray-title">Sign In</h3>
+                </div>
+                <div id="ember3798" class="modal-body __bd376 ember-view">  
+                    <div id="ember3799" class="login-form qa-login-form ember-view">
+                        <div id="ember3800" class="form-errors-container qa-form-errors __2952d no-messages ember-view">
+                            <div id="ember3801" class="ember-view"></div>
+                        </div>
+                        <form novalidate="novalidate" class="form-signin" data-ember-action="" data-ember-action-3808="3808">
+                            <div id="ember3802" class="account-form qa-account-form ember-view">    
+                                <div id="ember3803" class="form-group aeo-input qa-input-username ember-view textinput">  
+                                    <label class="aeo-input-label clickable" for="ember3803-input">Email</label>
+                                    <input name="username" autocomplete="email" placeholder="Email" maxlength="50" id="ember3803-input" class="form-control ember-text-field ember-view" type="email">
+                                </div>
+                                <div id="ember3804" class="form-group aeo-input qa-input-password ember-view textinput">  
+                                    <label class="aeo-input-label clickable" for="ember3804-input">Password</label>
+                                    <input name="password" autocomplete="current-password" placeholder="Password" id="ember3804-input" class="form-control ember-text-field ember-view" type="password">
+                                </div>
+                                <p id="ember3805" class="qa-password-limit-msg help-block form-help-block __934b2 ember-view">        6-25 Characters
+                                    <button class="btn-link clickable pull-right qa-link-forgot-password" type="button" data-ember-action="" data-ember-action-3806="3806">Forgot Password?</button>
+                                </p>
+                            </div>
+                            <button data-tl="btn-login" name="login" id="ember3807" class="btn-block btn btn-primary qa-btn-login ember-view" type="submit">SIGN IN</button>
+                        </form>
+                    </div>
+                    <div class="login-form-create-account">
+                        <h4 class="login-form-create-account-header">Need an online account?</h4>
+                        <p class="login-form-create-account-body">Create one now if you're a new customer or signed up for rewards in store.</p>
+                        <a href="/us/en/myaccount/create-account" id="ember3809" class="btn btn-secondary btn-block ember-view btn-create-account">        create account</a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="myModalMenu" class="modal">
+    <div class="top-navigation mobile open modal-content">
+        <div class="scroll">
+            <div class="category-navigation">
+                <div id="ember101" class="mega-menu v-align-top qa-mega-menu __fd4a4 ember-view">  
+                    <div class="top-navigation-header">
+                        <a href="/us/en" class="home-link qa-home-link" data-ember-action="" data-ember-action-1171="1171">Home</a>
+                        <div class="clearfix top-level-actions">
+                            <button class="close qa-close" data-ember-action="" data-ember-action-1172="1172">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="top-navigation-title">Shop</div>
+                    <div>
+                        <div id="ember1174" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/c/l/women/womens?pagetype=clp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1174" data-toggle="collapse" data-ember-action="" data-ember-action-1176="1176">
+                                    Women
+                                    <span id="ember1175" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1174">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                        <div id="ember1178" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/c/l/men/mens?pagetype=clp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1178" data-toggle="collapse" data-ember-action="" data-ember-action-1180="1180">Men
+                                    <span id="ember1179" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1178">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                        <div id="ember1182" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/x/jeans?pagetype=slp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1182" data-toggle="collapse" data-ember-action="" data-ember-action-1184="1184">Jeans
+                                    <span id="ember1183" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1182">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                        <div id="ember1186" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/x/aerie/swimsuits?menu=cat4840006&amp;pagetype=slp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1186" data-toggle="collapse" data-ember-action="" data-ember-action-1188="1188">Swimsuits
+                                    <span id="ember1187" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1186">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                        <div id="ember1190" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/c/l/aerie/cat4840006?pagetype=clp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1190" data-toggle="collapse" data-ember-action="" data-ember-action-1192="1192">Aerie
+                                    <span id="ember1191" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1190">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                        <div id="ember1194" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/x/aerie/bras?menu=cat4840006&amp;pagetype=slp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1194" data-toggle="collapse" data-ember-action="" data-ember-action-1196="1196">Bras
+                                    <span id="ember1195" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"> </span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1194">
+                                <div class="container-fluid"> </div>
+                            </div>
+                        </div>
+                        <div id="ember1198" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/c/l/tailgate/cat8050004?pagetype=clp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1198" data-toggle="collapse" data-ember-action="" data-ember-action-1200="1200">Tailgate
+                                    <span id="ember1199" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1198">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                        <div id="ember1202" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/x/clearance?pagetype=slp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1202" data-toggle="collapse" data-ember-action="" data-ember-action-1204="1204">
+                                    Clearance
+                                    <span id="ember1203" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1202">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php elseif($header == 'header_4'): ?>
+    <?php // Header 4 ?>
+    <?php $topLeftBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_left_link')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    <?php $topMiddleBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_middle_block')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    
+    <div class="top-header-content">
+        <div class="container<?php if($header != 'header_3'): ?>-fluid<?php endif ?>">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Static block: header_1_top_left_link -->
+                    <?php if($topLeftBlock): ?>
+                        <div class="top-custom-link">
+                            <?php echo $topLeftBlock; ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Static block: header_1_top_middle_block -->
+                    <?php if($topMiddleBlock): ?>
+                        <div class="top-middle-header">
+                            <?php echo $topMiddleBlock; ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs col-sm-12 col-xs-12">
+                    <?php echo $storeLanguage ?>
+                    <?php echo $currency ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 mobile-item-col">
+                    <button class="action nav-toggle hidden-lg"><?php echo $imgToggleMenu ?></button>
+                    
+                    <div class="visible-lg">
+                        <?php echo $headerSocialBlock; ?>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-4 logo-header mobile-item-col"><?php echo $logo ?></div>
+                
+                <div class="col-md-4 col-sm-4 col-xs-auto mobile-item-col">
+                    <div class="table-icon-menu pull-right">
+                    
+                        <?php echo $topSearch ?>
+                        
+                        <?php echo $htmlTopLink ?>
+                        
+                        <?php echo $htmlWishlist; ?>
+                        
+                        <?php echo $miniCart ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-header-content">
+        <div class="megamenu-content">
+            <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+        </div>
+    </div>
+<?php elseif($header == 'header_5'): ?>
+    <?php // Header 5 ?>
+    <?php if($headerSocialBlock): ?>
+        <div class="top-header-content hidden-lg">
+            <!-- Static block: header_1_social_block -->
+            <?php echo $headerSocialBlock; ?>
+        </div>
+    <?php endif ?>
+
+    <div class="middle-header-content">
+        <div class="container">
+            <div class="middle-content">
+                <div class="action-menu-responsive hidden-lg">
+                    <button class="action nav-toggle"><?php echo $imgToggleMenu ?></button>
+                </div>
+                
+                <?php echo $logo ?>
+               
+                <div class="table-icon-menu">
+                    <?php echo $topSearch ?>
+                    
+                    <?php echo $htmlTopLink ?>
+                    
+                    <?php echo $htmlWishlist; ?>
+                    
+                    <?php echo $miniCart ?>
+                    <div class="switchers">
+		                <?php echo $storeLanguage ?>
+		                <?php echo $currency ?>
+	            	</div>
+                </div>
+
+                <div class="megamenu-content">
+                    <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+                </div>
+                
+                <?php if($headerSocialBlock): ?>
+                    <div class="bottom-header-custom-block visible-lg">
+                        <!-- Static block: header_1_social_block -->
+                        <?php echo $headerSocialBlock; ?>
+                    </div>
+                <?php endif ?>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        require([
+            "jquery"
+        ], function($){
+            $(document).ready(function(){
+                $(".header.header5 .navigation .nav-main-menu > li.mega-menu-fullwidth:not(.menu-2columns)").hover(function() {
+                    if($(window).width() > 1199){
+                        var widthMenu = $(window).width() - 360;
+                        $(this).find("> .dropdown-menu").width(widthMenu);
+                    }
+                });
+                $(".header.header5 .navigation .nav-main-menu > li.mega-menu-fullwidth.menu-2columns").hover(function() {
+                    if($(window).width() > 1199){
+                        $(this).find("> .dropdown-menu").width(500);
+                    }
+                });
+            });
+            
+            $(window).scroll(function () {
+                var headerLeftHeight = $(".header.header5").innerHeight();
+                var window_height = $(this).height();
+
+                if (headerLeftHeight - window_height < $(this).scrollTop()) {
+                    if (!$(".header.header5").hasClass("fixed-bottom")) {
+                        $(".header.header5").addClass("fixed-bottom");
+                    }
+                }
+                if (headerLeftHeight - window_height >= $(this).scrollTop()) {
+                    if ($(".header.header5").hasClass("fixed-bottom")) {
+                        $(".header.header5").removeClass("fixed-bottom");
+                    }
+                }
+            });
+        });
+    </script>
+<?php elseif($header == 'header_6'): ?>
+    <?php // Header 6 ?>
+    <?php $topLeftBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_left_link')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+
+    <?php $topMiddleBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_middle_block')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    <div class="top-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Static block: header_1_top_left_link -->
+                    <?php if($topLeftBlock): ?>
+                        <div class="top-custom-link">
+                            <?php echo $topLeftBlock; ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <?php if($topMiddleBlock): ?>
+                        <div class="top-middle-header">
+                            <?php echo $topMiddleBlock; ?>
+                        </div>
+                    <?php endif ?>
+                    <!-- Static block: header_1_top_middle_block -->
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs col-sm-12 col-xs-12">
+                    <?php echo $storeLanguage ?>
+                    <?php echo $currency ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 mobile-item-col">
+                    <button class="action nav-toggle"><?php echo $imgToggleMenu ?></button>
+                </div>
+                
+                <div class="col-md-4 col-sm-4 logo-header mobile-item-col"><?php echo $logo ?></div>
+                
+                <div class="col-md-4 col-sm-4 col-xs-auto mobile-item-col">
+                    <div class="table-icon-menu pull-right">
+                        <?php echo $topSearch ?>
+                        
+                        <?php echo $htmlTopLink ?>
+                        
+                        <?php echo $htmlWishlist; ?>
+                        
+                        <?php echo $miniCart ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="megamenu-content">
+        <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+    </div>
+<?php elseif($header == 'header_7'): ?>
+    <?php // Header 7 ?>
+    <?php $topLeftBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_left_link')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+
+    <?php $topMiddleBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_middle_block')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    <div class="top-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Static block: header_1_top_left_link -->
+                    <?php if($topLeftBlock): ?>
+                        <div class="top-custom-link">
+                            <?php echo $topLeftBlock; ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <?php if($topMiddleBlock): ?>
+                        <div class="top-middle-header">
+                            <?php echo $topMiddleBlock; ?>
+                        </div>
+                    <?php endif ?>
+                    <!-- Static block: header_1_top_middle_block -->
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs col-sm-12 col-xs-12">
+                    <?php echo $storeLanguage ?>
+                    <?php echo $currency ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 mobile-item-col">
+                    <button class="action nav-toggle visible-xs"><?php echo $imgToggleMenu ?></button>
+                    <div class="hidden-xs">
+                        <?php echo $headerSocialBlock; ?>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-4 logo-header mobile-item-col"><?php echo $logo ?></div>
+                
+                <div class="col-md-4 col-sm-4 col-xs-auto mobile-item-col">
+                    <div class="table-icon-menu pull-right">
+                        <?php echo $topSearch ?>
+                        
+                        <?php echo $htmlTopLink ?>
+                        
+                        <?php echo $htmlWishlist; ?>
+                        
+                        <?php echo $miniCart ?>
+                        
+                        <button class="action nav-toggle hidden-xs margin-left20"><?php echo $imgToggleMenu ?></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="megamenu-content">
+        <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+    </div>
+<?php elseif($header == 'header_8'): ?>
+    <?php // Header 8 ?>
+    <?php $topLeftBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_8_top_left_link')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+
+    <?php $topMiddleBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_middle_block')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    <div class="top-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <!-- Static block: header_8_top_left_link -->
+                    <?php if($topLeftBlock): ?>
+                        <div class="top-custom-link">
+                            <?php echo $topLeftBlock; ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs col-xs-12">
+                    <?php echo $storeLanguage ?>
+                    <?php echo $currency ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header-content">
+        <div class="container">
+            <div class="row">
+            
+                <div class="col-lg-3 col-md-2 col-xs-6 logo-header"><?php echo $logo ?></div>
+                
+                <div class="col-lg-6 col-md-8 col-xs-12 parent__search"><?php echo $topSearch ?></div>
+                
+                <div class="col-lg-3 col-md-2 col-xs-6">
+                    <div class="table-icon-menu pull-right">
+                        <?php echo $htmlTopLink ?>
+                        
+                        <?php echo $htmlWishlist; ?>
+                        
+                        <div class="search-form select-search">
+                            <div class="actions-search visible-sm visible-xs">
+                                <button class="action-search" onclick="showHideFormSearch()"><i class="pe-7s-search"></i></button>
+                            </div>
+                        </div>
+                        
+                        <?php echo $miniCart ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-4">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('claue_vertical_menu_header')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+                </div>
+                <div class="col-lg-6 col-sm-2 parent__megameu">
+                    <div class="megamenu-content">
+                        <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+                    </div>
+                    <div class="text-right hidden-lg">
+                        <button class="action nav-toggle hidden-lg"><?php echo $imgToggleMenu ?></button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-12 hidden-xs">
+                    <div class="bottom-header-block"><?php echo $topMiddleBlock; ?></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php elseif($header == 'header_9'): ?>
+    <?php // Header 9 ?>
+    <?php $topLeftBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_8_top_left_link')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+
+    <div class="top-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <!-- Static block: header_8_top_left_link -->
+                    <?php if($topLeftBlock): ?>
+                        <div class="top-custom-link">
+                            <?php echo $topLeftBlock; ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs col-xs-12">
+                    <?php echo $storeLanguage ?>
+                    <?php echo $currency ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header-content">
+        <div class="container">
+            <div class="row">
+            
+                <div class="col-lg-3 col-md-3 col-xs-6 logo-header"><?php echo $logo ?></div>
+                
+                <div class="col-lg-9 col-md-9 col-xs-6 parent__megameu">
+                    <div class="megamenu-content">
+                        <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+                    </div>
+                    <div class="text-right hidden-lg">
+                        <button class="action nav-toggle hidden-lg"><?php echo $imgToggleMenu ?></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-12">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('claue_vertical_menu_header')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+                </div>
+                <div class="col-lg-9 col-md-9 col-xs-12">
+                    <div class="parent__search">
+                        <?php echo $topSearch ?>
+                        <div class="table-icon-menu">
+                            <?php echo $htmlTopLink ?>
+                            
+                            <?php echo $htmlWishlist; ?>
+                            
+                            <div class="search-form select-search">
+                                <div class="actions-search visible-sm visible-xs">
+                                    <button class="action-search" onclick="showHideFormSearch()"><i class="pe-7s-search"></i></button>
+                                </div>
+                            </div>
+                            
+                            <?php echo $miniCart ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php elseif($header == 'header_10'): ?>
+    <?php // Header 10 ?>
+    <div class="middle-header-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-4 mobile-item-col">
+                    <button class="action nav-toggle hidden-lg"><?php echo $imgToggleMenu ?></button>
+                    <div class="visible-lg">
+                        <?php echo $storeLanguage ?>
+                        <?php echo $currency ?>
+                    </div>
+                </div>
+                
+                <div class="hidden-lg col-md-4 col-sm-4 logo-header mobile-item-col"><?php echo $logo ?></div>
+                
+                <div class="col-lg-8 col-xs-12 megamenu-content">
+                    <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4 col-xs-auto mobile-item-col">
+                    <div class="table-icon-menu pull-right">
+                        <?php echo $topSearch ?>
+                        
+                        <?php echo $htmlTopLink ?>
+                        
+                        <?php echo $htmlWishlist; ?>
+                        
+                        <?php echo $miniCart ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+<?php endif ?>
+
+<?php if(!($header == 'header_5')){echo $subCategories;}?>
+
+<button class="action close-nav-button"><span class="pe-7s-close" aria-hidden="true"></span></button><?php $helper = $this->helper('MGS\Mpanel\Helper\Data') ?>
+<?php $header = $helper->getStoreConfig('mgstheme/general/header') ?>
+<?php $canUsePanel = $helper->acceptToUsePanel() ?>
+<?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); ?>
+<?php $customerSession = $objectManager->create('Magento\Customer\Model\Session'); ?>
+<?php $customerUrl = $objectManager->create('Magento\Customer\Model\Url'); ?>
+
+<?php // Variable Layout Element ?>
+<?php $miniCart = $block->getChildHtml('minicart'); //Mini Cart ?>
+<?php $storeLanguage = $block->getChildHtml('store_language'); //Language Option ?>
+<?php $currency = $block->getChildHtml('currency'); //Currenct Option ?>
+<?php $logo = $block->getChildHtml('logo'); //Logo ?>
+
+<?php $mgsMegamenu = $block->getChildHtml('megamenu'); // MGS_Megamenu ?>
+<?php if (!$helper->isActiveModule('MGS_Mmegamenu')) {
+    $mgsMegamenu = $block->getChildHtml('catalog.topnav'); // Default menu magento
+}  ?>
+
+<?php $topSearch = $block->getChildHtml('top.search'); // Top Search ?>
+<?php $storeSetting = $block->getChildHtml('store.settings'); // Store Setting ?>
+<?php $subCategories = $block->getChildHtml('sub.categories'); // Sub Categories ?>
+
+<?php $headerSocialBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_social_block')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+
+<?php // Image Toogle menu button ?>
+<?php $imgToggleMenu = '<img src="'. $block->getViewFileUrl('images/hamburger-black.svg') .'" alt="'. __('Toggle Menu') .'">'; ?>
+
+<?php // Tab Menu - Responsive Header ?>
+<?php $htmlTabMenu = '<ul class="nav nav-tabs">' ?>
+    <?php $htmlTabMenu .= '<li class="active"><a data-toggle="tab" href="#main-Menucontent">'. __('Menu') .'</a></li>'; ?>
+    <?php if($header == 'header_6' || $header == 'header_7'): ?>
+        <?php $htmlTabMenu .= '<li class="hidden-lg"><a data-toggle="tab" href="#main-Accountcontent">'. __('Account') .'</a></li>'; ?>
+        <?php if($storeSetting): ?>
+            <?php $htmlTabMenu .= '<li class="hidden-lg"><a data-toggle="tab" href="#main-Settingcontent">'. __('Setting') .'</a></li>'; ?>
+        <?php endif ?>
+    <?php else: ?>
+        <?php $htmlTabMenu .= '<li><a data-toggle="tab" href="#main-Accountcontent">'. __('Account') .'</a></li>'; ?>
+        <?php if($storeSetting): ?>
+            <?php $htmlTabMenu .= '<li><a data-toggle="tab" href="#main-Settingcontent">'. __('Setting') .'</a></li>'; ?>
+        <?php endif ?>
+    <?php endif ?>
+<?php $htmlTabMenu .= '</ul>'; ?>
+
+
+<?php // Setting Tab Panel ?>
+<?php $htmlTabSetting = "" ?>
+<?php if($storeSetting): ?>
+    <?php $htmlTabSetting = '<div id="main-Settingcontent" class="tab-pane">'.$storeSetting.'</div>'; ?>
+<?php endif ?>
+
+<?php //Tab content - Responsive Header ?>
+<?php if ($helper->isActiveModule('MGS_Mmegamenu')): ?>
+    <?php $htmlTabContent = '<div class="tab-content"><div id="main-Menucontent" class="tab-pane active">'. $mgsMegamenu .'</div><div id="main-Accountcontent" class="tab-pane"><div class="top-links">'.$block->getChildHtml('top.links').'</div></div>'.$htmlTabSetting.'</div>' ; ?>
+<?php else:?>
+    <?php $htmlTabContent = '<div class="tab-content mgt-menu"><div id="main-Menucontent" class="tab-pane active">'. $mgsMegamenu .'</div><div id="main-Accountcontent" class="tab-pane"><div class="top-links">'.$block->getChildHtml('top.links').'</div></div>'.$htmlTabSetting.'</div>' ; ?>
+<?php endif;?>
+                    
+<?php // Wishlist link ?>
+<?php $htmlWishlist = "" ?>
+<?php if($this->helper('Magento\Wishlist\Helper\Data')->isAllow()): ?>
+    <?php $htmlWishlist = '<div class="header-wl"><a href="'.$this->helper('Magento\Wishlist\Helper\Data')->getListUrl().'"><i class="pe-7s-like"></i>'; ?>
+    <?php if($this->helper('Magento\Wishlist\Helper\Data')->getItemCount() > 0): ?>
+        <?php $htmlWishlist .= '<span class="count-wl">'. $this->helper('Magento\Wishlist\Helper\Data')->getItemCount() .'</span>'; ?>
+    <?php endif ?>
+    <?php $htmlWishlist .= '</a></div>'; ?>
+<?php endif ?>
+
+<?php // Top Link ?>
+<?php $htmlTopLink = '<div class="dropdown dropdown-toplinks"><button class="dropdown-toggle" type="button" data-toggle="dropdown"><i class="pe-7s-user"></i></button><div class="dropdown-menu">'. $block->getChildHtml('top.links') .'</div></div>'; ?>
+<?php // HEADER CONTENT ?>
+<?php if($header == "" || $header == 'header_1' || $header == 'header_2' || $header == 'header_3' || $header == 'header'): ?>
+    <?php // Header 1, 2 , 3 ?>
+    <?php $topLeftBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_left_link')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    <?php $topMiddleBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_middle_block')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    <div class="top-header-content">
+        <div class="container<?php if($header != 'header_3'): ?>-fluid<?php endif ?>">
+            <div class="row header-content">
+                <div class="col-xs-12 col-lg-6 header-utilities qa-header-utilities __a1bcd ember-view header-logo">
+                    <!-- Static block: header_1_top_left_link -->
+                    <?php if($topLeftBlock): ?>
+                        <!-- <php echo $logo  ?> | -->
+                        <img class="logo-aeo"  src="<?php echo $this->getViewFileUrl("images/aeo.svg"); ?>">
+                        <img class="logo-aerie" src="<?php echo $this->getViewFileUrl("images/aerie.svg"); ?>">
+                    <?php endif ?>
+                </div>
+                <div class="col-xs-12 col-lg-6 header-utilities qa-header-utilities __a1bcd ember-view tab-menu">
+                    <ul class="utilities-list qa-utilities-menu">
+                        <li class="utilities-list-item utilities-hamburger relative qa-utilities-hamburger hidden-lg" data-ember-action="" data-ember-action-86="86">
+                            <img class="btnMenuBar" src="<?php echo $this->getViewFileUrl("images/fonts/menubar.png"); ?>">
+                        </li>
+                        <li class="utilities-list-item utilities-search qa-utilities-search relative">
+                            <a tabindex="0" class="myBtnSearch" id="myBtnSearch" class="clickable sidetray-search qa-show-sidetray-search ember-view">      
+                                <img  src="<?php echo $this->getViewFileUrl("images/fonts/search.png"); ?>">
+                                <span  class="utilities-item-title">Search</span>
+                            </a>  
+                        </li>
+                        <li class="tnav-myaeo utilities-list-item utilities-account qa-utilities-account hidden-on-affix">
+                            <a tabindex="0" class="myBtnAccount" id="myBtnAccount" class="clickable sidetray-account qa-show-sidetray-account ember-view">      
+                                <img src="<?php echo $this->getViewFileUrl("images/fonts/account.png"); ?>">
+                                <span class="utilities-item-title">Account</span>
+                            </a>  
+                        </li>
+                        <li class="utilities-list-item utilities-favorites qa-utilities-favorites hidden-on-affix">
+                            <a href="/us/en/favorites" id="ember93" class="favorites-button ember-view">        
+                                <img src="<?php echo $this->getViewFileUrl("images/fonts/favorites.png"); ?>">
+                                <span class="utilities-item-title">Favorites</span>
+                            </a>    
+                        </li>
+                        <li class="utilities-list-item utilities-cart qa-utilities-cart relative">
+                            <a data-tl="tnav-bag-icon" href="/us/en/cart" id="ember97" class="bag-button underline-on-hover qa-tnav-bag-icon ember-view">  
+                                <img src="<?php echo $this->getViewFileUrl("images/fonts/checkout.png"); ?>">
+                                <span class="utilities-item-title qa-utilities-item-title">Checkout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header-content">
+        <div class="container<?php if($header != 'header_3'): ?>-fluid<?php endif ?>">
+            <div class="row megamenu-content-mobile">
+                <div class="col-lg-12 col-xs-12 megamenu-content">
+                    <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+                    <ul class="utilities-list qa-utilities-megamenu-content">
+                        <li class="utilities-list-item utilities-search qa-utilities-search relative">
+                            <a tabindex="0" class="myBtnSearch" id="myBtnSearch" class="clickable sidetray-search qa-show-sidetray-search ember-view">      
+                                <img  src="<?php echo $this->getViewFileUrl("images/fonts/search.png"); ?>">
+                            </a>  
+                        </li>
+                        <li class="utilities-list-item utilities-cart qa-utilities-cart relative">
+                            <a data-tl="tnav-bag-icon" href="/us/en/cart" id="ember97" class="bag-button underline-on-hover qa-tnav-bag-icon ember-view">  
+                                <img src="<?php echo $this->getViewFileUrl("images/fonts/checkout.png"); ?>">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cms-header-promo cms-header-promo-ae_summer19_studio_pink_ec008c_100 text-center cms-header-dynheight" style="">
+                        <p class="cms-details-lg-white_ffffff_100 cms-details-xs-white_ffffff_100 ">
+                            <span class="cms-avenir">25-50% off all AE jeans &amp; shorts through Sunday!&nbsp;</span>
+                            <span class="cms-link-wrap">
+                                <a href="/us/en/c/women/bottoms/cat10051?pagetype=plp" data-link-text="Shop Women" class="cms-link-text cms-link-text-lg-white_ffffff_100 cms-link-text-xs-white_ffffff_100 cms-avenir" data-cms-agwa-link="">Shop Women</a>
+                                  | 
+                                <a href="/us/en/c/men/bottoms/cat10027?pagetype=plp" data-link-text="Shop Men" class="cms-link-text cms-link-text-lg-white_ffffff_100 cms-link-text-xs-white_ffffff_100 cms-avenir" data-cms-agwa-link="">Shop Men</a> 
+                            </span>
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- The Modal -->
+<div id="myModalSearch" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div id="ember3814" class="modal-header __84815 ember-view">  
+        <button arialabel="Close" datadismiss="modal" id="ember3815" class="close clickable qa-btn-cancel ember-view" type="button">
+            <span aria-hidden="true">×</span>
+        </button>
+        <h2 class="modal-title">Search</h2>
+    </div>
+    <div id="ember3816" class="modal-body __bd376 ember-view">    
+        <form action="." class="search-input-section row" novalidate="" data-ember-action="" data-ember-action-3820="3820">
+            <div id="ember3817" class="form-group aeo-input __0a189 qa-input-search ember-view col-xs-10 input-search-term qa-input-search-term">
+                <span class="twitter-typeahead" style="position: relative; display: inline-block;">
+                    <label class="search-input-label clickable" for="ember487-input">What are you looking for?</label>
+                    <input name="search" id="ember3817-input" class="form-control ember-text-field ember-view tt-input qa-tt-input search-tt-input" type="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+                    <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Avenir Next Regular&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0.5px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+                    <div class="search-typeahead-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+                        <div class="tt-dataset tt-dataset-5"></div>
+                    </div>
+                </span>
+            </div>
+            <button class="btn btn-link search-btn" type="submit">
+                <img id="myBtn" src="<?php echo $this->getViewFileUrl("images/fonts/search.png"); ?>">
+            </button>
+        </form>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="myModalAccount" class="modal">
+  <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-content-wrapper start with-transition ">
+            <div id="ember3778" class="pull-left sidetray-account-links qa-sidetray-account-links __d29fa ember-view slide-content">
+                <div id="ember3779" class="modal-header __84815 ember-view">    
+                    <button arialabel="Close" datadismiss="modal" id="ember3780" class="close clickable qa-btn-cancel ember-view" type="button">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h2 class="modal-title" tabindex="0">Account</h2>
+                </div>
+                <div id="ember3781" class="modal-body __bd376 ember-view">    
+                    <div class="btn-actions">
+                        <button data-tl="" name="" id="myBtnSignIn" class="myBtnSignIn qa-btn-signin btn-action btn btn-secondary ember-view" type="submit">SIGN IN</button>
+                        <a href="/us/en/myaccount/create-account" id="ember3783" class="btn btn-secondary qa-btn-register btn-action link ember-view">CREATE ACCOUNT</a>    
+                    </div>
+                    <ul class="link-list">
+                        <li class="link-list-item">
+                            <a href="/us/en/myaccount/aeoconnected" id="ember3784" class="link qa-aeo-connected-link ember-view">AEO Connected</a>      
+                        </li>
+                        <li class="link-list-item">
+                            <a href="/us/en/trackorder" id="ember3785" class="link qa-order-tracking-link ember-view">Track Order</a>    
+                        </li>
+                        <li class="link-list-item">
+                            <a href="/us/en/myaccount" id="ember3786" class="link qa-account-settings-link ember-view">Account Settings</a>    
+                        </li>
+                        <li class="link-list-item">
+                            <a target="_blank" href="/us/en/content/credit" id="ember3787" class="link qa-credit-card-bill-pay-link ember-view">AEO Credit Card &amp; Bill Pay </a>     
+                        </li>
+                        <li class="link-list-item currency">
+                            <button tabindex="0" id="ember3788" class="i18n-icon btn-link clickable qa-i18n-icon __d75dc ember-view link link-icon">  
+                                <span class="i18n-status-flag">
+                                        <img src="https://s7d2.scene7.com/is/image/aeo/flag__US?fit=crop&amp;wid=50&amp;qlt=90,0&amp;fmt=png-alpha" id="ember3789" class="country-flag ember-view">
+                                </span>
+                                <span class="i18n-icon-currency">$USD</span>
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="help-title">Help &amp; More</div>
+                    <ul class="link-list">
+                        <li class="link-list-item">
+                            <a href="/us/en/content/help/home" id="ember3790" class="link qa-help-link ember-view">Help</a>    
+                        </li>
+                        <li class="link-list-item">
+                            <a class="link qa-locator-link" href="//storelocations.ae.com/search.html">Store Locator</a>
+                        </li>
+                        <li class="link-list-item awo-slot-container qa-just-for-you-link">
+                            <div class="awo-slot" data-awo="jfy-acc-nav"></div>
+                        </li>
+                        <li class="link-list-item awo-slot-container qa-feedback-link">
+                            <div id="awo_qualtrics_1" class="awo-slot-feed-back" data-awo="qualtrics-acc-nav">Feed back</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="ember3793" class="pull-left sidetray-account-login qa-sidetray-account-login __bfad4 ember-view slide-menu">
+                <div id="ember3794" class="modal-header __84815 ember-view">    
+                    <div class="actions-panel">
+                        <span class="actions-panel-back qa-btn-back link myBtnBack" data-ember-action="" data-ember-action-3796="3796">
+                            <span id="ember3795" class="fa fa-chevron-left"></span>
+                            <span class="btn-back-text">Back</span>
+                        </span>
+                        <button arialabel="Close" datadismiss="modal" id="ember3797" class="close clickable qa-btn-cancel ember-view" type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <h3 class="sidetray-title">Sign In</h3>
+                </div>
+                <div id="ember3798" class="modal-body __bd376 ember-view">  
+                    <div id="ember3799" class="login-form qa-login-form ember-view">
+                        <div id="ember3800" class="form-errors-container qa-form-errors __2952d no-messages ember-view">
+                            <div id="ember3801" class="ember-view"></div>
+                        </div>
+                        <form novalidate="novalidate" class="form-signin" data-ember-action="" data-ember-action-3808="3808">
+                            <div id="ember3802" class="account-form qa-account-form ember-view">    
+                                <div id="ember3803" class="form-group aeo-input qa-input-username ember-view textinput">  
+                                    <label class="aeo-input-label clickable" for="ember3803-input">Email</label>
+                                    <input name="username" autocomplete="email" placeholder="Email" maxlength="50" id="ember3803-input" class="form-control ember-text-field ember-view" type="email">
+                                </div>
+                                <div id="ember3804" class="form-group aeo-input qa-input-password ember-view textinput">  
+                                    <label class="aeo-input-label clickable" for="ember3804-input">Password</label>
+                                    <input name="password" autocomplete="current-password" placeholder="Password" id="ember3804-input" class="form-control ember-text-field ember-view" type="password">
+                                </div>
+                                <p id="ember3805" class="qa-password-limit-msg help-block form-help-block __934b2 ember-view">        6-25 Characters
+                                    <button class="btn-link clickable pull-right qa-link-forgot-password" type="button" data-ember-action="" data-ember-action-3806="3806">Forgot Password?</button>
+                                </p>
+                            </div>
+                            <button data-tl="btn-login" name="login" id="ember3807" class="btn-block btn btn-primary qa-btn-login ember-view" type="submit">SIGN IN</button>
+                        </form>
+                    </div>
+                    <div class="login-form-create-account">
+                        <h4 class="login-form-create-account-header">Need an online account?</h4>
+                        <p class="login-form-create-account-body">Create one now if you're a new customer or signed up for rewards in store.</p>
+                        <a href="/us/en/myaccount/create-account" id="ember3809" class="btn btn-secondary btn-block ember-view btn-create-account">        create account</a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="myModalMenu" class="modal">
+    <div class="top-navigation mobile open modal-content">
+        <div class="scroll">
+            <div class="category-navigation">
+                <div id="ember101" class="mega-menu v-align-top qa-mega-menu __fd4a4 ember-view">  
+                    <div class="top-navigation-header">
+                        <a href="/us/en" class="home-link qa-home-link" data-ember-action="" data-ember-action-1171="1171">Home</a>
+                        <div class="clearfix top-level-actions">
+                            <button class="close qa-close" data-ember-action="" data-ember-action-1172="1172">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="top-navigation-title">Shop</div>
+                    <div>
+                        <div id="ember1174" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/c/l/women/womens?pagetype=clp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1174" data-toggle="collapse" data-ember-action="" data-ember-action-1176="1176">
+                                    Women
+                                    <span id="ember1175" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1174">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                        <div id="ember1178" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/c/l/men/mens?pagetype=clp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1178" data-toggle="collapse" data-ember-action="" data-ember-action-1180="1180">Men
+                                    <span id="ember1179" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1178">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                        <div id="ember1182" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/x/jeans?pagetype=slp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1182" data-toggle="collapse" data-ember-action="" data-ember-action-1184="1184">Jeans
+                                    <span id="ember1183" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1182">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                        <div id="ember1186" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/x/aerie/swimsuits?menu=cat4840006&amp;pagetype=slp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1186" data-toggle="collapse" data-ember-action="" data-ember-action-1188="1188">Swimsuits
+                                    <span id="ember1187" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1186">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                        <div id="ember1190" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/c/l/aerie/cat4840006?pagetype=clp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1190" data-toggle="collapse" data-ember-action="" data-ember-action-1192="1192">Aerie
+                                    <span id="ember1191" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1190">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                        <div id="ember1194" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/x/aerie/bras?menu=cat4840006&amp;pagetype=slp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1194" data-toggle="collapse" data-ember-action="" data-ember-action-1196="1196">Bras
+                                    <span id="ember1195" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"> </span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1194">
+                                <div class="container-fluid"> </div>
+                            </div>
+                        </div>
+                        <div id="ember1198" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/c/l/tailgate/cat8050004?pagetype=clp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1198" data-toggle="collapse" data-ember-action="" data-ember-action-1200="1200">Tailgate
+                                    <span id="ember1199" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1198">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                        <div id="ember1202" class="mega-menu-top-level qa-mega-menu-top-level __f3ac9 navigable ember-view">
+                            <div class="top-level-header qa-top-level-header ">
+                                <a href="/us/en/x/clearance?pagetype=slp" class="top-level-link qa-top-level-link" data-target=".collapse-ember1202" data-toggle="collapse" data-ember-action="" data-ember-action-1204="1204">
+                                    Clearance
+                                    <span id="ember1203" class="top-level-icon qa-top-level-icon fa fa-plus ember-view"></span>
+                                </a>
+                            </div>
+                            <div class="top-level-flyout collapse collapse-ember1202">
+                                <div class="container-fluid"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php elseif($header == 'header_4'): ?>
+    <?php // Header 4 ?>
+    <?php $topLeftBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_left_link')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    <?php $topMiddleBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_middle_block')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    
+    <div class="top-header-content">
+        <div class="container<?php if($header != 'header_3'): ?>-fluid<?php endif ?>">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Static block: header_1_top_left_link -->
+                    <?php if($topLeftBlock): ?>
+                        <div class="top-custom-link">
+                            <?php echo $topLeftBlock; ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Static block: header_1_top_middle_block -->
+                    <?php if($topMiddleBlock): ?>
+                        <div class="top-middle-header">
+                            <?php echo $topMiddleBlock; ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs col-sm-12 col-xs-12">
+                    <?php echo $storeLanguage ?>
+                    <?php echo $currency ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 mobile-item-col">
+                    <button class="action nav-toggle hidden-lg"><?php echo $imgToggleMenu ?></button>
+                    
+                    <div class="visible-lg">
+                        <?php echo $headerSocialBlock; ?>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-4 logo-header mobile-item-col"><?php echo $logo ?></div>
+                
+                <div class="col-md-4 col-sm-4 col-xs-auto mobile-item-col">
+                    <div class="table-icon-menu pull-right">
+                    
+                        <?php echo $topSearch ?>
+                        
+                        <?php echo $htmlTopLink ?>
+                        
+                        <?php echo $htmlWishlist; ?>
+                        
+                        <?php echo $miniCart ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-header-content">
+        <div class="megamenu-content">
+            <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+        </div>
+    </div>
+<?php elseif($header == 'header_5'): ?>
+    <?php // Header 5 ?>
+    <?php if($headerSocialBlock): ?>
+        <div class="top-header-content hidden-lg">
+            <!-- Static block: header_1_social_block -->
+            <?php echo $headerSocialBlock; ?>
+        </div>
+    <?php endif ?>
+
+    <div class="middle-header-content">
+        <div class="container">
+            <div class="middle-content">
+                <div class="action-menu-responsive hidden-lg">
+                    <button class="action nav-toggle"><?php echo $imgToggleMenu ?></button>
+                </div>
+                
+                <?php echo $logo ?>
+               
+                <div class="table-icon-menu">
+                    <?php echo $topSearch ?>
+                    
+                    <?php echo $htmlTopLink ?>
+                    
+                    <?php echo $htmlWishlist; ?>
+                    
+                    <?php echo $miniCart ?>
+                    <div class="switchers">
+		                <?php echo $storeLanguage ?>
+		                <?php echo $currency ?>
+	            	</div>
+                </div>
+
+                <div class="megamenu-content">
+                    <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+                </div>
+                
+                <?php if($headerSocialBlock): ?>
+                    <div class="bottom-header-custom-block visible-lg">
+                        <!-- Static block: header_1_social_block -->
+                        <?php echo $headerSocialBlock; ?>
+                    </div>
+                <?php endif ?>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        require([
+            "jquery"
+        ], function($){
+            $(document).ready(function(){
+                $(".header.header5 .navigation .nav-main-menu > li.mega-menu-fullwidth:not(.menu-2columns)").hover(function() {
+                    if($(window).width() > 1199){
+                        var widthMenu = $(window).width() - 360;
+                        $(this).find("> .dropdown-menu").width(widthMenu);
+                    }
+                });
+                $(".header.header5 .navigation .nav-main-menu > li.mega-menu-fullwidth.menu-2columns").hover(function() {
+                    if($(window).width() > 1199){
+                        $(this).find("> .dropdown-menu").width(500);
+                    }
+                });
+            });
+            
+            $(window).scroll(function () {
+                var headerLeftHeight = $(".header.header5").innerHeight();
+                var window_height = $(this).height();
+
+                if (headerLeftHeight - window_height < $(this).scrollTop()) {
+                    if (!$(".header.header5").hasClass("fixed-bottom")) {
+                        $(".header.header5").addClass("fixed-bottom");
+                    }
+                }
+                if (headerLeftHeight - window_height >= $(this).scrollTop()) {
+                    if ($(".header.header5").hasClass("fixed-bottom")) {
+                        $(".header.header5").removeClass("fixed-bottom");
+                    }
+                }
+            });
+        });
+    </script>
+<?php elseif($header == 'header_6'): ?>
+    <?php // Header 6 ?>
+    <?php $topLeftBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_left_link')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+
+    <?php $topMiddleBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_middle_block')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    <div class="top-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Static block: header_1_top_left_link -->
+                    <?php if($topLeftBlock): ?>
+                        <div class="top-custom-link">
+                            <?php echo $topLeftBlock; ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <?php if($topMiddleBlock): ?>
+                        <div class="top-middle-header">
+                            <?php echo $topMiddleBlock; ?>
+                        </div>
+                    <?php endif ?>
+                    <!-- Static block: header_1_top_middle_block -->
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs col-sm-12 col-xs-12">
+                    <?php echo $storeLanguage ?>
+                    <?php echo $currency ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 mobile-item-col">
+                    <button class="action nav-toggle"><?php echo $imgToggleMenu ?></button>
+                </div>
+                
+                <div class="col-md-4 col-sm-4 logo-header mobile-item-col"><?php echo $logo ?></div>
+                
+                <div class="col-md-4 col-sm-4 col-xs-auto mobile-item-col">
+                    <div class="table-icon-menu pull-right">
+                        <?php echo $topSearch ?>
+                        
+                        <?php echo $htmlTopLink ?>
+                        
+                        <?php echo $htmlWishlist; ?>
+                        
+                        <?php echo $miniCart ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="megamenu-content">
+        <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+    </div>
+<?php elseif($header == 'header_7'): ?>
+    <?php // Header 7 ?>
+    <?php $topLeftBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_left_link')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+
+    <?php $topMiddleBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_middle_block')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    <div class="top-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Static block: header_1_top_left_link -->
+                    <?php if($topLeftBlock): ?>
+                        <div class="top-custom-link">
+                            <?php echo $topLeftBlock; ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <?php if($topMiddleBlock): ?>
+                        <div class="top-middle-header">
+                            <?php echo $topMiddleBlock; ?>
+                        </div>
+                    <?php endif ?>
+                    <!-- Static block: header_1_top_middle_block -->
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs col-sm-12 col-xs-12">
+                    <?php echo $storeLanguage ?>
+                    <?php echo $currency ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 mobile-item-col">
+                    <button class="action nav-toggle visible-xs"><?php echo $imgToggleMenu ?></button>
+                    <div class="hidden-xs">
+                        <?php echo $headerSocialBlock; ?>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-4 logo-header mobile-item-col"><?php echo $logo ?></div>
+                
+                <div class="col-md-4 col-sm-4 col-xs-auto mobile-item-col">
+                    <div class="table-icon-menu pull-right">
+                        <?php echo $topSearch ?>
+                        
+                        <?php echo $htmlTopLink ?>
+                        
+                        <?php echo $htmlWishlist; ?>
+                        
+                        <?php echo $miniCart ?>
+                        
+                        <button class="action nav-toggle hidden-xs margin-left20"><?php echo $imgToggleMenu ?></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="megamenu-content">
+        <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+    </div>
+<?php elseif($header == 'header_8'): ?>
+    <?php // Header 8 ?>
+    <?php $topLeftBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_8_top_left_link')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+
+    <?php $topMiddleBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_1_top_middle_block')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+    <div class="top-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <!-- Static block: header_8_top_left_link -->
+                    <?php if($topLeftBlock): ?>
+                        <div class="top-custom-link">
+                            <?php echo $topLeftBlock; ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs col-xs-12">
+                    <?php echo $storeLanguage ?>
+                    <?php echo $currency ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header-content">
+        <div class="container">
+            <div class="row">
+            
+                <div class="col-lg-3 col-md-2 col-xs-6 logo-header"><?php echo $logo ?></div>
+                
+                <div class="col-lg-6 col-md-8 col-xs-12 parent__search"><?php echo $topSearch ?></div>
+                
+                <div class="col-lg-3 col-md-2 col-xs-6">
+                    <div class="table-icon-menu pull-right">
+                        <?php echo $htmlTopLink ?>
+                        
+                        <?php echo $htmlWishlist; ?>
+                        
+                        <div class="search-form select-search">
+                            <div class="actions-search visible-sm visible-xs">
+                                <button class="action-search" onclick="showHideFormSearch()"><i class="pe-7s-search"></i></button>
+                            </div>
+                        </div>
+                        
+                        <?php echo $miniCart ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-4">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('claue_vertical_menu_header')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+                </div>
+                <div class="col-lg-6 col-sm-2 parent__megameu">
+                    <div class="megamenu-content">
+                        <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+                    </div>
+                    <div class="text-right hidden-lg">
+                        <button class="action nav-toggle hidden-lg"><?php echo $imgToggleMenu ?></button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-12 hidden-xs">
+                    <div class="bottom-header-block"><?php echo $topMiddleBlock; ?></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php elseif($header == 'header_9'): ?>
+    <?php // Header 9 ?>
+    <?php $topLeftBlock = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header_8_top_left_link')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+
+    <div class="top-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <!-- Static block: header_8_top_left_link -->
+                    <?php if($topLeftBlock): ?>
+                        <div class="top-custom-link">
+                            <?php echo $topLeftBlock; ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs col-xs-12">
+                    <?php echo $storeLanguage ?>
+                    <?php echo $currency ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header-content">
+        <div class="container">
+            <div class="row">
+            
+                <div class="col-lg-3 col-md-3 col-xs-6 logo-header"><?php echo $logo ?></div>
+                
+                <div class="col-lg-9 col-md-9 col-xs-6 parent__megameu">
+                    <div class="megamenu-content">
+                        <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+                    </div>
+                    <div class="text-right hidden-lg">
+                        <button class="action nav-toggle hidden-lg"><?php echo $imgToggleMenu ?></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-12">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('claue_vertical_menu_header')->setCanUsePanel($canUsePanel)->toHtml(); ?>
+                </div>
+                <div class="col-lg-9 col-md-9 col-xs-12">
+                    <div class="parent__search">
+                        <?php echo $topSearch ?>
+                        <div class="table-icon-menu">
+                            <?php echo $htmlTopLink ?>
+                            
+                            <?php echo $htmlWishlist; ?>
+                            
+                            <div class="search-form select-search">
+                                <div class="actions-search visible-sm visible-xs">
+                                    <button class="action-search" onclick="showHideFormSearch()"><i class="pe-7s-search"></i></button>
+                                </div>
+                            </div>
+                            
+                            <?php echo $miniCart ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php elseif($header == 'header_10'): ?>
+    <?php // Header 10 ?>
+    <div class="middle-header-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-4 mobile-item-col">
+                    <button class="action nav-toggle hidden-lg"><?php echo $imgToggleMenu ?></button>
+                    <div class="visible-lg">
+                        <?php echo $storeLanguage ?>
+                        <?php echo $currency ?>
+                    </div>
+                </div>
+                
+                <div class="hidden-lg col-md-4 col-sm-4 logo-header mobile-item-col"><?php echo $logo ?></div>
+                
+                <div class="col-lg-8 col-xs-12 megamenu-content">
+                    <?php echo $htmlTabMenu ?><?php echo $htmlTabContent ?>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4 col-xs-auto mobile-item-col">
+                    <div class="table-icon-menu pull-right">
+                        <?php echo $topSearch ?>
+                        
+                        <?php echo $htmlTopLink ?>
+                        
+                        <?php echo $htmlWishlist; ?>
+                        
+                        <?php echo $miniCart ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+<?php endif ?>
+
+<?php if(!($header == 'header_5')){echo $subCategories;}?>
+
+<button class="action close-nav-button"><span class="pe-7s-close" aria-hidden="true"></span></button>

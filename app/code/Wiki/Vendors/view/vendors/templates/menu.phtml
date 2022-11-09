@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+
+
+<aside class="main-sidebar" id="main-sidebar">
+    <section class="sidebar">
+      <?php echo $block->getChildHtml('menu_before')?>
+      <?php /* @escapeNotVerified */ echo $block->renderNavigation($block->getMenuModel(), 0, 12); ?>
+      <?php echo $block->getChildHtml('menu_after')?>
+    </section>
+</aside>
+<script type="text/javascript">
+require(['jquery'], function($){
+  $(document).ready(function(){
+    var img = document.getElementById('img-logo-seller'); 
+    //or however you get a handle to the IMG
+    var width = img.clientWidth;
+    var height = img.clientHeight;
+    document.getElementById("main-sidebar").style.paddingTop = height+ "px";
+  });
+});
+</script>

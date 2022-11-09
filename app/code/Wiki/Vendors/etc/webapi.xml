@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <route url="/V1/seller/:sellerId/main-address" method="GET">
+        <service class="Wiki\Vendors\Api\SellerAddressInterface" method="getDefaultMainAddress"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/seller/:sellerId/shipping-address" method="GET">
+        <service class="Wiki\Vendors\Api\SellerAddressInterface" method="getDefaultShippingAddress"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/seller/:sellerId/return-address" method="GET">
+        <service class="Wiki\Vendors\Api\SellerAddressInterface" method="getDefaultReturnAddress"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/seller/address/create" method="POST">
+        <service class="Wiki\Vendors\Api\SellerAddressInterface" method="saveAddress"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/seller/address/:addressId/update" method="PUT">
+        <service class="Wiki\Vendors\Api\SellerAddressInterface" method="updateAddress"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/seller/:sellerId/default-address" method="PUT">
+        <service class="Wiki\Vendors\Api\SellerAddressInterface" method="saveDefaultAddress"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/seller/address/:addressId" method="DELETE">
+        <service class="Wiki\Vendors\Api\SellerAddressInterface" method="deleteAddress"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <!-- Customer Group -->
+    <route url="/V1/seller/getStoreConfig" method="GET">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="getStoreConfig"/>
+        <resources>
+            <resource ref="Wiki_Vendors::vendors"/>
+        </resources>
+    </route>
+    <route url="/V1/seller/loginSeller" method="POST">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="loginSeller"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/seller/create" method="POST">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="createSeller"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    
+    <route url="/V1/seller/edit/:vendorId" method="PUT">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="updateDataMyStore"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/seller/novice/:vendorId" method="PUT">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="noviceSeller"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/searchProductID" method="POST">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="searchProductID"/>
+        <resources>
+            <resource ref="Wiki_Vendors::vendors"/>
+        </resources>
+    </route>
+    <route url="/V1/addProductToCategory" method="POST">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="addProductToCategory"/>
+        <resources>
+            <resource ref="Wiki_Vendors::vendors"/>
+        </resources>
+    </route>
+    <route url="/V1/searchProductManagement" method="POST">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="searchProductManagement"/>
+        <resources>
+            <resource ref="Wiki_Vendors::vendors"/>
+        </resources>
+    </route>
+
+    <route url="/V1/seller/get-info" method="POST">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="getInfoVendor"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/seller/list-products/:vendorId" method="GET">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="getItemsByVendorId"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/seller/list-buyer-orders/:vendorId" method="GET">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="getBuyerOrderOfVendorId"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/seller/list-seller-orders/:vendorId" method="GET">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="getSellerOrderOfVendorId"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/seller/count-orders-by-status/:id/:type" method="GET">
+        <service class="Wiki\Vendors\Api\SellerManagementInterface" method="countOrdersByStatus"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Wiki_VendorsReport::report_menu" title="Reports" translate="title" module="Wiki_VendorsReport" parent="Wiki_Vendors::marketplace"
+         dependsOnModule="Wiki_VendorsReport" resource="Wiki_VendorsReport::report"/>
+
+        <add id="Wiki_VendorsReport::report_sales" title="Sales" sortOrder="10" module="Wiki_VendorsReport" parent="Wiki_VendorsReport::report_menu" 
+         action="wiki_report/report" resource="Wiki_VendorsReport::report_sales" dependsOnModule="Wiki_VendorsReport" />
+    </menu>
+   
+</config>

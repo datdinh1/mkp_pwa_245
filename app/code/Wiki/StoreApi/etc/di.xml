@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Wiki\StoreApi\Api\CouponListInterface" type="Wiki\StoreApi\Model\CouponList"/>
+    <preference for="Wiki\StoreApi\Api\Data\CouponInterface" type="Wiki\StoreApi\Model\Api\Data\Coupon"/>
+    <preference for="Wiki\StoreApi\Api\Data\RuleInterface" type="Wiki\StoreApi\Model\Api\Data\Rule" />
+    <preference for="Wiki\StoreApi\Api\Data\CardInterface" type="Wiki\StoreApi\Model\Card"/>
+    <preference for="Wiki\StoreApi\Api\CardManagementInterface" type="Wiki\StoreApi\Model\Api\CardManagement"/>
+    <preference for="Wiki\StoreApi\Api\Data\SettingInterface" type="Wiki\StoreApi\Model\Api\Data\Setting"/>
+    <preference for="Wiki\StoreApi\Api\StoreManagementInterface" type="Wiki\StoreApi\Model\Api\StoreManagement"/>
+    <preference for="Wiki\StoreApi\Api\CartsMineInterface" type="Wiki\StoreApi\Model\Carts\CartsMineRepository"/>
+    <preference for="Wiki\StoreApi\Api\Data\DataProductOutStockInterface" type="Wiki\StoreApi\Model\Api\Data\DataProductOutStock"/>
+    <preference for="Wiki\StoreApi\Api\Data\ShippingMethodInterface" type="Wiki\StoreApi\Model\Api\Data\ShippingMethod"/>
+    <preference for="Wiki\StoreApi\Api\Data\AddressInterface" type="Wiki\StoreApi\Model\Api\Data\Address"/>
+
+    <type name="Magento\SalesRule\Api\RuleRepositoryInterface">
+        <plugin name="Wiki_StoreApi::image" type="Wiki\StoreApi\Model\Plugin\RuleAttributeImage"/>
+    </type>
+    <type name="Magento\Customer\Api\CustomerRepositoryInterface">
+        <plugin name="Wiki_StoreApi::extension_attributes" type="Wiki\StoreApi\Model\Plugin\CustomerRepositoryPlugin"/>
+    </type>
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="district_sub_district" type="Wiki\StoreApi\Model\Plugin\OrderGet"/>
+    </type>
+</config>

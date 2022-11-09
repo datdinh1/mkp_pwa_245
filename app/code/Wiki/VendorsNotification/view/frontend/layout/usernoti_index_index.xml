@@ -1,0 +1,15 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd"> 
+<update handle="customer_account"/> 
+<head>
+
+     <!-- <script src="Wiki_VendorsNotification::js/notification.js"/> -->
+<css src="Wiki_VendorsNotification::css/styleNotification.css" />​
+</head>
+   <body>
+        <referenceContainer name="content">     
+            <block class="Wiki\VendorsNotification\Block\Frontend\Display" name="notification_display"
+             template="Wiki_VendorsNotification::display.phtml"  />
+        </referenceContainer>     
+    </body>
+
+</page> 

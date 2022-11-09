@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="Wiki_VendorsCredit::credit" title="Credit" module="Wiki_VendorsCredit" sortOrder="40" parent="Wiki_Vendors::marketplace" dependsOnModule="Wiki_VendorsCredit" resource="Wiki_VendorsCredit::credit"/>
+    	<add id="Wiki_VendorsCredit::credit_pending" title="Escrow Transactions" sortOrder="10" module="Wiki_VendorsCredit" parent="Wiki_VendorsCredit::credit" action="vendors/credit/pending" dependsOnModule="Wiki_VendorsCredit" resource="Wiki_VendorsCredit::credit_pending"/>
+    	<add id="Wiki_VendorsCredit::credit_transactions" title="Credit Transactions" sortOrder="20" module="Wiki_VendorsCredit" parent="Wiki_VendorsCredit::credit" action="vstorecredit/transaction" dependsOnModule="Wiki_VendorsCredit" resource="Wiki_VendorsCredit::credit_transactions"/>
+    	<add id="Wiki_VendorsCredit::credit_pending_withdrawal" title="Pending Withdrawal" sortOrder="30" module="Wiki_VendorsCredit" parent="Wiki_VendorsCredit::credit" action="vendors/credit_withdrawal/pending" dependsOnModule="Wiki_VendorsCredit" resource="Wiki_VendorsCredit::credit_pending_withdrawal"/>
+    	<add id="Wiki_VendorsCredit::credit_all_withdrawal" title="All Withdrawal" sortOrder="40" module="Wiki_VendorsCredit" parent="Wiki_VendorsCredit::credit" action="vendors/credit_withdrawal" dependsOnModule="Wiki_VendorsCredit" resource="Wiki_VendorsCredit::credit_all_withdrawal"/>
+    </menu>
+</config>

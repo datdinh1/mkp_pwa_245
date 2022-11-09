@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Wiki_Vendors::vendor">
+                <resource id="Wiki_Vendors::catalog" title="Catalog" translate="title" sortOrder="25">
+                    <!--                    <resource id="Wiki_Vendors::catalog_product" title="Manage Products" translate="title" sortOrder="10">-->
+                    <!--                    	<resource id="Wiki_Vendors::product_actions" title="Actions" translate="title" sortOrder="10">-->
+                    <!--                    		<resource id="Wiki_Vendors::product_action_save" title="Add/Edit" translate="title" sortOrder="10" />-->
+                    <!--                    		<resource id="Wiki_Vendors::product_action_delete" title="Delete" translate="title" sortOrder="10" />-->
+                    <!--                    	</resource>-->
+                    <!--                    </resource>-->
+                    <resource id="Wiki_Vendors::catalog_dashboard" title="Dashboard" translate="title" sortOrder="10" />
+                    <resource id="Wiki_Vendors::catalog_addEdit" title="Add New Product" translate="title" sortOrder="20" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

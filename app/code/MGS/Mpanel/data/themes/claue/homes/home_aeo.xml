@@ -1,0 +1,1198 @@
+<home>
+	<section>
+		<name><![CDATA[block1]]></name>
+		<theme_name><![CDATA[]]></theme_name>
+		<block_cols><![CDATA[12]]></block_cols>
+		<tablet_cols><![CDATA[["12"]]]></tablet_cols>
+		<mobile_cols><![CDATA[["12"]]]></mobile_cols>
+		<block_class><![CDATA[[""]]]></block_class>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat><![CDATA[0]]></background_repeat>
+		<background_cover><![CDATA[0]]></background_cover>
+		<parallax><![CDATA[0]]></parallax>
+		<fullwidth><![CDATA[1]]></fullwidth>
+		<padding_top><![CDATA[]]></padding_top>
+		<padding_bottom><![CDATA[]]></padding_bottom>
+		<block_position><![CDATA[1]]></block_position>
+	</section>
+	<section>
+		<name><![CDATA[block2]]></name>
+		<theme_name><![CDATA[]]></theme_name>
+		<block_cols><![CDATA[12]]></block_cols>
+		<tablet_cols><![CDATA[["12"]]]></tablet_cols>
+		<mobile_cols><![CDATA[["12"]]]></mobile_cols>
+		<block_class><![CDATA[[""]]]></block_class>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat><![CDATA[0]]></background_repeat>
+		<background_cover><![CDATA[0]]></background_cover>
+		<parallax><![CDATA[0]]></parallax>
+		<fullwidth><![CDATA[1]]></fullwidth>
+		<padding_top><![CDATA[]]></padding_top>
+		<padding_bottom><![CDATA[]]></padding_bottom>
+		<block_position><![CDATA[2]]></block_position>
+	</section>
+	<section>
+		<name><![CDATA[block3]]></name>
+		<theme_name><![CDATA[]]></theme_name>
+		<block_cols><![CDATA[12]]></block_cols>
+		<tablet_cols><![CDATA[["12"]]]></tablet_cols>
+		<mobile_cols><![CDATA[["12"]]]></mobile_cols>
+		<block_class><![CDATA[[""]]]></block_class>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat><![CDATA[0]]></background_repeat>
+		<background_cover><![CDATA[0]]></background_cover>
+		<parallax><![CDATA[0]]></parallax>
+		<fullwidth><![CDATA[1]]></fullwidth>
+		<padding_top><![CDATA[]]></padding_top>
+		<padding_bottom><![CDATA[]]></padding_bottom>
+		<block_position><![CDATA[3]]></block_position>
+	</section>
+	<section>
+		<name><![CDATA[block4]]></name>
+		<theme_name><![CDATA[]]></theme_name>
+		<block_cols><![CDATA[12]]></block_cols>
+		<tablet_cols><![CDATA[["12"]]]></tablet_cols>
+		<mobile_cols><![CDATA[["12"]]]></mobile_cols>
+		<block_class><![CDATA[[""]]]></block_class>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat><![CDATA[0]]></background_repeat>
+		<background_cover><![CDATA[0]]></background_cover>
+		<parallax><![CDATA[0]]></parallax>
+		<fullwidth><![CDATA[1]]></fullwidth>
+		<padding_top><![CDATA[]]></padding_top>
+		<padding_bottom><![CDATA[]]></padding_bottom>
+		<block_position><![CDATA[4]]></block_position>
+	</section>
+	<section>
+		<name><![CDATA[block5]]></name>
+		<theme_name><![CDATA[]]></theme_name>
+		<block_cols><![CDATA[12]]></block_cols>
+		<tablet_cols><![CDATA[["12"]]]></tablet_cols>
+		<mobile_cols><![CDATA[["12"]]]></mobile_cols>
+		<block_class><![CDATA[[""]]]></block_class>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat><![CDATA[0]]></background_repeat>
+		<background_cover><![CDATA[0]]></background_cover>
+		<parallax><![CDATA[0]]></parallax>
+		<fullwidth><![CDATA[1]]></fullwidth>
+		<padding_top><![CDATA[]]></padding_top>
+		<padding_bottom><![CDATA[]]></padding_bottom>
+		<block_position><![CDATA[5]]></block_position>
+	</section>
+	<section>
+		<name><![CDATA[block6]]></name>
+		<theme_name><![CDATA[]]></theme_name>
+		<block_cols><![CDATA[12]]></block_cols>
+		<tablet_cols><![CDATA[["12"]]]></tablet_cols>
+		<mobile_cols><![CDATA[["12"]]]></mobile_cols>
+		<block_class><![CDATA[[""]]]></block_class>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat><![CDATA[0]]></background_repeat>
+		<background_cover><![CDATA[0]]></background_cover>
+		<parallax><![CDATA[0]]></parallax>
+		<fullwidth><![CDATA[1]]></fullwidth>
+		<padding_top><![CDATA[]]></padding_top>
+		<padding_bottom><![CDATA[]]></padding_bottom>
+		<block_position><![CDATA[6]]></block_position>
+	</section>
+	<section>
+		<name><![CDATA[block7]]></name>
+		<theme_name><![CDATA[]]></theme_name>
+		<block_cols><![CDATA[12]]></block_cols>
+		<tablet_cols><![CDATA[["12"]]]></tablet_cols>
+		<mobile_cols><![CDATA[["12"]]]></mobile_cols>
+		<block_class><![CDATA[[""]]]></block_class>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat><![CDATA[0]]></background_repeat>
+		<background_cover><![CDATA[0]]></background_cover>
+		<parallax><![CDATA[0]]></parallax>
+		<fullwidth><![CDATA[1]]></fullwidth>
+		<padding_top><![CDATA[]]></padding_top>
+		<padding_bottom><![CDATA[]]></padding_bottom>
+		<block_position><![CDATA[7]]></block_position>
+	</section>
+	<section>
+		<name><![CDATA[block8]]></name>
+		<theme_name><![CDATA[]]></theme_name>
+		<block_cols><![CDATA[12]]></block_cols>
+		<tablet_cols><![CDATA[["12"]]]></tablet_cols>
+		<mobile_cols><![CDATA[["12"]]]></mobile_cols>
+		<block_class><![CDATA[[""]]]></block_class>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat><![CDATA[0]]></background_repeat>
+		<background_cover><![CDATA[0]]></background_cover>
+		<parallax><![CDATA[0]]></parallax>
+		<fullwidth><![CDATA[1]]></fullwidth>
+		<padding_top><![CDATA[]]></padding_top>
+		<padding_bottom><![CDATA[]]></padding_bottom>
+		<block_position><![CDATA[8]]></block_position>
+	</section>
+	<section>
+		<name><![CDATA[block9]]></name>
+		<theme_name><![CDATA[]]></theme_name>
+		<block_cols><![CDATA[12]]></block_cols>
+		<tablet_cols><![CDATA[["12"]]]></tablet_cols>
+		<mobile_cols><![CDATA[["12"]]]></mobile_cols>
+		<block_class><![CDATA[[""]]]></block_class>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat><![CDATA[0]]></background_repeat>
+		<background_cover><![CDATA[0]]></background_cover>
+		<parallax><![CDATA[0]]></parallax>
+		<fullwidth><![CDATA[1]]></fullwidth>
+		<padding_top><![CDATA[]]></padding_top>
+		<padding_bottom><![CDATA[]]></padding_bottom>
+		<block_position><![CDATA[9]]></block_position>
+	</section>
+	<section>
+		<name><![CDATA[block10]]></name>
+		<theme_name><![CDATA[]]></theme_name>
+		<block_cols><![CDATA[12]]></block_cols>
+		<tablet_cols><![CDATA[["12"]]]></tablet_cols>
+		<mobile_cols><![CDATA[["12"]]]></mobile_cols>
+		<block_class><![CDATA[[""]]]></block_class>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat><![CDATA[0]]></background_repeat>
+		<background_cover><![CDATA[0]]></background_cover>
+		<parallax><![CDATA[0]]></parallax>
+		<fullwidth><![CDATA[1]]></fullwidth>
+		<padding_top><![CDATA[]]></padding_top>
+		<padding_bottom><![CDATA[]]></padding_bottom>
+		<block_position><![CDATA[10]]></block_position>
+	</section>
+	<block>
+		<block_name><![CDATA[block1-0]]></block_name>
+		<type><![CDATA[static]]></type>
+		<position><![CDATA[2]]></position>
+		<setting><![CDATA[{"animation":"","animation_delay":""}]]></setting>
+		<col><![CDATA[12]]></col>
+		<class><![CDATA[]]></class>
+		<block_content><![CDATA[
+		<div class="cms-content">
+			<div class="cms-hero-small">
+				<div class="cms-aeo-picture-min-height-hero">
+					<picture>
+						<source media="(min-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190621_aehp_ohsaleyes_lg?scl=1&qlt=60">
+						<source media="(max-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190621_aehp_ohsaleyes_sm?scl=1&qlt=60">
+						<img src="/7d2.scene7.com/is/image/aeo/20190621_aehp_ohsaleyes_lg?scl=1&qlt=60" class="imgHero img-responsive"/>
+					</picture>
+				</div>
+			</div>
+			<div class="cms-pad0px-17px"></div>
+			<div class="cms-overlay"><!--Row Container-->
+				<div class="row cms-overlay-height-row">
+					<div class="col-md-7 col-xs-1 cms-col-offset"></div>
+					<div class="col-md-4 col-xs-10 cms-overlay-height-col">
+						<div class="cms-overlay-content">
+							<div class="cms-overlay-content-inner">
+								<div class="cms-sub-header"> 
+									<p>ONLINE ONLY THROUGH MONDAY</p>
+								</div>
+								<div class="cms-pad8px-8px"></div> 
+								<div class="cms-title">
+									<p>60% OFF CLEARANCE</p> 
+								</div>
+								<div class="cms-pad8px-8px"></div> 
+								<div class="cms-subheader-fontsize-medium-web"> 
+									<p>+ TAKE AN ADDITIONAL 10% OFF</p>
+								</div>
+								<div class="cms-pad24px-20px"></div>
+								<div>
+									<div class="row">
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1">
+											<a data-link-text="SHOP WOMEN" class=" btn btn-block btn-secondary-transparent option-button cms-video-content-top" href="/us/en/c/women/women-s-clearance/11gj7jfZ13v7thc-filtered?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP WOMEN</a>
+										</div>
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="SHOP MEN" class=" btn btn-block btn-secondary-transparent option-button cms-video-content-top" href="/us/en/c/men/men-s-clearance/1hnv8q2Z13v7thc-filtered?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP MEN</a>
+										</div>
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="SHOP AERIE" class=" btn btn-block btn-secondary-transparent option-button cms-video-content-top" href="/us/en/c/aerie/aerie-clearance/1k7sqlcZ13v7thc-filtered?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP AERIE</a>
+										</div>
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="SHOP TAILGATE" class=" btn btn-block btn-secondary-transparent option-button cms-video-content-top" href="/us/en/c/tailgate/tailgate/fi0jtfZ13v7thc-filtered?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP TAILGATE</a>
+										</div>
+									</div>
+								</div>
+								<div class="cms-pad10px-8px"></div>
+								<div class="cms-use-code ">
+									<p>
+										<span class="cms-use-code-label ">USE CODE:</span> 
+										<span id="text-to-copy1435818636100" data-clipboard-text="OHSALE" class="cms-code-here">OHSALE</span>
+									</p>
+								</div>
+								<div class="cms-pad10px-10px"></div>
+								<div class="cms-details">
+									<div class="modal animate cms-accordions modal-valign" id="TandC948648357317823270" tabindex="-1" role="dialog" aria-labelledby="TandC" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">×</span>
+													</button>
+													<h4 class="modal-title" id="myModalLabel">Details</h4>
+												</div>
+												<div class="modal-body">
+													<div class="panel-group" id="accordion9" role="tablist" aria-multiselectable="true">
+														<div class="panel-default">
+															<div class="panel-heading" role="tab" id="heading1">
+																<h4 class="panel-title">
+																	<div>Buy One AEO® or Aerie® Clearance Item And Get One AEO® or Aerie® Clearance Item For Free*</div>
+																</h4>
+															</div>
+															<div class="cms-single-body guide-modal-window">
+																<div class="cms-panel-body-content cms-panel-body-single scroll-container custom-scroll">Beginning March 5, 2015 at 6:00 PM EST for a limited time online only, buy one AEO® or Aerie® Clearance Item and get one AEO® or Aerie® Clearance Item of equal or lesser value for free*  online only at ae.com or aerie.com . Must purchase two AEO® or Aerie® Clearance Items to qualify. All prices and/or promotions at ae.com and aerie.com are reflected in USD. This offer may be combined with some coupon codes, see coupon for terms and conditions. Discount applies to merchandise costs only, not tax and shipping &amp; handling costs. Not applicable toward previously purchased merchandise. Not valid in AEO® stores, Aerie® stores, on AEO® clearance jeans, Aerie® clearance undies, clearance Tailgate merchandise and merchandise from these brands: American Crafts, Artisan De Luxe, Audiology, Baggu, Ban.Do, Bass, BC, Beauty For Real, Bed Stu, Big Mouth INC, Birkenstock, Bravado, BTW, CAT Footwear, Clarks, Classy Chargers, Compagnie de Provence, Creative Recreation, Chronicle Books, CoLab, Color Factory, CROWNJWLZ, Define, DIOY, Dr. Martens, Dr. Scholl,  Durango, Dolce Vita, Eastland, Fjallraven, Emoji, EOS,  Formation Brands, Found My Animal, Fred &amp; Friends, Fringe, Glory/Goorin, GOLA, Hachette, Half United, Hang Ten, Heidi Swapp, Henschel, Hunter, IMM, Just Mustard, Living, Keds, Keep It Simple, Kelsi Dagger, Kikkerland, Knock Knock, Knot &amp; Bow, K.Swiss, LAQA,  Laline, Lack of Color, Liberty, LIFE Line, Lulu DK, Luxy Lemon, Make Up Eraser, Marquee Market, Matisse, Meri Meri, Minnetonka, Moorish, Mountain Ocean, Muses &amp; Rebels, New Balance, NPW, Nudestix, Octopus Books, Paddywax, Palladium, Pendleton, PF Flyers, Pinch, PONY, Quadrille, Quay, Reebok, Rosanna, Royal Apothic, Scarlett Kitty, Seychelles, Slant, Sprigs, Street Level, Sun Bum, Sunnylife, Swedish Hasbeens, Talking Tables, Tangle Teezer, Tattly, Teva, Thorogood, Timberland, Tonymoly, Topo, Tretorn, Triple C, Volley, Wallpops, Whish, Wild + Wolf, Wolverine, Woolrich, Word, and Workman.*WHEN REDEEMING ONLINE FOR INTERNATIONAL CUSTOMERS, FREE AEO® OR AERIE® CLEARANCE ITEM WILL BE $0.01 PLUS SHIPPING AND HANDLING. OFFER'S VALUE WILL NOT BE REFUNDED UPON RETURN EXCEPT ONLINE RETURNS OF A $0.01. AEO® OR AERIE® CLEARANCE ITEM WILL BE REFUNDED $0.01.
+																	<div class="cms-copyright">© 2019 AEO MANAGEMENT CO. ALL RIGHTS RESERVED.</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<p>
+										<span>Excludes jeans, underwear &amp; other items. &nbsp;</span>
+										<span>
+											<a href="/us/en/content/help/terms-and-conditions" data-link-text="Details" class="cms-link-text-white " data-cms-agwa-link="">Details</a> 
+										</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	]]></block_content>
+	</block>
+	<block>
+		<block_name><![CDATA[block2-0]]></block_name>
+		<type><![CDATA[static]]></type>
+		<position><![CDATA[2]]></position>
+		<setting><![CDATA[{"animation":"","animation_delay":""}]]></setting>
+		<col><![CDATA[12]]></col>
+		<class><![CDATA[]]></class>
+		<block_content><![CDATA[
+		<div class="cms-content">
+			<div class="cms-hero-small">
+				<div class="cms-aeo-picture-min-height-hero  cms-aeo-picture-overlay">
+					<picture>
+						<source media="(min-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190720_aehp_aexme_lg_2?scl=1&qlt=60">
+						<source media="(max-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190720_aehp_aexme_sm?scl=1&qlt=60">
+						<img src="//s7d2.scene7.com/is/image/aeo/20190720_aehp_aexme_lg_2?scl=1&qlt=60" class="imgHero img-responsive"/>
+					</picture>
+				</div>
+			</div>
+			<div class="cms-pad0px-17px"></div>
+			<div class="cms-overlay"><!--Row Container-->
+				<div class="row cms-overlay-height-row">
+					<div class="col-md-1 col-xs-1 cms-col-offset"></div>
+					<div class="col-md-4 col-xs-10 text-section2 cms-overlay-height-col ">
+						<div class="cms-overlay-content cms-overlay-content-overlay-height">
+							<div class="cms-overlay-content-inner cms-overlay-content-top color-black">
+								<div class="cms-sub-header cms-sub-header-lg-black_000000_100 cms-sub-header-xs-black_000000_100 cms-avenir "> 
+									<p>VACAY STARTS NOW.</p>
+								</div>
+								<div class="cms-pad8px-8px"></div> 
+								<div class="cms-title">
+									<p>THIS IS YOUR PLACE.</p> 
+								</div>
+								<div class="cms-pad8px-8px"></div> 
+								<div class="cms-desc">  
+									<p>The #AExME crew is doing summer their way. Real travel, real friends – and you're invited.</p>
+								</div>
+								<div class="cms-pad24px-20px"></div>
+								<div class="cms-btns">
+									<div class="row">
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="WHAT IS AE X ME?" class="btn btn-block btn-primary btn-primary option-button cms-video-content-top btn-bg-yellow-color-black" href="/us/en/x/women/featured/ae-x-me" target="_self" data-cms-agwa-link="">WHAT IS AE X ME?</a>
+										</div>
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="VIEW GALLERY" class="btn btn-block btn-primary btn-primary option-button cms-video-content-top btn-bg-yellow-color-black" href="/us/en/x/women/featured/style-gallery" target="_self" data-cms-agwa-link="">VIEW GALLERY</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	]]></block_content>
+	</block>
+	<block>
+		<block_name><![CDATA[block3-0]]></block_name>
+		<type><![CDATA[static]]></type>
+		<position><![CDATA[2]]></position>
+		<setting><![CDATA[{"animation":"","animation_delay":""}]]></setting>
+		<col><![CDATA[12]]></col>
+		<class><![CDATA[]]></class>
+		<block_content><![CDATA[
+	<div class="cms-content">
+		<div class="cms-hero-small">
+			<div class="cms-aeo-picture-min-height-hero  cms-aeo-picture-overlay">
+				<picture>
+					<source media="(min-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190720_aehp_bogojeansshorts_lg?scl=1&amp;qlt=60">
+					<source media="(max-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190720_aehp_bogojeansshorts_sm?scl=1&amp;qlt=60">
+					<img src="//s7d2.scene7.com/is/image/aeo/20190720_aehp_bogojeansshorts_lg?scl=1&amp;qlt=60" class="imgHero img-responsive"/>
+				</picture>
+			</div>
+		</div>
+		<div class="cms-pad0px-17px"></div>
+		<div class="cms-overlay">
+			<div class="row cms-overlay-height-row">
+				<div class="col-md-7 col-xs-1 cms-col-offset"></div>
+				<div class="col-md-4 col-xs-10 text-center cms-overlay-height-col">
+					<div class="cms-overlay-content cms-overlay-content-overlay-height">
+						<div class="cms-overlay-content-inner cms-overlay-content-top color-black">
+							<div class="cms-sub-header cms-sub-header-lg-black_000000_100 cms-sub-header-xs-black_000000_100 cms-avenir "> 
+								<p>LIMITED TIME: ONLINE ONLY</p>
+							</div>
+							<div class="cms-pad8px-8px"></div> 
+							<div class="cms-title cms-title-lg-black_000000_100 cms-title-xs-black_000000_100 ">
+								<p>25-50% OFF ALL AE JEANS &amp; SHORTS</p> 
+							</div>
+							<div class="cms-pad24px-20px"></div> 
+								<div class="cms-btns">
+									<div class="row">
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="SHOP WOMEN'S JEANS" class=" btn btn-block btn-primary btn-primary option-button cms-video-content-top  btn-bg-yellow-color-black" href="/us/en/c/women/bottoms/jeans/cat6430042?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP WOMEN'S JEANS</a>
+										</div>
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="SHOP MEN'S JEANS" class=" btn btn-block btn-primary btn-primary option-button cms-video-content-top btn-bg-yellow-color-black" href="/us/en/c/men/bottoms/jeans/cat6430041?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP MEN'S JEANS</a>
+										</div>
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="SHOP WOMEN'S SHORTS" class=" btn btn-block btn-primary btn-primary option-button cms-video-content-top btn-bg-yellow-color-black" href="/us/en/c/women/bottoms/shorts/cat380159?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP WOMEN'S SHORTS</a>
+										</div>
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="SHOP MEN'S SHORTS" class=" btn btn-block btn-primary btn-primary option-button cms-video-content-top btn-bg-yellow-color-black" href="/us/en/c/men/bottoms/shorts/cat5180435?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP MEN'S SHORTS</a>
+										</div>
+									</div>
+								</div>
+								<div class="cms-pad10px-8px"></div>
+								<div class="cms-details">
+									<div class="modal animate cms-accordions modal-valign" id="TandC914072311499244009" tabindex="-1" role="dialog" aria-labelledby="TandC" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">×</span>
+													</button>
+													<h4 class="modal-title" id="myModalLabel">Details</h4>
+												</div>
+												<div class="modal-body">
+													<div class="panel-group" id="accordion9" role="tablist" aria-multiselectable="true">
+														<div class="panel-default">
+															<div class="panel-heading" role="tab" id="heading1">
+																<h4 class="panel-title"><div></div></h4>
+															</div>
+														<div class="cms-single-body guide-modal-window">
+															<div class="cms-panel-body-content cms-panel-body-single scroll-container custom-scroll">
+																<div class="cms-copyright">© 2019 AEO Management Co. All Rights Reserved.</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<p class="cms-details-lg-black_000000_100 cms-details-xs-black_000000_100 ">
+									<span class="cms-avenir">Excludes clearance &amp; other items. Prices as marked.&nbsp;</span>
+									<span class="cms-link-wrap"></span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	]]></block_content>
+	</block>
+	<block>
+		<block_name><![CDATA[block4-0]]></block_name>
+		<type><![CDATA[static]]></type>
+		<position><![CDATA[2]]></position>
+		<setting><![CDATA[{"animation":"","animation_delay":""}]]></setting>
+		<col><![CDATA[12]]></col>
+		<class><![CDATA[]]></class>
+		<block_content><![CDATA[
+		<div class="cms-content">
+			<div class="cms-hero-small">
+				<div class="cms-aeo-picture-min-height-hero  cms-aeo-picture-overlay">
+					<picture>
+						<source media="(min-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190719_aehp_credit_lg?scl=1&amp;qlt=60">
+						<source media="(max-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190719_aehp_credit_sm?scl=1&amp;qlt=60">
+						<img src="//s7d2.scene7.com/is/image/aeo/20190719_aehp_credit_lg?scl=1&amp;qlt=60" class="imgHero img-responsive"/>
+					</picture>
+				</div>
+			</div>
+			<div class="cms-pad0px-17px"></div>
+			<div class="cms-overlay">
+				<div class="row cms-overlay-height-row">
+					<div class="col-md-1 col-xs-1 cms-col-offset"></div>
+					<div class="col-md-4 col-xs-10 text-center cms-overlay-height-col">
+						<div class="cms-overlay-content cms-overlay-content-overlay-height">
+							<div class="cms-overlay-content-inner cms-overlay-content-top color-black">
+								<div class="cms-sub-header cms-sub-header-lg-black_000000_100 cms-sub-header-xs-black_000000_100 cms-avenir ">
+									<p>IN STORES &amp; ONLINE THROUGH SUNDAY</p>
+								</div>
+								<div class="cms-pad8px-8px"></div>
+								<div class="cms-title cms-title-lg-black_000000_100 cms-title-xs-black_000000_100 cms-avenirdemi">
+									<p>TAKE AN ADDITIONAL 25% OFF</p> 
+								</div>
+								<div class="cms-pad8px-8px"></div>
+								<div class="cms-desc cms-desc-lg-black_000000_100 cms-desc-xs-black_000000_100 cms-avenir ">  
+									<p>With your new AEO Connected® credit card!</p>
+								</div>
+								<div class="cms-pad24px-20px"></div>
+								<div class="cms-btns">
+									<div class="row">
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="APPLY NOW" class="btn btn-block btn-transparent-black option-button cms-video-content-top cms-avenirdemi" href="/us/en/content/credit" target="_blank" data-cms-agwa-link="">APPLY NOW</a>
+										</div>
+									</div>
+								</div>
+								<div class="cms-pad10px-8px"></div>
+								<div class="cms-details">
+									<div class="modal animate cms-accordions modal-valign" id="TandC-1951387883347790723" tabindex="-1" role="dialog" aria-labelledby="TandC" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">×</span>
+													</button>
+													<h4 class="modal-title" id="myModalLabel">Details</h4>
+												</div>
+												<div class="modal-body">
+													<div class="panel-group" id="accordion9" role="tablist" aria-multiselectable="true">
+														<div class="panel-default">
+															<div class="panel-heading" role="tab" id="heading1">
+																<h4 class="panel-title">
+																	<div>TAKE AN ADDITIONAL 30% OFF WHEN YOU USE YOUR AEO/CONNECTED CREDIT CARD®</div>
+																</h4>
+															</div>
+															<div class="cms-single-body guide-modal-window">
+																<div class="cms-panel-body-content cms-panel-body-single scroll-container custom-scroll">*Purchases subject to credit approval. No coupon required in store. 5.16.19 -5.20.19 take 30% off your AE or Aerie purchase with your AEO Connected® credit card at US AE or Aerie stores or on ae.com or aerie.com in the US with the discount code HEYMAY. Discount applied prior to sales tax and shipping &amp; handling. Cannot be combined with any other coupon or discount code. Not valid for 3rd party merchandise, previously purchased merchandise or gift cards. Valid in US (including PR) stores only. No cash value. The AEO Connected Visa Credit Card is issued by Synchrony Bank pursuant to a license from Visa USA Inc. (use only when Visa card is referenced)<div class="cms-copyright">© 2019 AEO Management Co. All Rights Reserved.</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<p class="cms-details-lg-black_000000_100 cms-details-xs-black_000000_100 ">
+									<span class="cms-avenir">Exclusions apply.&nbsp;</span>
+									<span class="cms-link-wrap">
+										<a href="/us/en/content/help/terms-and-conditions" data-link-text="Details" class="cms-link-text-black" data-cms-agwa-link="">Details</a> 
+									</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	]]></block_content>
+	</block>
+	<block>
+		<block_name><![CDATA[block5-0]]></block_name>
+		<type><![CDATA[static]]></type>
+		<position><![CDATA[2]]></position>
+		<setting><![CDATA[{"animation":"","animation_delay":""}]]></setting>
+		<col><![CDATA[12]]></col>
+		<class><![CDATA[]]></class>
+		<block_content><![CDATA[
+		<div class="cms-content cmsherooverlayheight">
+			<div class="cms-hero-small">
+				<div class="cms-aeo-picture-min-height-hero cms-aeo-picture-overlay">
+					<picture>
+						<source media="(min-width: 768px)" srcset="//s7d2.scene7.com/is/content/aeo/20190709_aehp_new_lg?scl=1&qlt=60">
+						<source media="(max-width: 768px)" srcset="//s7d2.scene7.com/is/content/aeo/20190709_aehp_new_sm?scl=1&qlt=60">
+						<img src="//s7d2.scene7.com/is/content/aeo/20190709_aehp_new_lg?scl=1&qlt=60" class="imgHero img-responsive"/>
+					</picture>
+				</div>
+				<div class="cms-creative-top"></div>
+			</div>
+			<div class="cms-pad0px-18px"></div>
+			<div class="cms-overlay">
+				<div class="row cms-overlay-height-row">
+					<div class="col-md-12 col-md-offset-0 col-xs-10 col-xs-offset-1 text-center cms-overlay-height-col">
+						<div class="cms-overlay-content cms-overlay-content-overlay-height">
+							<div class="cms-overlay-content-inner">
+								<div class="col-md-6 col-md-offset-3 col-xs-12 text-center cms-overlay-content-top">                  
+									<div class="cms-title cms-title-lg-white_ffffff_100 cms-title-xs-black_000000_100 cms-avenirdemi ">
+										<p>SO. MUCH. NEW.</p>
+									</div>
+									<div class="cms-pad8px-5px-8px"></div>   
+									<div class="cms-desc cms-desc-lg-white_ffffff_100 cms-desc-xs-black_000000_100 cms-avenir ">
+										<p>Get your hands on hundreds of new arrivals – online NOW before they hit stores on 7.23. Featuring Curvy jeans for her and Ne(x)t Level AirFlex jeans for him!</p>
+									</div>
+									<div class="cms-pad24px-14px-20px"></div>
+								</div>
+								<div class="col-md-10 col-md-offset-1 col-xs-12 text-center cms-overlay-content-top">
+									<div class="cms-btns">
+										<div class="row">
+											<div class="col-xs-12 col-md-3">
+												<a data-link-text="WOMEN’S NEW ARRIVALS" class=" btn btn-block btn-primary btn-secondary-transparent  option-button cms-video-content-top" href="/us/en/c/women/new-arrivals/11gj7jfZ1266xyj-filtered?pagetype=plp" target="_self" data-cms-agwa-link="">WOMEN’S NEW ARRIVALS</a>
+											</div>
+											<div class="col-xs-12 col-md-3">
+												<a data-link-text="MEN’S NEW ARRIVALS" class=" btn btn-block btn-primary btn-secondary-transparent  option-button cms-video-content-top" href="/us/en/c/men/new-arrivals/1hnv8q2Z1266xyj-filtered?pagetype=plp" target="_self" data-cms-agwa-link="">MEN’S NEW ARRIVALS</a>
+											</div>
+											<div class="col-xs-12 col-md-3">
+												<a data-link-text="SHOP CURVY JEANS" class=" btn btn-block btn-primary btn-secondary-transparent  option-button cms-video-content-top" href="/us/en/c/women/jeans/curvy-jeans/cat300016?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP CURVY JEANS</a>
+											</div>
+											<div class="col-xs-12 col-md-3">
+												<a data-link-text="SHOP AIRFLEX JEANS" class=" btn btn-block btn-primary btn-secondary-transparent  option-button cms-video-content-top" href="/us/en/x/jeans/mensjeantrends/men-next-level-airflex" target="_self" data-cms-agwa-link="">SHOP AIRFLEX JEANS</a>
+											</div>
+										</div>
+									</div>
+									<div class="cms-pad0px-0px"></div>
+								</div>
+								<div class="col-md-8 col-md-offset-2 col-xs-12 text-center cms-overlay-content-top"></div>
+								<div class="col-md-8 col-md-offset-2 col-xs-12 text-center cms-overlay-content-top"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	]]></block_content>
+	</block>
+	<block>
+		<block_name><![CDATA[block6-0]]></block_name>
+		<type><![CDATA[static]]></type>
+		<position><![CDATA[2]]></position>
+		<setting><![CDATA[{"animation":"","animation_delay":""}]]></setting>
+		<col><![CDATA[12]]></col>
+		<class><![CDATA[]]></class>
+		<block_content><![CDATA[
+		<div class="cms-content">
+			<div class="cms-hero-small">
+				<div class="cms-aeo-picture-min-height-hero  cms-aeo-picture-overlay">
+					<picture>
+						<source media="(min-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190715_aehp_ym_lg?scl=1&qlt=60">
+						<source media="(max-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190715_aehp_ym_sm?scl=1&qlt=60">
+						<img src="//s7d2.scene7.com/is/image/aeo/20190715_aehp_ym_lg?scl=1&qlt=60" class="imgHero img-responsive"/>
+					</picture>
+				</div>
+			</div>
+			<div class="cms-pad0px-17px"></div>
+			<div class="cms-overlay">
+				<div class="row cms-overlay-height-row">
+					<div class="col-md-1 col-xs-1 cms-col-offset"></div>
+					<div class="col-md-4 col-xs-10 text-center cms-overlay-height-col">
+						<div class="cms-overlay-content cms-overlay-content-overlay-height">
+							<div class="cms-overlay-content-inner cms-overlay-content-top">
+								<img class="cms-creative-center hidden-lg hidden-md" src="//s7d2.scene7.com/is/image/aeo/20190715_aehp_ym_sm_png?scl=2&amp;qlt=100 &amp;fmt=png-alpha" alt="lil wayne">  
+								<img class="cms-creative-center hidden-xs hidden-sm" src="//s7d2.scene7.com/is/image/aeo/20190715_aehp_ym_lg_png?scl=2&amp;qlt=100 &amp;fmt=png-alpha" alt="lil wayne">
+								<div class="cms-pad16px-16px"></div> 
+								<div class="cms-desc cms-desc-lg-white_ffffff_100 cms-desc-xs-black_000000_100 cms-avenir ">  
+									<p>An exclusive collection of tees, hoodies, accessories &amp; more designed in collaboration with Lil Wayne.</p>
+								</div>
+								<div class="cms-pad24px-20px"></div>
+								<div class="cms-btns">
+									<div class="row">
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="GET FIRST ACCESS" class=" btn btn-block btn-primary btn-primary option-button cms-video-content-top btn-secondary-transparent" href="/us/en/coming-soon-products/landing" target="_self" data-cms-agwa-link="">GET FIRST ACCESS</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	]]></block_content>
+	</block>
+	<block>
+		<block_name><![CDATA[block7-0]]></block_name>
+		<type><![CDATA[static]]></type>
+		<position><![CDATA[2]]></position>
+		<setting><![CDATA[{"animation":"","animation_delay":""}]]></setting>
+		<col><![CDATA[12]]></col>
+		<class><![CDATA[]]></class>
+		<block_content><![CDATA[
+		<div class="cms-content">
+			<div class="cms-hero-small">
+				<div class="cms-aeo-picture-min-height-hero  cms-aeo-picture-overlay">
+					<picture>
+						<source media="(min-width: 768px)" srcset="//s7d2.scene7.com/is/content/aeo/20190711_aehp_tops_lg?scl=1&amp;qlt=60">
+						<source media="(max-width: 768px)" srcset="//s7d2.scene7.com/is/content/aeo/20190711_aehp_tops_sm?scl=1&amp;qlt=60">
+						<img src="//s7d2.scene7.com/is/content/aeo/20190711_aehp_tops_lg?scl=1&amp;qlt=60" class="imgHero img-responsive"/>
+					</picture>
+				</div>
+			</div>
+			<div class="cms-pad0px-17px"></div>
+			<div class="cms-overlay">
+				<div class="row cms-overlay-height-row">
+					<div class="col-md-7 col-xs-1 cms-col-offset"></div>
+					<div class="col-md-4 col-xs-10 text-center cms-overlay-height-col">
+						<div class="cms-overlay-content cms-overlay-content-overlay-height">
+							<div class="cms-overlay-content-inner cms-overlay-content-top"> 
+								<div class="cms-title cms-title-lg-white_ffffff_100 cms-title-xs-black_000000_100 cms-avenirdemi ">
+									<p>THE TOPS YOU NEED</p> 
+								</div>
+								<div class="cms-pad8px-8px"></div> 
+								<div class="cms-desc cms-desc-lg-white_ffffff_100 cms-desc-xs-black_000000_100 cms-avenir ">  
+									<p>Bold stripes for her. Beachy prints for him. Tropical vibes for all.</p>
+								</div>
+								<div class="cms-pad24px-20px"></div>
+								<div class="cms-btns">
+									<div class="row">
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="SHOP WOMEN'S TOPS" class=" btn btn-block btn-primary btn-primary option-button cms-video-content-top btn-secondary-transparent" href="/us/en/c/women/tops/cat10049?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP WOMEN'S TOPS</a>
+										</div>
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="SHOP MEN'S TOPS" class=" btn btn-block btn-primary btn-primary option-button cms-video-content-top btn-secondary-transparent" href="/us/en/c/men/tops/cat10025?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP MEN'S TOPS</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	]]></block_content>
+	</block>
+	<block>
+		<block_name><![CDATA[block8-0]]></block_name>
+		<type><![CDATA[static]]></type>
+		<position><![CDATA[2]]></position>
+		<setting><![CDATA[{"animation":"","animation_delay":""}]]></setting>
+		<col><![CDATA[12]]></col>
+		<class><![CDATA[]]></class>
+		<block_content><![CDATA[
+		<div class="cms-content">
+			<div class="cms-hero-small">
+				<div class="cms-aeo-picture-min-height-hero  cms-aeo-picture-overlay">
+					<picture>
+						<source media="(min-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190717_aehp_aerie_lg?scl=1&amp;qlt=60">
+						<source media="(max-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190717_aehp_aerie_sm?scl=1&amp;qlt=60">
+						<img src="//s7d2.scene7.com/is/image/aeo/20190717_aehp_aerie_lg?scl=1&amp;qlt=60" class="imgHero img-responsive"/>
+					</picture>
+				</div>
+			</div>
+			<div class="cms-pad0px-17px"></div>
+			<div class="cms-overlay">
+				<div class="row cms-overlay-height-row">
+					<div class="col-md-4 col-xs-1 cms-col-offset"></div>
+					<div class="col-md-4 col-xs-10 text-center cms-overlay-height-col">
+						<div class="cms-overlay-content cms-overlay-content-overlay-height">
+							<div class="cms-overlay-content-inner cms-overlay-content-top">
+								<img class="cms-creative-center hidden-lg hidden-md" src="//s7d2.scene7.com/is/image/aeo/20190717_aehp_aerie_PNG_sm?scl=2&amp;qlt=100 &amp;fmt=png-alpha" alt="aerie">  
+								<img class="cms-creative-center hidden-xs hidden-sm" src="//s7d2.scene7.com/is/image/aeo/20190717_aehp_aerie_PNG_lg?scl=2&amp;qlt=100 &amp;fmt=png-alpha" alt="aerie">
+								<div class="cms-pad16px-16px"></div> 
+								<div class="cms-title cms-title-lg-white_ffffff_100 cms-title-xs-aerie_bts_dark_coral_d95e59_100 cms-didonesquebold cms-header-fontsize-medium-web cms-header-fontsize-small-mobile">
+									<p>40% off all bras &amp; bralettes</p> 
+								</div>
+								<div class="cms-pad24px-20px"></div> 
+								<div class="cms-btns">
+									<div class="row">
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="SHOP REAL FREE BRALETTES" class=" btn btn-block btn-secondary-transparent btn-secondary-lg-white_ffffff_100-textcolor btn-secondary-lg-white_ffffff_100-bordercolor btn-secondary-transparent  btn-secondary-xs-aerie_bts_dark_coral_d95e59_100-textcolor  btn-secondary-xs-aerie_bts_dark_coral_d95e59_100-bordercolor option-button cms-video-content-top cms-avenirdemi" href="/us/en/c/aerie/bralettes/real-free-bralettes/cat8240062?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP REAL FREE BRALETTES</a>
+										</div>
+										<div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1"> 
+											<a data-link-text="SHOP ALL BRAS &amp; BRALETTES" class=" btn btn-block btn-secondary-transparent btn-secondary-lg-white_ffffff_100-textcolor btn-secondary-lg-white_ffffff_100-bordercolor btn-secondary-transparent  btn-secondary-xs-aerie_bts_dark_coral_d95e59_100-textcolor  btn-secondary-xs-aerie_bts_dark_coral_d95e59_100-bordercolor option-button cms-video-content-top cms-avenirdemi" href="/us/en/c/aerie/bras/cat4840012?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP ALL BRAS &amp; BRALETTES</a>
+										</div>
+									</div>
+								</div>
+								<div class="cms-pad10px-8px"></div>
+								<div class="cms-details">
+									<div class="modal animate cms-accordions modal-valign" id="TandC5099002108828278742" tabindex="-1" role="dialog" aria-labelledby="TandC" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">×</span>
+													</button>
+													<h4 class="modal-title" id="myModalLabel">Details</h4>
+												</div>
+												<div class="modal-body">
+													<div class="panel-group" id="accordion9" role="tablist" aria-multiselectable="true">
+														<div class="panel-default">
+															<div class="panel-heading" role="tab" id="heading1">
+																<h4 class="panel-title">
+																	<div>BUY AN AERIE® BIKINI TOP AND GET AN AERIE BIKINI BOTTOM FOR $5 USD</div>
+																</h4>
+															</div>
+															<div class="cms-single-body guide-modal-window">
+																<div class="cms-panel-body-content cms-panel-body-single scroll-container custom-scroll">Offer valid beginning May 02, 2019 at 6:00 AM EST for a limited time only, at aerie.com®. Offer valid for U.S. customers only. Buy an Aerie® bikini top and get a bikini bottom for $5 USD. Offer not valid on Aerie one pieces, clearance merchandise, 3rd party merchandise, AE x Marvel, Aerie x Marvel, AEO APT, American Beagle or Gift Cards. Offer applies to merchandise after discount costs have been applied, prior to sales tax and shipping &amp; handling costs. This discount is not redeemable for cash, nor is it applicable toward previously purchased merchandise. All prices and/or promotions at ae.com and aerie.com are reflected in USD.
+																	<div class="cms-copyright">© 2019 AEO Management Co. All Rights Reserved.</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<p class="cms-details-lg-white_ffffff_100 cms-details-xs-ae_dark_gray_333333_100 ">
+										<span class="cms-avenir">Prices as marked. Exclusions apply.&nbsp;</span>
+										<span class="cms-link-wrap"></span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	]]></block_content>
+	</block>
+	<block>
+		<block_name><![CDATA[block9-0]]></block_name>
+		<type><![CDATA[static]]></type>
+		<position><![CDATA[2]]></position>
+		<setting><![CDATA[{"animation":"","animation_delay":""}]]></setting>
+		<col><![CDATA[12]]></col>
+		<class><![CDATA[]]></class>
+		<block_content><![CDATA[
+		<div class="cms-content">
+			<div class="cms-hero-small">
+				<div class="cms-aeo-picture-min-height-text-only-promo cms-aeo-picture-overlay">
+					<picture>
+						<source media="(min-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190704_tghp_promo_lg?scl=1&qlt=60">
+						<source media="(max-width: 768px)" srcset="//s7d2.scene7.com/is/image/aeo/20190704_tghp_promo_sm?scl=1&qlt=60">
+						<img src="//s7d2.scene7.com/is/image/aeo/20190704_tghp_promo_lg?scl=1&qlt=60" class="imgHero img-responsive"/>
+					</picture>
+				</div>
+			</div>
+			<div class="cms-overlay cms-overlay-tailgate">
+				<div class="row cms-overlay-height-row">
+					<div class="col-md-12 col-md-offset-0 col-xs-12 col-xs-offset-0 text-center cms-overlay-height-col">
+						<div class="cms-overlay-content cms-overlay-content-overlay-height">
+							<div class="cms-overlay-content-inner cms-overlay-content-top">
+								<div class="creativetop">
+									<div class="row">
+										<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 text-center">
+											<img class="cms-creative-top hidden-xs hidden-sm" src="//s7d2.scene7.com/is/image/aeo/20190711_aehp_tg_PNG_lg?scl=2&qlt=100&fmt=png-alpha" alt="tailgate">
+											<img class="cms-creative-top hidden-lg hidden-md" src="//s7d2.scene7.com/is/image/aeo/20190711_aehp_tg_PNG_sm?scl=2&qlt=100&fmt=png-alpha" alt="tailgate">
+											<div class="cms-pad16px-18px"></div>
+										</div>
+									</div>
+								</div>
+								<div class="cms-sub-header cms-sub-header-lg-white_ffffff_100 cms-sub-header-xs-white_ffffff_100 cms-avenir ">
+									<div class="row">
+										<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 text-center">
+											<p>LIMITED TIME ONLY: ONLINE ONLY</p>
+										</div>
+									</div>
+								</div>
+								<div class="cms-pad8px-8px"></div>
+								<div class="cms-title cms-title-lg-white_ffffff_100 cms-title-xs-white_ffffff_100 cms-avenirdemi cms-header-fontsize-medium-web cms-header-fontsize-medium-mobile">
+									<div class="row">
+										<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 text-center">
+											<p>25-60% OFF EVERYTHING</p>
+										</div>
+									</div>
+								</div>
+								<div class="cms-pad24px-20px"></div>
+								<div class="cms-desc cms-desc-lg-white_ffffff_100 cms-desc-xs-white_ffffff_100 cms-avenir ">
+									<div class="row">
+										<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 text-center">
+											<p></p>
+										</div>
+									</div>
+								</div>
+								<div class="cms-pad0px-0px"></div>
+								<div class="cms-btns">
+									<div class="row">
+										<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 text-center">
+											<div class="row">
+												<div class="col-xs-12 col-md-3">
+													<a data-link-text="SHOP MLB" class=" btn btn-block btn-primary option-button cms-video-content-top btn-bg-white-color-blue" href="/us/en/c/l/tailgate/mlb/cat8510010?pagetype=clp" target="_self" data-cms-agwa-link="">SHOP MLB</a>
+												</div>
+												<div class="col-xs-12 col-md-3">
+													<a data-link-text="SHOP COLLEGE" class=" btn btn-block btn-primary option-button cms-video-content-top btn-bg-white-color-blue" href="/us/en/c/l/tailgate/college/cat8060066?pagetype=clp" target="_self" data-cms-agwa-link="">SHOP COLLEGE</a>
+												</div>
+												<div class="col-xs-12 col-md-3">
+													<a data-link-text="SHOP COLLECTIONS" class=" btn btn-block btn-primary option-button cms-video-content-top btn-bg-white-color-blue" href="/us/en/c/tailgate/collections/cat8510003?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP COLLECTIONS</a>
+												</div>
+												<div class="col-xs-12 col-md-3">
+													<a data-link-text="SHOP CLEARANCE" class=" btn btn-block btn-primary option-button cms-video-content-top btn-bg-white-color-blue" href="/us/en/c/tailgate/clearance/fi0jtfZ13v7thc-filtered?pagetype=plp" target="_self" data-cms-agwa-link="">SHOP CLEARANCE</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cms-pad10px-8px"></div>
+								<div class="cms-details">
+									<div class="row">
+										<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 text-center">
+											<div class="modal animate cms-accordions modal-valign" id="TandC-5471853883425591758" tabindex="-1" role="dialog" aria-labelledby="TandC" aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																<span aria-hidden="true">×</span>
+															</button>
+															<h4 class="modal-title" id="myModalLabel">Details</h4>
+														</div>
+														<div class="modal-body">
+															<div class="panel-group" id="accordion9" role="tablist" aria-multiselectable="true">
+																<div class="panel-default">
+																	<div class="panel-heading" role="tab" id="heading1">
+																		<h4 class="panel-title">
+																			<div>TAKE 25% OFF YOUR PURCHASE WITH TAILGATE ITEM PURCHASE WITH CODE: NEWYEAR</div>
+																		</h4>
+																	</div>
+																	<div class="cms-single-body guide-modal-window">
+																		<div class="cms-panel-body-content cms-panel-body-single scroll-container custom-scroll">Beginning December 31, 2018 at 6:00am EST through January 2, 2019 at 6:00am EST at ae.com® and aerie.com® only. Offer valid for U.S. customers only. Take 25% your AE®, Aerie® or Tailgate® purchase when you buy one qualifying Tailgate item online at ae.com or aerie.com. Offer not valid on clearance merchandise, AEO APT, American Beagle or Gift Cards. Excludes 3rd party merchandise. You must enter the discount code NEWYEAR and have one qualifying Tailgate item in the ae.com or aerie.com shopping bag to receive the 25% off discount. This discount offer cannot be combined with other discount codes. Discount applies to merchandise after discount costs only, not tax and shipping &amp; handling costs. This discount is not redeemable for cash, nor is it applicable toward previously purchased merchandise. All prices and/or promotions at ae.com are reflected in USD.
+																			<div class="cms-copyright">© 2019 AEO Management Co. All Rights Reserved.</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<p class="cms-details-lg-white_ffffff_100 cms-details-xs-white_ffffff_100 ">
+												<span class="cms-avenir">Prices as marked.&nbsp;</span>
+												<span class="cms-link-wrap"></span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	]]></block_content>
+	</block>
+	<block>
+		<block_name><![CDATA[block10-0]]></block_name>
+		<type><![CDATA[static]]></type>
+		<position><![CDATA[2]]></position>
+		<setting><![CDATA[{"animation":"","animation_delay":""}]]></setting>
+		<col><![CDATA[12]]></col>
+		<class><![CDATA[]]></class>
+		<block_content><![CDATA[
+<div id="awo_recently_viewed" data-awo="recs">
+    <div id="awo_recently_view" class="awo-rec-widget awo-rec-no-price awo-trans-remove awo-rec-carousel awo-rec- awo-rec-6-across awo-rec-hide-arrows awo-rec-arrows-in awo-rec-header-left-underline">
+        <div class="awo-rec-header">Recently Viewed</div>
+        <div class="awo-rec-content">
+            <div class="awo-rec-scroll awo-rec-hide-scroll">
+                <div class="awo-rec-sections">
+                    <div class="awo-rec-section">
+                        <a data-path="women/curvy-shorts/curvy-super-high/ae-ne-x-t-level-curvy-super-high/0332_5820_896?recs=rv_female_0332_5820_896_AE" class="awo-rec-product msg-link-to" data-route="product-detail">
+                            <img src="https://s7d2.scene7.com/is/image/aeo/0332_5820_896_of?$cat-main_large$&amp;defaultImage=0332_5820_896_f" alt="AE Ne(X)t Level Curvy Super High-Waisted Short Short">
+                        </a>
+                        <div class="awo-rec-info">
+                            <span class="awo-rec-qv qv-btn-wrapper">
+                                <button type="button" class=" fa fa-plus quickview-product quickview-product-btn myBtnQuickView">
+                                    <span class="hidden">Launch product quickview</span>
+                                </button>
+                            </span>
+                            <a data-path="women/curvy-shorts/curvy-super-high/ae-ne-x-t-level-curvy-super-high/0332_5820_896?recs=rv_female_0332_5820_896_AE" class="awo-rec-equity msg-link-to " data-id="0332_5820_896" data-route="product-detail">
+                                <div class="awo-rec-name">AE Ne(X)t Level Curvy Super High-Waisted Short Short</div>
+                                <span class="awo-rec-price">$44.95</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <span class="awo-rec-arrow awo-rec-left aeoicon aeoicon-arrow2_l awo-rec-hide"></span>
+                <span class="awo-rec-arrow awo-rec-right aeoicon aeoicon-arrow2_r awo-rec-hide"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="myModalQuickView" class="modal">
+    <div class="modal-content">
+        <div id="ember4508" class="modal-header __84815 ember-view">  
+            <button arialabel="Close" datadismiss="modal" id="ember4509" class="close clickable qa-btn-cancel ember-view" type="button">
+                <span aria-hidden="true">×</span>
+            </button>
+            <h2 class="modal-title" tabindex="0">Quick View</h2>
+        </div>
+        <div id="ember4510" class="modal-body __bd376 ember-view">
+            <div id="ember4511" class="product-quickview product-name-and-flags qa-product-name-and-flags text-center __31bd4 ember-view">
+                <h1 itemprop="name" class="product-name" aria-label="AE Ne(X)t Level Curvy Super High-Waisted Short Short">
+                    AE Ne(X)t Level Curvy Super High-Waisted Short Short
+                </h1>
+            </div>
+            <div id="ember4512" class="quickview-carousel_outer __c9a0b ember-view">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <ol>
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                        <li data-target="#myCarousel" data-slide-to="4"></li>
+                        <li data-target="#myCarousel" data-slide-to="5"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img class="item-image lazyload" itemprop="image" alt="product image" src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_of?$quickview-prod-image$">
+                        </div>
+                        <div class="item">
+                            <img class="item-image lazyload" itemprop="image" alt="product image" src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_ob?$quickview-prod-image$">
+                        </div>
+                        <div class="item">
+                            <img class="item-image lazyload" itemprop="image" alt="product image" src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_os?$quickview-prod-image$">
+                        </div>
+                        <div class="item">
+                            <img class="item-image lazyload" itemprop="image" alt="product image" src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_f?$quickview-prod-image$">
+                        </div>
+                        <div class="item">
+                            <img class="item-image lazyload" itemprop="image" alt="product image" src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_b?$quickview-prod-image$">
+                        </div>
+                        <div class="item">
+                                <img class="item-image lazyload" itemprop="image" alt="product image" src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_d3?$quickview-prod-image$">
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    <div class="quickview-carousel-thumbs-parent">
+                        <ol id="indicators" class="quickview-carousel-thumbs carousel-indicators">
+                            <li data-target="#quickview-edit-carousel" data-slide-to="0" aria-expanded="true" class="carousel-thumb image-thumb active" data-ember-action="" data-ember-action-4537="4537">
+                                <img src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_of?$pdp-thumb$" class="img-responsive-quickview">
+                            </li>
+                            <li data-target="#quickview-edit-carousel" data-slide-to="1" aria-expanded="false" class="carousel-thumb image-thumb " data-ember-action="" data-ember-action-4538="4538">
+                                <img src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_ob?$pdp-thumb$" class="img-responsive-quickview">
+                            </li>
+                            <li data-target="#quickview-edit-carousel" data-slide-to="2" aria-expanded="false" class="carousel-thumb image-thumb " data-ember-action="" data-ember-action-4539="4539">
+                                <img src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_os?$pdp-thumb$" class="img-responsive-quickview">
+                            </li>
+                            <li data-target="#quickview-edit-carousel" data-slide-to="3" aria-expanded="false" class="carousel-thumb image-thumb " data-ember-action="" data-ember-action-4540="4540">
+                                <img src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_f?$pdp-thumb$" class="img-responsive-quickview">
+                            </li>
+                            <li data-target="#quickview-edit-carousel" data-slide-to="4" aria-expanded="false" class="carousel-thumb image-thumb " data-ember-action="" data-ember-action-4541="4541">
+                                <img src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_b?$pdp-thumb$" class="img-responsive-quickview">
+                            </li>
+                            <li data-target="#quickview-edit-carousel" data-slide-to="5" aria-expanded="false" class="carousel-thumb image-thumb " data-ember-action="" data-ember-action-4542="4542">
+                                <img src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_d3?$pdp-thumb$" class="img-responsive-quickview">
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>	
+            <div id="ember4515" class="product-swatches qa-product-swatches __ba478 ember-view">
+                <div class="border-circle">
+                    <div class="swatch swatch-active " data-proddata-key="0332_5820_896" data-ember-action="" data-ember-action-4544="4544">
+                        <img class="swatch-img" src="//s7d2.scene7.com/is/image/aeo/0332_5820_896_s" alt="Dark Wash">
+                    </div>
+                </div>
+            </div>
+            <div class="quickview-product-txt quickview-product-color">Dark Wash</div>
+            <div class="quickview-price-container">
+                <div id="ember4516" class="qa-product-prices product-prices __527f1 ember-view">
+                    <div id="ember4517" class="product-list-price product-list-price-on-sale ember-view">$44.95</div>
+                    <div id="ember4545" class="product-sale-price ember-view"><!---->$22.47</div>
+                    <div class="product-you-save">YOU SAVE 50%</div>
+                </div>
+                <div class="product-marketing text-center">Free Shipping + Free Returns!</div>
+            </div>
+            <a tabindex="0" id="ember4546" class="quickview-size-sizeChart clickable modal-size-chart qa-show-modal-size-chart ember-view">        Size Chart</a>
+            <div class="">
+                <div id="ember4518" class="qa-product-size-and-quantity product-size-and-quantity __045a9 ember-view">
+                    <div class="fields-container clearfix">
+                        <div id="ember4519" class="select-control form-group __68015 qa-select-size ember-view">
+                            <div role="button" id="ember4520" class="dropdown-toggle ember-view">
+                                <span class="dropdown-label">Size</span>
+                                <span class="dropdown-text">Size</span>
+                                <span class="caret"></span>
+                            </div>
+                            <ul class="dropdown-menu dropdown-menu-size" role="menu">
+                                <li data-value="0030249155" id="ember4547" class="ember-view" value="00" >
+                                    <a role="menuitem" tabindex="-1">00</a>
+                                </li>  
+                                <li data-value="0030249148" id="ember4548" class="ember-view" value="0">
+                                    <a role="menuitem" tabindex="-1">0</a>
+                                </li>  
+                                <li data-value="0030249049" id="ember4549" class="ember-view" value="2">
+                                    <a role="menuitem" tabindex="-1">2</a>
+                                </li>  
+                                <li data-value="0030249056" id="ember4550" class="ember-view" value="4">
+                                    <a role="menuitem" tabindex="-1">4</a>
+                                </li>  
+                                <li data-value="0030249064" id="ember4551" class="ember-view" value="6">
+                                    <a role="menuitem" tabindex="-1">6</a>
+                                </li>  
+                                <li data-value="0030249072" id="ember4552" class="ember-view" value="8">
+                                    <a role="menuitem" tabindex="-1">8</a>
+                                </li>  
+                                <li data-value="0030249080" id="ember4553" class="ember-view" value="10">
+                                    <a role="menuitem" tabindex="-1">10</a>
+                                </li>  
+                                <li data-value="0030249098" id="ember4554" class="ember-view" value="12">
+                                    <a role="menuitem" tabindex="-1">12</a>
+                                </li>  
+                                <li data-value="0030249106" id="ember4555" class="ember-view" value="14">
+                                    <a role="menuitem" tabindex="-1">14</a>
+                                </li>  
+                                <li data-value="0030249114" id="ember4556" class="ember-view" value="16">
+                                    <a role="menuitem" tabindex="-1">16</a>
+                                </li>  
+                                <li data-value="0030249122" id="ember4557" class="visually-disabled ember-view">
+                                    <a class="visually-disabled" role="menuitem" tabindex="-1">18 – Out of Stock + Online Only</a>
+                                </li>  
+                                <li data-value="0030249130" id="ember4558" class="visually-disabled ember-view">
+                                    <a class="visually-disabled" role="menuitem" tabindex="-1">20 – Out of Stock + Online Only</a>
+                                </li>  
+                            </ul>
+                        </div>
+                        <div id="ember4521" class="form-group select-counter-control __2741d qa-select-counter-quantity ember-view">
+                              <div class="select-counter-quantity" >
+								<span>
+									<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+										<span class="glyphicon glyphicon-minus"></span>
+									</button>
+								</span>
+								<input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="100">
+								<span>
+									<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+										<span class="glyphicon glyphicon-plus"></span>
+									</button>
+								</span>
+							</div>
+                        </div>
+                    </div>
+                    <div id="ember4524" class="availability-status text-left __467a1 ember-view"></div>
+                </div>
+            </div>
+            <div id="ember4525" class="quickview-action-btn-wrapper product-buttons __1fe95 ember-view">  
+                <div class="button-container">
+                    <button data-tl="btn-add-to-bag" name="add-to-bag" id="ember4526" class="btn-block btn-add-to-bag btn btn-primary qa-btn-add-to-bag disabled clickable ember-view" type="submit">      ADD TO BAG</button>
+                    <div id="ember4527" class="favorite-button qa-favorite-button __338c8 ember-view">
+                        <button data-tl="btn-toggle-favorites" name="toggleFavorites" id="ember4528" class="btn-toggle-favorites btn btn-secondary qa-btn-toggle-favorites ember-view" type="submit">      
+                            <span class="fa fa-heart"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="ember4529" class="product-quickview __0c728 ember-view">  
+                <div class="nsa-product-availability qa-nsa-product-availability">
+                    <div id="ember4530" class="store-inventory-content qa-store-inventory-content ember-view">
+                        <div class="no-size-selected qa-no-size-selected">
+                            <p class="check-in-store">Want it now? Check in-store availability:</p>
+                            <button data-tl="" name="" disabled="" id="ember4531" class="btn-sm btn-block text-capitalize btn btn-primary ember-view btn-select-size" type="submit">    Select Size</button>
+							<form action="" class="select-zip-form" data-ember-action="" data-ember-action-491="491">
+								<div id="ember486" class="postal-code-input form-group form-postal-code __b20c1 ember-view">
+									<div id="ember487" class="form-group aeo-input qa-input-postalCode right-addon ember-view">  
+										<label class="aeo-input-label clickable" for="ember487-input">Zip/Postal Code</label>
+										<input name="postalCode" autocomplete="postal-code" maxlength="10" id="ember487-input" class="form-control ember-text-field ember-view" type="search">
+										<span id="ember488" class="glyphicon glyphicon-map-marker font-locate ember-view"></span>
+										<div data-label-code="error.account.geolocation.disabled" id="ember372" class="help-block qa-error-help-block has-error ember-view">To use this feature, enable location services.</div>
+									</div>
+									<div id="ember489" class="loader-overlay qa-loader __5b72e ember-view">
+										<div class="progress-outer-wrapper" role="status" aria-live="polite">
+											<p class="sr-only">Content is loading...</p>
+											<div class="progress-inner-wrapper">
+												<div class="progress">
+													<div class="progress-spoke"></div>
+													<div class="progress-spoke"></div>
+													<div class="progress-spoke"></div>
+													<div class="progress-spoke"></div>
+													<div class="progress-spoke"></div>
+													<div class="progress-spoke"></div>
+													<div class="progress-spoke"></div>
+													<div class="progress-spoke"></div>
+													<div class="progress-spoke"></div>
+													<div class="progress-spoke"></div>
+													<div class="progress-spoke"></div>
+													<div class="progress-spoke"></div>
+												</div>
+											</div>
+											<div class="loader-overlay"></div>
+										</div>
+									</div>
+								</div>
+								<button data-tl="" name="" id="ember490" class="btn-search qa-btn-search text-capitalize btn btn-primary ember-view" type="submit">      Search</button>
+							</form>
+                        </div>
+                    </div>
+                    <div id="ember4532" class="loader-overlay qa-loader __5b72e ember-view">
+                        <div class="progress-outer-wrapper" role="status" aria-live="polite">
+                            <p class="sr-only">Content is loading...</p>
+                            <div class="progress-inner-wrapper">
+                                <div class="progress">
+                                    <div class="progress-spoke"></div>
+                                    <div class="progress-spoke"></div>
+                                    <div class="progress-spoke"></div>
+                                    <div class="progress-spoke"></div>
+                                    <div class="progress-spoke"></div>
+                                    <div class="progress-spoke"></div>
+                                    <div class="progress-spoke"></div>
+                                    <div class="progress-spoke"></div>
+                                    <div class="progress-spoke"></div>
+                                    <div class="progress-spoke"></div>
+                                    <div class="progress-spoke"></div>
+                                    <div class="progress-spoke"></div>
+                                </div>
+                            </div>
+                            <div class="loader-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="/us/en/p/women/short-shorts/curvy-super-high-waisted-short-shorts/ae-ne-x-t-level-curvy-super-high-waisted-short-short/0332_5820_896" class="xm-link-to qa-xm-link-to quickview-get-details qa-all-details-btn">View More Details</a>
+        </div>  
+        <div id="ember4534" class="loader-overlay qa-loader __5b72e ember-view">
+            <div class="progress-outer-wrapper" role="status" aria-live="polite">
+                <p class="sr-only">Content is loading...</p>
+                <div class="progress-inner-wrapper">
+                    <div class="progress">
+                        <div class="progress-spoke"></div>
+                        <div class="progress-spoke"></div>
+                        <div class="progress-spoke"></div>
+                        <div class="progress-spoke"></div>
+                        <div class="progress-spoke"></div>
+                        <div class="progress-spoke"></div>
+                        <div class="progress-spoke"></div>
+                        <div class="progress-spoke"></div>
+                        <div class="progress-spoke"></div>
+                        <div class="progress-spoke"></div>
+                        <div class="progress-spoke"></div>
+                        <div class="progress-spoke"></div>
+                    </div>
+                </div>
+                <div class="loader-overlay"></div>
+            </div>
+        </div>
+    </div>
+</div>
+	]]></block_content>
+	</block>
+	<theme_setting>
+		<general>
+			<header>header_2</header>
+			<layout>wide</layout>
+		</general>
+		<custom_style><style></style></custom_style>
+	</theme_setting>
+
+</home>

@@ -1,0 +1,674 @@
+<?php
+if(!empty($this->getRequest()->getParam('id'))){
+    $id = $this->getRequest()->getParam('id');
+    $coupon = $block->getListCouponById($id);
+}
+?>
+<!-- EDIT COUPON  -->
+<?php if(!empty($coupon)): ?>
+<div class="container-md" id="coupon-form" data-bind="scope:'editCoupon'">
+    <form action="<?= $block->getSaveUrl()?>" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?= $coupon->getId();?>">
+        <div class="bg-section-02 mb-5">
+            <div class="a-form flex flex-nowrap va-center">
+                <label class="d-block py-2 pr-4 h4 a-form--nowrap"><?= __('type') ?></label>
+                <div class="w-100">
+                    <div class="flex va-center ha-between">
+                        <p class="h4 px-4" data-bind="i18n: getCouponType()"></p>
+                        <input type="hidden" name="type" data-bind="attr:{'value': getCouponTypeHidden() }" >
+                        <button class="a-btn a-btn--small a-btn--no-border a-btn--right" type="button" data-bind="click: toggleCouponType">
+                            <i class="a-icon a-btn__icon a-icon--small material-icons">chevron_right</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="bg-section-02 mb-5">
+            <div class="a-form">
+                <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('discount code name') ?></label>
+                <div class="">
+                    <div class="a-form-input flex flex-nowrap">
+                        <input type="text" value="<?= $coupon->getName()?>" placeholder="<?= __('The code name will not be visible to the buyer.') ?>" name="name" data-bind="event: {keyup: setCouponName}">
+                    </div>
+                    <div class="a-form__message"></div>
+                </div>
+            </div>
+            <div class="a-form">
+                <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('discount code') ?></label>
+                <div class="">
+                    <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                        <div class="a-form-input__prepend">
+                            A0000
+                        </div>
+                        <input type="text" value="<?= $coupon->getCouponCode()?>" placeholder="<?= __('Coupon code') ?>" maxlength="5" name="coupon_code" data-bind="event: {keyup: setCouponCode}">
+                    </div>
+                    <div class="a-form__message"></div>
+                </div>
+            </div>
+            <div class="flex flex-cols-2 g-2">
+                <div>
+                    <div class="a-form">
+                        <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('start time') ?></label>
+                        <div class="">
+                            <div class="a-form-input flex flex-nowrap" type="date">
+                                <input type="date" value="<?= $coupon->getFromDate()?>" name="from_date" data-bind="event: {change: setCouponStart}">
+                            </div>
+                            <div class="a-form__message"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="a-form">
+                        <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('end time') ?></label>
+                        <div class="">
+                            <div class="a-form-input flex flex-nowrap" type="date">
+                                <input type="date" value="<?= $coupon->getToDate()?>" name="to_date" data-bind="event: {change: setCouponEnd}, attr: {'min': today}">
+                            </div>
+                            <div class="a-form__message"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-section-02 mb-5">
+            <div class="a-form">
+                <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('Discount type') ?></label>
+                <div class="">
+                    <div class="pt-4">
+                        <div class="mb-4">
+                            <div class="a-form-radio mb-3">
+                                <input type="radio"  name="simple_action" id="coupon-price" value="by_fixed"
+                                    data-bind="checked: radioSelectedOptionValue" >
+                                <label for="coupon-price" class="flex flex-nowrap va-center"><?= __(' Value discount') ?></label>
+   
+                            </div>
+                            <div class="a-form ml-5">
+                                <div class="">
+                                    <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                                        <div class="a-form-input__prepend">฿</div>
+                                        <?php 
+                                            $discountAmount = 0;
+                                            if($coupon->getSimpleAction() == \Wiki\VendorsSalesRule\Api\Data\RuleInterface::BYFIXED){
+                                                $discountAmount = number_format($coupon->getDiscountAmount(), 0, '.', '.');
+                                            }
+                                        ?>
+                                        <input data-bind="enable: byFixed()" type="number" name="discount_amount" value="<?= $discountAmount ?>"
+                                            placeholder="<?= __('Please enter the desired discount.') ?>">
+                                    </div>
+                                    <div class="a-form__message"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="a-form-radio mb-3">
+                                <input type="radio" name="simple_action" id="coupon-price" value="by_percent"
+                                    data-bind="checked: radioSelectedOptionValue">
+                                <label for="coupon-price" class="flex flex-nowrap va-center"><?= __('% discount') ?></label>
+                            </div>
+                            <div class="a-form ml-5">
+                                <div class="">
+                                    <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                                        <div class="a-form-input__prepend">%</div>
+                                        <input data-bind="enable: byPercent()" value="<?= number_format($coupon->getDiscountAmount()); ?>"  type="number" name="discount_amount"
+                                            placeholder="<?= __('Please enter the desired discount.') ?>">
+                                    </div>
+                                    <div class="a-form__message"></div>
+                                </div>
+                            </div>
+                            <div class="ml-5" data-bind="visible: byPercent()">
+                                <div class="a-form">
+                                    <label class="d-block py-2 pr-4 h4"><?= __('maximum discount') ?></label>
+                                    <div class="">
+                                        <div class="flex g-3 pb-3">
+                                            <div class="a-form-radio">
+                                                <input type="radio"  id="max-discount" value="limit_value" data-bind="checked: maximumDiscount">
+                                                <label for="max-discount" class="flex flex-nowrap va-center"><?= __('limited value') ?></label>
+                                            </div>
+                                            <div class="a-form-radio">
+                                                <input type="radio" name="max_discount_amount" id="max-discount" value="unlimited" data-bind="checked: maximumDiscount">
+                                                <label for="max-discount" class="flex flex-nowrap va-center"><?= __('unlimited') ?></label>
+                                            </div>
+                                        </div>
+                                        <div class="a-form-input flex flex-nowrap a-form-input--prepend" data-bind="visible: maximumDiscount() == 'limit_value'">
+                                            <div class="a-form-input__prepend">฿</div>
+                                            <input type="text" placeholder="ใส่ค่า" name="max_discount_amount"  value="<?= $coupon->getMaxDiscountAmount()?>">
+                                        </div>
+                                        <div class="a-form__message"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="a-form">
+                <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('available amount') ?></label>
+                <div class="">
+                    <div class="a-form-input flex flex-nowrap">
+                        <input type="number" value="<?= $coupon->getUsesPerCoupon()?>" placeholder="<?= __('Restrict code usage from all codes.') ?>" name="uses_per_coupon" data-bind="event: {keyup: setCouponAmount}">
+                    </div>
+                    <div class="a-form__message"></div>
+                </div>
+            </div>
+            <div class="a-form">
+                <label class="d-block py-2 pr-4 h4"><?= __('minimum price') ?></label>
+                <div class="">
+                    <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                        <div class="a-form-input__prepend">฿</div>
+                        <input type="number" value="<?= $coupon->getMinimumPrice()?>" name="minimum_price" placeholder="<?= __('Specify the minimum price to use the code.')?>"></div>
+                    <div class="a-form__message"></div>
+                </div>
+            </div>
+            <div class="a-form"><label class="d-block py-2 pr-4 h4 a-form--required">
+                    <?= __('select category') ?>
+                </label>
+                <div class="">
+                    <div
+                        class="vue-treeselect vue-treeselect--single vue-treeselect--searchable vue-treeselect--has-value vue-treeselect--open-below">
+                        <div class="vue-treeselect__control">
+                            <div class="vue-treeselect__value-container">
+                                <div
+                                    class="vue-treeselect__placeholder vue-treeselect-helper-zoom-effect-off vue-treeselect-helper-hide">
+                                    Select Category
+                                </div>
+                                <div class="vue-treeselect__input-container">
+                                    <input type="text" name="category_id" value="12" autocomplete="off" tabindex="0" class="vue-treeselect__input">
+                                </div>
+                            </div>
+                            <div title="Clear value" class="vue-treeselect__x-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.333 348.333"
+                                    class="vue-treeselect__x">
+                                    <path
+                                        d="M336.559 68.611L231.016 174.165l105.543 105.549c15.699 15.705 15.699 41.145 0 56.85-7.844 7.844-18.128 11.769-28.407 11.769-10.296 0-20.581-3.919-28.419-11.769L174.167 231.003 68.609 336.563c-7.843 7.844-18.128 11.769-28.416 11.769-10.285 0-20.563-3.919-28.413-11.769-15.699-15.698-15.699-41.139 0-56.85l105.54-105.549L11.774 68.611c-15.699-15.699-15.699-41.145 0-56.844 15.696-15.687 41.127-15.687 56.829 0l105.563 105.554L279.721 11.767c15.705-15.687 41.139-15.687 56.832 0 15.705 15.699 15.705 41.145.006 56.844z"></path>
+                                </svg>
+                            </div>
+                            <div class="vue-treeselect__control-arflex-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292.362 292.362"
+                                    class="vue-treeselect__control-arflex">
+                                    <path
+                                        d="M286.935 69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952 0-9.233 1.807-12.85 5.424C1.807 72.998 0 77.279 0 82.228c0 4.948 1.807 9.229 5.424 12.847l127.907 127.907c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428L286.935 95.074c3.613-3.617 5.427-7.898 5.427-12.847 0-4.948-1.814-9.229-5.427-12.85z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="vue-treeselect__menu-container" style="z-index: 999;">
+                            <div class="vue-treeselect__menu" style="max-height: 300px">
+                            <?php $categories = $block->getStoreCategories(true,false,true)?>
+                            <?php foreach ($categories as $category):?>
+                                <?php if($category->getIsActive()): ?>
+                            <div class="lv1-category">
+                                    <span><?= $category->getName() ?></span>
+                                    <?php $subcategories = $block->getChildCategories($category);
+                                    if(!empty($subcategories)):
+                                    ?>
+                                        <?php foreach ($subcategories as $subcategory): ?>
+                                            <?php if($subcategory->getIsActive()):?>
+                                            <div class="sub-category">
+                                                <span><?= $subcategory->getName() ?></span>
+                                            </div>
+                                            <?php endif ?>
+                                        <?php endforeach ?>
+                                    <?php endif ?>
+                            </div>
+                            <?php endif ?>
+                            <?php endforeach ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="a-form__message"></div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-section-02 mb-5">
+            <div class="a-form flex flex-nowrap">
+                <label class="d-block py-2 pr-4 h4 a-form--nowrap">
+                    <?= __('Coupon Image') ?>
+                </label>
+                <div class="w-100">
+                    <div class="a-form-upload">
+                        <input type="file" id="coupon-image" name="image" data-bind="event: {change: setImage}">
+                        <div class="msg-error"></div>
+                        <div class="flex flex-nowrap">
+                            <div class="py-3" data-bind="visible: getPendingCoupon().size() == 0 && couponImg() == ''">
+                                <label for="coupon-image" class="a-form-upload__label text-center">
+                                    <i class="a-icon a-icon--medium material-icons">add</i>
+                                    <?= __('add cover photo') ?>
+                                </label>
+                            </div>
+                            <div data-bind="visible: getPendingCoupon().size() > 0" class="a-form-upload__images flex flex-nowrap py-3 g-3">
+                                <div>
+                                    <div class="a-form-upload__thumbnail">
+                                        <img data-bind="attr: {'src': couponImg}" alt="coupon image" class="h-100">
+                                        <span class="a-form-upload__close flex ha-center va-center" data-bind="click: clearImage">
+                                            <i class="material-icons a-icon">cancel</i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-bind="visible: couponImg() != '' && getPendingCoupon().size() == 0" class="a-form-upload__images flex flex-nowrap py-3 g-3">
+                                <div>
+                                    <div class="a-form-upload__thumbnail">
+                                        <img data-bind="attr: {'src': couponImg}" alt="coupon image" class="h-100">
+                                        <span class="a-form-upload__close flex ha-center va-center" data-bind="click: clearImage">
+                                            <i class="material-icons a-icon">cancel</i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="a-form flex flex-nowrap va-center">
+                <label class="d-block py-2 pr-4 h4 a-form--nowrap"><?= __('show all pages') ?></label>
+                <div class="w-100">
+                    <label for="available-allpages" class="a-form-switch">
+                        <input type="checkbox" id="available-allpages" <?= $coupon->getIsDisplayAll()?'checked':''?> name="is_display_all" value="true">
+                        <span class="a-form-switch__slider"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+        <section class="bg-section-02 mb-5" data-bind="visible: couponType() == 'product_coupon'">
+            <div class="a-form flex flex-nowrap va-center">
+                <label class="d-block py-2 pr-4 h4 a-form--nowrap">Apply for</label>
+                <div class="w-100">
+                    <div class="flex va-center ha-end">
+                        <button class="a-btn a-btn--small a-btn--no-border a-btn--right" data-bind="click: toggleSelectProduct">
+                            <span class="a-btn__text"><?= __('Choose an available product') ?></span>
+                            <i class="a-icon a-btn__icon a-icon--small material-icons">chevron_right</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button data-bind="enable: allInputFilled()" class="variant-yellow w-50 mx-auto a-btn">
+            <span class="a-btn__text"><?= __('record') ?></span>
+        </button>   
+    </form>
+    <div class="a-explorer _type">
+        <div class="a-explorer__slide">
+            <div class="a-explorer__meta flex">
+                <div class="a-explorer__back flex ha-between">
+                    <button class="a-btn a-btn--no-border" data-bind="click: toggleCouponType">
+                        <i class="a-icon a-btn__icon material-icons">chevron_left</i>
+                    </button>
+                </div>
+                <p class="a-explorer__title h2"><?= __('type') ?></p>
+            </div>
+            <div class="a-explorer__content">
+                <div class="a-form">
+                    <div class="flex flex-cols-1 g-2">
+                        <button class="a-btn a-btn--no-border coupon-select">
+                            <input type="radio" name="coupon_type" id="coupon-type-1" value="store_coupon"
+                                   data-bind="checked: couponType">
+                            <label for="coupon-type-1" class="a-btn__text">
+                                <p class="mb-3"><?= __('store discount code') ?></p>
+                                <p class="text-gray"><?= __('This code will work for your store and all products.') ?></p>
+                            </label>
+                        </button>
+                        <hr class="text-gray">
+                        <button class="a-btn a-btn--no-border coupon-select">
+                            <input type="radio" name="coupon_type" id="coupon-type-2" value="product_coupon"
+                                   data-bind="checked: couponType">
+                            <label for="coupon-type-2" class="a-btn__text">
+                                <p class="my-3"><?= __('product discount code') ?></p>
+                                <p class="text-gray"><?= __('This code is valid only for the products you selected.') ?></p>
+                            </label>
+                        </button>
+                        <hr class="text-gray">
+                        <button class="a-btn a-btn--no-border" data-bind="click: toggleCouponType">
+                            <span class="a-btn__text"><?= __('cancel') ?></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="a-explorer _product">
+        <div class="a-explorer__slide">
+            <div class="a-explorer__meta flex">
+                <div class="a-explorer__back flex ha-between">
+                    <button class="a-btn a-btn--no-border" data-bind="click: toggleSelectProduct">
+                        <i class="a-icon a-btn__icon material-icons">chevron_left</i>
+                    </button>
+                </div>
+                <p class="a-explorer__title h2"><?= __('add product') ?></p>
+            </div>
+            <div class="a-explorer__content">
+                <button class="mx-auto variant-yellow a-btn">
+                    <span class="a-btn__text"><?= __('Load more') ?></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php else: ?>
+<!-- ADD NEW COUPON  -->
+<div class="container-md" id="coupon-form" data-bind="scope:'editCoupon'">
+    <form action="<?= $block->getSaveUrl()?>" method="post" enctype="multipart/form-data">
+        <div class="bg-section-02 mb-5">
+            <div class="a-form flex flex-nowrap va-center">
+                <label class="d-block py-2 pr-4 h4 a-form--nowrap"><?= __('type') ?></label>
+                <div class="w-100">
+                    <div class="flex va-center ha-between">
+                        <p class="h4 px-4" data-bind="i18n: getCouponType()"></p>
+                        <input type="hidden" name="type" data-bind="attr:{'value': getCouponTypeHidden() }" >
+                        <button class="a-btn a-btn--small a-btn--no-border a-btn--right" type="button" data-bind="click: toggleCouponType">
+                            <i class="a-icon a-btn__icon a-icon--small material-icons">chevron_right</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="bg-section-02 mb-5">
+            <div class="a-form">
+                <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('discount code name') ?></label>
+                <div class="">
+                    <div class="a-form-input flex flex-nowrap">
+                        <input type="text" placeholder="<?= __('The code name will not be visible to the buyer.') ?>" name="name" data-bind="event: {keyup: setCouponName}">
+                    </div>
+                    <div class="a-form__message"></div>
+                </div>
+            </div>
+            <div class="a-form">
+                <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('discount code') ?></label>
+                <div class="">
+                    <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                        <div class="a-form-input__prepend">
+                            A0000
+                        </div>
+                        <input type="text" placeholder="<?= __('Coupon code') ?>" maxlength="5" name="coupon_code" data-bind="event: {keyup: setCouponCode}">
+                    </div>
+                    <div class="a-form__message"></div>
+                </div>
+            </div>
+            <div class="flex flex-cols-2 g-2">
+                <div>
+                    <div class="a-form">
+                        <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('start time') ?></label>
+                        <div class="">
+                            <div class="a-form-input flex flex-nowrap" type="date">
+                                <input type="date" name="from_date" data-bind="event: {change: setCouponStart}">
+                            </div>
+                            <div class="a-form__message"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="a-form">
+                        <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('end time') ?></label>
+                        <div class="">
+                            <div class="a-form-input flex flex-nowrap" type="date">
+                                <input type="date" name="to_date" data-bind="event: {change: setCouponEnd}, attr: {'min': today}">
+                            </div>
+                            <div class="a-form__message"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-section-02 mb-5">
+            <div class="a-form">
+                <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('Discount type') ?></label>
+                <div class="">
+                    <div class="pt-4">
+                        <div class="mb-4">
+                            <div class="a-form-radio mb-3">
+                                <input type="radio" name="simple_action" id="coupon-price" value="by_fixed"
+                                    data-bind="checked: radioSelectedOptionValue">
+                                <label for="coupon-price" class="flex flex-nowrap va-center"><?= __('
+    Value discount') ?></label>
+                            </div>
+                            <div class="a-form ml-5">
+                                <div class="">
+                                    <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                                        <div class="a-form-input__prepend">฿</div>
+                                        <input data-bind="enable: byFixed()" type="number" name="discount_amount"
+                                            placeholder="<?= __('Please enter the desired discount.') ?>">
+                                    </div>
+                                    <div class="a-form__message"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="a-form-radio mb-3">
+                                <input type="radio" name="simple_action" id="coupon-price" value="by_percent"
+                                    data-bind="checked: radioSelectedOptionValue">
+                                <label for="coupon-price" class="flex flex-nowrap va-center"><?= __('% discount') ?></label>
+                            </div>
+                            <div class="a-form ml-5">
+                                <div class="">
+                                    <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                                        <div class="a-form-input__prepend">%</div>
+                                        <input data-bind="enable: byPercent()" type="number" name="discount_amount"
+                                            placeholder="<?= __('Please enter the desired discount.') ?>">
+                                    </div>
+                                    <div class="a-form__message"></div>
+                                </div>
+                            </div>
+                            <div class="ml-5" data-bind="visible: byPercent()">
+                                <div class="a-form">
+                                    <label class="d-block py-2 pr-4 h4"><?= __('maximum discount') ?></label>
+                                    <div class="">
+                                        <div class="flex g-3 pb-3">
+                                            <div class="a-form-radio">
+                                                <input type="radio"  id="max-discount" value="limit_value" data-bind="checked: maximumDiscount">
+                                                <label for="max-discount" class="flex flex-nowrap va-center"><?= __('limited value') ?></label>
+                                            </div>
+                                            <div class="a-form-radio">
+                                                <input type="radio" name="max_discount_amount" id="max-discount" value="unlimited" data-bind="checked: maximumDiscount">
+                                                <label for="max-discount" class="flex flex-nowrap va-center"><?= __('unlimited') ?></label>
+                                            </div>
+                                        </div>
+                                        <div class="a-form-input flex flex-nowrap a-form-input--prepend" data-bind="visible: maximumDiscount() == 'limit_value'">
+                                            <div class="a-form-input__prepend">฿</div>
+                                            <input type="text" placeholder="ใส่ค่า" name="max_discount_amount">
+                                        </div>
+                                        <div class="a-form__message"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="a-form">
+                <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('available amount') ?></label>
+                <div class="">
+                    <div class="a-form-input flex flex-nowrap">
+                        <input type="number" placeholder="<?= __('Restrict code usage from all codes.') ?>" name="uses_per_coupon" data-bind="event: {keyup: setCouponAmount}">
+                    </div>
+                    <div class="a-form__message"></div>
+                </div>
+            </div>
+            <div class="a-form">
+                <label class="d-block py-2 pr-4 h4"><?= __('minimum price') ?></label>
+                <div class="">
+                    <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                        <div class="a-form-input__prepend">฿</div>
+                        <input type="number" name="minimum_price" placeholder="<?= __('Specify the minimum price to use the code.')?>"></div>
+                    <div class="a-form__message"></div>
+                </div>
+            </div>
+            <div class="a-form"><label class="d-block py-2 pr-4 h4 a-form--required">
+                    <?= __('select category') ?>
+                </label>
+                <div class="">
+                    <div
+                        class="vue-treeselect vue-treeselect--single vue-treeselect--searchable vue-treeselect--has-value vue-treeselect--open-below">
+                        <div class="vue-treeselect__control">
+                            <div class="vue-treeselect__value-container">
+                                <div
+                                    class="vue-treeselect__placeholder vue-treeselect-helper-zoom-effect-off vue-treeselect-helper-hide">
+                                    Select Category
+                                </div>
+                                <div class="vue-treeselect__input-container">
+                                    <input type="text" name="category_id" value="12" autocomplete="off" tabindex="0" class="vue-treeselect__input">
+                                </div>
+                            </div>
+                            <div title="Clear value" class="vue-treeselect__x-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.333 348.333"
+                                    class="vue-treeselect__x">
+                                    <path
+                                        d="M336.559 68.611L231.016 174.165l105.543 105.549c15.699 15.705 15.699 41.145 0 56.85-7.844 7.844-18.128 11.769-28.407 11.769-10.296 0-20.581-3.919-28.419-11.769L174.167 231.003 68.609 336.563c-7.843 7.844-18.128 11.769-28.416 11.769-10.285 0-20.563-3.919-28.413-11.769-15.699-15.698-15.699-41.139 0-56.85l105.54-105.549L11.774 68.611c-15.699-15.699-15.699-41.145 0-56.844 15.696-15.687 41.127-15.687 56.829 0l105.563 105.554L279.721 11.767c15.705-15.687 41.139-15.687 56.832 0 15.705 15.699 15.705 41.145.006 56.844z"></path>
+                                </svg>
+                            </div>
+                            <div class="vue-treeselect__control-arflex-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292.362 292.362"
+                                    class="vue-treeselect__control-arflex">
+                                    <path
+                                        d="M286.935 69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952 0-9.233 1.807-12.85 5.424C1.807 72.998 0 77.279 0 82.228c0 4.948 1.807 9.229 5.424 12.847l127.907 127.907c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428L286.935 95.074c3.613-3.617 5.427-7.898 5.427-12.847 0-4.948-1.814-9.229-5.427-12.85z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="vue-treeselect__menu-container" style="z-index: 999;">
+                            <div class="vue-treeselect__menu" style="max-height: 300px">
+                            <?php $categories = $block->getStoreCategories(true,false,true)?>
+                            <?php foreach ($categories as $category):?>
+                                <?php if($category->getIsActive()): ?>
+                            <div class="lv1-category">
+                                    <span><?= $category->getName() ?></span>
+                                    <?php $subcategories = $block->getChildCategories($category);
+                                    if(!empty($subcategories)):
+                                    ?>
+                                        <?php foreach ($subcategories as $subcategory): ?>
+                                            <?php if($subcategory->getIsActive()):?>
+                                            <div class="sub-category">
+                                                <span><?= $subcategory->getName() ?></span>
+                                            </div>
+                                            <?php endif ?>
+                                        <?php endforeach ?>
+                                    <?php endif ?>
+                            </div>
+                            <?php endif ?>
+                            <?php endforeach ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="a-form__message"></div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-section-02 mb-5">
+            <div class="a-form flex flex-nowrap">
+                <label class="d-block py-2 pr-4 h4 a-form--nowrap">
+                    <?= __('Coupon Image') ?>
+                </label>
+                <div class="w-100">
+                    <div class="a-form-upload">
+                        <input type="file" id="coupon-image" name="image" data-bind="event: {change: setImage}">
+                        <div class="msg-error"></div>
+                        <div class="flex flex-nowrap">
+                            <div class="py-3" data-bind="visible: getPendingCoupon().size() == 0">
+                                <label for="coupon-image" class="a-form-upload__label text-center">
+                                    <i class="a-icon a-icon--medium material-icons">add</i>
+                                    <?= __('add cover photo') ?>
+                                </label>
+                            </div>
+                            <div data-bind="visible: getPendingCoupon().size() > 0" class="a-form-upload__images flex flex-nowrap py-3 g-3">
+                                <div>
+                                    <div class="a-form-upload__thumbnail">
+                                        <img data-bind="attr: {'src': couponImg}" alt="coupon image" class="h-100">
+                                        <span class="a-form-upload__close flex ha-center va-center" data-bind="click: clearImage">
+                                            <i class="material-icons a-icon">cancel</i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="a-form flex flex-nowrap va-center">
+                <label class="d-block py-2 pr-4 h4 a-form--nowrap"><?= __('show all pages') ?></label>
+                <div class="w-100">
+                    <label for="available-allpages" class="a-form-switch">
+                        <input type="checkbox" id="available-allpages" name="is_display_all" value="true">
+                        <span class="a-form-switch__slider"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+        <section class="bg-section-02 mb-5" data-bind="visible: couponType() == 'product_coupon'">
+            <div class="a-form flex flex-nowrap va-center">
+                <label class="d-block py-2 pr-4 h4 a-form--nowrap">Apply for</label>
+                <div class="w-100">
+                    <div class="flex va-center ha-end">
+                        <button class="a-btn a-btn--small a-btn--no-border a-btn--right" data-bind="click: toggleSelectProduct">
+                            <span class="a-btn__text"><?= __('Choose an available product') ?></span>
+                            <i class="a-icon a-btn__icon a-icon--small material-icons">chevron_right</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button data-bind="enable: allInputFilled()" class="variant-yellow w-50 mx-auto a-btn">
+            <span class="a-btn__text"><?= __('record') ?></span>
+        </button>   
+    </form>
+    <div class="a-explorer _type">
+        <div class="a-explorer__slide">
+            <div class="a-explorer__meta flex">
+                <div class="a-explorer__back flex ha-between">
+                    <button class="a-btn a-btn--no-border" data-bind="click: toggleCouponType">
+                        <i class="a-icon a-btn__icon material-icons">chevron_left</i>
+                    </button>
+                </div>
+                <p class="a-explorer__title h2"><?= __('type') ?></p>
+            </div>
+            <div class="a-explorer__content">
+                <div class="a-form">
+                    <div class="flex flex-cols-1 g-2">
+                        <button class="a-btn a-btn--no-border coupon-select">
+                            <input type="radio" name="coupon_type" id="coupon-type-1" value="store_coupon"
+                                   data-bind="checked: couponType">
+                            <label for="coupon-type-1" class="a-btn__text">
+                                <p class="mb-3"><?= __('store discount code') ?></p>
+                                <p class="text-gray"><?= __('This code will work for your store and all products.') ?></p>
+                            </label>
+                        </button>
+                        <hr class="text-gray">
+                        <button class="a-btn a-btn--no-border coupon-select">
+                            <input type="radio" name="coupon_type" id="coupon-type-2" value="product_coupon"
+                                   data-bind="checked: couponType">
+                            <label for="coupon-type-2" class="a-btn__text">
+                                <p class="my-3"><?= __('product discount code') ?></p>
+                                <p class="text-gray"><?= __('This code is valid only for the products you selected.') ?></p>
+                            </label>
+                        </button>
+                        <hr class="text-gray">
+                        <button class="a-btn a-btn--no-border" data-bind="click: toggleCouponType">
+                            <span class="a-btn__text"><?= __('cancel') ?></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="a-explorer _product">
+        <div class="a-explorer__slide">
+            <div class="a-explorer__meta flex">
+                <div class="a-explorer__back flex ha-between">
+                    <button class="a-btn a-btn--no-border" data-bind="click: toggleSelectProduct">
+                        <i class="a-icon a-btn__icon material-icons">chevron_left</i>
+                    </button>
+                </div>
+                <p class="a-explorer__title h2"><?= __('add product') ?></p>
+            </div>
+            <div class="a-explorer__content">
+                <button class="mx-auto variant-yellow a-btn">
+                    <span class="a-btn__text"><?= __('Load more') ?></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif ?>
+<script type="text/x-magento-init">
+    {
+        "#coupon-form": {
+            "Magento_Ui/js/core/app":  <?php /* @escapeNotVerified */
+    echo $block->getJsLayout(); ?>
+        }
+    }
+</script>

@@ -1,0 +1,17 @@
+{
+  "name": "Wiki/module-vendors-media",
+  "description": "Integrate module allow vendors upload media assets",
+  "require": {
+    "Wiki/module-vendors": ">=100.1.0"
+  },
+  "type": "magento2-module",
+  "version": "2.0.0",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Wiki\\VendorsMedia\\": ""
+    }
+  }
+}

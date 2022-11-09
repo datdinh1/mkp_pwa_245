@@ -1,0 +1,25 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php /** @var $block \Magento\Catalog\Block\Product\Image */ ?>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->create('Magento\Catalog\Model\Product')->load($block->getProductId());
+$store = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore();
+$imageUrl = $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $product->getImage();
+
+?>
+<span class="product-image-container"
+      style="width:<?= $block->escapeHtmlAttr($block->getWidth()) ?>px;">
+    <span class="product-image-wrapper"
+          style="padding-bottom: <?= ($block->getRatio() * 100) ?>%;">
+        <img class="<?= $block->escapeHtmlAttr($block->getClass()) ?>"
+            <?= $block->escapeHtmlAttr($block->getCustomAttributes()) ?>
+            src="<?= $imageUrl ?>"
+            max-width="<?= $block->escapeHtmlAttr($block->getWidth()) ?>"
+            max-height="<?= $block->escapeHtmlAttr($block->getHeight()) ?>"
+            alt="<?= /* @noEscape */ $block->stripTags($block->getLabel(), null, true) ?>"/></span>
+</span>

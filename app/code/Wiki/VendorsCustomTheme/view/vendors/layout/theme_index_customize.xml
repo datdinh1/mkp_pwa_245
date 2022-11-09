@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="vendor-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="vendor_left_navigation" />
+    <head>
+        <css src="Wiki_VendorsCustomTheme::css/styles.css"/>
+        <css src="Wiki_VendorsCustomTheme::css/style1.css"/>
+        <script src="Wiki_VendorsCustomTheme::js/mColorPicker.js"/>
+    </head>
+    <body>
+        <referenceContainer name="left">
+            <block class="Wiki\VendorsCustomTheme\Block\Vendors\Theme\Edit\Tabs" name="vendor.customtheme.edit.tabs">
+                <block class="Wiki\VendorsCustomTheme\Block\Vendors\Theme\Edit\Tab\Main" name="vendor.customtheme.edit.tab.main"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main</argument>
+                    <argument name="block" xsi:type="string">vendor.customtheme.edit.tab.main</argument>
+                </action>
+                <block class="Wiki\VendorsCustomTheme\Block\Vendors\Theme\Edit\Tab\Configuration" name="vendor.customtheme.edit.tab.configuration"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">configuration</argument>
+                    <argument name="block" xsi:type="string">vendor.customtheme.edit.tab.configuration</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Wiki\VendorsCustomTheme\Block\Vendors\Theme\Edit" name="vendor.customtheme.edit"/>
+        </referenceContainer>
+    </body>
+</page>

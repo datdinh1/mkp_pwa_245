@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<chat>
+			<general>
+				<channel>marketplace</channel>
+				<app_id>1280089</app_id>
+				<key>ffe7a71255f1e3446126</key>
+				<secret>3bc801fee8d27274196a</secret>
+				<cluster>ap1</cluster>
+				<port>4567</port>
+			</general>
+		</chat>
+	</default>
+</config>

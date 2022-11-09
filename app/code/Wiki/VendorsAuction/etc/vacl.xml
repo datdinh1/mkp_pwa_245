@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Wiki_Vendors::vendor">
+                <resource id="Wiki_VendorsAuction::auction" title="Auctions" translate="title" sortOrder="50">
+                    <resource id="Wiki_VendorsAuction::dashboard" title="Dashboard" translate="title" sortOrder="10" />
+                    <resource id="Wiki_VendorsAuction::product" title="Auction Products" translate="title" sortOrder="20" />
+                    <resource id="Wiki_VendorsAuction::create" title="Add New Product" translate="title" sortOrder="30" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

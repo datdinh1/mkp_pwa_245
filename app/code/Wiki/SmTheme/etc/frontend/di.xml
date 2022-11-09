@@ -1,0 +1,13 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Sm\FilterProducts\Block\FilterProducts">
+        <plugin name="Wiki_product_filter" type="Wiki\SmTheme\Plugin\FilterProducts" sortOrder="1" />
+    </type>
+    
+    <type name="Sm\ListingTabs\Block\ListingTabs">
+        <plugin name="Wiki_listing_tabs" type="Wiki\SmTheme\Plugin\ListingTabs" sortOrder="1" />
+    </type>
+    
+    <type name="Wiki\VendorsCategory\Controller\Category\View">
+        <plugin name="Sm_ShopBy_VendorCategory" type="Wiki\SmTheme\Plugin\VendorCategoryView"></plugin>
+    </type>
+</config>

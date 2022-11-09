@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- All Coupon -->
+    <route url="/V1/all-coupon" method="GET">
+        <service class="Wiki\StoreApi\Api\CouponListInterface" method="getAll"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/all-coupon-ship" method="GET">
+        <service class="Wiki\StoreApi\Api\CouponListInterface" method="getAllCouponShip"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <!-- Managing Cart Coupons List -->
+    <route url="/V1/carts/mine/coupon-list" method="GET">
+        <service class="Wiki\StoreApi\Api\CouponListInterface" method="getCart"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <!-- Managing Guest Cart Coupons List -->
+    <route url="/V1/guest-carts/coupon-list" method="GET">
+        <service class="Wiki\StoreApi\Api\CouponListInterface" method="getGuest"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/freeship/product-list/recommend/:cusId" method="GET">
+        <service class="Wiki\StoreApi\Api\CouponListInterface" method="recommendProductFreeShip"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/store/add-card-info" method="POST">
+        <service class="Wiki\StoreApi\Api\CardManagementInterface" method="addCardInfo"/>
+        <resources>
+            <resource ref="Magento_Customer::customer"/>
+        </resources>
+    </route>
+    <route url="/V1/store/delete-card-info/:cardId" method="DELETE">
+        <service class="Wiki\StoreApi\Api\CardManagementInterface" method="deleteCardInfo"/>
+        <resources>
+            <resource ref="Magento_Customer::customer"/>
+        </resources>
+    </route>
+    <route url="/V1/store/save-setting/:customerId" method="POST">
+        <service class="Wiki\StoreApi\Api\StoreManagementInterface" method="saveSetting"/>
+        <resources>
+            <resource ref="Magento_Customer::customer"/>
+        </resources>
+    </route>
+
+    <!-- add to cart multi product -->
+    <route url="/V1/wiki-store-api/carts/mine/items" method="POST">
+        <service class="Wiki\StoreApi\Api\CartsMineInterface" method="addCartMultiProduct"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+
+    <route url="/V1/wiki-store-api/carts/mine/items" method="DELETE">
+        <service class="Wiki\StoreApi\Api\CartsMineInterface" method="removeAllItems"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+
+    <route url="/V1/wiki-store-api/guest-carts/:cartId/items" method="POST">
+        <service class="Wiki\StoreApi\Api\CartsMineInterface" method="addGuestCartMultiProduct"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <!-- get shipping methods  -->
+    <route url="/V1/wiki-store-api/shipping-methods" method="GET">
+        <service class="Wiki\StoreApi\Api\StoreManagementInterface" method="getShippingMethods"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+
+    <route url="/V1/wiki-store-api/guest-carts/:cartId/items" method="DELETE">
+        <service class="Wiki\StoreApi\Api\CartsMineInterface" method="removeGuestCartAllItems"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

@@ -1,0 +1,18 @@
+<?php $helperGenerator = $this->helper('MGS\Mmegamenu\Helper\Generator') ?>
+<?php $html = $helperGenerator->getMenuCacheHtml(1); ?>
+
+<?php echo $helperGenerator->filter($html); ?>
+<script type="text/javascript">
+	require([
+	'jquery'
+	], function(jQuery){
+		(function($) {
+			$(document).ready(function() {
+            $('.megamenu-content').prepend('<div class="top-navigation-header"><a href="http://192.168.1.75/" class="home-link qa-home-link" data-ember-action="" data-ember-action-102="102">Home</a> </div><div class="top-navigation-title">Shop</div>');
+
+        });
+
+})(jQuery);
+
+});
+</script>

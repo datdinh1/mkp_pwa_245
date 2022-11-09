@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd">
+    <module name="Wiki_VendorsCoupon" setup_version="1.0.7" >
+    	<sequence>
+    	   <module name="Wiki_Vendors"/>
+           <module name="Wiki_VendorsSales"/>
+    	</sequence>
+    </module>
+</config>

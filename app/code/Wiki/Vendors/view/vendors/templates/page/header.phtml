@@ -1,0 +1,125 @@
+<?php
+
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Backend\Block\Page\Header */
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+//Load product by product id
+$scopeConfig = $objectManager->create('\Magento\Framework\App\Config\ScopeConfigInterface');
+$configHelper = $objectManager->create('\Wiki\VendorsConfig\Helper\Data');
+$vendorSession = $objectManager->create('\Wiki\Vendors\Model\Session');
+$scopeConfig = $configHelper->getVendorConfig(
+    'general/store_information/logo_image_seller',
+    $vendorSession->getVendor()->getId()
+);
+$basePath = 'ves_vendors/logo/';
+$imageHelper = $objectManager->create('\Wiki\Vendors\Helper\Image');
+$image = $imageHelper->init($scopeConfig, '', [])
+    ->setBaseMediaPath($basePath)
+    ->backgroundColor([250, 250, 250]);
+$image = $image->getUrl();
+$themeHelper = $this->helper('MGS\Mpanel\Helper\Data');
+$data = $themeHelper->getImageSize($image);
+
+
+//$data = getimagesize($image);
+if ($scopeConfig == null) {
+    $image = $block->getLogoSrc();
+}
+if (count($data) > 0 && $data[0] > 600) { ?>
+    <style>
+        .logo-img {
+            width: 100%;
+        }
+    </style>
+<?php } else { ?>
+    <style>
+        .logo-img {
+            width: 100px;
+        }
+    </style>
+<?php } ?>
+<?php switch ($block->getShowPart()):
+    case 'logo': ?>
+        <?php $edition = $block->hasEdition() ? 'data-edition="' . $block->escapeHtml($block->getEdition()) . '"' : ''; ?>
+        <?php $logoSrc = ($block->hasLogoImageSrc()) ? $block->escapeHtml($block->getLogoImageSrc()) : 'images/logo-icon.png' ?>
+        <a href="<?php /* @escapeNotVerified */ echo $block->getHomeLink() ?>" <?php /* @escapeNotVerified */ echo $edition; ?> class="logo logo-seller">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><img class="logo-img" src="<?php /* @escapeNotVerified */ echo $block->getLogoIconSrc() ?>" alt="<?php echo $block->escapeHtml(__('Logo')) ?>" /></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg">
+                <img id="img-logo-seller" class="logo-img" src="<?php /* @escapeNotVerified */ echo $image ?>" alt="<?php echo $block->escapeHtml(__('Magento Admin Panel')) ?>" />
+            </span>
+        </a>
+        <?php break; ?>
+    <?php
+    case 'user': ?>
+        <div class="admin-user admin__action-dropdown-wrap">
+            <a href="<?php /* @escapeNotVerified */ echo $block->getUrl('adminhtml/system_account/index') ?>" class="admin__action-dropdown" title="<?php echo $block->escapeHtml(__('My Account')) ?>" data-mage-init='{"dropdown":{}}' data-toggle="dropdown">
+                <span class="admin__action-dropdown-text">
+                    <span class="admin-user-account-text"><?php echo $block->escapeHtml($block->getUser()->getUsername()); ?></span>
+                </span>
+            </a>
+            <ul class="admin__action-dropdown-menu">
+                <?php if ($block->getAuthorization()->isAllowed('Magento_Backend::myaccount')) : ?>
+                    <li>
+                        <a href="<?php /* @escapeNotVerified */ echo $block->getUrl('adminhtml/system_account/index') ?>" <?php /* @escapeNotVerified */ echo $block->getUiId('user', 'account', 'settings') ?> title="<?php echo $block->escapeHtml(__('Account Setting')) ?>">
+                            <?php /* @escapeNotVerified */ echo __('Account Setting') ?> (<span class="admin-user-name"><?php echo $block->escapeHtml($block->getUser()->getUsername()); ?></span>)
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <li>
+                    <a href="<?php /* @escapeNotVerified */ echo $block->getBaseUrl(); ?>" title="<?php echo $block->escapeHtml(__('Customer View')); ?>" target="_blank" class="store-front">
+                        <?php /* @escapeNotVerified */ echo __('Customer View'); ?>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php /* @escapeNotVerified */ echo $block->getLogoutLink() ?>" class="account-signout" title="<?php echo $block->escapeHtml(__('Sign Out')) ?>">
+                        <?php /* @escapeNotVerified */ echo __('Sign Out') ?>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <?php break; ?>
+    <?php
+    case 'other': ?>
+        <?php echo $block->getChildHtml(); ?>
+        <?php break; ?>
+<?php endswitch; ?>
+<style>
+    .logo-lg {
+        background-color: #367fa9;
+    }
+
+    .main-header .logo {
+        overflow: unset !important;
+    }
+
+    @media (max-width: 425px) {
+        .main-header .logo-seller {
+            width: 50px;
+        }
+
+        .main-header {
+            display: flex;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .navbar-static-top .credit-menu .dropdown-toggle {
+            padding-right: 11px;
+            padding-left: 11px;
+        }
+    }
+</style>

@@ -1,0 +1,16 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+        <preference for="Magento\SalesRule\Controller\Adminhtml\Promo\Quote\Save" type="Wiki\VendorsSalesRule\Controller\Adminhtml\Promo\Quote\Save" />
+        <preference for="Magento\SalesRule\Controller\Adminhtml\Promo\Quote\Index" type="Wiki\VendorsSalesRule\Controller\Adminhtml\Promo\Quote\Index" />
+        <preference for="Magento\SalesRule\Model\Rule\DataProvider" type="Wiki\VendorsSalesRule\Model\Rule\DataProvider" />
+
+        <preference for="Wiki\VendorsSalesRule\Api\SalesRuleManagementInterface" type="Wiki\VendorsSalesRule\Model\SalesRuleManagement" />
+        <type name="Magento\SalesRule\Api\RuleRepositoryInterface">
+                <plugin name="wiki_rulecouponcode_add_rule_extension_attribute" type="Wiki\VendorsSalesRule\Plugin\RuleRepositoryPlugin" />
+        </type>
+        <type name="Magento\SalesRule\Model\Rule">
+                <plugin name="custom_auto_generate_varchar_coupon_code" type="Wiki\VendorsSalesRule\Plugin\RulePlugin" sortOrder="1" />
+        </type>
+        <preference for="Wiki\VendorsSalesRule\Api\Data\CollectInterface" type="Wiki\VendorsSalesRule\Model\CollectCoupon" />
+        <preference for="Wiki\VendorsSalesRule\Api\Data\RuleInterface" type="Wiki\VendorsSalesRule\Model\Api\Rule" />
+</config>
+  

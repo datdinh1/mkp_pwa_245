@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Wiki_Vendors:etc/menu.xsd">
+    <menu>
+    	<add id="Wiki_VendorsProfile::profile" icon="fa fa-user" title="Profile" sortOrder="120" module="Wiki_VendorsProfile" dependsOnModule="Wiki_VendorsProfile" resource="Wiki_VendorsProfile::profile"/>
+        <add id="Wiki_VendorsProfile::edit_profile" icon="fa fa-pencil" title="Edit Profile" sortOrder="10" module="Wiki_VendorsProfile" action="profile/user/index" parent="Wiki_VendorsProfile::profile" dependsOnModule="Wiki_VendorsProfile" resource="Wiki_VendorsProfile::edit_profile"/>
+        <add id="Wiki_VendorsProfile::address" icon="fa fa-address-book" title="Address" sortOrder="20" module="Wiki_VendorsProfile" action="profile/address/index" parent="Wiki_VendorsProfile::profile" dependsOnModule="Wiki_VendorsProfile" resource="Wiki_VendorsProfile::address"/>
+    </menu>
+</config>

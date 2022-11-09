@@ -1,0 +1,25 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+use Wiki\VendorsProfile\Block\Address;
+
+/** @var  Address $block */
+?>
+<div id="profile_address_info" data-bind="scope: 'address'">
+
+</div>
+
+
+
+<script type="text/x-magento-init">
+    {
+        "#profile_address_info": {
+            "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout();?>
+        }
+    }
+</script>

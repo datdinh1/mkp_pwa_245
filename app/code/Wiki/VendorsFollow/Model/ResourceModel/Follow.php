@@ -1,0 +1,12 @@
+<?php
+namespace Wiki\VendorsFollow\Model\ResourceModel;
+
+use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
+
+class Follow extends AbstractDb
+{
+    public function _construct()
+    {
+        $this->_init("wiki_follow", "id");
+    }
+}

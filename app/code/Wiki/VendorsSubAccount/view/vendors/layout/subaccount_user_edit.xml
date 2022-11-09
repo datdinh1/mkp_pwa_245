@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="vendor-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+		<css src="Wiki_VendorsSubAccount::css/styles.css"/>
+	</head>
+    <body>
+        <referenceContainer name="left">
+            <block class="Wiki\VendorsSubAccount\Block\User\Edit\Tabs" name="vendor.subaccount.user.tabs">
+                <block class="Wiki\VendorsSubAccount\Block\User\Edit\Tab\Main" name="vendor.subaccount.user.tab.main"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main</argument>
+                    <argument name="block" xsi:type="string">vendor.subaccount.user.tab.main</argument>
+                </action>
+                
+                <block class="Wiki\VendorsSubAccount\Block\User\Edit\Tab\Roles" name="vendor.subaccount.user.tab.roles"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">roles</argument>
+                    <argument name="block" xsi:type="string">vendor.subaccount.user.tab.roles</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Wiki\VendorsSubAccount\Block\User\Edit" name="vendor.subaccount.user"/>
+        </referenceContainer>
+    </body>
+</page>

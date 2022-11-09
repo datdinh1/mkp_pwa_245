@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="Wiki_VendorsNotification::notification" icon="fa fa-envelope" title="Notification" module="Wiki_VendorsNotification" action="notification/index/index" sortOrder="20" resource="Wiki_VendorsNotification::notification" dependsOnModule="Wiki_VendorsNotification" />
+    </menu>
+</config>

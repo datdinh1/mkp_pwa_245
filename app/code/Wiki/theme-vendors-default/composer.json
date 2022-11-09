@@ -1,0 +1,22 @@
+{
+    "name": "Wiki/theme-vendors-default",
+    "description": "N/A",
+		"authors": [
+			{
+					"name": "Wiki",
+					"email": "support@Wiki.com"
+			}
+		],
+		"require": {
+				"magento/framework": "*",
+				"magento/module-theme": ">=100.0.0 <102",
+        "Wiki/module-core": "2.0.*"
+    },
+    "type": "magento2-theme",
+    "version": "2.0.3",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}

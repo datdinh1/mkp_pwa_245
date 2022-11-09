@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Wiki_VendorsConfigApproval::pending_config" title="Pending Vendor Config" sortOrder="998" module="Wiki_VendorsConfigApproval" parent="Wiki_Vendors::marketplace" action="vendors/config_pending"  dependsOnModule="Wiki_VendorsConfigApproval" resource="Wiki_VendorsConfigApproval::pending_config"/>
+    </menu>
+</config>

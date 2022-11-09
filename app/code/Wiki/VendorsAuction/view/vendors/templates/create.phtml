@@ -1,0 +1,872 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+use Wiki\VendorsAuction\Block\Create;
+
+/** @var  Create $block */
+?>
+<div id="auction_create" data-bind="scope: 'create'">
+    <div class="p-seller-product py-5">
+        <div class="container-lg">
+            <div class="bg-section-02">
+                <div class="a-form">
+                    <label class="d-block py-2 pr-4 h4">
+                        Product Images
+                    </label>
+                    <div class="a-form-upload o-product-upload">
+                        <input type="file" multiple="multiple" id="upload" data-bind="event: {change: uploadImg}">
+                        <div class="flex flex-nowrap">
+                            <div class="py-3 mr-4">
+                                <label for="upload" class="a-form-upload__label text-center">
+                                    <i class="a-icon a-icon--medium material-icons">add</i>
+                                    <?= __('add photo') ?>
+                                </label>
+                            </div>
+                            <!-- ko if: (getProductImage().size()) -->
+                            <div class="a-form-upload__images flex flex-nowrap py-3 g-3 overx-scroll"
+                                 data-bind="foreach: getProductImage()">
+                                <div>
+                                    <img class="a-form-upload__thumbnail o-product-upload__thumbnail"
+                                         data-bind="attr: {'src': $data.url, 'alt': $data.name}, click: function(data, event) {return $parent.openModal(data, event)}">
+                                </div>
+                            </div>
+                            <!-- /ko -->
+
+                            <section class="a-modal a-modal--overlay">
+                                <div class="a-modal__inner">
+                                    <div class="a-modal__meta">
+                                        <div class="a-modal__btn">
+
+                                        </div>
+                                        <button class="a-modal__close a-btn a-btn--no-border"
+                                                data-bind="click: closeModal">
+                                            <i class="a-icon a-btn__icon material-icons">close</i>
+                                        </button>
+                                    </div>
+                                    <div class="a-modal__content p-3">
+                                        <div class="pt-5 pb-3">
+                                            <button class="w-100 variant-yellow mb-4 a-btn"
+                                                    data-bind="disable: modalBtn(), click: setDefault">
+                                                <span class="a-btn__text"><?= __('Set as default background') ?></span>
+                                            </button>
+                                            <button class="w-100 a-btn a-btn-white" data-bind="click: closeModal">
+                                                <span class="a-btn__text"><?= __('close') ?></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="a-form">
+                    <label class="d-block py-2 pr-4 h4 a-form--required">
+                        <?= __('Product name') ?>
+                    </label>
+                    <div class="">
+                        <div class="a-form-input flex flex-nowrap a-form-input--wordcount">
+                            <input type="text" placeholder="Product Name" id="product_name" maxlength="130"
+                                   data-bind="event: {'keyup': countPName}">
+                            <div class="a-form-input__wordcount">
+                                <small data-bind="text: p_name() + '/130'"></small>
+                            </div>
+                        </div>
+                        <div class="a-form__message" data-bind="visible: p_name() == 0">
+                            <small>Field is required</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="a-form">
+                    <label class="d-block py-2 pr-4 h4 a-form--required">
+                        <?= __('Product code') ?>
+                    </label>
+                    <div class="">
+                        <div class="a-form-input flex flex-nowrap">
+                            <input type="text" id="product_sku" placeholder="Product SKU"
+                                   data-bind="event: {'keyup': countPSku}">
+                        </div>
+                        <div class="a-form__message" data-bind="visible: p_sku() == 0">
+                            <small>Field is required</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="a-form">
+                    <label class="d-block py-2 pr-4 h4 a-form--required">
+                        <?= __('Condition') ?>
+                    </label>
+                    <div class="">
+                        <div class="a-form-input" id="product-condition">
+                            <select title="Select" data-bind="selectedOptions: p_condition">
+                                <option disabled="disabled" selected="selected">
+                                    Select Product Condition
+                                </option>
+                                <option value="5655">
+                                    New
+                                </option>
+                                <option value="5656">
+                                    Used
+                                </option>
+                                <option value="5657">
+                                    Custom
+                                </option>
+                            </select>
+                        </div>
+                        <div class="a-form__message" data-bind="visible: p_condition() == ''">
+                            <small>Field is required</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="a-form">
+                    <label class="d-block py-2 pr-4 h4 a-form--required">
+                        <?= __('Product Description') ?>
+                    </label>
+                    <div class="">
+                        <div class="a-form-input">
+                            <div contenteditable="true" data-text="Product Description" class="a-form-input-textarea"
+                                 style="height: 250px;" id="product_des" data-bind="event: {'keyup': countPDes}">
+                            </div>
+                            <small class="a-form-input-textarea__wordcount" data-bind="text: p_des() + '/5000'"></small>
+                        </div>
+                        <div class="a-form__message">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="a-form">
+                    <label class="d-block py-2 pr-4 h4 a-form--required">
+                        <?= __('Product category') ?>
+                    </label>
+                    <div class="">
+                        <div
+                            class="vue-treeselect vue-treeselect--multi vue-treeselect--searchable vue-treeselect--open-below">
+                            <div class="vue-treeselect__control">
+                                <div class="vue-treeselect__value-container">
+                                    <div class="vue-treeselect__multi-value">
+                                        <div class="vue-treeselect__placeholder vue-treeselect-helper-zoom-effect-off">
+                                            Select Category
+                                        </div>
+                                        <div class="vue-treeselect__input-container">
+                                            <input type="text" autocomplete="off" tabindex="0"
+                                                   class="vue-treeselect__input" style="width: 5px;">
+                                            <div class="vue-treeselect__sizer"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vue-treeselect__control-arrow-container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292.362 292.362"
+                                         class="vue-treeselect__control-arrow">
+                                        <path
+                                            d="M286.935 69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952 0-9.233 1.807-12.85 5.424C1.807 72.998 0 77.279 0 82.228c0 4.948 1.807 9.229 5.424 12.847l127.907 127.907c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428L286.935 95.074c3.613-3.617 5.427-7.898 5.427-12.847 0-4.948-1.814-9.229-5.427-12.85z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="vue-treeselect__menu-container" style="z-index: 999;">
+
+                            </div>
+                        </div>
+                        <div class="a-form__message"></div>
+                    </div>
+                </div>
+                <div class="a-form flex flex-nowrap va-center">
+                    <label class="d-block py-2 pr-4 h4 a-form--nowrap a-form--required">
+                        <?= __('brand') ?>
+                    </label>
+                    <div class="w-100">
+                        <div class="flex va-center ha-between">
+                            <span class="px-4 c-pointer" data-bind="click: brandBar">
+                                <span data-bind="text: selectBrand() != '' ? selectBrand() : 'select brand'"></span>
+                            </span>
+                            <button class="a-btn a-btn-white" data-bind="click: brandBar">
+                                <i class="a-icon a-btn__icon material-icons">chevron_right</i>
+                            </button>
+                        </div>
+                        <div class="a-form__message"></div>
+                    </div>
+                </div>
+                <div class="flex-nowidth flex-cols-2 g-3">
+                    <div>
+                        <div class="a-form flex flex-nowrap va-center">
+                            <label class="d-block py-2 pr-4 h4 a-form--nowrap a-form--required">
+                                <?= __('sex') ?>
+                            </label>
+                            <div class="w-100">
+                                <div class="a-form-input" id="product-gender">
+                                    <select title="Select" data-bind="selectedOptions: p_typeGender">
+                                        <option disabled="disabled" selected="selected">
+                                            <?= __('Select Product Gender') ?>
+                                        </option>
+                                        <option value="5662">
+                                            Male
+                                        </option>
+                                        <option value="5663">
+                                            Female
+                                        </option>
+                                        <option value="5670">
+                                            All
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="a-form__message" data-bind="visible: p_typeGender() == ''">
+                                    <small>Field is required</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="a-form flex flex-nowrap va-center">
+                            <label class="d-block py-2 pr-4 h4 a-form--nowrap a-form--required">
+                                <?= __('age') ?>
+                            </label>
+                            <div class="w-100">
+                                <div class="a-form-input" id="product-age">
+                                    <select title="Select" data-bind="selectedOptions: p_typeAge">
+                                        <option disabled="disabled" selected="selected">
+                                            Select Product Age
+                                        </option>
+                                        <option value="5651">
+                                            0-6
+                                        </option>
+                                        <option value="5652">
+                                            6-12
+                                        </option>
+                                        <option value="5653">
+                                            12-18
+                                        </option>
+                                        <option value="5654">
+                                            18+
+                                        </option>
+                                        <option value="5685">
+                                            ทุกวัย
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="a-form__message" data-bind="visible: p_typeAge() == ''">
+                                    <small>Field is required</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="a-form">
+                        <label class="d-block py-2 pr-4 h4 a-form--required">
+                            <?= __('starting price') ?>
+                        </label>
+                        <div class="">
+                            <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                                <div class="a-form-input__prepend">฿</div>
+                                <input type="number" id="product_startprice" placeholder="Starting Price" data-bind="event: {'keyup': countPStartPrice}">
+                            </div>
+                            <div class="a-form__message" data-bind="visible: p_startPrice() == 0">
+                                <small>
+                                    Field is required
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="a-form flex flex-nowrap va-center">
+                        <label class="d-block py-2 pr-4 h4 a-form--nowrap"><?= __('Buy it now') ?></label>
+                        <div class="w-100">
+                            <label for="switch-buy-it-now" class="a-form-switch">
+                                <input type="checkbox" id="switch-buy-it-now" value="false" data-bind="checked: buyItNow">
+                                <span class="a-form-switch__slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="a-form" data-bind="visible: buyItNow">
+                        <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('Buy now Price') ?></label>
+                        <div class="">
+                            <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                                <div class="a-form-input__prepend">฿</div>
+                                <input type="number" placeholder="Buy now Price">
+                            </div>
+                            <div class="a-form__message">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="a-form">
+                        <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('Minimum bid') ?></label>
+                        <div class="">
+                            <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                                <div class="a-form-input__prepend">฿</div>
+                                <input type="number" id="product_miniumbid" placeholder="Minimum Bid" data-bind="event: {'keyup': countPMiniumBid}">
+                            </div>
+                            <div class="a-form__message" data-bind="visible: p_miniumBid() == 0">
+                                <small>
+                                    Field is required
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-cols-3 g-2">
+                    <div>
+                        <div class="a-form flex flex-nowrap va-center">
+                            <label class="d-block py-2 pr-4 h4 a-form--nowrap"><?= __('Make Offer') ?></label>
+                            <div class="w-100">
+                                <label for="switch-make-offer" class="a-form-switch">
+                                    <input type="checkbox" id="switch-make-offer" value="false">
+                                    <span class="a-form-switch__slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="a-form flex flex-nowrap va-center">
+                            <label class="d-block py-2 pr-4 h4 a-form--nowrap"><?= __('Snipping Bid') ?></label>
+                            <div class="w-100">
+                                <label for="switch-snipping-bid" class="a-form-switch">
+                                    <input type="checkbox" id="switch-snipping-bid" value="false">
+                                    <span class="a-form-switch__slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="a-form flex flex-nowrap va-center">
+                        <label class="d-block py-2 pr-4 h4 a-form--nowrap">Reserve</label>
+                        <div class="w-100">
+                            <label for="switch-reverse-price" class="a-form-switch">
+                                <input type="checkbox" id="switch-reverse-price" value="false" data-bind="checked: reverse">
+                                <span class="a-form-switch__slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="a-form" data-bind="visible: reverse">
+                        <label class="d-block py-2 pr-4 h4">
+                            <?= __('Reserve Price') ?>
+                        </label>
+                        <div class="">
+                            <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                                <div class="a-form-input__prepend">฿</div>
+                                <input type="number" placeholder="Reserve Price">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="a-form">
+                    <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('Date / time of auction start') ?></label>
+                    <div class="">
+                        <div class="a-form-input flex flex-nowrap">
+                            <div class="col-8 pr-3">
+                                <input data-bind="attr: {'min': today}" type="date" max="" id="dateundefined">
+                            </div>
+                            <div class="col-4">
+                                <input type="time" max="" min="" step="1" id="timeundefined">
+                            </div>
+                        </div>
+                        <div class="a-form__message">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="a-form">
+                    <label class="d-block py-2 pr-4 h4 a-form--required"><?= __('auction end date') ?></label>
+                    <div class="">
+                        <div class="a-form-input flex flex-nowrap">
+                            <div class="col-8 pr-3">
+                                <input data-bind="attr: {'min': today}" type="date" max="" id="dateundefined">
+                            </div>
+                            <div class="col-4">
+                                <input type="time" max="" min="" step="1" id="timeundefined">
+                            </div>
+                        </div>
+                        <div class="a-form__message">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="a-form">
+                    <label class="d-block py-2 pr-4 h4 a-form--required">
+                        <?= __('Product weight') ?>
+                    </label>
+                    <div class="">
+                        <div class="flex-nowidth g-2">
+                            <div class="col-9">
+                                <div class="a-form-input flex flex-nowrap">
+                                    <input type="number" id="product_weight" placeholder="Weight"
+                                           data-bind="event: {'keyup': countPWeight}">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="a-form-input" name="product-weight-unit" id="product_weight_unit">
+                                    <select title="Select">
+                                        <option value="5710">
+                                            g
+                                        </option>
+                                        <option value="5711">
+                                            mg
+                                        </option>
+                                        <option value="5712">
+                                            kg
+                                        </option>
+                                        <option value="5713">
+                                            ton
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a-form__message" data-bind="visible: p_weight() == ''">
+                            <small>Field is required</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="a-form mb-3">
+                    <label class="d-block py-2 pr-4 h4">
+                        <?= __('Product size') ?>
+                    </label>
+                    <div class="">
+                        <div class="flex-nowidth flex-cols-4 g-2">
+                            <div>
+                                <div class="a-form-input flex flex-nowrap">
+                                    <input type="number" placeholder="Width">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="a-form-input flex flex-nowrap">
+                                    <input type="number" placeholder="Length">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="a-form-input flex flex-nowrap">
+                                    <input type="number" placeholder="Height">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="a-form-input" name="product-size-unit" id="product_size_unit">
+                                    <select title="Select">
+                                        <option value="5714">cm</option>
+                                        <option value="5715">m</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a-form__message">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="a-form mb-3">
+                    <div class="">
+                        <p>
+                            <?= __('Choose a shipping method') ?><br>
+                            <?= __('Delivery supported by Nurse Marketplace') ?>
+                        </p>
+                        <div class="flex va-center ha-between">
+                            <span class="text-blue c-pointer" data-bind="click: shippingBar">
+                                <span
+                                    data-bind="visible: shipping_method().length == 0"><?= __('Choose shipping') ?></span>
+                                <div data-bind="foreach: shipping_method()">
+                                    <span data-bind="text: $data"></span>
+                                </div>
+                            </span>
+                            <button class="a-btn a-btn-white" data-bind="click: shippingBar">
+                                <i class="a-icon a-btn__icon material-icons">chevron_right</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="a-form flex flex-nowrap va-center">
+                        <label class="d-block py-2 pr-4 h4 a-form--nowrap">
+                            <?= __('Prepare to ship longer than usual') ?>
+                        </label>
+                        <div class="w-100">
+                            <div class="flex g-3">
+                                <div>
+                                    <div class="a-form-radio">
+                                        <input type="radio" name="product-prepare" id="product-prepare-0" value="1"
+                                               data-bind="checked: product_prepare">
+                                        <label for="product-prepare-0" class="flex flex-nowrap va-center">
+                                            <?= __('yes') ?>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="a-form-radio">
+                                        <input type="radio" name="product-prepare" id="product-prepare-1" value="0"
+                                               data-bind="checked: product_prepare">
+                                        <label for="product-prepare-1" class="flex flex-nowrap va-center">
+                                            <?= __('no') ?>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray" data-bind="visible: product_prepare() == '0'">
+                        <?= __('I will ship the item within 3 days') ?><br>
+                        <?= __('(excluding public holidays and shipping company holidays).') ?>
+                    </p>
+                    <div class="a-form flex flex-nowrap va-center" data-bind="visible: product_prepare() == '1'">
+                        <label class="d-block py-2 pr-4 h4 a-form--nowrap">
+                            <?= __('I need time to deliver') ?>
+                        </label>
+                        <div class="w-100">
+                            <div class="flex va-center ha-between">
+                                <span class="px-4 c-pointer text-blue" data-bind="click: deliveryBar">
+                                    <span class="text-blue"
+                                          data-bind="visible: shipping_date() == ''"><?= __('Choose a delivery time') ?></span>
+                                    <span class="text-blue"
+                                          data-bind="i18n: getDeliveryText(), visible: shipping_date() != ''"></span>
+                                </span>
+                                <button class="a-btn a-btn--no-border" data-bind="click: deliveryBar">
+                                    <i class="a-icon a-btn__icon material-icons">chevron_right</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="a-form flex flex-nowrap va-center">
+                    <label class="d-block py-2 pr-4 h4 a-form--nowrap">
+                        <?= __('Bidders are required to have an address and payment information.') ?>
+                    </label>
+                    <div class="w-100">
+                        <label for="switch-address" class="a-form-switch">
+                            <input type="checkbox" id="switch-address">
+                            <span class="a-form-switch__slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="a-form mt-4">
+                    <div class="">
+                        <div class="flex ha-end flex-cols-3 g-1">
+                            <div>
+                                <a href="/seller/products" class="">
+                                    <button class="w-100 a-btn">
+                                        <span class="a-btn__text"><?= __('Cancel') ?></span>
+                                    </button>
+                                </a>
+                            </div>
+                            <div>
+                                <button class="variant-yellow w-100 a-btn">
+                                    <span class="a-btn__text"><?= __('Save and hide') ?></span>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="variant-yellow w-100 a-btn">
+                                    <span class="a-btn__text"><?= __('Sell now') ?></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="a-explorer brand">
+        <div class="a-explorer__slide">
+            <div class="a-explorer__meta flex">
+                <div class="a-explorer__back flex ha-between">
+                    <button class="a-btn a-btn--no-border" data-bind="click: brandBar">
+                        <i class="a-icon a-btn__icon material-icons">chevron_left</i>
+                    </button>
+                </div>
+                <p class="a-explorer__title h2"><?= __('Brand') ?></p>
+            </div>
+            <div class="a-explorer__content">
+                <div class="a-form">
+                    <div class="">
+                        <div class="a-form-input flex flex-nowrap">
+                            <input type="text" placeholder="<?= __('Find a brand') ?>">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="ml-auto a-btn a-btn--small a-btn--no-border" data-bind="click: createBrandBar">
+                        <i class="a-icon a-btn__icon a-icon--small material-icons">add</i>
+                        <span class="a-btn__text"><?= __('put your our brand') ?></span>
+                    </button>
+                </div>
+                <div>
+                    <div class="a-form">
+                        <div class="a-form-radio w-100">
+                            <input type="radio" name="brand" id="brand-21" value="Alter"
+                                   data-bind="checked: selectBrand">
+                            <label for="brand-21" class="flex flex-nowrap va-center">
+                                <div class="o-brand-item">
+                                    <div class="flex va-center flex-nowrap">
+                                        <p class="o-brand-item__ttl">
+                                            Alter
+                                        </p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <hr class="text-gray">
+                    <div class="a-form">
+                        <div class="a-form-radio w-100">
+                            <input type="radio" name="brand" id="brand-22" value="Bandai"
+                                   data-bind="checked: selectBrand">
+                            <label for="brand-22" class="flex flex-nowrap va-center">
+                                <div class="o-brand-item">
+                                    <div class="flex va-center flex-nowrap">
+                                        <p class="o-brand-item__ttl">
+                                            Bandai
+                                        </p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex ha-end g-2">
+                    <div>
+                        <button class="a-btn a-btn-white" data-bind="click: clearBrand">
+                            <span class="a-btn__text"><?= __('Discard') ?></span>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="variant-yellow a-btn" data-bind="click: brandBar">
+                            <span class="a-btn__text"><?= __('Confirm') ?></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="a-explorer create_brand">
+        <div class="a-explorer__slide">
+            <div class="a-explorer__meta flex">
+                <div class="a-explorer__back flex ha-between">
+                    <button class="a-btn a-btn--no-border" data-bind="click: createBrandBar">
+                        <i class="a-icon a-btn__icon material-icons">
+                            chevron_left
+                        </i>
+                    </button>
+                </div>
+                <p class="a-explorer__title h2">
+                    <?= __('Put your our brand') ?>
+                </p>
+            </div>
+            <div class="a-explorer__content">
+                <div class="a-form">
+                    <label class="d-block py-2 pr-4 h4 a-form--required">
+                        Brand Name
+                    </label>
+                    <div class="">
+                        <div class="a-form-input flex flex-nowrap a-form-input--append">
+                            <input type="text" id="brand_name" placeholder="Brand Name" maxlength="99"
+                                   data-bind="event: {'keyup': countBName}">
+                            <div class="a-form-input__append" data-bind="text: b_name() + '/99'"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="a-form">
+                    <label class="d-block py-2 pr-4 h4">
+                        Note
+                    </label>
+                    <div class="">
+                        <div class="a-form-input">
+                            <textarea placeholder="Note"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="a-form">
+                    <label class="d-block py-2 pr-4 h4">
+                        Logo
+                    </label>
+                    <div class="">
+                        <div class="a-form-upload">
+                            <input type="file" id="brand-logo" data-bind="event: {'change': setBrandImage}">
+                            <div class="flex flex-nowrap">
+                                <div class="py-3" data-bind="visible: getBrandImage().size() == 0">
+                                    <label for="brand-logo" class="a-form-upload__label text-center">
+                                        <i class="a-icon a-icon--medium material-icons">add</i>
+                                        <?= __('add photo') ?>
+                                    </label>
+                                </div>
+                                <div class="a-form-upload__images flex flex-nowrap py-3 g-3"
+                                     data-bind="visible: getBrandImage().size() > 0 ">
+                                    <div>
+                                        <div class="a-form-upload__thumbnail">
+                                            <img data-bind="attr: {'src': brandImg}" alt="brand image" class="h-100">
+                                            <span class="a-form-upload__close flex ha-center va-center"
+                                                  data-bind="click: clearImage">
+                                            <i class="material-icons a-icon">cancel</i>
+                                        </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex ha-end g-3">
+                    <div>
+                        <button class="a-btn a-btn-white" data-bind="click: createBrandBar">
+                            <span class="a-btn__text"><?= __('cancel') ?></span>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="variant-yellow a-btn" data-bind="disable: b_name() == ''">
+                            <span class="a-btn__text"><?= __('setup') ?></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="a-explorer shipping">
+        <div class="a-explorer__slide">
+            <div class="a-explorer__meta flex">
+                <div class="a-explorer__back flex ha-between">
+                    <button class="a-btn a-btn--no-border" data-bind="click: shippingBar">
+                        <i class="a-icon a-btn__icon material-icons">chevron_left</i>
+                    </button>
+                </div>
+                <p class="a-explorer__title h2"><?= __('Choose shipping') ?></p>
+            </div>
+            <div class="a-explorer__content">
+                <div>
+                    <div class="a-form">
+                        <div class="a-form-checkbox w-100">
+                            <input type="checkbox" name="shippop" id="shippop-flatrate" value="fixed"
+                                   data-bind="checked: shipping_method">
+                            <label for="shippop-flatrate" class="flex va-center flex-nowrap">
+                                <div class="o-product-shippop">
+                                    <div class="flex va-center flex-nowrap">
+                                        <div class="o-product-shippop__thumbnail mr-4 flex va-center">
+                                            <img
+                                                src="http://cmkp.funsecondlife.com/img/150/150/resize/pub/static/version1659603277/adminhtml/Magento/backend/th_TH/Shippop_Ecommerce/images/logistic_logo/SPE.png"
+                                                alt="shipping-logo">
+                                        </div>
+                                        <p class="o-product-shippop__ttl">Fixed</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="a-form">
+                        <div class="a-form-checkbox w-100">
+                            <input type="checkbox" name="shippop" id="shippop-cj" value="cj_logistics"
+                                   data-bind="checked: shipping_method">
+                            <label for="shippop-cj" class="flex va-center flex-nowrap">
+                                <div class="o-product-shippop">
+                                    <div class="flex va-center flex-nowrap">
+                                        <div class="o-product-shippop__thumbnail mr-4 flex va-center">
+                                            <img
+                                                src="http://cmkp.funsecondlife.com/img/150/150/resize/pub/static/version1659603277/adminhtml/Magento/backend/th_TH/Shippop_Ecommerce/images/logistic_logo/CJLX.png"
+                                                alt="shipping-logo">
+                                        </div>
+                                        <p class="o-product-shippop__ttl">CJ Logistics</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex ha-end g-2">
+                    <div>
+                        <button class="a-btn a-btn-white" data-bind="click: clearShipping">
+                            <span class="a-btn__text"><?= __('Discard') ?></span>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="variant-yellow a-btn" data-bind="click: shippingBar">
+                            <span class="a-btn__text"><?= __('Confirm') ?></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="a-explorer delivery">
+        <div class="a-explorer__slide">
+            <div class="a-explorer__meta flex">
+                <div class="a-explorer__back flex ha-between">
+                    <button class="a-btn a-btn--no-border" data-bind="click: deliveryBar">
+                        <i class="a-icon a-btn__icon material-icons">chevron_left</i>
+                    </button>
+                </div>
+                <p class="a-explorer__title h2"><?= __('Choose a delivery time') ?></p>
+            </div>
+            <div class="a-explorer__content">
+                <div class="">
+                    <div class="a-form">
+                        <div class="">
+                            <div>
+                                <div class="a-form-radio py-3 w-100">
+                                    <input type="radio" name="product-shipping-time" id="product-shipping-time-0"
+                                           value="7-14" data-bind="checked: shipping_time">
+                                    <label for="product-shipping-time-0"
+                                           class="flex flex-nowrap va-center"><?= __('within 7-14 business days') ?></label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="a-form-radio py-3 w-100">
+                                    <input type="radio" name="product-shipping-time" id="product-shipping-time-1"
+                                           value="30" data-bind="checked: shipping_time">
+                                    <label for="product-shipping-time-1" class="flex flex-nowrap va-center">
+                                        <?= __('within 30 business days') ?>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="flex-nowidth va-center flex-nowrap py-3">
+                                <div class="a-form-radio">
+                                    <input type="radio" name="product-shipping-time" id="product-shipping-time-03"
+                                           value="" data-bind="checked: shipping_time">
+                                    <label for="product-shipping-time-03" class="flex flex-nowrap va-center"></label>
+                                </div>
+                                <div class="a-form-input flex flex-nowrap input-width">
+                                    <input type="number" id="delivery__date" placeholder="ใส่วันที่ในการจัดส่งเอง"
+                                           data-bind="value: shippingTime(), event: {'keyup': setDate}, disable: isDisable()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex ha-end g-2">
+                        <div>
+                            <button class="a-btn a-btn-white" data-bind="click: clearDate">
+                                <span class="a-btn__text"><?= __('Discard') ?></span>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="variant-yellow a-btn" data-bind="click: deliveryBar">
+                                <span class="a-btn__text"><?= __('Confirm') ?></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#auction_create": {
+            "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */
+    echo $block->getJsLayout(); ?>
+        }
+    }
+
+</script>

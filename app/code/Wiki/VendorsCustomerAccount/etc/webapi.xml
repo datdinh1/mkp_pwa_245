@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <route url="/V1/vendors-customer-account/check-status/:vendorId/:customerId" method="GET">
+        <service class="Wiki\VendorsCustomerAccount\Api\BlockRepositoryInterface" method="checkStatus"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/vendors-customer-account/get-blocked-users/:vendorId" method="GET">
+        <service class="Wiki\VendorsCustomerAccount\Api\BlockRepositoryInterface" method="getBlockedCustomers"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    
+    <route url="/V1/vendors-customer-account/block-customer" method="POST">
+        <service class="Wiki\VendorsCustomerAccount\Api\BlockRepositoryInterface" method="blockCustomers"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    
+    <route url="/V1/vendors-customer-account/unblock-customer" method="POST">
+        <service class="Wiki\VendorsCustomerAccount\Api\BlockRepositoryInterface" method="unBlockCustomers"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/vendors-customer-account/get-blocked-seller/:customerId" method="GET">
+        <service class="Wiki\VendorsCustomerAccount\Api\BlockRepositoryInterface" method="getBlockedVendors"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/vendors-customer-account/block-seller" method="POST">
+        <service class="Wiki\VendorsCustomerAccount\Api\BlockRepositoryInterface" method="blockVendors"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    
+    <route url="/V1/vendors-customer-account/unblock-seller" method="POST">
+        <service class="Wiki\VendorsCustomerAccount\Api\BlockRepositoryInterface" method="unBlockVendors"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+
+
+</routes>

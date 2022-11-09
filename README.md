@@ -2,7 +2,7 @@
 ### Require version:
 
 ```
-php 7.4
+php 8.1
 composer 2
 elasticsearch 7
 ```
@@ -22,7 +22,7 @@ composer install
 ~root magento(mkp_pwa_245):
 ```bash
 cd database
-sudo mysql -u root -p db-name < init_db.sql
+sudo mysql -u root -p db-name < empty.sql
 ```
 
 ### 4. Run Magento 2 deploy command:

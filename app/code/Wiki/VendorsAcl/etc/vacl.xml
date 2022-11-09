@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+        	<resource id="Wiki_Vendors::all" title="Allow everything" translate="title" sortOrder="0" />
+            <resource id="Wiki_Vendors::vendor" title="Vendor Panel" translate="title" sortOrder="10" />
+        </resources>
+    </acl>
+</config>

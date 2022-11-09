@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <route url="/V1/saveFaq/" method="POST">
+        <service class="Wiki\VendorsFaq\Api\FaqRepositoryInterface" method="saveFaq"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/getListFaq/ByVendor/:vendorId" method="GET">
+        <service class="Wiki\VendorsFaq\Api\FaqRepositoryInterface" method="getFaqByVendorId"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/delete/:idFaq" method="DELETE">
+        <service class="Wiki\VendorsFaq\Api\FaqRepositoryInterface" method="deleteFaq"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

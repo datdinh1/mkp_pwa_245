@@ -1,0 +1,23 @@
+{
+	"name": "Wiki/module-vendors-withdrawal",
+	"description": "N/A",
+	"authors": [
+		{
+			"name": "Wiki",
+			"email": "support@Wiki.com"
+		}
+	],
+	"require": {
+		"magento/framework": "*"
+	},
+	"type": "magento2-module",
+	"version": "2.0.3",
+	"autoload": {
+		"files": [
+			"registration.php"
+		],
+		"psr-4": {
+			"Wiki\\VendorsCustomWithdrawal\\": ""
+		}
+	}
+}

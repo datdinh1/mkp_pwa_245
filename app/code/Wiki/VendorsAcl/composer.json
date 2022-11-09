@@ -1,0 +1,25 @@
+{
+	"name" : "Wiki/module-vendors-acl",
+	"description" : "N/A",
+	"authors": [
+		{
+				"name": "Wiki",
+				"email": "support@Wiki.com"
+		}
+	],
+	"require": {
+			"magento/framework": "*",
+			"Wiki/module-vendors": ">=100.1.0",
+			"Wiki/module-core": "2.0.*"
+	},
+	"type" : "magento2-module",
+	"version" : "2.0.1",
+	"autoload" : {
+		"files" : [
+			"registration.php"
+		],
+		"psr-4" : {
+			"Wiki\\VendorsAcl\\" : ""
+		}
+	}
+}

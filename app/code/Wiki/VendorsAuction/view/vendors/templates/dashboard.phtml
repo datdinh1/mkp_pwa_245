@@ -1,0 +1,113 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+use Wiki\VendorsAuction\Block\Dashboard;
+
+/** @var  Dashboard $block */
+?>
+
+<div id="auction_dashboard" data-bind="scope: 'dashboard'">
+    <div class="container-lg">
+        <div class="flex flex-cols-1 flex-cols-sm-2 ha-between va-center my-5">
+            <div>
+                <h1 class="text-bold mb-3">
+                    <?= __('My order list') ?>
+                </h1>
+            </div>
+            <div class="a-form-input a-form-search">
+                <input type="text" placeholder="Search for orders" id="order-history">
+                <i class="a-icon a-form-search__icon material-icons">search</i>
+            </div>
+        </div>
+        <div class="bg-section-02">
+            <div class="px-4 pb-5">
+                <div class="o-order-status__list flex ha-center g-4 mb-5">
+                    <div>
+                        <button class="a-btn-icon a-btn-white a-btn--no-border">
+                            <span class="a-btn-icon__main variant-yellow">
+                                <i class="a-icon material-icons">view_in_ar</i>
+                            </span>
+                            <p>All</p>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="a-btn-icon a-btn-white a-btn--no-border">
+                            <span class="a-btn-icon__main variant-gray">
+                                <i class="a-icon material-icons">view_in_ar</i>
+                            </span>
+                            <p>Auction Coming</p>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="a-btn-icon a-btn-white a-btn--no-border">
+                            <span class="a-btn-icon__main variant-gray">
+                                <i class="a-icon material-icons">view_in_ar</i>
+                            </span>
+                            <p>Auction Running</p>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="a-btn-icon a-btn-white a-btn--no-border">
+                            <span class="a-btn-icon__main variant-gray">
+                                <i class="a-icon material-icons">view_in_ar</i>
+                            </span>
+                            <p>Auction Closed</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="py-5">
+                <div class="flex flex-cols-1 flex-cols-md-2 g-3">
+                    <div>
+                        <div class="m-card-auction-order">
+                            <div class="flex">
+                                <img class="m-card-auction-order__thumbnail col-4" src="<?= $block->getProductImage() ?>" alt="product_image">
+                                <div class="m-card-auction-order__meta col-8 px-4">
+                                    <h3 class="mb-4">
+                                        <a href="<?= $block->getProductUrl() ?>" class="a__hover_black">
+                                            <?= $block->getProductName() ?>
+                                        </a>
+                                    </h3>
+                                    <p class="text-blue"><?= $block->getProductStatus() ?></p>
+                                    <p class="mt-5">time left</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="m-card-auction-order">
+                            <div class="flex">
+                                <img class="m-card-auction-order__thumbnail col-4" src="<?= $block->getProductImage() ?>" alt="product_image">
+                                <div class="m-card-auction-order__meta col-8 px-4">
+                                    <h3 class="mb-4">
+                                        <a href="<?= $block->getProductUrl() ?>" class="a__hover_black">
+                                            <?= $block->getProductName() ?>
+                                        </a>
+                                    </h3>
+                                    <p class="text-blue"><?= $block->getProductStatus() ?></p>
+                                    <p class="mt-5">time left</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#auction_dashboard": {
+            "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */
+    echo $block->getJsLayout(); ?>
+        }
+    }
+
+</script>

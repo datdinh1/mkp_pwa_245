@@ -1,0 +1,20 @@
+{
+	"name" : "Wiki/module-vendors-smtheme",
+	"description" : "Fix SM themes to work with marketplace extension",
+	"authors": [
+		{
+				"name": "Wiki",
+				"email": "support@Wiki.com"
+		}
+	],
+	"type" : "magento2-module",
+	"version" : "2.0.1",
+	"autoload" : {
+		"files" : [
+			"registration.php"
+		],
+		"psr-4" : {
+			"Wiki\\SmTheme\\" : ""
+		}
+	}
+}

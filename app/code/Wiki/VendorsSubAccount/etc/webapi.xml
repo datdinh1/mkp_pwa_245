@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/VendorsSubAccount/getAllSubAccount" method="POST">
+        <service class="Wiki\VendorsSubAccount\Api\SubAccountManagementInterface" method="getAllSubAccount"/>
+        <resources>
+            <resource ref="Wiki_VendorsSubAccount::subaccount_configuration"/>
+        </resources>
+    </route>
+    <route url="/V1/VendorsSubAccount/getRoleData" method="POST">
+        <service class="Wiki\VendorsSubAccount\Api\SubAccountManagementInterface" method="getRoleData"/>
+        <resources>
+            <resource ref="Wiki_VendorsSubAccount::subaccount_configuration"/>
+        </resources>
+    </route>
+    <route url="/V1/VendorsSubAccount/createSubAccount" method="POST">
+        <service class="Wiki\VendorsSubAccount\Api\SubAccountManagementInterface" method="createSubAccount"/>
+        <resources>
+            <resource ref="Wiki_VendorsSubAccount::subaccount_configuration"/>
+        </resources>
+    </route>
+</routes>

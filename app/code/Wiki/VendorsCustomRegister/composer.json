@@ -1,0 +1,24 @@
+{
+    "name": "Wiki/module-vendors-custom-register",
+    "description": "Add registration form for seller.",
+    "authors": [
+			{
+					"name": "Wiki",
+					"email": "support@Wiki.com"
+			}
+		],
+		"require": {
+				"magento/framework": "*",
+        "Wiki/module-core": "2.0.*"
+    },
+    "type": "magento2-module",
+    "version": "2.0.3",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Wiki\\VendorsCustomRegister\\": ""
+        }
+    }
+}

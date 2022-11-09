@@ -1,0 +1,400 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+use Wiki\VendorsAuction\Block\Product;
+
+/** @var  Product $block */
+
+$totals = $block->getTotals();
+?>
+<div id="auction_product" data-bind="scope: 'product'">
+    <div class="container-md">
+        <h1 class="mb-5">Manage Product</h1>
+
+        <div class="p-seller-product__search bg-section">
+            <div class="flex g-2">
+                <div class="col-9">
+                    <div class="a-form">
+                        <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                            <div class="a-form-input__prepend">
+                                <i class="a-icon material-icons">search</i>
+                            </div>
+                            <input type="text" placeholder="Search for auction items in the store.">
+                        </div>
+                        <div class="a-form__message">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="a-form">
+                        <div class="">
+                            <div class="a-form-input">
+                                <select title="Select">
+                                    <option value="" selected="selected">all</option>
+                                    <option value="coming">Auction hasn't started yet.</option>
+                                    <option value="running">Auctioning</option>
+                                    <option value="closed">out of time</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex ha-end g-2 pb-3">
+                <div class="col-3">
+                    <div class="a-form">
+                        <div class="">
+                            <div class="a-form-input flex flex-nowrap a-form-input--prepend">
+                                <div class="a-form-input__prepend">฿</div>
+                                <input type="number" placeholder="From">
+                            </div>
+                            <div class="a-form__message">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="a-form">
+                        <div class="">
+                            <div class="a-form-input flex flex-nowrap a-form-input--prepend" min="">
+                                <div class="a-form-input__prepend">฿</div>
+                                <input type="number" placeholder="To">
+                            </div>
+                            <div class="a-form__message">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex ha-end g-2">
+                <div>
+                    <button class="variant-yellow a-btn">
+                        <span class="a-btn__text">search</span>
+                    </button>
+                </div>
+                <div>
+                    <button class="a-btn">
+                        <span class="a-btn__text">Clear</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="p-seller-product__list py-5">
+            <h2><?= __($block->getTotal() . ' products in total') ?></h2>
+            <div class="flex ha-end g-2">
+                <div>
+                    <a href="/vendors/auction/new/index/" class="">
+                        <button class="variant-yellow a-btn">
+                            <i class="a-icon a-btn__icon material-icons">add</i>
+                            <span class="a-btn__text">add product</span>
+                        </button>
+                    </a>
+                </div>
+                <div>
+                    <button class="variant-white a-btn">
+                        <i class="a-icon a-btn__icon material-icons">add</i>
+                        <span class="a-btn__text">Add multiple products</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-cols-4 bg-section text-center">
+            <div>
+                <button class="text-yellow a-btn-white a-btn--no-border">all</button>
+            </div>
+            <div>
+                <button class="a-btn-white a-btn--no-border">Auction hasn't started yet.</button>
+            </div>
+            <div>
+                <button class="a-btn-white a-btn--no-border">Auctioning</button>
+            </div>
+            <div>
+                <button class="a-btn-white a-btn--no-border">out of time</button>
+            </div>
+        </div>
+        <div class="py-5">
+            <div>
+                <div class="mb-3">
+                    <div class="m-card-auction p-3">
+                        <div class="flex ha-between">
+                            <div>
+                                <div class="a-form-checkbox">
+                                    <input type="checkbox" class="auction-product" name="product-2942" id="auction-product-2942" value="product-2942" data-bind="checked: product_checked">
+                                    <label for="auction-product-2942" class="flex flex-nowrap va-center">Select</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex py-3">
+                            <img class="m-card-auction__thumbnail col-4" src="http://cmkp.funsecondlife.com/img/310/300/resize/pub/media/catalog/product/n/o/no_7_1feb2021_1200x800_fun_spm_1_jpg_1.jpg">
+                            <div class="col-8 pl-3">
+                                <div class="m-card-auction__table">
+                                    <table class="table table-bordered tg-3">
+                                        <tbody>
+                                        <tr>
+                                            <th colspan="2">
+                                                <div class="flex va-center flex-nowrap">
+                                                    <div>
+                                                        <div class="a-form-tag variant-green">
+                                                            <div class="flex">
+                                                                <p class="text-white h5 p-1">running</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="h3 px-3">
+                                                        <a href="/test-1-s85.html" class="" target="_blank">test 1</a>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                SKU
+                                            </th>
+                                            <td>
+                                                test-1-S85
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Bid start price
+                                            </th>
+                                            <td>
+                                                first
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Date / time of auction start
+                                            </th>
+                                            <td>
+                                                2022-09-20 00:00:00
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                auction end date
+                                            </th>
+                                            <td>
+                                                2022-09-23 00:00:00
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex ha-end g-2">
+                            <div>
+                                <a href="/seller/auction/bid/test-1-S85" class="">
+                                    <button class="variant-yellow a-btn">
+                                        <span class="a-btn__text">see details</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="mb-3">
+                    <div class="m-card-auction p-3">
+                        <div class="flex ha-between">
+                            <div>
+                                <div class="a-form-checkbox">
+                                    <input type="checkbox" name="product-2943" class="auction-product" id="auction-product-2942" value="product-2943" data-bind="checked: product_checked">
+                                    <label for="auction-product-2942" class="flex flex-nowrap va-center">Select</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex py-3">
+                            <img class="m-card-auction__thumbnail col-4" src="http://cmkp.funsecondlife.com/img/310/300/resize/pub/media/catalog/product/n/o/no_7_1feb2021_1200x800_fun_spm_1_jpg_1.jpg">
+                            <div class="col-8 pl-3">
+                                <div class="m-card-auction__table">
+                                    <table class="table table-bordered tg-3">
+                                        <tbody>
+                                        <tr>
+                                            <th colspan="2">
+                                                <div class="flex va-center flex-nowrap">
+                                                    <div>
+                                                        <div class="a-form-tag variant-green">
+                                                            <div class="flex">
+                                                                <p class="text-white h5 p-1">running</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="h3 px-3">
+                                                        <a href="/test-1-s85.html" class="" target="_blank">test 2</a>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                SKU
+                                            </th>
+                                            <td>
+                                                test-1-S85
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Bid start price
+                                            </th>
+                                            <td>
+                                                first
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Date / time of auction start
+                                            </th>
+                                            <td>
+                                                2022-09-20 00:00:00
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                auction end date
+                                            </th>
+                                            <td>
+                                                2022-09-23 00:00:00
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex ha-end g-2">
+                            <div>
+                                <a href="/seller/auction/bid/test-1-S85" class="">
+                                    <button class="variant-yellow a-btn">
+                                        <span class="a-btn__text">see details</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="mb-3">
+                    <div class="m-card-auction p-3">
+                        <div class="flex ha-between">
+                            <div>
+                                <div class="a-form-checkbox">
+                                    <input type="checkbox" name="product-2944" class="auction-product" id="auction-product-2942" value="product-2944" data-bind="checked: product_checked">
+                                    <label for="auction-product-2942" class="flex flex-nowrap va-center">Select</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex py-3">
+                            <img class="m-card-auction__thumbnail col-4" src="http://cmkp.funsecondlife.com/img/310/300/resize/pub/media/catalog/product/n/o/no_7_1feb2021_1200x800_fun_spm_1_jpg_1.jpg">
+                            <div class="col-8 pl-3">
+                                <div class="m-card-auction__table">
+                                    <table class="table table-bordered tg-3">
+                                        <tbody>
+                                        <tr>
+                                            <th colspan="2">
+                                                <div class="flex va-center flex-nowrap">
+                                                    <div>
+                                                        <div class="a-form-tag variant-green">
+                                                            <div class="flex">
+                                                                <p class="text-white h5 p-1">running</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="h3 px-3">
+                                                        <a href="/test-1-s85.html" class="" target="_blank">test 3</a>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                SKU
+                                            </th>
+                                            <td>
+                                                test-1-S85
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Bid start price
+                                            </th>
+                                            <td>
+                                                first
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Date / time of auction start
+                                            </th>
+                                            <td>
+                                                2022-09-20 00:00:00
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                auction end date
+                                            </th>
+                                            <td>
+                                                2022-09-23 00:00:00
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex ha-end g-2">
+                            <div>
+                                <a href="/seller/auction/bid/test-1-S85" class="">
+                                    <button class="variant-yellow a-btn">
+                                        <span class="a-btn__text">see details</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-seller-product__footer p-3 bg-section " data-bind="css: { 'p-seller-product__footer--open': product_checked().length > 0 }">
+        <div class="flex ha-between ha-md-flex-end va-center">
+            <div class="pr-5">
+                <div class="a-form-checkbox">
+                    <input type="checkbox" id="auction-select-all" value="true" data-bind="click: selectAll()">
+                    <label for="auction-select-all" class="flex flex-nowrap va-center">เลือกทั้งหมด</label>
+                </div>
+            </div>
+            <div>
+                <button class="variant-yellow a-btn">
+                <span class="a-btn__text">
+                    Delete <span data-bind="text: '(' + product_checked().length + ')'"> </span>
+                </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#auction_product": {
+            "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */
+    echo $block->getJsLayout(); ?>
+        }
+    }
+
+
+
+</script>

@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/carts/mine/vendor-coupons/:couponCode" method="PUT">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="set"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::all_coupon" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/guest-carts/:cartId/vendor-coupons/:couponCode" method="PUT">
+        <service class="Wiki\VendorsCoupon\Api\GuestCouponManagementInterface" method="set"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::all_coupon" />
+        </resources>
+    </route>
+    <route url="/V1/carts/:cartId/vendor-coupons/:couponCode" method="PUT">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="applyCouponCart"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::all_coupon" />
+        </resources>
+    </route>
+    <route url="/V1/carts/mine/vendor-coupons/:couponCode" method="DELETE">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="removeCoupon"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::all_coupon" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/guest-carts/:cartId/vendor-coupons/:couponCode" method="DELETE">
+        <service class="Wiki\VendorsCoupon\Api\GuestCouponManagementInterface" method="removeCoupon"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::all_coupon" />
+        </resources>
+    </route>
+    <route url="/V1/carts/:cartId/vendor-coupons/:couponCode" method="DELETE">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="cancleCoupon"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::all_coupon" />
+        </resources>
+    </route>
+    <route url="/V1/carts/mine/vendor-coupons" method="GET">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="getDiscountDetail"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::all_coupon" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/guest-carts/:cartId/vendor-coupons" method="GET">
+        <service class="Wiki\VendorsCoupon\Api\GuestCouponManagementInterface" method="getDiscountDetail"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::all_coupon" />
+        </resources>
+    </route>
+    <route url="/V1/vendors-coupon/all" method="GET">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="getAllCoupon"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/coupon/get-mkp-coupon" method="GET">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="getListCouponMKP"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/vendors-coupon/list-coupon-seller" method="GET">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="getListCouponByVendor"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/vendors-sales-rule/get-seller-coupons/:vendorId" method="GET">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="getListCouponByVendorId"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/list-coupon/all-coupon-mkp/:cartId" method="POST">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="getAllCouponMKP"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::all_coupon" />
+        </resources>
+    </route>
+    <route url="/V1/list-coupon/by-vendor/:cartId/:namestore" method="POST">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="getCouponByVendor"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::detail_coupon_by_vendor" />
+        </resources>
+    </route>
+    <route url="/V1/list-coupon/coupon-mkp-by-vendor/:cartId" method="POST">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="getCouponMrkByVendor"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::detail_coupon_by_vendor" />
+        </resources>
+    </route>
+    <route url="/V1/applyDiscount/:cartId/:couponCode" method="POST">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="applyDiscount"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::detail_coupon_by_vendor" />
+        </resources>
+    </route>
+    <route url="/V1/applyCouponSumProduct/:cartId/:couponCode" method="POST">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="applyCouponSumProduct"/>
+        <resources>
+            <resource ref="Wiki_VendorsCoupon::detail_coupon_by_vendor" />
+        </resources>
+    </route>
+
+    <!-- get all coupon for mall store by id group -->
+    <route url="/V1/product/mallPage/getAllCoupon/:idGroup" method="GET">
+        <service class="Wiki\VendorsCoupon\Api\CouponManagementInterface" method="getCouponMallPage"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

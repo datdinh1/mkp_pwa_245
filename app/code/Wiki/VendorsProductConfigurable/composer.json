@@ -1,0 +1,25 @@
+{
+    "name": "Wiki/module-vendors-product-configurable",
+    "description": "N/A",
+    "authors": [
+			{
+					"name": "Wiki",
+					"email": "support@Wiki.com"
+			}
+		],
+		"require": {
+				"magento/framework": "*",
+        "magento/module-catalog": ">=100.0.0",
+        "Wiki/module-core": "2.0.*"
+    },
+    "type": "magento2-module",
+    "version": "2.2.5",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Wiki\\VendorsProductConfigurable\\": ""
+        }
+    }
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="wkotpsms" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+            <label>OTP SMS</label>
+            <tab>wiki</tab>
+            <resource>Wiki_OtpSms::otpsms_config</resource>
+            <group id="general" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                <label>General Settings</label>
+                <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>   
+            </group>
+            <group id="connection" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+                <label>Connection</label>
+                <depends>
+                    <field id="wkotpsms/general/enable">1</field>
+                </depends>
+                <field id="sender" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                    <label>Sender</label>
+                </field>
+                <field id="service" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+                    <label>Service</label>
+                    <source_model>Wiki\OtpSms\Model\Config\Source\Service</source_model>
+                </field>
+                <field id="url_sms" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30">
+                    <label>URL SMS</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="service">smsmkt</field>
+                    </depends>
+                </field>
+                <field id="api_key" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="40">
+                    <label>API Key</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="service">smsmkt</field>
+                    </depends>
+                </field>
+                <field id="secret_key" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="50">
+                    <label>Secret Key</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="service">smsmkt</field>
+                    </depends>
+                </field>
+                <field id="content_sms" translate="label" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="60">
+                    <label>Content SMS</label>
+                    <comment><![CDATA[%s will be replaced with OTP]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

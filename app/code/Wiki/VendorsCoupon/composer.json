@@ -1,0 +1,23 @@
+{
+    "name": "wiki/module-vendors-coupon",
+    "description": "Allows vendor can create coupon codes to offer discount for customers when buying his product.",
+    "authors": [
+      {
+        "name": "WIKI",
+        "email": "support@wiki.com"
+      }
+    ],
+    "require": {
+        "wiki/module-core": "2.4.*"
+    },
+    "type": "magento2-module",
+    "version": "2.4.0",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Wiki\\VendorsCoupon\\": ""
+        }
+    }
+}

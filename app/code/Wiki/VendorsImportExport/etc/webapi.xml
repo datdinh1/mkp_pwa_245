@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <route url="/V1/vendors-import-export/export/product/:vendorId" method="GET">
+        <service class="Wiki\VendorsImportExport\Api\ImportExportManagementInterface" method="getCSVProductByVendorId"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/vendors-import-export/import/product/:vendorId" method="POST">
+        <service class="Wiki\VendorsImportExport\Api\ImportExportManagementInterface" method="importProductByVendorId"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+</routes>
